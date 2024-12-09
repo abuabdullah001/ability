@@ -3,6 +3,8 @@
 HOME
 @endsection
 @section('front-main-content')
+
+{{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> --}}
 <style type="text/css">
     .principle {
         margin-top: 50px;
@@ -183,6 +185,7 @@ flex-direction: column;
 
   }
 </style>
+
 <div class="clearfix "></div>
 
 @include('frontend.include.slider')
@@ -232,7 +235,7 @@ flex-direction: column;
                         <div id="service-One" class="panel-collapse collapse noticeContant" role="tabpanel"
                             aria-labelledby="headingOne">
                             <div class="panel-body noticetext" style="">
-                                <h4 class="text-center">{{$notice->title}}</h4>
+                                <h4 class="text-center"> {{$notice->title}}</h4>
                                 <p> {!! $notice->descriptino !!}</p>
                             </div>
                         </div>
@@ -302,38 +305,7 @@ margin-top: 10px;
 </style>
 
 
-<section style="background-color: rgb(255, 255, 255);">
-    <div class="container" style="margin-top: 30px;">
-        <h1 style="margin-left: 470px; margin-bottom:30px;">ODMS</h1>
-        <div class="col-md-4">
-            <img src="images/1732170023-01-10-8.jpg" style="height: 200px" alt="">
-            <h1>Flood</h1>
-          <p style="text-align: justify">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora ratione natus id adipisci aspernatur. Eum, a? Odio dicta, enim, harum molestias distinctio libero, exercitationem veniam hic temporibus laboriosam quisquam aut.
-
-          </p>
-        </div>
-        <div class="col-md-4">
-            <img src="images/istockphoto-122719833-612x612.jpg" style="height: 200px" alt="">
-            <h1>Drought</h1>
-             <p style="text-align: justify">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora ratione natus id adipisci aspernatur. Eum, a? Odio dicta, enim, harum molestias distinctio libero, exercitationem veniam hic temporibus laboriosam quisquam aut.
-
-          </p>
-        </div>
-        <div class="col-md-4">
-            <img src="images/1732169911-Amphan-Effected-1.jpg" style="height: 200px" alt="">
-           <h1>Storm</h1>
-           <p style="text-align: justify">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora ratione natus id adipisci aspernatur. Eum, a? Odio dicta, enim, harum molestias distinctio libero, exercitationem veniam hic temporibus laboriosam quisquam aut.
-
-          </p>
-        </div>
-
-    </div>
-</section>
-
-
+{{-- About odms --}}
 
 <section class="" style="background-color: #f0f0f0">
 <div class="container">
@@ -358,18 +330,363 @@ margin-top: 10px;
 </div>
 </section>
 
-{{-- 
+
+{{-- feature Event --}}
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+
+
+<section style="">
+ {{-- background-image: url('images/pngtree-drone-perspective.jpg'); background-size: cover; background-position: center; background-attachment: fixed; --}}
+    {{-- <h1 style="margin-left: 500px; color: white; text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);">Featured Event</h1> --}}
+    <h1 class="text-center" style="color: white; text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);"> Current Event </h1>
+    <div class="swiper " style="margin-top: 50px; margin-bottom: 50px; margin-left:50px;">
+        <div class="swiper-wrapper">
+            @php
+                $events = App\Models\Event::all();
+            @endphp
+
+            @foreach($events as $project)
+            <div class="swiper-slide">
+                <div class="d-flex gap-4" style="margin-left: 80px">
+                    <div style="width: 50rem; height: 100px;">
+                        <section class="brows-job-category">
+                            <div class="container" style="width: 1154px">
+                                <div class="ibox">
+                                    <div class="i-body">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row">
+                                                    <div class="col-md-6 col-sm-6 mb-4">
+                                                        <div class="card">
+                                                            <a href="{{ route('event.show', ['slug' => $project->slug]) }}">
+                                                                <img src="{{ asset($project->image) }}" style="width: 35rem; height: 23rem;" class="card-img-top img-responsive" alt="...">
+                                                                <div class="card-body">
+                                                                    <h5 class="card-title" style="font-size: 21px; font-weight: 600; line-height: 25px; margin-bottom: 38px;">
+                                                                        {{ Str::limit($project->name, 20, '...') }}
+                                                                    </h5>
+                                                                    <a href="{{ route('champaign.show', ['slug' => $project->slug]) }}" class="" style="color: blue">Read More</a>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        </div>
+
+        <!-- Swiper navigation buttons -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+
+        <!-- Swiper pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <section class="brows-job-category">
+        <div class="container" >
+            <h3 class="text-center" style="color: white; text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);">All Event</h3>
+            <hr>
+            <div class="ibox">
+                <div class="i-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                @php
+                                    $completedchmapin = App\Models\Event::where('type', 'complite')->get();
+                                @endphp
+                                @foreach($completedchmapin as $project)
+                                <div class="col-md-3 col-sm-6 mb-4">
+                                    <div class="card">
+                                        <a href="{{ route('event.show', ['slug' => $project->slug]) }}">
+                                            <img src="{{ asset($project->image) }}" style="width: 35rem; height: 23rem;" class="card-img-top img-responsive" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">
+                                                    {{ Str::limit($project->name, 30, '...') }}
+                                                </h5>
+                                                <a href="{{ route('event.show', ['slug' => $project->slug]) }}" class="btn btn-link" style="color: blue">Read More</a>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
+
+
+{{-- yearly report --}}
+
+<style>
+        .hover-car {
+        background-color: #F0F4F5;
+        position: relative; /* To allow absolute positioning of text */
+        height: 450px;
+        width: 350px;
+        margin: 10px 0;
+        margin-left: 0px;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth zoom & shadow */
+    }
+    .hover-car:hover {
+        transform: scale(1.05); /* Slightly enlarge the card */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+    }
+</style>
+
+
+<section style="background-color: rgb(255, 255, 255);">
+    <div class="container" style=" ">
+            <div class="row">
+                <h1 style="margin-left: 470px; margin-top:30px;margin-bottom:30px">Report</h1>
+                <div class="col-md-3 hover-car">
+                    <img src="images/1732170023-01-10-8.jpg" style="height: 200px;width:100%;" alt="">
+                    <h3>Event-wise report</h3>
+                <p style="text-align: justify">
+                    Lorem ipsum dolor sit amet consecteturm, harum molestias distinctio libero, exercitationem veniam hic temporibus laboriosam quisquam aut.
+                </p>
+                    <a href="">pdf file download</a>
+                </div>
+                <div class="col-md-3 hover-car ms-2" style="margin-left: 20px;">
+                    <img src="images/istockphoto-122719833-612x612.jpg" style="height: 200px;width:100%;" alt="">
+                    <h3>Monthly report</h3>
+                    <p style="text-align: justify">
+                    Lorem ipsum dolor sit amet consectetur nim, harum molestias distinctio libero, exercitationem veniam hic temporibus laboriosam quisquam aut.
+                </p>
+                    <a href="">pdf file download</a>
+                </div>
+                <div class="col-md-3 hover-car " style="margin-left: 20px;">
+                    <img src="images/1732169911-Amphan-Effected-1.jpg" style="height: 200px;width:100%;" alt="">
+                <h3>Yearly report</h3>
+                <p style="text-align: justify">
+                    Lorem ipsum dolor sit amet consectetur o dicta, enim, harum molestias distinctio libero, exercitationem veniam hic temporibus laboriosam quisquam aut.
+                </p>
+                <a href="">pdf file download</a>
+                </div>
+        </div>
+    </div>
+</section>
+
+
+{{-- people Feedback --}}
+<style>
+    /* Add hover effect for the card */
+    .hover-card {
+        background-color: #F0F4F5;
+        position: relative; /* To allow absolute positioning of text */
+        height: 600px;
+        margin: 10px 0;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth zoom & shadow */
+    }
+
+    .hover-card:hover {
+        transform: scale(1.05); /* Slightly enlarge the card */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+    }
+
+    /* Image styling */
+    .hover-card img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover; /* Ensure the image fits nicely */
+        transition: opacity 0.3s ease;
+    }
+
+    /* Title (h1) at the top of the image */
+    .hover-card h1 {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        color: white;
+        z-index: 1;
+        margin: 0;
+        padding: 5px 10px;
+        background: rgba(0, 0, 0, 0.5); /* Dark background to enhance readability */
+        border-radius: 5px;
+        font-size: 1.5rem;
+    }
+
+    /* Sub-title (h3) below h1 */
+    .hover-card h3 {
+        position: absolute;
+        top: 50px;
+        left: 10px;
+        color: white;
+        z-index: 1;
+        margin: 0;
+        padding: 5px 10px;
+        background: rgba(0, 0, 0, 0.5); /* Dark background to enhance readability */
+        border-radius: 5px;
+        font-size: 1.2rem;
+    }
+
+    /* Paragraph (p) at the bottom of the image */
+    .hover-card p {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        color: white;
+        z-index: 1;
+        margin: 0;
+        padding: 10px;
+        background: rgba(0, 0, 0, 0.5); /* Dark background to enhance readability */
+        border-radius: 5px;
+        font-size: 1rem;
+        max-width: 90%; /* Ensure the text doesn't overflow */
+    }
+
+    h1.section-title {
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 30px;
+    }
+
+    /* Optional: Fix for Bootstrap grid spacing */
+    .col-md-3 {
+        padding: 0 10px;
+    }
+</style>
+
 <section>
-    <div>
+    <h1 class="section-title">People Feedback</h1>
 
+    <div class="container">
+        <!-- Use Bootstrap's row and col-md-3 to ensure 4 cards in a row -->
+        <div class="row">
+
+            <!-- First Card -->
+            <div class="col-md-3">
+                <div class="hover-card">
+                    <img src="images/123.jpg" alt="Flood">
+                    <h1>John Smith</h1>
+                    <h3>CEO of Walton</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora ratione natus id adipisci aspernatur. Eum, a?
+                    </p>
+                </div>
+            </div>
+
+            <!-- Second Card -->
+            <div class="col-md-3">
+                <div class="hover-card">
+                    <img src="images/122.jpg" alt="Flood">
+                    <h1>John Smith</h1>
+                    <h3>CEO of Walton</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora ratione natus id adipisci aspernatur. Eum, a?
+                    </p>
+                </div>
+            </div>
+
+            <!-- Third Card -->
+            <div class="col-md-3">
+                <div class="hover-card">
+                    <img src="images/124.jpg" alt="Flood">
+                    <h1>John Smith</h1>
+                    <h3>CEO of Walton</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora ratione natus id adipisci aspernatur. Eum, a?
+                    </p>
+                </div>
+            </div>
+
+            <!-- Fourth Card -->
+            <div class="col-md-3">
+                <div class="hover-card">
+                    <img src="images/122.jpg" alt="Flood">
+                    <h1>John Smith</h1>
+                    <h3>CEO of Walton</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora ratione natus id adipisci aspernatur. Eum, a?
+                    </p>
+                </div>
+            </div>
+
+        </div>
     </div>
-    <div>
+</section>
 
+
+
+
+
+
+{{-- Blog --}}
+
+<style>
+        .hover-ca {
+        background-color: #F0F4F5;
+        position: relative; /* To allow absolute positioning of text */
+        height: 400px;
+        width: 350px;
+        margin: 10px 0;
+        margin-left: 20px;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth zoom & shadow */
+    }
+
+    .hover-ca:hover {
+        transform: scale(1.05); /* Slightly enlarge the card */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+    }
+</style>
+
+
+<section style="background-color: rgb(255, 255, 255);">
+    <div class="container" style="margin-top: ;">
+        <h1 style="margin-left: 470px; margin-top:0px;margin-bottom:30px">BLOG</h1>
+        <div class="col-md-3 hover-ca">
+            <img src="images/1732170023-01-10-8.jpg" style="height: 200px;width:100%;" alt="">
+            <p style="float: right">02.032024</p>
+            <h1>Flood</h1>
+          <p style="text-align: justify">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora ratione natus id adipisci aspernatur. Eum, a? Odio dicta, enim, harum molestias distinctio libero, exercitationem veniam hic temporibus laboriosam quisquam aut.
+
+          </p>
+        </div>
+        <div class="col-md-3 hover-ca">
+            <img src="images/istockphoto-122719833-612x612.jpg" style="height: 200px;width:100%;" alt="">
+            <p style="float: right">02.032024</p>
+            <h1>Drought</h1>
+             <p style="text-align: justify">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora ratione natus id adipisci aspernatur. Eum, a? Odio dicta, enim, harum molestias distinctio libero, exercitationem veniam hic temporibus laboriosam quisquam aut.
+
+          </p>
+        </div>
+        <div class="col-md-3 hover-ca">
+            <img src="images/1732169911-Amphan-Effected-1.jpg" style="height: 200px;width:100%;" alt="">
+            <p style="float: right">02.032024</p>
+           <h1>Storm</h1>
+           <p style="text-align: justify">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora ratione natus id adipisci aspernatur. Eum, a? Odio dicta, enim, harum molestias distinctio libero, exercitationem veniam hic temporibus laboriosam quisquam aut.
+
+          </p>
+        </div>
     </div>
-</section> --}}
+</section>
 
 
 
+
+
+
+
+{{-- video  --}}
 <div class="clearfix"></div>
 <section id="testimonial">
     <div class="container spidochetube" id="youtube">
@@ -391,8 +708,7 @@ margin-top: 10px;
                                 <ol id="vid-list">
                                     @foreach ($video as $item)
                                     <li>
-                                        <a href="javascript:void(0);"
-                                            onclick="document.getElementById('vid_frame').src='{{ $item->video }}'">
+                                        <a href="javascript:void(0);" onclick="document.getElementById('vid_frame').src='{{ $item->video }}'">
                                             <span class="vid-thumb">
                                                 <img class="img" width="72" height="40" src="{{ asset('images/' . $item->image) }}" alt="{{ $item->title }}">
                                             </span>
@@ -435,9 +751,46 @@ margin-top: 10px;
 
 
 
+
+{{-- all partner logo --}}
+
+<style>
+    .swiper-slide img {
+        height: 150px;
+        display: inline-block;
+    }
+</style>
+
+<section>
+    <div class="container">
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <!-- Images -->
+                <div class="swiper-slide"><img src="images/apple-logo.png" alt="Apple Logo"></div>
+                <div class="swiper-slide"><img src="images/fedex.png" alt="FedEx Logo"></div>
+                <div class="swiper-slide"><img src="images/download.png" alt="Download"></div>
+                <div class="swiper-slide"><img src="images/logo.png" alt="Logo"></div>
+                <div class="swiper-slide"><img src="images/mcdonalds.jpg" alt="McDonald's"></div>
+                <div class="swiper-slide"><img src="images/download.png" alt="Download"></div>
+                <div class="swiper-slide"><img src="images/logo.png" alt="Logo"></div>
+                <div class="swiper-slide"><img src="images/mcdonalds.jpg" alt="McDonald's"></div>
+            </div>
+
+            <!-- Swiper navigation buttons -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+
+            <!-- Swiper pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</section>
+
+
+
 {{-- memeber --}}
 
-<section style="background-color: rgb(255, 255, 255);">
+<section style="background-color: #F0F0F0;">
     <div class="container">
         <div class="col-md-4">
             <h1>125687</h1>
@@ -455,10 +808,31 @@ margin-top: 10px;
 </section>
 
 
-<img src="{{ asset('images/256-2562832_paypal-buttons-payment-method.png') }}" style="width:100%; height:35rem; object-fit: contain;" class="img-fluid" alt="Payment Banner">
 
-<hr>
 
+{{-- js part start --}}
+
+
+
+{{-- current event js  start --}}
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper('.swiper', {
+        slidesPerView: 2, // Show 2 slides at a time
+        spaceBetween: 10, // Smaller space between slides
+        loop: false, // Disable looping as you only have 2 slides
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+</script>
+
+{{-- current event js  end --}}
 
 <script>
     $(document).ready(function() {
@@ -473,4 +847,33 @@ margin-top: 10px;
 </script>
 
 
+{{-- logo js start --}}
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper('.swiper', {
+        slidesPerView: '4', // Ensures all images are visible together
+        spaceBetween: 10, // No space between images
+        loop: true, // Infinite looping
+        autoplay: {
+            delay: 2000, // Automatically slide every 3 seconds
+            disableOnInteraction: false,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    });
+</script>
+
+{{-- logo js end --}}
+
+{{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> --}}
 @endsection
+
+
+
+

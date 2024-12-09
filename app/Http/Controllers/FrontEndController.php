@@ -88,8 +88,6 @@ class FrontEndController extends Controller
     }
     public function editTermsCondition(Request $request, $id)
     {
-
-
         $privacy = Privacy::findOrFail($id);
         $privacy->desc = $request->input('description');
         $privacy->type = 'terms_conditions';
@@ -116,7 +114,7 @@ class FrontEndController extends Controller
 
     public function index()
     {
-        $image = WebGallery::where('status', 1)->orderBy('id', 'desc')->take(8)->get();
+        $image = WebGallery::where('status', 1)->orderBy('id', 'desc')->take(4)->get();
         $video = webVideo::where('status', 1)->orderBy('id', 'desc')->take(10)->get();
         // dd($video);
         $notice = Notice::all();

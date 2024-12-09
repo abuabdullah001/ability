@@ -138,7 +138,6 @@
                             <button class="btn btn-success">Donate</button>
                         </div>
                     </div>
-
                 </form>
 
                 <!-- Section for Registered Users -->

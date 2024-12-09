@@ -185,7 +185,7 @@ HOME
 
 <!-- Sponsorship Form Section -->
 <section class="sponsorship-form">
-    <h3>Child Sponsorship Information Form</h3>
+    <h3> sponsor and support us Form</h3>
     <form action="{{Route('donate.store')}}" method="post" >
         @csrf
         <label for="first-name">First Name*</label>
@@ -196,7 +196,7 @@ HOME
         <input type="email" id="email" name="email" required>
         <label for="first-name">Contact Number*</label>
         <input type="number" id="number" name="number" required>
-        <label for="first-name">Number of Child/Children You Want to Sponsor*</label>
+        <label for="first-name">Number of people You Want to support*</label>
         <select name="sponsor_number" id="sponsor_number" style="margin-bottom: 10px;border-radius: 5px;" required>
             <option value="">--None--</option>
             <option value="1">1</option>
@@ -210,7 +210,7 @@ HOME
             <option value="9">9</option>
             <option value="10">10</option>
         </select>
-        <label for="first-name">Preferred Interval for Contribution*</label>
+        <label for="first-name">Preferred Interval for needed*</label>
         <select name="contribution_type" id="contribution_type" style="margin-bottom: 10px;border-radius: 5px;" required>
             <option value="">--None--</option>
             <option value="Monthly">Monthly</option>

@@ -7,7 +7,7 @@
     <!-- Brand Logo -->
     <a href="{{ route('dashboard')}}" class="brand-link">
         @if(empty(Auth::user()->image))
-        <img class="brand-image img-circle elevation-3" style="opacity: 0.8; width: 50%;" src="{{ URL::to('/') }}/WhatsApp Image 2024-10-20 at 16.33.44_124edc14.jpg" />
+        <img class="brand-image img-circle elevation-3" style="opacity: 0.8; width: 50%;" src="{{ URL::to('/') }}/images/2a6585d4-e9d0-40ef-98dd-d3afb105b76e.jpg" />
 
         @else
         <img class="brand-image img-circle elevation-3" style="opacity: .8" style="width: 50%"

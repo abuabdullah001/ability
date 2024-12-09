@@ -73,6 +73,7 @@ HOME
         </div>
     </div>
 </section>
+
 @php
  $completedchmapin = App\Models\Event::where('type','complite')->get();
 @endphp

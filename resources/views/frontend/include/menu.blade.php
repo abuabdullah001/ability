@@ -13,7 +13,8 @@
 
     /* Navbar Styling */
     .navbar {
-        background-color: rgb(9, 19, 43);
+        /* background-color: rgb(9, 19, 43); */
+        background-color:white;
         padding: 30px;
     }
 
@@ -36,7 +37,8 @@
     .nav-links {
         display: flex;
         gap: 25px;
-        background-color: #ffffff;
+        /* background-color: #ffffff; */
+        background-color:#07B107;
         padding: 10px 20px;
         border-radius: 25px;
         list-style: none;
@@ -48,7 +50,8 @@
 
     .nav-links a {
         text-decoration: none;
-        color: #1d2a3a;
+        /* color: #1d2a3a; */
+        color: white;
         font-size: 16px;
         font-weight: 500;
         display: flex;
@@ -65,7 +68,8 @@
     /* Show arrow for items with submenus */
     .has-submenu > a::after {
         content: '▼';
-        color: rgb(29, 42, 58);
+        /* color: rgb(29, 42, 58); */
+        color: white;
         display: inline;
     }
 
@@ -106,7 +110,8 @@
     border-bottom-right-radius: -1px;
 }
     .btn-success {
-        background-color: rgb(17, 183, 25);
+        /* background-color: rgb(17, 183, 25); */
+        background-color: red;
         border: none;
         padding: 10px 20px;
         border-radius: 20px;
@@ -219,7 +224,7 @@
 <nav class="navbar">
     @php
     $footers = App\Models\contactUs::all();
-@endphp
+    @endphp
     @foreach ($footers as $footer)
     <div class="contact-info">
       <p class="text-white"><i class="fa-solid fa-square-phone"></i> Phone: {{ $footer->phone }}</p>
