@@ -39,6 +39,7 @@ use App\Http\Controllers\NoticeController;
 use App\Http\Controllers\DivisionsController;
 use App\Http\Controllers\DonateController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\ExpenseController;
 use App\Http\Controllers\GiftController;
 use App\Http\Controllers\IntroductionController;
 use App\Http\Controllers\NewsController;
@@ -116,6 +117,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::put('/supports/{support}', [SupportController::class, 'update'])->name('supports.update');
 
     Route::delete('/supports/{support}', [SupportController::class, 'destroy'])->name('supports.destroy');
+
+    Route::resource('event_support', ExpenseController::class);
 
     //  rabbi // withdrow
     Route::get('Withdraw', [WithdrawController::class, 'index'])->name('Withdrawview');

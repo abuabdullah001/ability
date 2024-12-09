@@ -21,7 +21,7 @@
     $admin_status = Auth::user()->status ?? null;
     $admin_id = Auth::user()->id ?? null;
     $type = Auth::user()->type ?? null;
-    $navs = DB::table('navigation')->where('active', '1')->where('parent_id', '0')->orderBy('orderBy', 'DESC')->get();
+    $navs = DB::table('navigation')->where('active', '1')->where('parent_id', '0')->orderBy('orderBy', 'ASC')->get();
     ?>
     <!-- Sidebar -->
     <div class="sidebar">
