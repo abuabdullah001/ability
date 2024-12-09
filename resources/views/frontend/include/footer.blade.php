@@ -287,7 +287,7 @@
                 <a href="{{Route('sponsor_child')}}" class="btn btn-success btn-lg">Sponsor</a>
             </div>
             <div style="padding-bottom:15px">
-                <a href="{{Route('sponsor_child')}}" class="btn btn-success btn-lg">Support us</a>
+                <a href="{{Route('support.showForm')}}" class="btn btn-success btn-lg">Support us</a>
             </div>
           </div>
                 <div class="footer-text mb-25">
