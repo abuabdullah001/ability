@@ -4,7 +4,7 @@
     }
 </style>
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Brand Logo -->
+<div>
     <a href="{{ route('dashboard')}}" class="brand-link">
         @if(empty(Auth::user()->image))
         {{-- <img class="brand-image img-circle elevation-3" style="opacity: 0.8; width: 50%;" src="{{ URL::to('/') }}/images/2a6585d4-e9d0-40ef-98dd-d3afb105b76e.jpg" /> --}}
@@ -13,8 +13,10 @@
         <img class="brand-image img-circle elevation-3" style="opacity: .8" style="width: 50%"
             src="{{asset('/images/'. Auth::user()->image)}}">
         @endif
-        <span class="brand-text font-weight-light">{{ isset(Auth::user()->name) ? Auth::user()->name : '' }}</span>
+        <p class="d-flex justify-content-center mt-4" style="">{{ isset(Auth::user()->name) ? Auth::user()->name : '' }}</p>
     </a>
+</div>
+    <!-- Brand Logo -->
     <?php
     use Illuminate\Support\Facades\DB;
     use Illuminate\Support\Facades\Auth;
@@ -26,7 +28,7 @@
     <!-- Sidebar -->
     <div class="sidebar">
         @if(Auth::user()->type == 1)
-        <nav class="mt-2">
+        <nav class="mt-5">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item ">
                     <a href="{{ route('dashboard')}}" class="nav-link active">
