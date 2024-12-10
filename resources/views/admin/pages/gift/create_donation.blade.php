@@ -46,6 +46,16 @@ Add Donation
                                                 </div>
                                                 @enderror
                                             </div>
+                                        <div class="row">
+                                            <div class="col-md-6 form-group">
+                                                <label for="">Phone*</label>
+                                                <input type="text" name="phone" class="form-control" required>
+                                                @error('phone')
+                                                <div class="error text-red text-bold" style="padding: 0;">
+                                                    <strong>{{ $message }}</strong>
+                                                </div>
+                                                @enderror
+                                            </div>
                                             <div class="col-md-6 form-group">
                                                 <label for="">Email*</label>
                                                 <input type="text" name="email" class="form-control" required>
