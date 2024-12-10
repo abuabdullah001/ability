@@ -423,14 +423,16 @@ width:20px;
             <div class="card" style="width:50%;padding:10px">
                 <img src="images/bangladesh-flooding-aerial.jpg" class="card-img-top" alt="..." style="height:300px">
                 <div class="card-body">
+                    <h1>lorem ipsum</h1>
                   <p class="card-text text-justify-center" style="color: #222">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                   <button>lerarn more</button>
                 </div>
               </div>
 <!-- card-2 -->
 <div class="card" style="width:50%;padding:10">
-  <img src="images/bangladesh-flooding-aerial.jpg" class="card-img-top" alt="..." style="height:300px">
+  <img src="images/1732169911-Amphan-Effected-1.jpg" class="card-img-top" alt="..." style="height:300px">
   <div class="card-body">
+    <h1>lorem ipsum</h1>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     <button>lerarn more</button>
 </div>
@@ -438,8 +440,9 @@ width:20px;
         </div>
         <div class="swiper-slide">
             <div class="card" style="width:50%;padding:10">
-                <img src="images/bangladesh-flooding-aerial.jpg" class="card-img-top" alt="..." style="height:300px">
+                <img src="images/1732167248-2019-09-Hurricane-Dorian-scaled.jpg" class="card-img-top" alt="..." style="height:300px">
                 <div class="card-body">
+                    <h1>lorem ipsum</h1>
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                   <button>lerarn more</button>
                 </div>
@@ -448,6 +451,7 @@ width:20px;
 <div class="card" style="width:50%;padding:10">
     <img src="images/bangladesh-flooding-aerial.jpg" class="card-img-top" alt="..." style="height:300px">
     <div class="card-body">
+        <h1>lorem ipsum</h1>
       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
       <button>lerarn more</button>
     </div>
@@ -455,8 +459,9 @@ width:20px;
         </div>
         <div class="swiper-slide">
             <div class="card" style="width:50%;padding:10">
-                <img src="images/bangladesh-flooding-aerial.jpg" class="card-img-top" alt="..." style="height:300px">
+                <img src="images/rajshahi_cold_jan10-05 (1).jpg" class="card-img-top" alt="..." style="height:300px">
                 <div class="card-body">
+                    <h1>lorem ipsum</h1>
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                   <button>lerarn more</button>
                 </div>
@@ -465,6 +470,7 @@ width:20px;
 <div class="card" style="width:50%;padding:10">
     <img src="images/bangladesh-flooding-aerial.jpg" class="card-img-top" alt="..." style="height:300px">
     <div class="card-body">
+        <h1>lorem ipsum</h1>
       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
       <button>lerarn more</button>
     </div>
