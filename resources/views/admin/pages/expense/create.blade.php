@@ -79,7 +79,6 @@
                     </div>
                 </div>
             </div>
-<<<<<<< HEAD
         </section>
     </div>
     <script>
@@ -106,9 +105,4 @@
             });
         });
     </script>
-=======
-        </div>
-    </section>
-</div>
->>>>>>> f3102e389e4ae8f77284e968fee463f301ffe754
 @endsection
