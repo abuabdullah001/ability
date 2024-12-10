@@ -57,7 +57,7 @@ Add Donation
                                             </div>
                                             <div class="col-md-6 form-group">
                                                 <label for="">Phone*</label>
-                                                <input type="phone" name="email" class="form-control" required>
+                                                <input type="phone" name="phone" class="form-control" required>
                                                 @error('phone')
                                                 <div class="error text-red text-bold" style="padding: 0;">
                                                     <strong>{{ $message }}</strong>
