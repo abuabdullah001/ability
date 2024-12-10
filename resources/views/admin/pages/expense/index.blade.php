@@ -1,11 +1,7 @@
 @extends('admin.masterTemplate')
 
 @section('menu-name')
-<<<<<<< HEAD
     ALL Expense
-=======
-ALL Expense
->>>>>>> f3102e389e4ae8f77284e968fee463f301ffe754
 @endsection
 
 @section('main-content')
@@ -128,10 +124,6 @@ ALL Expense
             <div class="modal-body">
                 <p id="noteContent">Loading...</p>
             </div>
-<<<<<<< HEAD
-=======
-
->>>>>>> f3102e389e4ae8f77284e968fee463f301ffe754
         </div>
     </div>
 </div>
@@ -151,7 +143,6 @@ ALL Expense
             myModal.show();
         });
     });
-<<<<<<< HEAD
 
     // JavaScript to handle filtering the table rows based on the selected type
     document.getElementById('btn-project').addEventListener('click', function() {
@@ -177,8 +168,6 @@ ALL Expense
             row.style.display = '';
         });
     }
-=======
->>>>>>> f3102e389e4ae8f77284e968fee463f301ffe754
 </script>
 
 @endsection
