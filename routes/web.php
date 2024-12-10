@@ -39,6 +39,7 @@ use App\Http\Controllers\NoticeController;
 use App\Http\Controllers\DivisionsController;
 use App\Http\Controllers\DonateController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\ExpenseController;
 use App\Http\Controllers\GiftController;
 use App\Http\Controllers\IntroductionController;
 use App\Http\Controllers\NewsController;
@@ -51,9 +52,10 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\SslCommerzPaymentController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ServeController;
+use App\Http\Controllers\SupportController;
 
-
-
+Route::get('/support', [SupportController::class, 'create'])->name('support.showForm');
+Route::post('/support', [SupportController::class, 'store'])->name('support.store');
 Auth::routes();
 
 Route::get('/example1', [SslCommerzPaymentController::class, 'exampleEasyCheckout']);
@@ -102,6 +104,21 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/storesliders', [SliderController::class, 'storesliders'])->name('storesliders');
     Route::post('/sliderStatusChange', [SliderController::class, 'sliderStatusChange'])->name('sliderStatusChange');
     Route::get('deleteslider/{id}', [SliderController::class, 'destroy']);
+
+    // Route to display the form to support us
+
+
+    Route::get('/supports', [SupportController::class, 'index'])->name('supports.index');
+
+    Route::get('/supports/{support}', [SupportController::class, 'show'])->name('supports.show');
+
+    Route::get('/supports/{support}/edit', [SupportController::class, 'edit'])->name('supports.edit');
+
+    Route::put('/supports/{support}', [SupportController::class, 'update'])->name('supports.update');
+
+    Route::delete('/supports/{support}', [SupportController::class, 'destroy'])->name('supports.destroy');
+
+    Route::resource('event_support', ExpenseController::class);
 
     //  rabbi // withdrow
     Route::get('Withdraw', [WithdrawController::class, 'index'])->name('Withdrawview');
@@ -336,70 +353,68 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/training/application', [TrainingController::class, 'applicationList']);
     Route::get('/training/studentresumy/{id}', [TrainingController::class, 'viewstudent'])->name('training.studentresumy');
 
-     // Donate
-     Route::get('/all-donate-list', [DonateController::class, 'index']);
-     Route::get('/add-donate', [DonateController::class, 'create'])->name('create.donate');
-     Route::post('/store/donate', [DonateController::class, 'store'])->name('donate.store');
-     Route::post('/update/donate/{id}', [DonateController::class, 'update'])->name('donate.update');
-     Route::get('/edit/donate/{id}', [DonateController::class, 'edit'])->name('donate.post.edit');
-     Route::get('/delate/donate/{id}', [DonateController::class, 'destroy'])->name('donate.post.delate');
-     Route::get('/donate/application', [DonateController::class, 'applicationList']);
+    // Donate
+    Route::get('/all-donate-list', [DonateController::class, 'index']);
+    Route::get('/add-donate', [DonateController::class, 'create'])->name('create.donate');
+    Route::post('/store/donate', [DonateController::class, 'store'])->name('donate.store');
+    Route::post('/update/donate/{id}', [DonateController::class, 'update'])->name('donate.update');
+    Route::get('/edit/donate/{id}', [DonateController::class, 'edit'])->name('donate.post.edit');
+    Route::get('/delate/donate/{id}', [DonateController::class, 'destroy'])->name('donate.post.delate');
+    Route::get('/donate/application', [DonateController::class, 'applicationList']);
 
-     Route::get('/all-donate-list', [DonateController::class, 'index']);
-     Route::get('/add-donate', [DonateController::class, 'create'])->name('create.donate');
-     Route::put('/store/donate', [DonateController::class, 'store'])->name('donate.store');
-     Route::post('/update/donate/{id}', [DonateController::class, 'update'])->name('donate.update');
+    Route::get('/all-donate-list', [DonateController::class, 'index']);
+    Route::get('/add-donate', [DonateController::class, 'create'])->name('create.donate');
+    Route::put('/store/donate', [DonateController::class, 'store'])->name('donate.store');
+    Route::post('/update/donate/{id}', [DonateController::class, 'update'])->name('donate.update');
 
-     Route::get('donate/gift', [GiftController::class, 'index'])->name('gifts.index');
+    Route::get('donate/gift', [GiftController::class, 'index'])->name('gifts.index');
 
-     Route::get('donate/create', [GiftController::class, 'create'])->name('gifts.create');
+    Route::get('donate/create', [GiftController::class, 'create'])->name('gifts.create');
 
-     Route::post('donate/store', [GiftController::class, 'store'])->name('gifts.store');
+    Route::post('donate/store', [GiftController::class, 'store'])->name('gifts.store');
 
-     Route::get('donate/{gift}/edit', [GiftController::class, 'edit'])->name('gifts.edit');
+    Route::get('donate/{gift}/edit', [GiftController::class, 'edit'])->name('gifts.edit');
 
-     Route::put('donate/{gift}', [GiftController::class, 'update'])->name('gifts.update');
+    Route::put('donate/{gift}', [GiftController::class, 'update'])->name('gifts.update');
 
-     Route::get('donate/{gift}', [GiftController::class, 'destroy'])->name('gifts.destroy');
-
-
-     // Project
-     Route::get('/all-project-list', [ProjectController::class, 'index']);
-     Route::get('/add-project', [ProjectController::class, 'create'])->name('create.project');
-     Route::post('/store/project', [ProjectController::class, 'store'])->name('project.store');
-     Route::post('/update/project/{id}', [ProjectController::class, 'update'])->name('project.update');
-     Route::get('/edit/project/{id}', [ProjectController::class, 'edit'])->name('project.post.edit');
-     Route::get('/delete/project/{id}', [ProjectController::class, 'destroy'])->name('project.post.delate');
-
-     Route::get('/all-event-list', [EventController::class, 'index'])->name('event.list');
-     Route::get('/add-event', [EventController::class, 'create'])->name('create.event');
-     Route::post('/store/event', [EventController::class, 'store'])->name('event.store');
-     Route::get('/edit/event/{id}', [EventController::class, 'edit'])->name('event.edit');
-     Route::post('/update/event/{id}', [EventController::class, 'update'])->name('event.update');
-     Route::get('/delete/event/{id}', [EventController::class, 'destroy'])->name('event.delete');
+    Route::get('donate/{gift}', [GiftController::class, 'destroy'])->name('gifts.destroy');
 
 
+    // Project
+    Route::get('/all-project-list', [ProjectController::class, 'index']);
+    Route::get('/add-project', [ProjectController::class, 'create'])->name('create.project');
+    Route::post('/store/project', [ProjectController::class, 'store'])->name('project.store');
+    Route::post('/update/project/{id}', [ProjectController::class, 'update'])->name('project.update');
+    Route::get('/edit/project/{id}', [ProjectController::class, 'edit'])->name('project.post.edit');
+    Route::get('/delete/project/{id}', [ProjectController::class, 'destroy'])->name('project.post.delate');
 
-     Route::get('/all-news-list', [NewsController::class, 'index'])->name('news.list');
-     Route::get('/add-news', [NewsController::class, 'create'])->name('create.news');
-     Route::post('/store/news', [NewsController::class, 'store'])->name('news.store');
-     Route::get('/edit/news/{id}', [NewsController::class, 'edit'])->name('news.edit');
-     Route::post('/update/news/{id}', [NewsController::class, 'update'])->name('news.update');
-     Route::get('/delete/news/{id}', [NewsController::class, 'destroy'])->name('news.delete');
-
-     Route::get('/all-champaign-list', [ChampaignController::class, 'index'])->name('champaign.list');
-     Route::get('/add-champaign', [ChampaignController::class, 'create'])->name('create.champaign');
-     Route::post('/store/champaign', [ChampaignController::class, 'store'])->name('champaign.store');
-     Route::get('/edit/champaign/{id}', [ChampaignController::class, 'edit'])->name('champaign.edit');
-     Route::post('/update/champaign/{id}', [ChampaignController::class, 'update'])->name('champaign.update');
-     Route::get('/delete/champaign/{id}', [ChampaignController::class, 'destroy'])->name('champaign.delete');
-
-     // Fixed spelling
-
-     // introduction page route
-     Route::get('/admin/introduction',[IntroductionController::class,'introduction']);
+    Route::get('/all-event-list', [EventController::class, 'index'])->name('event.list');
+    Route::get('/add-event', [EventController::class, 'create'])->name('create.event');
+    Route::post('/store/event', [EventController::class, 'store'])->name('event.store');
+    Route::get('/edit/event/{id}', [EventController::class, 'edit'])->name('event.edit');
+    Route::post('/update/event/{id}', [EventController::class, 'update'])->name('event.update');
+    Route::get('/delete/event/{id}', [EventController::class, 'destroy'])->name('event.delete');
 
 
+
+    Route::get('/all-news-list', [NewsController::class, 'index'])->name('news.list');
+    Route::get('/add-news', [NewsController::class, 'create'])->name('create.news');
+    Route::post('/store/news', [NewsController::class, 'store'])->name('news.store');
+    Route::get('/edit/news/{id}', [NewsController::class, 'edit'])->name('news.edit');
+    Route::post('/update/news/{id}', [NewsController::class, 'update'])->name('news.update');
+    Route::get('/delete/news/{id}', [NewsController::class, 'destroy'])->name('news.delete');
+
+    Route::get('/all-champaign-list', [ChampaignController::class, 'index'])->name('champaign.list');
+    Route::get('/add-champaign', [ChampaignController::class, 'create'])->name('create.champaign');
+    Route::post('/store/champaign', [ChampaignController::class, 'store'])->name('champaign.store');
+    Route::get('/edit/champaign/{id}', [ChampaignController::class, 'edit'])->name('champaign.edit');
+    Route::post('/update/champaign/{id}', [ChampaignController::class, 'update'])->name('champaign.update');
+    Route::get('/delete/champaign/{id}', [ChampaignController::class, 'destroy'])->name('champaign.delete');
+
+    // Fixed spelling
+
+    // introduction page route
+    Route::get('/admin/introduction', [IntroductionController::class, 'introduction']);
 });
 Route::get('view_aboutepage/{id}', [AboutMenuController::class, 'fontview']);
 
@@ -482,32 +497,32 @@ Route::get('/job-categories', [FrontEndController::class, 'viewcategory'])->name
 
 
 // our serve response
-Route::get('serve/create',[FrontEndController::class,'serve_create'])->name('serve.create');
-Route::post('serve/post',[FrontEndController::class,'serve_store'])->name('serve.store');
-Route::get('serve/index',[FrontEndController::class,'serve_index'])->name('serve.index');
+Route::get('serve/create', [FrontEndController::class, 'serve_create'])->name('serve.create');
+Route::post('serve/post', [FrontEndController::class, 'serve_store'])->name('serve.store');
+Route::get('serve/index', [FrontEndController::class, 'serve_index'])->name('serve.index');
 
-Route::get('serve/show/{slug}',[FrontEndController::class,'serve_Show'])->name('serve.show');
+Route::get('serve/show/{slug}', [FrontEndController::class, 'serve_Show'])->name('serve.show');
 
 
 
 
 // paid donation
-Route::get('eventAmount/create',[FrontEndController::class,'eventAmountcreate'])->name('eventAmount.create');
-Route::post('eventAmount/store',[FrontEndController::class,'eventAmountstore'])->name('eventAmount.store');
-Route::get('eventAmount/index',[FrontEndController::class,'eventAmountindex'])->name('eventAmount.index');
-Route::get('eventAmount/edit/{id}',[FrontEndController::class,'eventAmountedit'])->name('eventAmount.edit');
-Route::PUT('eventAmount/update/{id}',[FrontEndController::class,'eventAmountupdate'])->name('eventAmount.update');
-Route::delete('eventAmount/delete/{id}',[FrontEndController::class,'eventAmountdelete'])->name('eventAmount.delete');
+Route::get('eventAmount/create', [FrontEndController::class, 'eventAmountcreate'])->name('eventAmount.create');
+Route::post('eventAmount/store', [FrontEndController::class, 'eventAmountstore'])->name('eventAmount.store');
+Route::get('eventAmount/index', [FrontEndController::class, 'eventAmountindex'])->name('eventAmount.index');
+Route::get('eventAmount/edit/{id}', [FrontEndController::class, 'eventAmountedit'])->name('eventAmount.edit');
+Route::PUT('eventAmount/update/{id}', [FrontEndController::class, 'eventAmountupdate'])->name('eventAmount.update');
+Route::delete('eventAmount/delete/{id}', [FrontEndController::class, 'eventAmountdelete'])->name('eventAmount.delete');
 
 
 
 // Media Category
-Route::get('mediaCategory/create',[FrontEndController::class,'mediaCategoryCreate'])->name('mediaCategory.create');
-Route::post('mediaCategory/store',[FrontEndController::class,'mediaCategoryStore'])->name('mediaCategory.store');
-Route::get('mediaCategory/index',[FrontEndController::class,'mediaCategoryIndex'])->name('mediaCategory.index');
+Route::get('mediaCategory/create', [FrontEndController::class, 'mediaCategoryCreate'])->name('mediaCategory.create');
+Route::post('mediaCategory/store', [FrontEndController::class, 'mediaCategoryStore'])->name('mediaCategory.store');
+Route::get('mediaCategory/index', [FrontEndController::class, 'mediaCategoryIndex'])->name('mediaCategory.index');
 Route::get('mediaCategory/edit/{id}', [FrontEndController::class, 'mediaCategoryEdit'])->name('mediaCategory.edit');
-Route::put('mediaCategory/update/{id}',[FrontEndController::class,'mediaCategoryUpdate'])->name('mediaCategory.update');
-Route::delete('mediaCategory/delete/{id}',[FrontEndController::class,'mediaCategoryDelete'])->name('mediaCategory.delete');
+Route::put('mediaCategory/update/{id}', [FrontEndController::class, 'mediaCategoryUpdate'])->name('mediaCategory.update');
+Route::delete('mediaCategory/delete/{id}', [FrontEndController::class, 'mediaCategoryDelete'])->name('mediaCategory.delete');
 
 // Route::get('cate_mem_activity/{id}/{status}', [MediaCategoryController::class, 'activity'])->name('cate_mem_activity');
 

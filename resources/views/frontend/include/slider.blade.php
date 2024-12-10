@@ -16,7 +16,7 @@
         @foreach($slidersImages as $key => $eachImage)
             <div class="item {{ $key == 0 ? 'active' : '' }}" height="">
                 <img src="{{ URL::asset('/slider/'.$eachImage->image) }}"  style="height:500px" >
-              
+
             </div>
         @endforeach
     </div>

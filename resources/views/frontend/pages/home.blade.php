@@ -332,100 +332,136 @@ margin-top: 10px;
 
 `
 {{-- feature Event --}}
-<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<style>
+    /* Fullscreen Background */
+    .current_background {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      overflow: hidden; /* Ensures the background doesn't spill out */
+    }
 
 
 
-<section style="">
- {{-- background-image: url('images/pngtree-drone-perspective.jpg'); background-size: cover; background-position: center; background-attachment: fixed; --}}
-    {{-- <h1 style="margin-left: 500px; color: white; text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);">Featured Event</h1> --}}
-    <h1 class="text-center" style="color: white; text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);"> Current Event </h1>
-    <div class="swiper " style="margin-top: 50px; margin-bottom: 50px; margin-left:50px;">
-        <div class="swiper-wrapper">
-            @php
-                $events = App\Models\Event::all();
-            @endphp
+    .current_background::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image:
+        linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)),
+        url("https://i.ibb.co/drWry8K/image.png");
+      background-size: cover;
+      background-position: center;
+      filter: blur(4px);
+      z-index: 1;
+    }
 
-            @foreach($events as $project)
-            <div class="swiper-slide">
-                <div class="d-flex gap-4" style="margin-left: 80px">
-                    <div style="width: 50rem; height: 100px;">
-                        <section class="brows-job-category">
-                            <div class="container" style="width: 1154px">
-                                <div class="ibox">
-                                    <div class="i-body">
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="row">
-                                                    <div class="col-md-6 col-sm-6 mb-4">
-                                                        <div class="card">
-                                                            <a href="{{ route('event.show', ['slug' => $project->slug]) }}">
-                                                                <img src="{{ asset($project->image) }}" style="width: 35rem; height: 23rem;" class="card-img-top img-responsive" alt="...">
-                                                                <div class="card-body">
-                                                                    <h5 class="card-title" style="font-size: 21px; font-weight: 600; line-height: 25px; margin-bottom: 38px;">
-                                                                        {{ Str::limit($project->name, 20, '...') }}
-                                                                    </h5>
-                                                                    <a href="{{ route('champaign.show', ['slug' => $project->slug]) }}" class="" style="color: blue">Read More</a>
-                                                                </div>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                </div>
-            </div>
-            @endforeach
+    /* Swiper Container */
+    .swiper {
+      width: 90%;
+      height: 400px;
+      margin: auto;
+      margin-top: 50px;
+    }
+
+    /* Swiper slide */
+    .swiper-slide {
+        padding:60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      font-size: 20px;
+      color: #333;
+
+    }
+
+   #nav1{
+position:absolute;
+z-index: 20;
+top: 20px;
+width:20px;
+right:92%
+   }
+   #nav2{
+position:absolute;
+z-index: 20;
+top: 20px;
+width:20px;
+   }
+  </style>
+
+<!-- Slider -->
+<section class="current_background">
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+        <div class="card" style="width:100%;">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIc5LgZVA094K8Ag730_sjM0pc23I0ShCSdFWvvXUlBl472_GrV7p3TiU&s" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+<!-- card-2 -->
+<div class="card" style="width:100%;">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIc5LgZVA094K8Ag730_sjM0pc23I0ShCSdFWvvXUlBl472_GrV7p3TiU&s" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+        </div>
+        <div class="swiper-slide">
+        <div class="card" style="width:100%;">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIc5LgZVA094K8Ag730_sjM0pc23I0ShCSdFWvvXUlBl472_GrV7p3TiU&s" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+<!-- card-2 -->
+<div class="card" style="width:100%;">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIc5LgZVA094K8Ag730_sjM0pc23I0ShCSdFWvvXUlBl472_GrV7p3TiU&s" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+        </div>
+        <div class="swiper-slide">
+        <div class="card" style="width:100%;">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIc5LgZVA094K8Ag730_sjM0pc23I0ShCSdFWvvXUlBl472_GrV7p3TiU&s" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+<!-- card-2 -->
+<div class="card" style="width:100%;">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIc5LgZVA094K8Ag730_sjM0pc23I0ShCSdFWvvXUlBl472_GrV7p3TiU&s" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
         </div>
 
-        <!-- Swiper navigation buttons -->
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
 
-        <!-- Swiper pagination -->
-        <div class="swiper-pagination"></div>
+      </div>
+
+      <!-- Navigation buttons -->
+      <div id="nav1" class="swiper-button-next"></div>
+      <div id="nav2" class="swiper-button-prev"></div>
+
     </div>
+<!-- bg and the viewAll button -->
+    <div class="second_part">
 
-    <section class="brows-job-category">
-        <div class="container" >
-            <h3 class="text-center" style="color: white; text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);">All Event</h3>
-            <hr>
-            <div class="ibox">
-                <div class="i-body">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="row">
-                                @php
-                                    $completedchmapin = App\Models\Event::where('type', 'complite')->get();
-                                @endphp
-                                @foreach($completedchmapin as $project)
-                                <div class="col-md-3 col-sm-6 mb-4">
-                                    <div class="card">
-                                        <a href="{{ route('event.show', ['slug' => $project->slug]) }}">
-                                            <img src="{{ asset($project->image) }}" style="width: 35rem; height: 23rem;" class="card-img-top img-responsive" alt="...">
-                                            <div class="card-body">
-                                                <h5 class="card-title">
-                                                    {{ Str::limit($project->name, 30, '...') }}
-                                                </h5>
-                                                <a href="{{ route('event.show', ['slug' => $project->slug]) }}" class="btn btn-link" style="color: blue">Read More</a>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                @endforeach
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-</section>
+    </div>
+  </section>
+
+
 
 
 
@@ -862,7 +898,58 @@ margin-top: 10px;
     });
 </script>
 
+<!-- slider script -->
+
+<script>
+  let currentSlideIndex = 0; // Start with the first slide
+
+  const slides = document.querySelectorAll('.slide');
+  const totalSlides = slides.length;
+
+  // Show the current slide
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.remove('active-slide');
+      if (i === index) {
+        slide.classList.add('active-slide');
+      }
+    });
+  }
+
+  // Handle "Next Slide"
+  function nextSlide() {
+    currentSlideIndex = (currentSlideIndex + 1) % totalSlides;
+    showSlide(currentSlideIndex);
+  }
+
+  // Handle "Previous Slide"
+  function prevSlide() {
+    currentSlideIndex = (currentSlideIndex - 1 + totalSlides) % totalSlides;
+    showSlide(currentSlideIndex);
+  }
+
+  // Initial display
+  showSlide(currentSlideIndex);
+</script>
+
 {{-- logo js end --}}
+
+<!-- swiper script -->
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      // Enable navigation buttons
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      // Enable autoplay
+
+      loop: false, // Infinite loop for better UX
+    });
+  </script>
+
 
 {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> --}}
 @endsection
