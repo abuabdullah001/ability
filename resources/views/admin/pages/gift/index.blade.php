@@ -43,7 +43,7 @@ ALL Training
                                             class="fa fa-plus"></i> ADD Gift</a>
                                 </div>
                             </div>
-                          
+            
                         </div>
 
                         <div class="card-body">

@@ -81,6 +81,7 @@
         </div>
     </section>
 </div>
+<<<<<<< HEAD
 <script>
     $(document).ready(function() {
         $('#category').change(function() {
@@ -105,4 +106,6 @@
         });
     });
 </script>
+=======
+>>>>>>> f3102e389e4ae8f77284e968fee463f301ffe754
 @endsection

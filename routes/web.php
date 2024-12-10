@@ -127,7 +127,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('/supports/{support}', [SupportController::class, 'destroy'])->name('supports.destroy');
 
     Route::resource('event_support', ExpenseController::class);
+<<<<<<< HEAD
     Route::get('/fetch-events', [ExpenseController::class, 'fetchEvents'])->name('fetch.events');
+=======
+>>>>>>> f3102e389e4ae8f77284e968fee463f301ffe754
 
     //  rabbi // withdrow
     Route::get('Withdraw', [WithdrawController::class, 'index'])->name('Withdrawview');
