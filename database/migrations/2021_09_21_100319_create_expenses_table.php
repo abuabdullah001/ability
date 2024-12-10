@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMediaCategoriesTable extends Migration
+class CreateExpensesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class CreateMediaCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('media_categories', function (Blueprint $table) {
+        Schema::create('expenses', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->integer('event_id');
+            $table->float('amount', 20, 2)->nullable();
+            $table->longText('note')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
@@ -27,6 +30,6 @@ class CreateMediaCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('media_categories');
+        Schema::dropIfExists('expenses');
     }
 }

@@ -334,6 +334,7 @@ margin-top: 10px;
 {{-- feature Event --}}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
+<<<<<<< HEAD
 <style>
     /* Fullscreen Background */
     .current_background {
@@ -342,6 +343,9 @@ margin-top: 10px;
       width: 100%;
       overflow: hidden; /* Ensures the background doesn't spill out */
     }
+=======
+<h1>fasdklsdh</h1>
+>>>>>>> 406879e8ded373ff4c63af98ae23be5549501550
 
     .current_background::before {
       content: "";
