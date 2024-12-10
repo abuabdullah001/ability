@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SocialmediaController;
 use App\Http\Controllers\JournalAndPublicationController;
 use App\Http\Controllers\AcademicSummarieController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ZoneController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\WithdrawController;
@@ -53,6 +54,9 @@ use App\Http\Controllers\SslCommerzPaymentController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ServeController;
 use App\Http\Controllers\SupportController;
+
+
+
 
 Route::get('/support', [SupportController::class, 'create'])->name('support.showForm');
 Route::post('/support', [SupportController::class, 'store'])->name('support.store');
@@ -419,7 +423,7 @@ Route::group(['middleware' => ['auth']], function () {
 Route::get('view_aboutepage/{id}', [AboutMenuController::class, 'fontview']);
 
 Route::get('view-management-memeber', [AboutMenuController::class, 'management'])->name('MannagementMember.all');
-Route::post('store-management-member', [AboutMenuController::class, 'storemannagement'])->name('MannagementMember.store');
+Route::post('store-management-member', [AboutMenController::class, 'storemannagement'])->name('MannagementMember.store');
 Route::put('update-management-member/{id}', [AboutMenuController::class, 'manangemntupdate'])->name('MannagementMember.update');
 
 Route::get('management-member/{id}', [AboutMenuController::class, 'destroymanangemnt'])->name('MannagementMember.delete');
@@ -587,3 +591,9 @@ Route::get('/volunteer_request', [VolunteerController::class, 'volunteerRequest'
 Route::get('/show_volunteer/{id}', [VolunteerController::class, 'showVolunteer'])->name('show_volunteer');
 
 Route::get('/generate-pdf/{id}', [VolunteerController::class, 'generateVolunteerPDF'])->name('generate.pdf');
+
+
+// Blog
+Route::get('blog/create',[BlogController::class,'index'])->name('blog.index');
+Route::post('blog/store',[BlogController::class,'store'])->name('blog.store');
+Route::get('blog/create',[BlogController::class,'create'])->name('blog.create');
