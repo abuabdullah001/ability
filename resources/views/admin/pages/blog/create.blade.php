@@ -76,7 +76,7 @@ Add Event
 
                                         <div class="col-md-6 form-group">
                                             <label for="">Description</label>
-                                            <input type="textarea" name="description" class="form-control">
+                                            <input type="text" name="description" class="form-control">
                                             @error('title')
                                             <div class="error text-red text-bold" style="padding: 0;">
                                                 <strong>     {{$message}}  </strong>

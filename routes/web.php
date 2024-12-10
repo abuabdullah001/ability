@@ -594,6 +594,6 @@ Route::get('/generate-pdf/{id}', [VolunteerController::class, 'generateVolunteer
 
 
 // Blog
-Route::get('blog/create',[BlogController::class,'index'])->name('blog.index');
+Route::get('blog/index',[BlogController::class,'index'])->name('blog.index');
 Route::post('blog/store',[BlogController::class,'store'])->name('blog.store');
 Route::get('blog/create',[BlogController::class,'create'])->name('blog.create');

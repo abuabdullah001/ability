@@ -379,7 +379,13 @@ margin-top: 10px;
       font-size: 20px;
       color: #333;
 
+
     }
+    .swiper-slide img{
+        width: 400px;
+        height: 40px;
+    }
+
 
    #nav1{
 position:absolute;
@@ -394,57 +400,75 @@ z-index: 20;
 top: 20px;
 width:20px;
    }
+   .card-text{
+    color: black;
+    width: 70%;
+    margin: auto;
+    padding-top: 10 0 10 0px;
+
+   }
   </style>
 
 <!-- Slider -->
+
 <section class="current_background">
-    <div class="swiper mySwiper">
+    <h1 style="color:black" style="z-index:30">Current Event</h1>
+    <div class="swiper mySwiper" >
+
       <div class="swiper-wrapper">
         <!-- Slides -->
+
         <div class="swiper-slide">
-        <div class="card" style="width:100%;">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIc5LgZVA094K8Ag730_sjM0pc23I0ShCSdFWvvXUlBl472_GrV7p3TiU&s" class="card-img-top" alt="...">
-  <div class="card-body">
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-</div>
+
+            <div class="card" style="width:50%;padding:10px">
+                <img src="images/bangladesh-flooding-aerial.jpg" class="card-img-top" alt="..." style="height:300px">
+                <div class="card-body">
+                  <p class="card-text text-justify-center" style="color: #222">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <button>lerarn more</button>
+                </div>
+              </div>
 <!-- card-2 -->
-<div class="card" style="width:100%;">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIc5LgZVA094K8Ag730_sjM0pc23I0ShCSdFWvvXUlBl472_GrV7p3TiU&s" class="card-img-top" alt="...">
+<div class="card" style="width:50%;padding:10">
+  <img src="images/bangladesh-flooding-aerial.jpg" class="card-img-top" alt="..." style="height:300px">
   <div class="card-body">
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
+    <button>lerarn more</button>
+</div>
 </div>
         </div>
         <div class="swiper-slide">
-        <div class="card" style="width:100%;">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIc5LgZVA094K8Ag730_sjM0pc23I0ShCSdFWvvXUlBl472_GrV7p3TiU&s" class="card-img-top" alt="...">
-  <div class="card-body">
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-</div>
+            <div class="card" style="width:50%;padding:10">
+                <img src="images/bangladesh-flooding-aerial.jpg" class="card-img-top" alt="..." style="height:300px">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <button>lerarn more</button>
+                </div>
+              </div>
 <!-- card-2 -->
-<div class="card" style="width:100%;">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIc5LgZVA094K8Ag730_sjM0pc23I0ShCSdFWvvXUlBl472_GrV7p3TiU&s" class="card-img-top" alt="...">
-  <div class="card-body">
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+<div class="card" style="width:50%;padding:10">
+    <img src="images/bangladesh-flooding-aerial.jpg" class="card-img-top" alt="..." style="height:300px">
+    <div class="card-body">
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <button>lerarn more</button>
+    </div>
   </div>
-</div>
         </div>
         <div class="swiper-slide">
-        <div class="card" style="width:100%;">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIc5LgZVA094K8Ag730_sjM0pc23I0ShCSdFWvvXUlBl472_GrV7p3TiU&s" class="card-img-top" alt="...">
-  <div class="card-body">
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-</div>
+            <div class="card" style="width:50%;padding:10">
+                <img src="images/bangladesh-flooding-aerial.jpg" class="card-img-top" alt="..." style="height:300px">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <button>lerarn more</button>
+                </div>
+              </div>
 <!-- card-2 -->
-<div class="card" style="width:100%;">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIc5LgZVA094K8Ag730_sjM0pc23I0ShCSdFWvvXUlBl472_GrV7p3TiU&s" class="card-img-top" alt="...">
-  <div class="card-body">
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+<div class="card" style="width:50%;padding:10">
+    <img src="images/bangladesh-flooding-aerial.jpg" class="card-img-top" alt="..." style="height:300px">
+    <div class="card-body">
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <button>lerarn more</button>
+    </div>
   </div>
-</div>
         </div>
 
 

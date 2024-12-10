@@ -39,7 +39,7 @@ ALL Training
                                     <h3 class="card-title"> <i class="fa fa-users"></i> All events</h3>
                                 </div>
                                 <div class="col-md-6">
-                                    <a href="{{route('create.blog')}}" class="btn btn-success float-right"> <i
+                                    <a href="{{route('blog.create')}}" class="btn btn-success float-right"> <i
                                             class="fa fa-plus"></i> ADD Blog</a>
                                 </div>
                             </div>
@@ -66,8 +66,10 @@ ALL Training
 
                                         <td>{{ $value->name }}</td>
                                         <td>{{ $value->date }}</td>
+                                        <td><img src="{{ asset('images/post/' . $value->image) }}" alt="" style="width: 100px"></td>
                                         <td>{{ $value->title }}</td>
-                                        <td>{!! Str::limit($value->description, 5000) !!}</td>
+                                        <td>{{ $value->description }}</td>
+                                        {{-- <td>{!! Str::limit($value->description, 5000) !!}</td> --}}
                                         <td>    <img src="{{asset($value->image)}}" alt="" width="100%"> </td>
                                         <td>
                                             {{-- <a href="{{route('blog.edit',$value->id)}}"

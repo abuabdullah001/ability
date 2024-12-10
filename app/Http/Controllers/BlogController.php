@@ -13,25 +13,26 @@ class BlogController extends Controller
 
     public function store(Request $request){
 
-        dd($request->all());
+        // dd($request->all());
         $blog=new Blog();
 
         $blog->name=$request->name;
-        $blog->date=$request->date;
+        $blog->date = date('Y-m-d', strtotime($request->date));
         $imageName = '';
         if ($image = $request->file('image')) {
             $imageName = time() . '-' . uniqid() . '.' . $image->getClientOriginalExtension();
             $image->move(public_path('images/post'), $imageName);
+            $blog->image = $imageName;
         }
 
         $blog->title=$request->title;
-        $blog->descritption=$request->description;
+        $blog->description=$request->description;
         $blog->save();
 
         return redirect()->route('blog.index')->with('success', 'Blog added successfully!');
     }
     public function index(){
         $blogs=Blog::all();
-        return view('admin.pages.blog.index','blogs');
+        return view('admin.pages.blog.index',compact('blogs'));
     }
 }
