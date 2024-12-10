@@ -231,12 +231,12 @@
 
 
   </div>
-    <div class="navbar-container">
+    <div class="navbar-container" style="margin-bottom:10px;">
         <!-- Logo -->
-        <div class="logo">
-            <a class="navbar-brand" href="{{ url('/') }}" style="margin: 15px; padding: 0;">
-                {{-- <h3 style="color:white" class="">ODMS</h3> --}}
-                <img style="height: 50px;" class="img-responsive" src="{{ URL::to('/') }}/images/2a6585d4-e9d0-40ef-98dd-d3afb105b76e.jpg" alt="">
+        <div class="logo" >
+            <a class="navbar-brand"  href="{{ url('/') }}" style="margin: 10px; padding: 0;">
+
+                <img style="height: 80px; " class="img-responsive" src="{{ URL::to('/') }}/images/2a6585d4-e9d0-40ef-98dd-d3afb105b76e.jpg" alt="">
             </a>
         </div>
 
@@ -294,7 +294,6 @@
                     <li><a href="{{ url('/news') }}">NEWS</a></li>
                 </ul>
             </li>
-            <li><a href="{{ Route('donate.index') }}">Donate US</a></li>
             <li><a href="{{ url('/Contact-Us') }}">CONTACT</a></li>
         </ul>
 
@@ -305,6 +304,9 @@
             </button>
             <a href="{{ Route('sponsor_child') }}">
                 <button class="btn btn-success text-white">Sponsor</button>
+            </a>
+            <a href="{{ Route('donate.index') }}">
+                <button class="btn btn-success text-white">Donate us</button>
             </a>
         </div>
     </div>

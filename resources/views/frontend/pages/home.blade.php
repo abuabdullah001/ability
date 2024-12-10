@@ -330,11 +330,10 @@ margin-top: 10px;
 </div>
 </section>
 
-
+`
 {{-- feature Event --}}
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
-<h1>fasdklsdh</h1>
 
 
 <section style="">
@@ -436,10 +435,10 @@ margin-top: 10px;
         .hover-car {
         background-color: #F0F4F5;
         position: relative; /* To allow absolute positioning of text */
-        height: 450px;
+        height: 430px;
         width: 350px;
-        margin: 10px 0;
-        margin-left: 0px;
+        margin: 10px ;
+        margin-left: 30px;
         overflow: hidden;
         transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth zoom & shadow */
     }
@@ -454,7 +453,7 @@ margin-top: 10px;
     <div class="container" style=" ">
             <div class="row">
                 <h1 style="margin-left: 470px; margin-top:30px;margin-bottom:30px">Report</h1>
-                <div class="col-md-3 hover-car">
+                <div class="col-md-3 hover-car" style="padding: 10px">
                     <img src="images/1732170023-01-10-8.jpg" style="height: 200px;width:100%;" alt="">
                     <h3>Event-wise report</h3>
                 <p style="text-align: justify">
@@ -462,7 +461,7 @@ margin-top: 10px;
                 </p>
                     <a href="">pdf file download</a>
                 </div>
-                <div class="col-md-3 hover-car ms-2" style="margin-left: 20px;">
+                <div class="col-md-3 hover-car ms-2"  style="padding: 10px">
                     <img src="images/istockphoto-122719833-612x612.jpg" style="height: 200px;width:100%;" alt="">
                     <h3>Monthly report</h3>
                     <p style="text-align: justify">
@@ -470,7 +469,7 @@ margin-top: 10px;
                 </p>
                     <a href="">pdf file download</a>
                 </div>
-                <div class="col-md-3 hover-car " style="margin-left: 20px;">
+                <div class="col-md-3 hover-car "  style="padding: 10px">
                     <img src="images/1732169911-Amphan-Effected-1.jpg" style="height: 200px;width:100%;" alt="">
                 <h3>Yearly report</h3>
                 <p style="text-align: justify">
@@ -624,19 +623,16 @@ margin-top: 10px;
 
 
 
-
-
-
 {{-- Blog --}}
 
 <style>
         .hover-ca {
         background-color: #F0F4F5;
         position: relative; /* To allow absolute positioning of text */
-        height: 400px;
+        height: 450px;
         width: 350px;
-        margin: 10px 0;
-        margin-left: 20px;
+        margin: 10px ;
+        margin-left: 30px;
         overflow: hidden;
         transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth zoom & shadow */
     }
@@ -651,32 +647,28 @@ margin-top: 10px;
 <section style="background-color: rgb(255, 255, 255);">
     <div class="container" style="margin-top: ;">
         <h1 style="margin-left: 470px; margin-top:0px;margin-bottom:30px">BLOG</h1>
-        <div class="col-md-3 hover-ca">
+
+        <div class="col-md-3 hover-ca" style="padding: 10px">
             <img src="images/1732170023-01-10-8.jpg" style="height: 200px;width:100%;" alt="">
             <p style="float: right">02.032024</p>
             <h1>Flood</h1>
           <p style="text-align: justify">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora ratione natus id adipisci aspernatur. Eum, a? Odio dicta, enim, harum molestias distinctio libero, exercitationem veniam hic temporibus laboriosam quisquam aut.
-
           </p>
         </div>
-        <div class="col-md-3 hover-ca">
+        <div class="col-md-3 hover-ca" style="padding: 10px">
             <img src="images/istockphoto-122719833-612x612.jpg" style="height: 200px;width:100%;" alt="">
             <p style="float: right">02.032024</p>
             <h1>Drought</h1>
-             <p style="text-align: justify">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora ratione natus id adipisci aspernatur. Eum, a? Odio dicta, enim, harum molestias distinctio libero, exercitationem veniam hic temporibus laboriosam quisquam aut.
-
+             <p style="text-align: justify"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora ratione natus id adipisci aspernatur. Eum, a? Odio dicta, enim, harum molestias distinctio libero, exercitationem veniam hic temporibus laboriosam quisquam aut.
           </p>
         </div>
-        <div class="col-md-3 hover-ca">
+
+        <div class="col-md-3 hover-ca" style="padding: 10px">
             <img src="images/1732169911-Amphan-Effected-1.jpg" style="height: 200px;width:100%;" alt="">
             <p style="float: right">02.032024</p>
            <h1>Storm</h1>
-           <p style="text-align: justify">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora ratione natus id adipisci aspernatur. Eum, a? Odio dicta, enim, harum molestias distinctio libero, exercitationem veniam hic temporibus laboriosam quisquam aut.
-
-          </p>
+           <p style="text-align: justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora ratione natus id adipisci aspernatur. Eum, a? Odio dicta, enim, harum molestias distinctio libero, exercitationem veniam hic temporibus laboriosam quisquam aut.</p>
         </div>
     </div>
 </section>
