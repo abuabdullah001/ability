@@ -9,7 +9,7 @@
     $sponsor = App\Models\Doante::all();
     $event = App\Models\Event::all();
     $project = App\Models\Project::all();
-    $champagin = App\Models\Champain::all();
+    $champagin = App\Models\champaign::all();
     $expense = App\Models\Expense::sum('amount');
     $today = Carbon\Carbon::now();
     $todayTransaction = App\Models\Order::whereDate('created_at', $today)->get();
