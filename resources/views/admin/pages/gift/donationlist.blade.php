@@ -37,7 +37,7 @@
 </style>
 
 @php
-    $donations = App\Models\Order::all(); // Assuming the model name is `Order` and the namespace is correct
+    $donations = App\Models\Order::orderBy('id','DESC')->get(); // Assuming the model name is `Order` and the namespace is correct
 @endphp
 
 <div class="content-wrapper">
