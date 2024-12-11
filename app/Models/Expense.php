@@ -21,7 +21,18 @@ class Expense extends Model
     {
         return $this->belongsTo(Event::class);
     }
-
+    public function subcategories()
+    {
+        return $this->belongsTo(ExpenseCategory::class,'sub_category_id');
+    }
+    public function categories()
+    {
+        return $this->belongsTo(ExpenseCategory::class,'category_id');
+    }
+    public function account()
+    {
+        return $this->belongsTo(Accounts::class,'account_id');
+    }
     public function project()
     {
         return $this->belongsTo(Project::class,'projects_id');

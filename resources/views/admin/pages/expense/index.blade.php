@@ -54,6 +54,7 @@
                                 <button id="btn-project" class="btn btn-primary">Project</button>
                                 <button id="btn-champaign" class="btn btn-success">Champaign</button>
                                 <button id="btn-event" class="btn btn-info">Event</button>
+                                <button id="btn-other-expense" class="btn btn-warning">Other Expense</button> <!-- New Button -->
                             </div>
 
                             <table id="example1" class="table table-bordered table-striped">
@@ -63,46 +64,51 @@
                                         <th>Type</th>
                                         <th>Category Name</th>
                                         <th>Amount</th>
+                                        <th>Account Name</th>
                                         <th>Action</th>
                                         <th>Note</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($eventSupports as $key => $gift)
-                                        <tr class="row-type-{{ strtolower($gift->type) }}">
-                                            <td>{{ $loop->iteration }}</td>
-                                            <td>{{ ucfirst($gift->type) }}</td>
-                                            <td>
-                                                @if ($gift->type === 'event')
+                                    <tr class="row-type-{{ strtolower($gift->type) }}">
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ ucfirst($gift->type) }}</td>
+                                        <td>
+                                            @if ($gift->type === 'event')
                                                 {{ ucfirst($gift->event->name ?? 'N/A') }}
                                             @elseif ($gift->type === 'project')
                                                 {{ ucfirst($gift->project->name ?? 'N/A') }}
                                             @elseif ($gift->type === 'champaign')
                                                 {{ ucfirst($gift->champaign->name ?? 'N/A') }}
+                                            @elseif ($gift->type === 'other-expense')
+                                                    Category:   {{ ucfirst($gift->categories->name ?? 'N/A') }} <br> <br>
+                                                    Sub-Category:  {{ ucfirst($gift->subcategories->name ?? 'N/A') }}
                                             @else
                                                 N/A
                                             @endif
+                                        </td>
+                                        <td>{{ number_format($gift->amount, 2) ?? 'N/A' }}</td>
+                                        <td class="text-center">{{ $gift->account->account_name ?? null }}</td>
+                                        <td>
+                                            <a href="{{ route('event_support.edit', $gift->id) }}" class="btn btn-xs btn-info">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            <a href="{{ route('event_support.destroy', $gift->id) }}"
+                                               onclick="return confirm('Are you sure?')"
+                                               class="btn btn-xs btn-danger">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <!-- Button to open the modal for the note -->
+                                            <button class="btn btn-xs btn-primary view-note" data-note="{{ $gift->note ?? 'No note available' }}">
+                                                <i class="fas fa-eye"></i> View Note
+                                            </button>
+                                        </td>
+                                    </tr>
+                                @endforeach
 
-                                            </td>
-                                            <td>{{ number_format($gift->amount, 2) ?? 'N/A' }}</td>
-                                            <td>
-                                                <a href="{{ route('event_support.edit', $gift->id) }}" class="btn btn-xs btn-info">
-                                                    <i class="fas fa-edit"></i>
-                                                </a>
-                                                <a href="{{ route('event_support.destroy', $gift->id) }}"
-                                                   onclick="return confirm('Are you sure?')"
-                                                   class="btn btn-xs btn-danger">
-                                                    <i class="fas fa-trash-alt"></i>
-                                                </a>
-                                            </td>
-                                            <td>
-                                                <!-- Button to open the modal for the note -->
-                                                <button class="btn btn-xs btn-primary view-note" data-note="{{ $gift->note ?? 'No note available' }}">
-                                                    <i class="fas fa-eye"></i> View Note
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -155,6 +161,10 @@
 
     document.getElementById('btn-event').addEventListener('click', function() {
         filterRows('event');
+    });
+
+    document.getElementById('btn-other-expense').addEventListener('click', function() {
+        filterRows('other-expense');
     });
 
     function filterRows(type) {

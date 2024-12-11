@@ -187,7 +187,6 @@ class SslCommerzPaymentController extends Controller
 
     public function store(Request $request)
     {
-        // Get the authenticated user
         $user = auth()->user();
 
         // Create a new Donation instance
@@ -196,6 +195,7 @@ class SslCommerzPaymentController extends Controller
         $donation->name = $request->input('name');
         $donation->amount = $request->input('amount');
         $donation->email = $request->input('amount');
+        $donation->phone = $request->input('phone');
         $donation->address = $request->input('address');
         $donation->status = $request->input('status');
         $donation->transaction_id = $request->input('transaction_id');
