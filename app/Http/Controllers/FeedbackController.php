@@ -54,6 +54,7 @@ class FeedbackController extends Controller
         else{
             $imageName = $feedbacks->image;
         }
+
         $feedbacks->image =$imageName;
         $feedbacks->description=$request->description;
         $feedbacks->save();
@@ -64,7 +65,6 @@ class FeedbackController extends Controller
     public function delete($id){
         $var=Feedback::findOrFail($id);
         $var->delete();
-
         return redirect()->route('feedback.index')->with('success','Feedback successfully done');
     }
 

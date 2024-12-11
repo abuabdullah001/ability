@@ -549,6 +549,12 @@ width:20px;
 
 
 {{-- people Feedback --}}
+
+@php
+ $feedbacks=App\Models\Feedback::all();
+@endphp
+
+
 <style>
     /* Add hover effect for the card */
     .hover-card {
@@ -631,6 +637,10 @@ width:20px;
 <section>
     <h1 class="section-title">People Feedback</h1>
 
+    @foreach ($feedbacks as $feedback)
+
+
+
     <div class="container">
         <!-- Use Bootstrap's row and col-md-3 to ensure 4 cards in a row -->
         <div class="row">
@@ -638,17 +648,20 @@ width:20px;
             <!-- First Card -->
             <div class="col-md-3">
                 <div class="hover-card">
-                    <img src="images/123.jpg" alt="Flood">
-                    <h1>John Smith</h1>
-                    <h3>CEO of Walton</h3>
+                    <img src="{{ asset('images/post/' . $feedback->image) }}" alt="Feedback Image">
+                    <h1>{{$feedback->name}}</h1>
+                    <h3>{{$feedback->designation}}</h3>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora ratione natus id adipisci aspernatur. Eum, a?
+                        {!! $feedback->description !!}
                     </p>
+
                 </div>
             </div>
 
+            @endforeach
+
             <!-- Second Card -->
-            <div class="col-md-3">
+            {{-- <div class="col-md-3">
                 <div class="hover-card">
                     <img src="images/122.jpg" alt="Flood">
                     <h1>John Smith</h1>
@@ -657,10 +670,10 @@ width:20px;
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora ratione natus id adipisci aspernatur. Eum, a?
                     </p>
                 </div>
-            </div>
+            </div> --}}
 
             <!-- Third Card -->
-            <div class="col-md-3">
+            {{-- <div class="col-md-3">
                 <div class="hover-card">
                     <img src="images/124.jpg" alt="Flood">
                     <h1>John Smith</h1>
@@ -669,10 +682,10 @@ width:20px;
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora ratione natus id adipisci aspernatur. Eum, a?
                     </p>
                 </div>
-            </div>
+            </div> --}}
 
             <!-- Fourth Card -->
-            <div class="col-md-3">
+            {{-- <div class="col-md-3">
                 <div class="hover-card">
                     <img src="images/122.jpg" alt="Flood">
                     <h1>John Smith</h1>
@@ -681,7 +694,7 @@ width:20px;
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora ratione natus id adipisci aspernatur. Eum, a?
                     </p>
                 </div>
-            </div>
+            </div> --}}
 
         </div>
     </div>
