@@ -14,7 +14,7 @@ class PhysicalgiftController extends Controller
      */
     public function index()
     {
-        $gifts = PhysicalGift::all();
+        $gifts = Physicalgift::all();
         return view('admin.pages.physicalgift.index', compact('gifts'));
     }
 
@@ -56,7 +56,7 @@ class PhysicalgiftController extends Controller
             $image->move(public_path('/uploads/file/'), $imageName);
         }
 
-        $gift = new PhysicalGift();
+        $gift = new Physicalgift();
         $gift->name = $request->input('name');
         $gift->phone = $request->input('phone');
         $gift->address = $request->input('address');
@@ -78,7 +78,7 @@ class PhysicalgiftController extends Controller
      */
     public function show($id)
     {
-        $gift = PhysicalGift::findOrFail($id);
+        $gift = Physicalgift::findOrFail($id);
         return view('frontend.pages.show', compact('gift'));
     }
 
@@ -90,7 +90,7 @@ class PhysicalgiftController extends Controller
      */
     public function edit($id)
     {
-        $gift = PhysicalGift::findOrFail($id);
+        $gift = Physicalgift::findOrFail($id);
         return view('physicalgifts.edit', compact('gift'));
     }
 
@@ -114,7 +114,7 @@ class PhysicalgiftController extends Controller
             'comment' => 'nullable|string',
         ]);
 
-        $gift = PhysicalGift::findOrFail($id);
+        $gift = Physicalgift::findOrFail($id);
 
         $imagePath = $gift->image;  // Keep existing image path if no new image is uploaded
         if ($request->hasFile('image')) {
@@ -147,7 +147,7 @@ class PhysicalgiftController extends Controller
      */
     public function destroy($id)
     {
-        $gift = PhysicalGift::findOrFail($id);
+        $gift = Physicalgift::findOrFail($id);
         $gift->delete();
 
         return redirect()->route('physicalgifts.index')->with('success', 'Physical gift deleted successfully.');
