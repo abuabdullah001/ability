@@ -14,4 +14,6 @@ class Accounts extends Model
 
     protected $table = 'chart_of_accounts';
 
+   
+
 }

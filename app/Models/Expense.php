@@ -29,7 +29,10 @@ class Expense extends Model
     {
         return $this->belongsTo(ExpenseCategory::class,'category_id');
     }
-
+    public function account()
+    {
+        return $this->belongsTo(Accounts::class,'account_id');
+    }
     public function project()
     {
         return $this->belongsTo(Project::class,'projects_id');

@@ -62,6 +62,19 @@
                                     <div class="form-group" id='category3'>
 
                                     </div>
+                                    @php
+                                    $accounts = App\Models\Accounts::all();
+                                @endphp
+
+                                <div class="form-group">
+                                    <label for="account_id">Choose Account</label>
+                                    <select name="account_id" id="account_id" class="form-control select2" required>
+                                        <option value="">Select Account</option>
+                                        @foreach ($accounts as $item)
+                                            <option value="{{ $item->id }}"{{ $eventSupport->account_id == $item->id ? ' selected' : '' }}>{{ $item->account_name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
 
                                 <div class="form-group">
                                     <label for="amount"> Amount</label>

@@ -17,7 +17,7 @@ class CreateChartOfAccountsTable extends Migration {
             $table->string('accountCode', 15);
             $table->string('account_code', 15)->nullable();
             $table->string('account_name')->nullable();
-            $table->integer('branch_id')->unsigned();
+            $table->integer('branch_id')->nullable();
             $table->enum('status', ['Active', 'Inactive', 'Pending', 'Cancel'])->default('Active')->comment('default status set active , penidng status waiting for approbal');
             $table->integer('updated_by')->nullable();
             $table->integer('created_by')->nullable();

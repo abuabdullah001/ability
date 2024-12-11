@@ -22,6 +22,7 @@ class ExpenseController extends Controller
         $eventSupport->sub_category_id = $request->sub_category_id;
         $eventSupport->projects_id = $request->projects_id;
         $eventSupport->type = $request->type;
+        $eventSupport->account_id = $request->account_id;
         $eventSupport->amount = $request->amount;
         $eventSupport->note = $request->note;
         $eventSupport->save();
@@ -127,6 +128,7 @@ public function show($id){
         $eventSupport->projects_id = $request->projects_id;
         $eventSupport->category_id = $request->category_id;
         $eventSupport->sub_category_id = $request->sub_category_id;
+        $eventSupport->account_id = $request->account_id;
         $eventSupport->amount = $request->amount;
         $eventSupport->note = $request->note;
         $eventSupport->save();

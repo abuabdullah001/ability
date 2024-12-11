@@ -64,6 +64,7 @@
                                         <th>Type</th>
                                         <th>Category Name</th>
                                         <th>Amount</th>
+                                        <th>Account Name</th>
                                         <th>Action</th>
                                         <th>Note</th>
                                     </tr>
@@ -88,6 +89,7 @@
                                             @endif
                                         </td>
                                         <td>{{ number_format($gift->amount, 2) ?? 'N/A' }}</td>
+                                        <td class="text-center">{{ $gift->account->account_name ?? null }}</td>
                                         <td>
                                             <a href="{{ route('event_support.edit', $gift->id) }}" class="btn btn-xs btn-info">
                                                 <i class="fas fa-edit"></i>

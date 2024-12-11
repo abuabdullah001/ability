@@ -54,9 +54,8 @@ class AccountsController extends Controller
         $account->account_name = $request->account_name;
         $account->save();
 
-        flash('Account has been inserted successfully')->success();
 
-        return back();
+        return back()->with('success', 'Account Created Successfully!');
     }
 
     /**
@@ -86,8 +85,7 @@ class AccountsController extends Controller
         $account->account_name = $request->account_name;
         $account->save();
 
-        flash(translate('Account has been updated successfully'))->success();
-        return back();
+        return back()->with('success', 'Account Updated Successfully!');
     }
 
     /**
@@ -100,8 +98,7 @@ class AccountsController extends Controller
     {
         Accounts::destroy($id);
 
-        flash(translate('Account has been deleted successfully'))->success();
-        return back();
+        return back()->with('success', 'Account deleted Successfully!');
     }
 
     public function updateStatus(Request $request){
