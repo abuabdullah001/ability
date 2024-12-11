@@ -17,7 +17,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h5 class="m-0 text-dark">Add Expense</h5>
+                        <h5 class="m-0 text-dark">Add Category</h5>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
             </div><!-- /.container-fluid -->
@@ -35,47 +35,38 @@
 
                         <div class="card">
                             <div class="card-header bg-cyan">
-                                <h3 class="card-title"> <i class="fa fa-plus"></i> Add Expense</h3>
+                                <h3 class="card-title"> <i class="fa fa-plus"></i> Add Category</h3>
                             </div>
                             @php
-                                $events = App\Models\Expense::all();
+                                $events = App\Models\Event::all();
                             @endphp
                             <div class="card-body">
-                                <form action="{{ route('event_support.store') }}" method="POST"
+                                <form action="{{ route('expense.category.store') }}" method="POST"
                                     enctype="multipart/form-data">
                                     @csrf
 
                                     <div class="form-group">
-                                        <label for="event_id">Choose Category</label>
-                                        <select name="type" id="category" class="form-control" required>
-                                            <option value="">Select Category</option>
-                                            <option value="project">project</option>
-                                            <option value="champaign">champaign</option>
-                                            <option value="event">Event</option>
-                                            <option value="other-expense">Other expense</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group" id='category2'>
-
-                                    </div>
-                                    <div class="form-group" id='category3'>
-
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="amount">Amount</label>
-                                        <input type="number" step="0.01" name="amount" id="amount"
+                                        <label for="amount">Name</label>
+                                        <input type="text" name="name" id="amount"
                                             class="form-control" required>
                                     </div>
+                                    @php
+                                    $expenseCategories = App\Models\ExpenseCategory::all();
+                                @endphp
+                                <div class="form-group">
+                                    <label for="category">Parent Category</label>
+                                    <select name="parent_id" id="category" class="form-control" >
+                                        <option value="">Select a parent Category</option>
+                                        @foreach($expenseCategories as $category)
+                                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
 
                                     <div class="form-group">
-                                        <label for="note">Note</label>
-                                        <textarea name="note" id="note" class="form-control" rows="4"></textarea>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <button type="submit" class="btn btn-success">Save Expense</button>
-                                        <a href="{{ route('event_support.index') }}" class="btn btn-secondary">Back</a>
+                                        <button type="submit" class="btn btn-success">Save Category</button>
+                                        <a href="{{ route('expense.category.list') }}" class="btn btn-secondary">Back</a>
                                     </div>
                                 </form>
                             </div>
@@ -89,6 +80,7 @@
         $(document).ready(function() {
             $('#category').change(function() {
                 var category = $(this).val();
+
 
 
                 $.ajax({
@@ -108,6 +100,4 @@
             });
         });
     </script>
-
-
 @endsection

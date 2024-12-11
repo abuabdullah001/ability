@@ -29,7 +29,7 @@ class AccountsController extends Controller
             $AccountData = 1;
         endif;
         $accountCode = 'CA' . str_pad($AccountData, 5, "0", STR_PAD_LEFT);
-        return view('admin.pages.account.index', compact('accounts','accountCode'));
+        return view('backend.setup_configurations.account.index', compact('accounts','accountCode'));
     }
 
     /**
@@ -68,7 +68,7 @@ class AccountsController extends Controller
      public function edit(Request $request, $id)
      {
          $account = Accounts::find($id);
-         return view('admin.pages.account.edit', compact('account'));
+         return view('backend.setup_configurations.account.edit', compact('account'));
      }
 
 

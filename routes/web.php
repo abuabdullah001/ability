@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SocialmediaController;
 use App\Http\Controllers\JournalAndPublicationController;
 use App\Http\Controllers\AcademicSummarieController;
+use App\Http\Controllers\AccountsController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ZoneController;
 use App\Http\Controllers\ContactUsController;
@@ -44,6 +45,7 @@ use App\Http\Controllers\ExpenseController;
 use App\Http\Controllers\GiftController;
 use App\Http\Controllers\IntroductionController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\PhysicalgiftController;
 use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\SummaryController;
@@ -60,6 +62,25 @@ use App\Http\Controllers\SupportController;
 
 Route::get('/support', [SupportController::class, 'create'])->name('support.showForm');
 Route::post('/support', [SupportController::class, 'store'])->name('support.store');
+Route::resource('account', AccountsController::class);
+Route::controller(AccountsController::class)->group(function () {
+    Route::get('/account/edit/{id}', 'edit')->name('account.edit');
+    Route::get('/account/destroy/{id}', 'destroy')->name('account.destroy');
+});
+
+Route::get('/physicalgifts/index', [PhysicalGiftController::class, 'index'])->name('physicalgifts.index');
+
+Route::get('/physicalgifts/create', [PhysicalGiftController::class, 'create'])->name('physicalgifts.create');
+
+Route::post('physicalgifts/store', [PhysicalGiftController::class, 'store'])->name('physicalgifts.store');
+
+Route::get('physicalgifts/{id}', [PhysicalgiftController::class, 'show'])->name('physicalgifts.show');
+
+Route::get('physicalgifts/{id}/edit', [PhysicalGiftController::class, 'edit'])->name('physicalgifts.edit');
+
+Route::put('/physicalgifts/{id}', [PhysicalGiftController::class, 'update'])->name('physicalgifts.update');
+
+Route::delete('physicalgifts/{id}', [PhysicalGiftController::class, 'destroy'])->name('physicalgifts.destroy');
 Auth::routes();
 
 Route::get('/example1', [SslCommerzPaymentController::class, 'exampleEasyCheckout']);
@@ -126,8 +147,26 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::delete('/supports/{support}', [SupportController::class, 'destroy'])->name('supports.destroy');
 
+
+
+
     Route::resource('event_support', ExpenseController::class);
+
+    Route::get('expense/category', [ExpenseController::class, 'create2'])->name('expense.category');
+
+    Route::get('category/list', [ExpenseController::class, 'index2'])->name('expense.category.list');
+
+    Route::get('expense/category/{id}\edit', [ExpenseController::class, 'edit2'])->name('expense.category.edit');
+
+    Route::post('expense/category/store', [ExpenseController::class, 'store2'])->name('expense.category.store');
+
+    Route::put('expense/category/update/{id}', [ExpenseController::class, 'update2'])->name('expense.category.update');
+
+    Route::get('expense/category/destroy/{id}', [ExpenseController::class, 'destroy2'])->name('expense.category.destroy');
+
     Route::get('/fetch-events', [ExpenseController::class, 'fetchEvents'])->name('fetch.events');
+
+    Route::get('/fetch-events2', [ExpenseController::class, 'fetchEvents2'])->name('fetch.events2');
 
     //  rabbi // withdrow
     Route::get('Withdraw', [WithdrawController::class, 'index'])->name('Withdrawview');
@@ -599,6 +638,6 @@ Route::get('/generate-pdf/{id}', [VolunteerController::class, 'generateVolunteer
 
 
 // Blog
-Route::get('blog/index',[BlogController::class,'index'])->name('blog.index');
-Route::post('blog/store',[BlogController::class,'store'])->name('blog.store');
-Route::get('blog/create',[BlogController::class,'create'])->name('blog.create');
+Route::get('blog/index', [BlogController::class, 'index'])->name('blog.index');
+Route::post('blog/store', [BlogController::class, 'store'])->name('blog.store');
+Route::get('blog/create', [BlogController::class, 'create'])->name('blog.create');

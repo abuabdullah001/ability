@@ -46,17 +46,22 @@
                                 @method('PUT')
 
                                 <div class="form-group">
-                                    <label for="event_id">Choose Category</label>
-                                    <select name="type" id="category" class="form-control" required>
-                                        <option value="">Select Category</option>
-                                        <option value="project">project</option>
-                                        <option value="champaign">champaign</option>
-                                        <option value="event">Event</option>
-                                    </select>
-                                </div>
-                                <div class="form-group" id='category2'>
+                                    <div class="form-group">
+                                        <label for="event_id">Choose Category</label>
+                                        <select name="type" id="category" class="form-control" required>
+                                            <option value="">Select Category</option>
+                                            <option value="project" {{ $eventSupport->type == 'project' ? 'selected' : '' }}>Project</option>
+                                            <option value="champaign" {{ $eventSupport->type == 'champaign' ? 'selected' : '' }}>champaign</option>
+                                            <option value="event" {{ $eventSupport->type == 'event' ? 'selected' : '' }}>Event</option>
+                                            <option value="other-expense"{{ $eventSupport->type == 'other-expense' ? 'selected' : '' }}>Other expense</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group" id='category2'>
 
-                                </div>
+                                    </div>
+                                    <div class="form-group" id='category3'>
+
+                                    </div>
 
                                 <div class="form-group">
                                     <label for="amount"> Amount</label>

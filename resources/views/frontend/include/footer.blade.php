@@ -284,8 +284,11 @@
                 <a href="{{Route('donate.index')}}" class="btn btn-success btn-lg">Donate Now</a>
             </div>
             <div style="padding-bottom:15px">
-                <a href="{{Route('sponsor_child')}}" class="btn btn-success btn-lg">Sponsor</a>
+                <a href="{{Route('physicalgifts.create')}}" class="btn btn-success btn-lg">Donate Custom Gift</a>
             </div>
+            {{-- <div style="padding-bottom:15px">
+                <a href="{{Route('sponsor_child')}}" class="btn btn-success btn-lg">Sponsor</a>
+            </div> --}}
             <div style="padding-bottom:15px">
                 <a href="{{Route('support.showForm')}}" class="btn btn-success btn-lg">Support us</a>
             </div>
