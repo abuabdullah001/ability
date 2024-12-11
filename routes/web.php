@@ -578,7 +578,7 @@ Route::delete('mediaCategory/delete/{id}', [FrontEndController::class, 'mediaCat
 
 //avi route
 Route::get('/signin', [RegistrationController::class, 'index'])->name('signin');
-Route::get('admin/login', [RegistrationController::class, 'login'])->name('login');
+Route::get('/login', [RegistrationController::class, 'login'])->name('login');
 Route::post('/showDistList', [RegistrationController::class, 'showDistList'])->name('showDistList');
 Route::post('/showThanaList', [RegistrationController::class, 'showThanaList'])->name('showThanaList');
 Route::post('/regstore', [RegistrationController::class, 'store'])->name('regstore');
