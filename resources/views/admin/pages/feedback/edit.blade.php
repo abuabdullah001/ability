@@ -31,12 +31,13 @@ Add Event
                             <div class="tab-content">
                                 <div class="active tab-pane">
                                     <form class="form-horizontal" method="post"
-                                        action="{{Route('feedback.store')}}" enctype="multipart/form-data">
+                                        action="{{Route('feedback.update',$feedbacks->id)}}" enctype="multipart/form-data">
                                         @csrf
+                                        @method('PUT')
 
                                         <div class="col-md-6 form-group">
                                             <label for="">Name</label>
-                                            <input type="text" name="name" value="" class="form-control">
+                                            <input type="text" name="name" value="{{$feedbacks->name}}" class="form-control">
                                             @error('name')
                                             <div class="error text-red text-bold" style="padding: 0;">
                                                 <strong>     {{$message}}  </strong>
@@ -46,7 +47,7 @@ Add Event
 
                                         <div class="col-md-6 form-group">
                                             <label for="">Company and Designation name</label>
-                                            <input type="text" name="designation" class="form-control">
+                                            <input type="text" name="designation" value="{{$feedbacks->designation}}" class="form-control">
                                             @error('designation')
                                             <div class="error text-red text-bold" style="padding: 0;">
                                                 <strong>     {{$message}}  </strong>
@@ -56,18 +57,20 @@ Add Event
 
                                         <div class="col-md-6 form-group">
                                             <label for="">Image</label>
-                                            <input type="file" name="image" class="form-control" multiple>
+                                            <input type="file" name="image" value="{{$feedbacks->image}}" class="form-control" multiple>
                                             @error('image')
                                             <div class="error text-red text-bold" style="padding: 0;">
                                                 <strong>     {{$message}}  </strong>
                                             </div>
                                             @enderror
                                         </div>
+                                        <div>
+                                            <img src="{{asset('images/post/'.$feedbacks->image)}}" alt="" style="height: 100px;width:100px;">
+                                        </div>
 
                                         <div class="col-md-6 form-group">
                                             <label for="">Description</label>
-                                            {{-- <input type="longText" name="description" class="form-control summernote"> --}}
-                                            <textarea type="longText"  name="description" class="summernote" id="" cols="30" rows="10"></textarea>
+                                            <textarea type="longText"  name="description"  class="summernote" id="" cols="30" rows="10">{{$feedbacks->description}}</textarea>
                                             @error('title')
                                             <div class="error text-red text-bold" style="padding: 0;">
                                                 <strong>     {{$message}}  </strong>

@@ -51,7 +51,7 @@ ALL Training
                                     <tr>
                                         <th>SL</th>
                                         <th>Name</th>
-                                        <th>Designation</th>
+                                        <th>Company and Designation name</th>
                                         <th>Image</th>
                                         <th>Description</th>
                                         <th>Action</th>
@@ -69,8 +69,8 @@ ALL Training
                                         <td>{!! Str::limit($value->description, 5000) !!}</td>
 
                                         <td>
-                                             {{-- <a href="{{route('blog.edit',$value->id)}}"
-                                                class="btn btn-xs btn-info"><i class="fas fa-edit"></i></a> --}}
+                                             <a href="{{route('feedback.edit',$value->id)}}"
+                                                class="btn btn-xs btn-info"><i class="fas fa-edit"></i></a>
                                             <a href="{{route('feedback.delete',$value->id)}}"
                                                 onclick="return confirm('Are You sure')"
                                                 class="btn btn-xs btn-danger"><i class="fas fa-trash-alt"></i></a>
