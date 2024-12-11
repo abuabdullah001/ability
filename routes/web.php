@@ -41,6 +41,7 @@ use App\Http\Controllers\DivisionsController;
 use App\Http\Controllers\DonateController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\ExpenseController;
+use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\GiftController;
 use App\Http\Controllers\IntroductionController;
 use App\Http\Controllers\NewsController;
@@ -602,3 +603,14 @@ Route::get('/generate-pdf/{id}', [VolunteerController::class, 'generateVolunteer
 Route::get('blog/index',[BlogController::class,'index'])->name('blog.index');
 Route::post('blog/store',[BlogController::class,'store'])->name('blog.store');
 Route::get('blog/create',[BlogController::class,'create'])->name('blog.create');
+Route::get('blog/edit/{id}',[BlogController::class,'edit'])->name('blog.edit');
+Route::put('blog/update/{id}',[BlogController::class,'update'])->name('blog.update');
+Route::get('blog/delete/{id}',[BlogController::class,'delete'])->name('blog.delete');
+
+
+
+// Feedback
+Route::get('feedback/create',[FeedbackController::class,'create'])->name('feedback.create');
+Route::post('feedback/store',[FeedbackController::class,'store'])->name('feedback.store');
+Route::get('feedback/index',[FeedbackController::class,'index'])->name('feedback.index');
+Route::get('feedback/delete/{id}',[FeedbackController::class,'delete'])->name('feedback.delete');

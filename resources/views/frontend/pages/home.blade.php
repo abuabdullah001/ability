@@ -691,6 +691,10 @@ width:20px;
 
 {{-- Blog --}}
 
+@php
+    $blogs=App\Models\Blog::all();
+@endphp
+
 <style>
         .hover-ca {
         background-color: #F0F4F5;
@@ -711,31 +715,53 @@ width:20px;
 
 
 <section style="background-color: rgb(255, 255, 255);">
+    {{-- <div class="row"> --}}
+
+        {{-- <a href="" style="float: right"><h1>Create Blog</h1></a> --}}
+    {{-- </div> --}}
     <div class="container" style="margin-top: ;">
         <h1 style="margin-left: 470px; margin-top:0px;margin-bottom:30px">BLOG</h1>
+        @foreach ($blogs as $blog )
 
-        <div class="col-md-3 hover-ca" style="padding: 10px">
+        <div class="col-md-3 hover-ca" style="padding: 20px">
+
+            {{-- <img src="{{ asset($blog->image) }}" style="height: 200px; width: 100%;" alt="Blog Image"> --}}
+
+            <img src="images/1732170023-01-10-8.jpg" style="height: 200px;width:100%;" alt="">
+                <div class="row" style="padding: 5px">
+                <p style="float:left;">{{$blog->name}}</p>
+                <p style="float: right">{{$blog->date}}</p>
+                </div>
+
+            <h1>{{$blog->title}}</h1>
+
+          <a>Read more...</a>
+        </div>
+
+        @endforeach
+
+        {{-- <div class="col-md-3 hover-ca" style="padding: 10px">
             <img src="images/1732170023-01-10-8.jpg" style="height: 200px;width:100%;" alt="">
             <p style="float: right">02.032024</p>
             <h1>Flood</h1>
           <p style="text-align: justify">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora ratione natus id adipisci aspernatur. Eum, a? Odio dicta, enim, harum molestias distinctio libero, exercitationem veniam hic temporibus laboriosam quisquam aut.
           </p>
-        </div>
-        <div class="col-md-3 hover-ca" style="padding: 10px">
+        </div> --}}
+        {{-- <div class="col-md-3 hover-ca" style="padding: 10px">
             <img src="images/istockphoto-122719833-612x612.jpg" style="height: 200px;width:100%;" alt="">
             <p style="float: right">02.032024</p>
             <h1>Drought</h1>
              <p style="text-align: justify"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora ratione natus id adipisci aspernatur. Eum, a? Odio dicta, enim, harum molestias distinctio libero, exercitationem veniam hic temporibus laboriosam quisquam aut.
           </p>
-        </div>
+        </div> --}}
 
-        <div class="col-md-3 hover-ca" style="padding: 10px">
+        {{-- <div class="col-md-3 hover-ca" style="padding: 10px">
             <img src="images/1732169911-Amphan-Effected-1.jpg" style="height: 200px;width:100%;" alt="">
             <p style="float: right">02.032024</p>
            <h1>Storm</h1>
            <p style="text-align: justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora ratione natus id adipisci aspernatur. Eum, a? Odio dicta, enim, harum molestias distinctio libero, exercitationem veniam hic temporibus laboriosam quisquam aut.</p>
-        </div>
+        </div> --}}
     </div>
 </section>
 

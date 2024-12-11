@@ -26,12 +26,12 @@ Add Event
                 <div class="col-md-1"></div>
                 <div class="col-md-10">
                     <div class="card">
-                        <div class="card-header bg-blue text-center"> ADD Blog</div>
+                        <div class="card-header bg-blue text-center"> ADD People Feedback</div>
                         <div class="card-body">
                             <div class="tab-content">
                                 <div class="active tab-pane">
                                     <form class="form-horizontal" method="post"
-                                        action="{{Route('blog.store')}}" enctype="multipart/form-data">
+                                        action="{{Route('feedback.store')}}" enctype="multipart/form-data">
                                         @csrf
 
                                         <div class="col-md-6 form-group">
@@ -45,9 +45,9 @@ Add Event
                                         </div>
 
                                         <div class="col-md-6 form-group">
-                                            <label for="">Date</label>
-                                            <input type="date" name="date" class="form-control">
-                                            @error('date')
+                                            <label for="">Designation</label>
+                                            <input type="text" name="designation" class="form-control">
+                                            @error('designation')
                                             <div class="error text-red text-bold" style="padding: 0;">
                                                 <strong>     {{$message}}  </strong>
                                             </div>
@@ -56,7 +56,7 @@ Add Event
 
                                         <div class="col-md-6 form-group">
                                             <label for="">Image</label>
-                                            <input type="file" name="image[]" class="form-control" multiple>
+                                            <input type="file" name="image" class="form-control" multiple>
                                             @error('image')
                                             <div class="error text-red text-bold" style="padding: 0;">
                                                 <strong>     {{$message}}  </strong>
@@ -65,18 +65,9 @@ Add Event
                                         </div>
 
                                         <div class="col-md-6 form-group">
-                                            <label for="">Title</label>
-                                            <input type="text" name="title" class="form-control summernote">
-                                            @error('title')
-                                            <div class="error text-red text-bold" style="padding: 0;">
-                                                <strong>     {{$message}}  </strong>
-                                            </div>
-                                            @enderror
-                                        </div>
-
-                                        <div class="col-md-6 form-group">
                                             <label for="">Description</label>
-                                            <input type="text" name="description" class="form-control summernote">
+                                            {{-- <input type="longText" name="description" class="form-control summernote"> --}}
+                                            <textarea type="longText"  name="description" class="summernote" id="" cols="30" rows="10"></textarea>
                                             @error('title')
                                             <div class="error text-red text-bold" style="padding: 0;">
                                                 <strong>     {{$message}}  </strong>

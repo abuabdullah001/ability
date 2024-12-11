@@ -30,13 +30,14 @@ Add Event
                         <div class="card-body">
                             <div class="tab-content">
                                 <div class="active tab-pane">
-                                    <form class="form-horizontal" method="post"
-                                        action="{{Route('blog.store')}}" enctype="multipart/form-data">
+                                    <form class="form-horizontal" method="POST"
+                                        action="{{Route('blog.update',$blogs->id)}}" enctype="multipart/form-data">
                                         @csrf
+                                        @method('PUT')
 
                                         <div class="col-md-6 form-group">
-                                            <label for="">Name</label>
-                                            <input type="text" name="name" value="" class="form-control">
+                                            <label for="">Name*</label>
+                                            <input type="text" name="name" value="{{$blogs->name}}" class="form-control">
                                             @error('name')
                                             <div class="error text-red text-bold" style="padding: 0;">
                                                 <strong>     {{$message}}  </strong>
@@ -46,7 +47,7 @@ Add Event
 
                                         <div class="col-md-6 form-group">
                                             <label for="">Date</label>
-                                            <input type="date" name="date" class="form-control">
+                                            <input type="date" name="date" value="{{$blogs->date}}" class="form-control">
                                             @error('date')
                                             <div class="error text-red text-bold" style="padding: 0;">
                                                 <strong>     {{$message}}  </strong>
@@ -56,7 +57,7 @@ Add Event
 
                                         <div class="col-md-6 form-group">
                                             <label for="">Image</label>
-                                            <input type="file" name="image[]" class="form-control" multiple>
+                                            <input type="file" name="image[]" value="{{$blogs->image}}" class="form-control" multiple>
                                             @error('image')
                                             <div class="error text-red text-bold" style="padding: 0;">
                                                 <strong>     {{$message}}  </strong>
@@ -66,7 +67,7 @@ Add Event
 
                                         <div class="col-md-6 form-group">
                                             <label for="">Title</label>
-                                            <input type="text" name="title" class="form-control summernote">
+                                            <input type="text" name="title" value="{{$blogs->title}}" class="form-control">
                                             @error('title')
                                             <div class="error text-red text-bold" style="padding: 0;">
                                                 <strong>     {{$message}}  </strong>
@@ -76,7 +77,7 @@ Add Event
 
                                         <div class="col-md-6 form-group">
                                             <label for="">Description</label>
-                                            <input type="text" name="description" class="form-control summernote">
+                                            <input type="text" name="description" value="{{$blogs->description}}" class="form-control">
                                             @error('title')
                                             <div class="error text-red text-bold" style="padding: 0;">
                                                 <strong>     {{$message}}  </strong>
@@ -85,7 +86,7 @@ Add Event
                                         </div>
 
                                         <div>
-                                            <button class="btn btn-success">Submit</button>
+                                            <button class="btn btn-success">Update</button>
                                         </div>
 
                                     </form>

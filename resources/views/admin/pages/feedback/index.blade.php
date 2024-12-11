@@ -36,11 +36,11 @@ ALL Training
                         <div class="card-header bg-cyan">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <h3 class="card-title"> <i class="fa fa-users"></i> All events</h3>
+                                    <h3 class="card-title"> <i class="fa fa-users"></i> All People feedback</h3>
                                 </div>
                                 <div class="col-md-6">
-                                    <a href="{{route('blog.create')}}" class="btn btn-success float-right"> <i
-                                            class="fa fa-plus"></i> ADD Blog</a>
+                                    <a href="{{route('feedback.create')}}" class="btn btn-success float-right"> <i
+                                            class="fa fa-plus"></i> ADD People feedback</a>
                                 </div>
                             </div>
                         </div>
@@ -51,42 +51,27 @@ ALL Training
                                     <tr>
                                         <th>SL</th>
                                         <th>Name</th>
-                                        <th>Date</th>
+                                        <th>Designation</th>
                                         <th>Image</th>
-                                        <th>Title</th>
                                         <th>Description</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php $i = 1; ?>
-                                    @foreach ($blogs as $key => $value)
+                                    @foreach ($feedbacks as $key => $value)
                                     <tr>
                                         <td>{{ $i++ }}</td>
 
                                         <td>{{ $value->name }}</td>
-                                        <td>{{ $value->date }}</td>
-                                        <td>
-                                            @php
-                                                $images = json_decode($value->image, true) ?? []; // Decode the JSON-encoded images
-                                            @endphp
-                                            @if (count($images) > 0)
-                                                @foreach ($images as $image)
-                                                    <img src="{{ asset('images/post/' . $image) }}" alt="Blog Image" style="width: 100px; height: auto;">
-                                                @endforeach
-                                            @else
-                                                <span>No Images Available</span>
-                                            @endif
-                                        </td>
+                                        <td>{{ $value->designation }}</td>
+                                        <td><img src="{{asset('images/post/'.$value->image)}}" alt="" style="height: 100px;width:100px;"></td>
+                                        <td>{!! Str::limit($value->description, 5000) !!}</td>
 
-                                        <td>{{ $value->title }}</td>
-                                        <td>{{ $value->description }}</td>
-                                        {{-- <td>{!! Str::limit($value->description, 5000) !!}</td> --}}
-                                       
                                         <td>
-                                             <a href="{{route('blog.edit',$value->id)}}"
-                                                class="btn btn-xs btn-info"><i class="fas fa-edit"></i></a>
-                                            <a href="{{route('blog.delete',$value->id)}}"
+                                             {{-- <a href="{{route('blog.edit',$value->id)}}"
+                                                class="btn btn-xs btn-info"><i class="fas fa-edit"></i></a> --}}
+                                            <a href="{{route('feedback.delete',$value->id)}}"
                                                 onclick="return confirm('Are You sure')"
                                                 class="btn btn-xs btn-danger"><i class="fas fa-trash-alt"></i></a>
                                         </td>
