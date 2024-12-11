@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\PhysicalGift;
+use App\Models\Physicalgift;
 use Illuminate\Http\Request;
 
 class PhysicalgiftController extends Controller
