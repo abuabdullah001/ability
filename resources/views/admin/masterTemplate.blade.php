@@ -196,8 +196,7 @@
     <script>
         $(function () {
             $("#example1").DataTable({
-                "responsive": true,
-                "autoWidth": false,
+
             });
             $('#example2').DataTable({
                 "paging": true,
