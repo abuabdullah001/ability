@@ -172,7 +172,7 @@ HOME
 
 <!-- Support Us Form Section -->
 <section class="sponsorship-form">
-    <h3 style="color: white;">Physical Gift Form</h3>
+    <h3 style="color: white;">Custom Gift Form</h3>
     <form action="{{ route('physicalgifts.store') }}" method="post" enctype="multipart/form-data">
         @csrf
 
