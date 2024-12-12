@@ -551,7 +551,7 @@ width:20px;
 {{-- people Feedback --}}
 
 @php
- $feedbacks=App\Models\Feedback::all();
+ $feedbacks=App\Models\Feedback::take(4)->get();
 @endphp
 
 
@@ -702,7 +702,7 @@ width:20px;
 {{-- Blog --}}
 
 @php
-    $blogs=App\Models\Blog::all();
+    $blogs=App\Models\Blog::take(3)->get();
 @endphp
 
 
@@ -737,13 +737,11 @@ width:20px;
         <div class="col-md-3 hover-ca" style="padding: 20px">
 
             <img src="{{ asset('images/post/' . $blog->image) }}" style="height: 200px; width: 100%;" alt="Blog Image">
-
-            {{-- <img src="images/1732170023-01-10-8.jpg" style="height: 200px;width:100%;" alt=""> --}}
                 <div class="row" style="padding: 15px">
                 <p style="float:left;">{{$blog->name}}</p>
                 <p style="float: right">{{$blog->date}}</p>
                 </div>
-                <h1>{{ Str::limit(str_replace('<p>', '', str_replace('</p>', '', $blog->title ?? 'Default Title')), 100) }}</h1>
+                <h3>{{ Str::limit(str_replace('<p>', '', str_replace('</p>', '', $blog->title ?? 'Default Title')), 100) }}</h3>
             <h3><a href="{{route('blog_details',$blog->id)}}">Read more...</a></h3>
         </div>
 

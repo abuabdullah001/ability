@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 class BlogController extends Controller
 {
     public function create(){
-        return view('admin.pages.blog.create');
+        $blogs=Blog::all();
+        return view('admin.pages.blog.create',compact('blogs'));
     }
 
     public function store(Request $request){
@@ -19,22 +20,12 @@ class BlogController extends Controller
         $blog->name=$request->name;
         $blog->date = date('Y-m-d', strtotime($request->date));
 
-        // $imageName = [];
-        // if ($image = $request->file('image')) {
-        //     $imageName = time() . '-' . uniqid() . '.' . $image->getClientOriginalExtension();
-        //     $image->move(public_path('images/post'), $imageName);
-        //     $blog->image = $imageName;
-        // }
-
-        $imageNames = []; // Initialize an array to store image names
-        if ($images = $request->file('image')) { // Use 'images' as the field name for multiple files
-            foreach ($images as $image) {
-                $imageName = time() . '-' . uniqid() . '.' . $image->getClientOriginalExtension();
-                $image->move(public_path('images/post'), $imageName); // Save each image
-                $imageNames[] = $imageName; // Store the image name in the array
-            }
-            $blog->image = json_encode($imageNames); // Save image names as a JSON string in the database
+        $imageName='';
+        if($image=$request->file('image')){
+            $imageName=time().'-'.uniqid().'-'.$image->getClientOriginalExtension();
+            $image->move(public_path('images/post'),$imageName);
         }
+        $blog->image =$imageName;
 
         $blog->title=$request->title;
         $blog->description=$request->description;
@@ -57,12 +48,16 @@ class BlogController extends Controller
 
         $blogs->name=$request->name;
         $blogs->date = date('Y-m-d', strtotime($request->date));
+
         $imageName='';
         if($image=$request->file('image')){
             $imageName=time().'-'.uniqid().'-'.$image->getClientOriginalExtension();
             $image->move(public_path('images/post'),$imageName);
+        }else{
+         $blogs->image=$imageName;
         }
         $blogs->image =$imageName;
+
         $blogs->title=$request->title;
         $blogs->description=$request->description;
         $blogs->save();
