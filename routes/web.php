@@ -646,6 +646,7 @@ Route::get('blog/edit/{id}',[BlogController::class,'edit'])->name('blog.edit');
 Route::put('blog/update/{id}',[BlogController::class,'update'])->name('blog.update');
 Route::get('blog/delete/{id}',[BlogController::class,'delete'])->name('blog.delete');
 
+Route::get('blog/details/{id}',[FrontEndController::class,'blog_details'])->name('blog_details');
 
 
 // Feedback

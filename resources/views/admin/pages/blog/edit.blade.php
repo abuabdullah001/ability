@@ -57,17 +57,20 @@ Add Event
 
                                         <div class="col-md-6 form-group">
                                             <label for="">Image</label>
-                                            <input type="file" name="image[]" value="{{$blogs->image}}" class="form-control" multiple>
+                                            <input type="file" name="image" value="{{$blogs->image}}" class="form-control">
                                             @error('image')
                                             <div class="error text-red text-bold" style="padding: 0;">
                                                 <strong>     {{$message}}  </strong>
                                             </div>
                                             @enderror
                                         </div>
+                                        <div>
+                                            <img src="{{asset('images/post/'.$blogs->image)}}" alt="" style="height: 100px;width:100px;">
+                                        </div>
 
                                         <div class="col-md-6 form-group">
                                             <label for="">Title</label>
-                                            <input type="text" name="title" value="{{$blogs->title}}" class="form-control">
+                                            <textarea type="longText"  name="title"  class="summernote" id="" cols="30" rows="10">{{$blogs->title}}</textarea>
                                             @error('title')
                                             <div class="error text-red text-bold" style="padding: 0;">
                                                 <strong>     {{$message}}  </strong>
@@ -75,9 +78,10 @@ Add Event
                                             @enderror
                                         </div>
 
+
                                         <div class="col-md-6 form-group">
                                             <label for="">Description</label>
-                                            <input type="text" name="description" value="{{$blogs->description}}" class="form-control">
+                                            <textarea type="longText"  name="description"  class="summernote" id="" cols="30" rows="10">{{$blogs->description}}</textarea>
                                             @error('title')
                                             <div class="error text-red text-bold" style="padding: 0;">
                                                 <strong>     {{$message}}  </strong>

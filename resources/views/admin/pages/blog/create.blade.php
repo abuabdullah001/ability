@@ -56,7 +56,7 @@ Add Event
 
                                         <div class="col-md-6 form-group">
                                             <label for="">Image</label>
-                                            <input type="file" name="image[]" class="form-control" multiple>
+                                            <input type="file" name="image" class="form-control">
                                             @error('image')
                                             <div class="error text-red text-bold" style="padding: 0;">
                                                 <strong>     {{$message}}  </strong>
@@ -66,7 +66,8 @@ Add Event
 
                                         <div class="col-md-6 form-group">
                                             <label for="">Title</label>
-                                            <input type="text" name="title" class="form-control summernote">
+                                            {{-- <input type="text" name="title" class="form-control summernote"> --}}
+                                            <textarea name="title" class="form-control summernote" id="" cols="30" rows="10"></textarea>
                                             @error('title')
                                             <div class="error text-red text-bold" style="padding: 0;">
                                                 <strong>     {{$message}}  </strong>
@@ -76,7 +77,8 @@ Add Event
 
                                         <div class="col-md-6 form-group">
                                             <label for="">Description</label>
-                                            <input type="text" name="description" class="form-control summernote">
+                                            {{-- <input type="text" name="description" class="form-control summernote"> --}}
+                                            <textarea name="description" id="" cols="30" class="form-control summernote" rows="10"></textarea>
                                             @error('title')
                                             <div class="error text-red text-bold" style="padding: 0;">
                                                 <strong>     {{$message}}  </strong>

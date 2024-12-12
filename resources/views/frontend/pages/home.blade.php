@@ -330,7 +330,7 @@ margin-top: 10px;
 </div>
 </section>
 
-`
+
 {{-- feature Event --}}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
@@ -428,67 +428,67 @@ width:20px;
                   <button>lerarn more</button>
                 </div>
               </div>
-<!-- card-2 -->
-<div class="card" style="width:50%;padding:10">
-  <img src="images/1732169911-Amphan-Effected-1.jpg" class="card-img-top" alt="..." style="height:300px">
-  <div class="card-body">
-    <h1>lorem ipsum</h1>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <button>lerarn more</button>
-</div>
-</div>
-        </div>
-        <div class="swiper-slide">
-            <div class="card" style="width:50%;padding:10">
-                <img src="images/1732167248-2019-09-Hurricane-Dorian-scaled.jpg" class="card-img-top" alt="..." style="height:300px">
-                <div class="card-body">
-                    <h1>lorem ipsum</h1>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <button>lerarn more</button>
-                </div>
-              </div>
-<!-- card-2 -->
-<div class="card" style="width:50%;padding:10">
-    <img src="images/bangladesh-flooding-aerial.jpg" class="card-img-top" alt="..." style="height:300px">
+    <!-- card-2 -->
+    <div class="card" style="width:50%;padding:10">
+    <img src="images/1732169911-Amphan-Effected-1.jpg" class="card-img-top" alt="..." style="height:300px">
     <div class="card-body">
         <h1>lorem ipsum</h1>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <button>lerarn more</button>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <button>lerarn more</button>
     </div>
-  </div>
-        </div>
-        <div class="swiper-slide">
-            <div class="card" style="width:50%;padding:10">
-                <img src="images/rajshahi_cold_jan10-05 (1).jpg" class="card-img-top" alt="..." style="height:300px">
-                <div class="card-body">
-                    <h1>lorem ipsum</h1>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <button>lerarn more</button>
+    </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="card" style="width:50%;padding:10">
+                    <img src="images/1732167248-2019-09-Hurricane-Dorian-scaled.jpg" class="card-img-top" alt="..." style="height:300px">
+                    <div class="card-body">
+                        <h1>lorem ipsum</h1>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <button>lerarn more</button>
+                    </div>
                 </div>
-              </div>
-<!-- card-2 -->
-<div class="card" style="width:50%;padding:10">
-    <img src="images/bangladesh-flooding-aerial.jpg" class="card-img-top" alt="..." style="height:300px">
-    <div class="card-body">
-        <h1>lorem ipsum</h1>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <button>lerarn more</button>
+    <!-- card-2 -->
+    <div class="card" style="width:50%;padding:10">
+        <img src="images/bangladesh-flooding-aerial.jpg" class="card-img-top" alt="..." style="height:300px">
+        <div class="card-body">
+            <h1>lorem ipsum</h1>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <button>lerarn more</button>
+        </div>
     </div>
-  </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="card" style="width:50%;padding:10">
+                    <img src="images/rajshahi_cold_jan10-05 (1).jpg" class="card-img-top" alt="..." style="height:300px">
+                    <div class="card-body">
+                        <h1>lorem ipsum</h1>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <button>lerarn more</button>
+                    </div>
+                </div>
+    <!-- card-2 -->
+    <div class="card" style="width:50%;padding:10">
+        <img src="images/bangladesh-flooding-aerial.jpg" class="card-img-top" alt="..." style="height:300px">
+        <div class="card-body">
+            <h1>lorem ipsum</h1>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <button>lerarn more</button>
+        </div>
+    </div>
+            </div>
+
+
         </div>
 
+        <!-- Navigation buttons -->
+        <div id="nav1" class="swiper-button-next"></div>
+        <div id="nav2" class="swiper-button-prev"></div>
 
-      </div>
+        </div>
+    <!-- bg and the viewAll button -->
+        <div class="second_part">
 
-      <!-- Navigation buttons -->
-      <div id="nav1" class="swiper-button-next"></div>
-      <div id="nav2" class="swiper-button-prev"></div>
-
-    </div>
-<!-- bg and the viewAll button -->
-    <div class="second_part">
-
-    </div>
+        </div>
   </section>
 
 
@@ -638,9 +638,6 @@ width:20px;
     <h1 class="section-title">People Feedback</h1>
 
     @foreach ($feedbacks as $feedback)
-
-
-
     <div class="container">
         <!-- Use Bootstrap's row and col-md-3 to ensure 4 cards in a row -->
         <div class="row">
@@ -708,6 +705,7 @@ width:20px;
     $blogs=App\Models\Blog::all();
 @endphp
 
+
 <style>
         .hover-ca {
         background-color: #F0F4F5;
@@ -738,17 +736,15 @@ width:20px;
 
         <div class="col-md-3 hover-ca" style="padding: 20px">
 
-            {{-- <img src="{{ asset($blog->image) }}" style="height: 200px; width: 100%;" alt="Blog Image"> --}}
+            <img src="{{ asset('images/post/' . $blog->image) }}" style="height: 200px; width: 100%;" alt="Blog Image">
 
-            <img src="images/1732170023-01-10-8.jpg" style="height: 200px;width:100%;" alt="">
-                <div class="row" style="padding: 5px">
+            {{-- <img src="images/1732170023-01-10-8.jpg" style="height: 200px;width:100%;" alt=""> --}}
+                <div class="row" style="padding: 15px">
                 <p style="float:left;">{{$blog->name}}</p>
                 <p style="float: right">{{$blog->date}}</p>
                 </div>
-
-            <h1>{{$blog->title}}</h1>
-
-          <a>Read more...</a>
+                <h1>{{ Str::limit(str_replace('<p>', '', str_replace('</p>', '', $blog->title ?? 'Default Title')), 100) }}</h1>
+            <h3><a href="{{route('blog_details',$blog->id)}}">Read more...</a></h3>
         </div>
 
         @endforeach

@@ -17,7 +17,7 @@ ALL Training
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h5 class="m-0 text-dark">All events</h5>
+                    <h5 class="m-0 text-dark">All Blogs</h5>
                 </div><!-- /.col -->
 
             </div><!-- /.row -->
@@ -36,7 +36,7 @@ ALL Training
                         <div class="card-header bg-cyan">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <h3 class="card-title"> <i class="fa fa-users"></i> All events</h3>
+                                    <h3 class="card-title"> <i class="fa fa-users"></i> All Blogs</h3>
                                 </div>
                                 <div class="col-md-6">
                                     <a href="{{route('blog.create')}}" class="btn btn-success float-right"> <i
@@ -66,23 +66,10 @@ ALL Training
 
                                         <td>{{ $value->name }}</td>
                                         <td>{{ $value->date }}</td>
-                                        <td>
-                                            @php
-                                                $images = json_decode($value->image, true) ?? []; // Decode the JSON-encoded images
-                                            @endphp
-                                            @if (count($images) > 0)
-                                                @foreach ($images as $image)
-                                                    <img src="{{ asset('images/post/' . $image) }}" alt="Blog Image" style="width: 100px; height: auto;">
-                                                @endforeach
-                                            @else
-                                                <span>No Images Available</span>
-                                            @endif
-                                        </td>
+                                        <td><img src="{{asset('images/post'.$value->image)}}" alt=""></td>
+                                        <td>{!! Str::limit($value->title, 5000) !!}</td>
+                                        <td>{!! Str::limit($value->description, 5000) !!}</td>
 
-                                        <td>{{ $value->title }}</td>
-                                        <td>{{ $value->description }}</td>
-                                        {{-- <td>{!! Str::limit($value->description, 5000) !!}</td> --}}
-                                       
                                         <td>
                                              <a href="{{route('blog.edit',$value->id)}}"
                                                 class="btn btn-xs btn-info"><i class="fas fa-edit"></i></a>

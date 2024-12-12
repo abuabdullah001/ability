@@ -29,6 +29,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Gallery;
+use App\Models\Blog;
+use PhpParser\Node\Expr\FuncCall;
 
 //namespace App\Http\Controllers\Auth;
 
@@ -569,6 +571,12 @@ class FrontEndController extends Controller
         $allImages = Gallery::all(); // All gallery images
 
         return view('frontend.gallery', compact('mediaCategories', 'allImages'));
+    }
+
+
+    public Function blog_details($id){
+        $blog=Blog::findOrFail($id);
+        return view('frontend.blog_details',compact('blog'));
     }
 
 
