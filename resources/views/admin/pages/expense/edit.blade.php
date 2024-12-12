@@ -59,7 +59,7 @@
                                     @if ($eventSupport->type == 'event' && $eventSupport->count() > 0)
                                         <div class="form-group">
                                             <label for="event_id">Event</label>
-                                            <select name="event_id" id="event_id" class="form-control" required>
+                                            <select name="event_id" id="event_id" class="form-control" >
                                                 <option value="">Select Event</option>
                                                 @foreach ($events as $event)
                                                     <option value="{{ $event->id }}" {{ $eventSupport->event_id == $event->id ? 'selected' : '' }}>{{ $event->name }}</option>
@@ -71,7 +71,7 @@
                                     @if ($eventSupport->type == 'project' && $eventSupport->count() > 0)
                                         <div class="form-group">
                                             <label for="projects_id">Project</label>
-                                            <select name="projects_id" id="projects_id" class="form-control" required>
+                                            <select name="projects_id" id="projects_id" class="form-control" >
                                                 <option value="">Select Project</option>
                                                 @php
                                                     $projects = App\Models\Project::all();
@@ -86,7 +86,7 @@
                                     @if ($eventSupport->type == 'champaign' && $eventSupport->count() > 0)
                                         <div class="form-group">
                                             <label for="champaign_id">Champaign</label>
-                                            <select name="champaign_id" id="champaign_id" class="form-control" required>
+                                            <select name="champaign_id" id="champaign_id" class="form-control" >
                                                 <option value="">Select Champaign</option>
                                                 @php
                                                     $champaign = App\Models\Champaign::all();
@@ -134,7 +134,7 @@
 
                                     <div class="form-group">
                                         <label for="account_id">Choose Account</label>
-                                        <select name="account_id" id="account_id" class="form-control select2" required>
+                                        <select name="account_id" id="account_id" class="form-control select2" >
                                             <option value="">Select Account</option>
                                             @foreach ($accounts as $account)
                                                 <option value="{{ $account->id }}" {{ $eventSupport->account_id == $account->id ? 'selected' : '' }}>{{ $account->account_name }}</option>
@@ -144,7 +144,7 @@
 
                                     <div class="form-group">
                                         <label for="amount">Amount</label>
-                                        <input type="number" step="0.01" name="amount" id="amount" class="form-control" value="{{ old('amount', $eventSupport->amount) }}" required>
+                                        <input type="number" step="0.01" name="amount" id="amount" class="form-control" value="{{ old('amount', $eventSupport->amount) }}" >
                                     </div>
 
                                     <div class="form-group">
