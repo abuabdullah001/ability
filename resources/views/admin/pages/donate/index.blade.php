@@ -38,10 +38,10 @@ ALL Training
                                 <div class="col-md-6">
                                     <h3 class="card-title"> <i class="fa fa-users"></i> All Sponsar</h3>
                                 </div>
-                                <div class="col-md-6">
+                                {{-- <div class="col-md-6">
                                     <a href="{{route('create.training')}}" class="btn btn-success float-right"> <i
                                             class="fa fa-plus"></i> ADD Donations</a>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
 
