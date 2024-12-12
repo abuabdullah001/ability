@@ -320,7 +320,7 @@
                 </ul>
             </div>
             <div class="col-md-8 col-sm-12 ">
-                <p>&copy; All Rights Reserved AFDF - <?php echo date('Y') ?></p> ||
+                <p>&copy; All Rights Reserved ODMS - <?php echo date('Y') ?></p> ||
                 <p>Developed by <a target="_blank" href="https://itwaybd.com/">ITWAY BD</a></p>
             </div>
         </div>
