@@ -55,7 +55,7 @@
                                 @endphp
                                 <div class="form-group">
                                     <label for="category">Parent Category</label>
-                                    <select name="parent_id" id="category" class="form-control" >
+                                    <select name="parent_id" id="category" class="form-control select2" >
                                         <option value="">Select a parent Category</option>
                                         @foreach($expenseCategories as $category)
                                             <option value="{{ $category->id }}">{{ $category->name }}</option>
