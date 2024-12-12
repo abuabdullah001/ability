@@ -40,12 +40,12 @@
                                     @method('PUT')
                                     <div class="form-group">
                                         <label for="name">Category Name</label>
-                                        <input type="text" name="name" id="name" class="form-control" value="{{ old('name', $expenseCategory->name) }}" required>
+                                        <input type="text" name="name" id="name" class="form-control select2" value="{{ old('name', $expenseCategory->name) }}" required>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="parent_id">Parent Category</label>
-                                        <select name="parent_id" id="parent_id" class="form-control">
+                                        <select name="parent_id" id="parent_id" class="form-control select2">
                                             <option value="">Select Parent Category</option>
                                             @foreach ($parentCategories as $category)
                                                 <option value="{{ $category->id }}" {{ $expenseCategory->parent_id == $category->id ? 'selected' : '' }}>

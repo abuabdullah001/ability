@@ -59,7 +59,7 @@
                                     @if ($eventSupport->type == 'event' && $eventSupport->count() > 0)
                                         <div class="form-group">
                                             <label for="event_id">Event</label>
-                                            <select name="event_id" id="event_id" class="form-control" >
+                                            <select name="event_id" id="event_id" class="form-control select2" >
                                                 <option value="">Select Event</option>
                                                 @foreach ($events as $event)
                                                     <option value="{{ $event->id }}" {{ $eventSupport->event_id == $event->id ? 'selected' : '' }}>{{ $event->name }}</option>
@@ -71,7 +71,7 @@
                                     @if ($eventSupport->type == 'project' && $eventSupport->count() > 0)
                                         <div class="form-group">
                                             <label for="projects_id">Project</label>
-                                            <select name="projects_id" id="projects_id" class="form-control" >
+                                            <select name="projects_id" id="projects_id" class="form-control select2" >
                                                 <option value="">Select Project</option>
                                                 @php
                                                     $projects = App\Models\Project::all();
@@ -86,7 +86,7 @@
                                     @if ($eventSupport->type == 'champaign' && $eventSupport->count() > 0)
                                         <div class="form-group">
                                             <label for="champaign_id">Champaign</label>
-                                            <select name="champaign_id" id="champaign_id" class="form-control" >
+                                            <select name="champaign_id" id="champaign_id" class="form-control select2" >
                                                 <option value="">Select Champaign</option>
                                                 @php
                                                     $champaign = App\Models\Champaign::all();
@@ -101,7 +101,7 @@
                                     @if ($eventSupport->category_id && $eventSupport->count() > 0)
                                         <div class="form-group">
                                             <label for="category_id">Category</label>
-                                            <select name="category_id" id="category_id" class="form-control">
+                                            <select name="category_id" id="category_id" class="form-control select2">
                                                 <option value="">Select Category</option>
                                                 @php
                                                     $expensecategory = App\Models\ExpenseCategory::where('parent_id',null)->get();
@@ -116,7 +116,7 @@
                                     @if ($eventSupport->sub_category_id && $eventSupport->count() > 0)
                                         <div class="form-group">
                                             <label for="sub_category_id">Sub Category</label>
-                                            <select name="sub_category_id" id="sub_category_id" class="form-control">
+                                            <select name="sub_category_id" id="sub_category_id" class="form-control select2">
                                                 <option value="">Select Sub Category</option>
                                                 @php
                                                     $expensecategory = App\Models\ExpenseCategory::all();
