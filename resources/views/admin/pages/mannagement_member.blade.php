@@ -27,7 +27,7 @@
                     <div class="col-12 col-sm-6 col-md-12">
                         <div class="card">
                             <div class="card-header bg-cyan">
-                                <h3 class="card-title"><i class="fa fa-users"></i> All Members</h3>
+                                <h3 class="card-title"><i class="fa fa-users"></i> All Executives</h3>
                             </div>
                             <div class="card-body" id='td'>
                                 <table id="example1" class="table table-bordered table-striped">

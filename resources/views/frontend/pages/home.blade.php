@@ -190,6 +190,8 @@ flex-direction: column;
 
 @include('frontend.include.slider')
 {{-- @include('frontend\pages\about') --}}
+
+{{--message--}}
 <link rel="stylesheet" href="css/darkscroll.css">
 <br>
 <div class="container">
@@ -252,7 +254,7 @@ flex-direction: column;
                             <h4 class="panel-title">
                                 <a role="button" data-toggle="collapse" data-parent="#accordionR" href="#collapseROne"
                                     aria-expanded="true" aria-controls="collapseOne">
-                                    Executive Member
+                                    CEO Message
                                 </a>
                             </h4>
                         </div>
@@ -260,10 +262,10 @@ flex-direction: column;
                             aria-labelledby="work-process">
                             <div class="panel-body" style="border:1px solid green; min-height:316px;">
                                 <em>“We sincerely expect your active support and cooperation in our every step and
-                                    initiatives for ameliorating the status of BIEA and expanding indenting business in
+                                    initiatives for ameliorating the status of ODMS and expanding indenting business in
                                     the country.”</em><br><br>
                                 <!--<b>Md. Aktaruzzaman Hero<br>-->
-                                Central Executive Member </b>
+                                </b>
                             </div>
                         </div>
                     </div>
@@ -330,8 +332,74 @@ margin-top: 10px;
 </div>
 </section>
 
+{{-- Featured event --}}
+<style>
+    .event-item {
+        margin-bottom: 20px;
+        text-align: center;
+    }
 
-{{-- feature Event --}}
+    .event-item img {
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        max-width: 100%;
+        height: auto;
+    }
+
+    .event-item h2 {
+        margin-top: 10px;
+        font-size: 1.5em;
+        color: #333;
+    }
+
+    .event-item p {
+        color: #555;
+        font-size: 1em;
+        margin-top: 5px;
+    }
+    </style>
+
+@php
+$events = App\Models\Event::take(3)->get();
+@endphp
+<section class="brows-job-category">
+   <div class="container" style="width: 1154px">
+       <h1 class="" style="margin-left: 240px;margin-bottom:50px;">Featured Event</h1>
+
+       <div class="ibox">
+           <div class="i-body">
+               <div class="row">
+                   <div class="col-md-12">
+                       <div class="row">
+                           @foreach($events as $project)
+                           <div class="col-md-3 col-sm-6 mb-4"> <!-- col-md-4 ensures 3 cards per row -->
+                               <div class="card" >
+                                   <a href="{{ route('event.show', ['slug' => $project->slug]) }}">
+                                       <img src="{{ asset($project->image)}}" style="width:35rem;height: 23rem;" class="card-img-top img-responsive" alt="...">
+                                       <div class="card-body">
+                                           <h2 class="card-title">
+                                               {{ Str::limit($project->name, 30, '...') }} <!-- Limit the title to 30 characters -->
+                                           </h2>
+                                           <a href="{{ route('event.show', ['slug' => $project->slug]) }}" class="btn btn-link" style="color:blue">
+                                               Read More
+                                           </a>
+                                       </div>
+                                   </a>
+                               </div>
+                           </div>
+                           @endforeach
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+</section>
+
+{{-- Featured event end--}}
+
+
+{{-- current and all Event --}}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
 <style>
@@ -410,9 +478,9 @@ width:20px;
   </style>
 
 <!-- Slider -->
-
+<h1 style="color:black;margin-left:450px;" >   Current Event  </h1>
 <section class="current_background">
-    <h1 style="color:black" style="z-index:30">Current Event</h1>
+
     <div class="swiper mySwiper" >
 
       <div class="swiper-wrapper">
@@ -489,7 +557,11 @@ width:20px;
         <div class="second_part">
 
         </div>
+
+  <h1>See all event</h1>
+
   </section>
+
 
 
 
@@ -548,7 +620,7 @@ width:20px;
 </section>
 
 
-{{-- people Feedback --}}
+{{-- Expertt Feedback --}}
 
 @php
  $feedbacks=App\Models\Feedback::take(4)->get();
@@ -635,7 +707,7 @@ width:20px;
 </style>
 
 <section>
-    <h1 class="section-title">People Feedback</h1>
+    <h1 class="section-title">Expert Feedback</h1>
 
     @foreach ($feedbacks as $feedback)
     <div class="container">
@@ -854,7 +926,9 @@ width:20px;
 </style>
 
 <section>
+
     <div class="container">
+        <h1 style="margin-left: 400px">Our partners</h1>
         <div class="swiper">
             <div class="swiper-wrapper">
                 <!-- Images -->
