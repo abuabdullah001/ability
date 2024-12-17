@@ -286,12 +286,11 @@
             <div style="padding-bottom:15px">
                 <a href="{{Route('physicalgifts.create')}}" class="btn btn-success btn-lg">Donate Custom Gift</a>
             </div>
-            {{-- <div style="padding-bottom:15px">
-                <a href="{{Route('sponsor_child')}}" class="btn btn-success btn-lg">Sponsor</a>
-            </div> --}}
-            <div style="padding-bottom:15px">
-                <a href="{{Route('support.showForm')}}" class="btn btn-success btn-lg">Support us</a>
-            </div>
+            
+             <button class="btn btn-success text-white"  data-toggle="modal" data-target="#searchModal">
+                <i class="fa fa-search"></i> <!-- Search icon -->
+            </button>
+
           </div>
                 <div class="footer-text mb-25">
                   <p>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>

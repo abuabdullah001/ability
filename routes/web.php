@@ -61,6 +61,10 @@ use App\Http\Controllers\SupportController;
 
 
 
+Route::get('/report', function () {
+    return view('frontend.pages.report');
+})->name('report');
+
 Route::get('/support', [SupportController::class, 'create'])->name('support.showForm');
 Route::post('/support', [SupportController::class, 'store'])->name('support.store');
 Route::resource('account', AccountsController::class);
@@ -330,6 +334,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('updateaboute/{id}', [AboutMenuController::class, 'update']);
     Route::get('aboute_viewdelete/{id}', [AboutMenuController::class, 'destroy']);
     Route::get('aboute_viewedit/{id}', [AboutMenuController::class, 'edit']);
+
+
     //   rabbi  /committee Menu
     Route::get('All-committee', [CommitteeMenuController::class, 'index'])->name('committee_index');
     Route::get('Add-committee', [CommitteeMenuController::class, 'create'])->name('addcommittee');
@@ -468,7 +474,7 @@ Route::group(['middleware' => ['auth']], function () {
 Route::get('view_aboutepage/{id}', [AboutMenuController::class, 'fontview']);
 
 Route::get('view-management-memeber', [AboutMenuController::class, 'management'])->name('MannagementMember.all');
-Route::post('store-management-member', [AboutMenController::class, 'storemannagement'])->name('MannagementMember.store');
+Route::post('store-management-member', [AboutMenuController::class, 'storemannagement'])->name('MannagementMember.store');
 Route::put('update-management-member/{id}', [AboutMenuController::class, 'manangemntupdate'])->name('MannagementMember.update');
 
 Route::get('management-member/{id}', [AboutMenuController::class, 'destroymanangemnt'])->name('MannagementMember.delete');
@@ -487,6 +493,7 @@ Route::get('/', [FrontEndController::class, 'index']);
 
 // Privacy Policy Routes
 Route::get('/all-privacy-policy', [FrontEndController::class, 'createPrivacyPolicy'])->name('privacy-policy.create');
+
 Route::put('/privacy-policy/{id}', [FrontEndController::class, 'editPrivacyPolicy'])->name('privacy-policy.edit');
 Route::post('/privacy-policy/update', [FrontEndController::class, 'updatePrivacyPolicy'])->name('privacy-policy.update');
 
@@ -646,6 +653,7 @@ Route::get('blog/edit/{id}',[BlogController::class,'edit'])->name('blog.edit');
 Route::put('blog/update/{id}',[BlogController::class,'update'])->name('blog.update');
 Route::get('blog/delete/{id}',[BlogController::class,'delete'])->name('blog.delete');
 
+Route::get('blog/show',[FrontEndController::class,'blog_show'])->name('frontend.pages.blog');
 Route::get('blog/details/{id}',[FrontEndController::class,'blog_details'])->name('blog_details');
 
 

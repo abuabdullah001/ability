@@ -22,7 +22,7 @@ class AboutMenuController extends Controller
         //    dd($viewpageedit);
         return view('frontend/pages/adoutpage/aboutindex', get_defined_vars());
     }
-    
+
 
     public function management()
     {
@@ -178,4 +178,7 @@ class AboutMenuController extends Controller
         AboutMenu::where('id', $id)->delete();
         return back();
     }
+
+
+    
 }

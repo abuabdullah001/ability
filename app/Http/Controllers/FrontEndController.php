@@ -579,6 +579,11 @@ class FrontEndController extends Controller
         return view('frontend.blog_details',compact('blog'));
     }
 
+    public Function blog_show(){
+        $blogs=Blog::all();
+        return view('frontend.pages.blog',compact('blogs'));
+    }
+
 
 
 }

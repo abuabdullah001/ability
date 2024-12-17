@@ -17,7 +17,7 @@ HOME
     }
 
     .principle h2 {
-        color: #016401;
+        color: navy;
     }
 
     .principle img {
@@ -25,7 +25,7 @@ HOME
     }
 
     .principle h3 {
-        background: #016401;
+        background: navy;
         color: #ffff;
         display: block;
         padding: 5px 0px;
@@ -210,7 +210,7 @@ flex-direction: column;
                         </div>
                         <div id="collapseOne" class="panel-collapse collapse" role="tabpanel"
                             aria-labelledby="work-process">
-                            <div class="panel-body pbody" style="border : 1px solid green ; min-height:300px;">
+                            <div class="panel-body pbody" style="border : 1px solid navy ; min-height:300px;">
                                 <em>"Embracing diversity is our guiding principle, and in our pursuit of excellence, let us not forget the extraordinary strength and resilience embodied by children with disabilities. Together, let's create an inclusive environment where every child, regardless of ability, thrives and reaches their full potential. Our commitment is unwavering—empowering every child, every step of the way."</em><br>
                                 <b>Chairman (AFDF)
                                     <br>
@@ -260,10 +260,9 @@ flex-direction: column;
                         </div>
                         <div id="collapseROne" class="panel-collapse collapse " role="tabpanel"
                             aria-labelledby="work-process">
-                            <div class="panel-body" style="border:1px solid green; min-height:316px;">
-                                <em>“We sincerely expect your active support and cooperation in our every step and
-                                    initiatives for ameliorating the status of ODMS and expanding indenting business in
-                                    the country.”</em><br><br>
+                            <div class="panel-body" style="border:1px solid #393A3C; min-height:316px;">
+                                <em>chairman message - The Organization for Disaster Management Society is devoted to saving lives, strengthening communities, and increasing disaster resilience. We think that preparation and collaboration may turn vulnerability into strength, providing at-risk groups with the resources they need to prepare and recover. Our aim is for a future in which communities thrive, ecosystems are protected, and calamities are successfully managed.
+                                    Join us in developing a resilient and inclusive future through compassion, creativity, and action.</em><br><br>
                                 <!--<b>Md. Aktaruzzaman Hero<br>-->
                                 </b>
                             </div>
@@ -312,21 +311,26 @@ margin-top: 10px;
 <section class="" style="background-color: #f0f0f0">
 <div class="container">
   <div style="margin-top:50px " class="">
-    <div class="row col-md-6">
-     <img style="width: 500px;height:400px" src="images/news/0_NXiwdgRrkGARqDkU.jpg" alt="">
+    <div class="row col-md-6" style="margin-top: 150px;">
+     <img style="width: 500px;height:400px" src="images/c83b6c16-62b3-43d3-ab6c-a88872fec5eb.jpeg" alt="">
     </div>
     <div class="row col-md-6">
       <h1> About ODMS </h1>
-      <p style="text-size:12px;color:black;text-align: justify;" class="">Disaster Forum (DF) is a Dhaka based National Disaster Preparedness Network of seventy humanitarian and development agencies,
-         research institutions, government departments and independent activists who are working on various disaster and environmental issues with special focus on preparedness.
-         Since 1994, Forum is working for ensuring the accountability of the humanitarian and development agencies and to promote the rights of all vulnerable people.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium minus inventore nam, ducimus dolor rerum? Mollitia esse omnis quidem quas. Fugiat, alias qui! Eos laudantium voluptate ea vel delectus.
+      <p style="text-size:12px;color:black;text-align: justify;" class="">About Us
+        Welcome to ODMS (Organization for Disaster Management Society) a dedicated organization committed to enhancing disaster management and resilience in coastal communities. Established in 2015, our mission is to empower at-risk populations through disaster preparedness, response, and recovery initiatives.
+        Our organization addresses the specific challenges that coastal regions face, which are frequently affected by natural disasters such as tropical cyclones, floods, environmental pollution, and sea level rise. We believe that effective disaster management starts with education and active community participation. Therefore, we collaborate with local communities to create customized strategies that not only tackle immediate dangers but also foster long-term sustainability.
+
+<hr>
+
+        At ODMS, we prioritize
+Coastal disaster resilience: developing community-based strategies to mitigate the impact of natural disasters in coastal areas. Implementing pre and post strategies and techniques to ensure the protection, safety and sustainability of vulnerable population.
+Environment and climate protection: Through innovative and smart solutions, protect the pollution and make the changes accustomed and sustainable to create the environment clean & green which ultimately impact positively to climate.
+Zero net carbon: Drawing inspiration from the visionary ideas of Nobel laureate professor Muhammad Yunus, we are devoted to achieve zero net carbon emissions through the advancement of social business model and inclusive initiatives with the aim of safeguarding a sustainable and green planet for generations to come.
+
+Join us in our mission to build safer, more resilient coastal areas & communities. Together, we can make a difference in the face of adversity. Your support is crucial to us achieve our goals and empower those who need it most.
+
       </p>
-        <ul>
-            <li>   <h4>Hospitality</h4> </li>
-            <li> <h4>Food</h4>  </li>
-              <li>  <h4>Treatment</h4></li>
-        </ul>
+
     </div>
 </div>
 </div>
@@ -364,7 +368,7 @@ $events = App\Models\Event::take(3)->get();
 @endphp
 <section class="brows-job-category">
    <div class="container" style="width: 1154px">
-       <h1 class="" style="margin-left: 240px;margin-bottom:50px;">Featured Event</h1>
+       <h1 class="" style="margin-left: 340px;margin-bottom:50px;">Featured Event</h1>
 
        <div class="ibox">
            <div class="i-body">
@@ -372,7 +376,7 @@ $events = App\Models\Event::take(3)->get();
                    <div class="col-md-12">
                        <div class="row">
                            @foreach($events as $project)
-                           <div class="col-md-3 col-sm-6 mb-4"> <!-- col-md-4 ensures 3 cards per row -->
+                           <div class="col-md-4 col-sm-6 mb-4"> <!-- col-md-4 ensures 3 cards per row -->
                                <div class="card" >
                                    <a href="{{ route('event.show', ['slug' => $project->slug]) }}">
                                        <img src="{{ asset($project->image)}}" style="width:35rem;height: 23rem;" class="card-img-top img-responsive" alt="...">
@@ -478,7 +482,7 @@ width:20px;
   </style>
 
 <!-- Slider -->
-<h1 style="color:black;margin-left:450px;" >   Current Event  </h1>
+<h1 style="color:black;margin-left:600px;" >   Current Event  </h1>
 <section class="current_background">
 
     <div class="swiper mySwiper" >
@@ -564,63 +568,7 @@ width:20px;
 
 
 
-
-
-
-{{-- yearly report --}}
-
-<style>
-        .hover-car {
-        background-color: #F0F4F5;
-        position: relative; /* To allow absolute positioning of text */
-        height: 430px;
-        width: 350px;
-        margin: 10px ;
-        margin-left: 30px;
-        overflow: hidden;
-        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth zoom & shadow */
-    }
-    .hover-car:hover {
-        transform: scale(1.05); /* Slightly enlarge the card */
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
-    }
-</style>
-
-
-<section style="background-color: rgb(255, 255, 255);">
-    <div class="container" style=" ">
-            <div class="row">
-                <h1 style="margin-left: 470px; margin-top:30px;margin-bottom:30px">Report</h1>
-                <div class="col-md-3 hover-car" style="padding: 10px">
-                    <img src="images/1732170023-01-10-8.jpg" style="height: 200px;width:100%;" alt="">
-                    <h3>Event-wise report</h3>
-                <p style="text-align: justify">
-                    Lorem ipsum dolor sit amet consecteturm, harum molestias distinctio libero, exercitationem veniam hic temporibus laboriosam quisquam aut.
-                </p>
-                    <a href="">pdf file download</a>
-                </div>
-                <div class="col-md-3 hover-car ms-2"  style="padding: 10px">
-                    <img src="images/istockphoto-122719833-612x612.jpg" style="height: 200px;width:100%;" alt="">
-                    <h3>Monthly report</h3>
-                    <p style="text-align: justify">
-                    Lorem ipsum dolor sit amet consectetur nim, harum molestias distinctio libero, exercitationem veniam hic temporibus laboriosam quisquam aut.
-                </p>
-                    <a href="">pdf file download</a>
-                </div>
-                <div class="col-md-3 hover-car "  style="padding: 10px">
-                    <img src="images/1732169911-Amphan-Effected-1.jpg" style="height: 200px;width:100%;" alt="">
-                <h3>Yearly report</h3>
-                <p style="text-align: justify">
-                    Lorem ipsum dolor sit amet consectetur o dicta, enim, harum molestias distinctio libero, exercitationem veniam hic temporibus laboriosam quisquam aut.
-                </p>
-                <a href="">pdf file download</a>
-                </div>
-        </div>
-    </div>
-</section>
-
-
-{{-- Expertt Feedback --}}
+{{-- Expertt Feedback  --}}
 
 @php
  $feedbacks=App\Models\Feedback::take(4)->get();
@@ -711,7 +659,7 @@ width:20px;
 
     @foreach ($feedbacks as $feedback)
     <div class="container">
-        <!-- Use Bootstrap's row and col-md-3 to ensure 4 cards in a row -->
+
         <div class="row">
 
             <!-- First Card -->
@@ -729,123 +677,9 @@ width:20px;
 
             @endforeach
 
-            <!-- Second Card -->
-            {{-- <div class="col-md-3">
-                <div class="hover-card">
-                    <img src="images/122.jpg" alt="Flood">
-                    <h1>John Smith</h1>
-                    <h3>CEO of Walton</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora ratione natus id adipisci aspernatur. Eum, a?
-                    </p>
-                </div>
-            </div> --}}
-
-            <!-- Third Card -->
-            {{-- <div class="col-md-3">
-                <div class="hover-card">
-                    <img src="images/124.jpg" alt="Flood">
-                    <h1>John Smith</h1>
-                    <h3>CEO of Walton</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora ratione natus id adipisci aspernatur. Eum, a?
-                    </p>
-                </div>
-            </div> --}}
-
-            <!-- Fourth Card -->
-            {{-- <div class="col-md-3">
-                <div class="hover-card">
-                    <img src="images/122.jpg" alt="Flood">
-                    <h1>John Smith</h1>
-                    <h3>CEO of Walton</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora ratione natus id adipisci aspernatur. Eum, a?
-                    </p>
-                </div>
-            </div> --}}
-
-        </div>
-    </div>
+             </div>
+   </div>
 </section>
-
-
-
-{{-- Blog --}}
-
-@php
-    $blogs=App\Models\Blog::take(3)->get();
-@endphp
-
-
-<style>
-        .hover-ca {
-        background-color: #F0F4F5;
-        position: relative; /* To allow absolute positioning of text */
-        height: 450px;
-        width: 350px;
-        margin: 10px ;
-        margin-left: 30px;
-        overflow: hidden;
-        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth zoom & shadow */
-    }
-
-    .hover-ca:hover {
-        transform: scale(1.05); /* Slightly enlarge the card */
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
-    }
-</style>
-
-
-<section style="background-color: rgb(255, 255, 255);">
-    {{-- <div class="row"> --}}
-
-        {{-- <a href="" style="float: right"><h1>Create Blog</h1></a> --}}
-    {{-- </div> --}}
-    <div class="container" style="margin-top: ;">
-        <h1 style="margin-left: 470px; margin-top:0px;margin-bottom:30px">BLOG</h1>
-        @foreach ($blogs as $blog )
-
-        <div class="col-md-3 hover-ca" style="padding: 20px">
-
-            <img src="{{ asset('images/post/' . $blog->image) }}" style="height: 200px; width: 100%;" alt="Blog Image">
-                <div class="row" style="padding: 15px">
-                <p style="float:left;">{{$blog->name}}</p>
-                <p style="float: right">{{$blog->date}}</p>
-                </div>
-                <h3>{{ Str::limit(str_replace('<p>', '', str_replace('</p>', '', $blog->title ?? 'Default Title')), 100) }}</h3>
-            <h3><a href="{{route('blog_details',$blog->id)}}">Read more...</a></h3>
-        </div>
-
-        @endforeach
-
-        {{-- <div class="col-md-3 hover-ca" style="padding: 10px">
-            <img src="images/1732170023-01-10-8.jpg" style="height: 200px;width:100%;" alt="">
-            <p style="float: right">02.032024</p>
-            <h1>Flood</h1>
-          <p style="text-align: justify">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora ratione natus id adipisci aspernatur. Eum, a? Odio dicta, enim, harum molestias distinctio libero, exercitationem veniam hic temporibus laboriosam quisquam aut.
-          </p>
-        </div> --}}
-        {{-- <div class="col-md-3 hover-ca" style="padding: 10px">
-            <img src="images/istockphoto-122719833-612x612.jpg" style="height: 200px;width:100%;" alt="">
-            <p style="float: right">02.032024</p>
-            <h1>Drought</h1>
-             <p style="text-align: justify"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora ratione natus id adipisci aspernatur. Eum, a? Odio dicta, enim, harum molestias distinctio libero, exercitationem veniam hic temporibus laboriosam quisquam aut.
-          </p>
-        </div> --}}
-
-        {{-- <div class="col-md-3 hover-ca" style="padding: 10px">
-            <img src="images/1732169911-Amphan-Effected-1.jpg" style="height: 200px;width:100%;" alt="">
-            <p style="float: right">02.032024</p>
-           <h1>Storm</h1>
-           <p style="text-align: justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora ratione natus id adipisci aspernatur. Eum, a? Odio dicta, enim, harum molestias distinctio libero, exercitationem veniam hic temporibus laboriosam quisquam aut.</p>
-        </div> --}}
-    </div>
-</section>
-
-
-
 
 
 
@@ -916,6 +750,8 @@ width:20px;
 
 
 
+
+
 {{-- all partner logo --}}
 
 <style>
@@ -929,17 +765,14 @@ width:20px;
 
     <div class="container">
         <h1 style="margin-left: 400px">Our partners</h1>
-        <div class="swiper">
+        <div class="swipers">
             <div class="swiper-wrapper">
                 <!-- Images -->
-                <div class="swiper-slide"><img src="images/apple-logo.png" alt="Apple Logo"></div>
-                <div class="swiper-slide"><img src="images/fedex.png" alt="FedEx Logo"></div>
-                <div class="swiper-slide"><img src="images/download.png" alt="Download"></div>
-                <div class="swiper-slide"><img src="images/logo.png" alt="Logo"></div>
-                <div class="swiper-slide"><img src="images/mcdonalds.jpg" alt="McDonald's"></div>
-                <div class="swiper-slide"><img src="images/download.png" alt="Download"></div>
-                <div class="swiper-slide"><img src="images/logo.png" alt="Logo"></div>
-                <div class="swiper-slide"><img src="images/mcdonalds.jpg" alt="McDonald's"></div>
+                <div class="swiper-slide"><img src="images/Picture1.png" alt="Apple Logo"></div>
+                <div class="swiper-slide"><img src="images/Picture2.png" alt="FedEx Logo"></div>
+                <div class="swiper-slide"><img src="images/Picture3.png" alt="Download"></div>
+                <div class="swiper-slide"><img src="images/Picture4.png" alt="Logo"></div>
+
             </div>
 
             <!-- Swiper navigation buttons -->
@@ -1015,59 +848,29 @@ width:20px;
 
 {{-- logo js start --}}
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
 <script>
-    var swiper = new Swiper('.swiper', {
-        slidesPerView: '4', // Ensures all images are visible together
-        spaceBetween: 10, // No space between images
-        loop: true, // Infinite looping
-        autoplay: {
-            delay: 2000, // Automatically slide every 3 seconds
-            disableOnInteraction: false,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
+    document.addEventListener('DOMContentLoaded', function () {
+        const swipers = new Swiper('.swipers', {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            loop: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false,
+            },
+        });
     });
 </script>
 
-<!-- slider script -->
-
-<script>
-  let currentSlideIndex = 0; // Start with the first slide
-
-  const slides = document.querySelectorAll('.slide');
-  const totalSlides = slides.length;
-
-  // Show the current slide
-  function showSlide(index) {
-    slides.forEach((slide, i) => {
-      slide.classList.remove('active-slide');
-      if (i === index) {
-        slide.classList.add('active-slide');
-      }
-    });
-  }
-
-  // Handle "Next Slide"
-  function nextSlide() {
-    currentSlideIndex = (currentSlideIndex + 1) % totalSlides;
-    showSlide(currentSlideIndex);
-  }
-
-  // Handle "Previous Slide"
-  function prevSlide() {
-    currentSlideIndex = (currentSlideIndex - 1 + totalSlides) % totalSlides;
-    showSlide(currentSlideIndex);
-  }
-
-  // Initial display
-  showSlide(currentSlideIndex);
-</script>
 
 {{-- logo js end --}}
 
@@ -1088,7 +891,6 @@ width:20px;
   </script>
 
 
-{{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> --}}
 @endsection
 
 

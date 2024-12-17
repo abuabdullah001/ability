@@ -38,7 +38,7 @@
         display: flex;
         gap: 25px;
         /* background-color: #ffffff; */
-        background-color:#07B107;
+        background-color:#393A3C;
         padding: 10px 20px;
         border-radius: 25px;
         list-style: none;
@@ -111,7 +111,7 @@
 }
     .btn-success {
         /* background-color: rgb(17, 183, 25); */
-        background-color: red;
+        background-color:#393A3C;
         border: none;
         padding: 10px 20px;
         border-radius: 20px;
@@ -259,7 +259,9 @@
                         <a class="dropdown-item" href="{{ '/view_committeepage/' . $committeemenu->id }}">{{ $committeemenu->title }}</a>
                     </li>
                     @endforeach
-
+                    <li>
+                    <a href="{{ route('report') }}">Report</a>
+                </li>
                 </ul>
             </li>
             <li class="nav-item has-submenu">
@@ -273,10 +275,9 @@
             <li class="nav-item has-submenu">
                 <a href="#" class="dropdown-toggle">OUR RESPONSE</a>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="{{ url('/event') }}">How we serve</a></li>
-                    <li><a class="dropdown-item" href="{{ url('/champaign') }}">Disaster Response</a></li>
-                    <li><a class="dropdown-item" href="{{ url('/project') }}">Long Term Recovery</a></li>
-                    <li><a class="dropdown-item" href="{{ url('/project') }}">Disaster</a></li>
+                    <li><a class="dropdown-item" href="">How we serve</a></li>
+                    <li><a class="dropdown-item" href="">Disaster Response</a></li>
+                    <li><a class="dropdown-item" href="">Disaster</a></li>
                 </ul>
             </li>
             <li class="nav-item has-submenu">
@@ -292,22 +293,26 @@
                     <li><a href="{{ url('/All-Gallery') }}">GALLERY</a></li>
                     <li><a href="/All-Video">VIDEO</a></li>
                     <li><a href="{{ url('/news') }}">NEWS</a></li>
+                    <li><a href="{{ route('frontend.pages.blog')}}">BLOG</a></li>
                 </ul>
             </li>
+
             <li><a href="{{ url('/Contact-Us') }}">CONTACT</a></li>
         </ul>
 
         <!-- Right Side Buttons -->
         <div class="nav-buttons ml-3">
-            <button class="btn btn-success text-white" data-toggle="modal" data-target="#searchModal">
-                <i class="fa fa-search"></i> <!-- Search icon -->
-            </button>
+
             <a href="{{ Route('sponsor_child') }}">
                 <button class="btn btn-success text-white">Sponsor</button>
             </a>
             <a href="{{ Route('donate.index') }}">
                 <button class="btn btn-success text-white">Donate us</button>
             </a>
+            <a href="{{Route('support.showForm')}}">
+                <button class="btn btn-success text-white">Support us</button>
+            </a>
+
         </div>
     </div>
 </nav>
