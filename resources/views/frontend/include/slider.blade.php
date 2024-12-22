@@ -1,9 +1,7 @@
 <style>
 /* Container for the three vertical bars (Hamburger Icon) */
 
-#myCarousel{
-    /* position: absolute; */
-}
+
 .container {
     /* position: relative; */
     cursor: pointer;
@@ -11,7 +9,7 @@
     top: 50%; /* Center vertically relative to the viewport */
     left: 20px; /* Distance from the left of the screen */
     /* transform: translateY(50%); */
-    z-index: 100;
+    z-index: 10;
 }
 
 /* The individual bars (three dots) */
@@ -46,11 +44,11 @@
 
 
 <!-- Hamburger Icon (Three Vertical Dots) -->
-<div class="container" onclick="myFunction(this)">
+{{-- <div class="container" onclick="myFunction(this)">
     <div class="bar1"></div>
     <div class="bar2"></div>
     <div class="bar3"></div>
-</div>
+</div> --}}
 
 <!-- Carousel -->
 <div id="myCarousel" class="carousel slide">
