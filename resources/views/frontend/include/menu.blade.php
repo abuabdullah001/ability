@@ -79,6 +79,10 @@
         transform: rotate(180deg);
     }
 
+    .has-submenu > a::after {
+    color: black;
+    }
+
     /* Dropdown Menu */
     .dropdown-menu {
         display: none;
@@ -107,6 +111,10 @@
         background-color: black;
     }
 
+    ul#navLink.nav-links{
+        margin-left: 40px;
+    }
+
 
 
     /* Right Side Buttons */
@@ -114,13 +122,13 @@
         display: flex;
         align-items: center;
         gap: 20px;
-        margin-top: 20px;
+        margin-top: 30px;
 
     }
 
 
     .nav-buttons {
-    z-index: 100;
+    z-index: 50;
     position: fixed;
     top: 20px; /* Adjust as needed */
     right: 20px; /* Adjust as needed */
@@ -198,7 +206,9 @@
         background-color: #ffffff;
         border-radius: 0;
         padding: 10px 20px;
-        z-index: 10; /* Ensures the menu appears above other content */
+        z-index: 10;
+        margin-right: 438px !important;
+        margin-left: 50px !important;
     }
 
     /* Show nav links when toggled */
@@ -245,11 +255,41 @@
 }
 
 
+
+.container {
+  /* display: inline-block; */
+  cursor: pointer;
+  z-index: 10;
+  /* position: fixed; */
+
+  position: relative;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  transform: translate(0, 11px) rotate(-45deg);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+  transform: translate(0, -11px) rotate(45deg);
+}
+
+
+
 </style>
 
-{{-- <li class="dots-icon">
-    <a href="#" id="dotsIcon">&#x2022;&#x2022;&#x2022;</a>
-</li> --}}
+
+
+
 
 
 <nav class="navbar">
@@ -333,13 +373,14 @@
 
         <!-- Right Side Buttons -->
         <div class="nav-buttons ml-3">
+             <a href="{{ Route('donate.index') }}">
+                <button class="btn btn-success text-white">Donate us</button>
+            </a>
 
             <a href="{{ Route('sponsor_child') }}">
                 <button class="btn btn-success text-white">Sponsor</button>
             </a>
-            <a href="{{ Route('donate.index') }}">
-                <button class="btn btn-success text-white">Donate us</button>
-            </a>
+
             <a href="{{Route('support.showForm')}}">
                 <button class="btn btn-success text-white">Support us</button>
             </a>
@@ -396,3 +437,4 @@ margin-left:250px;
         });
     });
 </script>
+

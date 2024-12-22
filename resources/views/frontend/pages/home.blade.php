@@ -6,6 +6,11 @@ HOME
 
 {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> --}}
 <style type="text/css">
+
+#accordion .panel-heading > .panel-title > a {
+    background:black;
+}
+
     .principle {
         margin-top: 50px;
         margin-bottom: 50px;
@@ -17,7 +22,7 @@ HOME
     }
 
     .principle h2 {
-        color: navy;
+        color: black;
     }
 
     .principle img {
@@ -25,7 +30,7 @@ HOME
     }
 
     .principle h3 {
-        background: navy;
+        background: black;
         color: #ffff;
         display: block;
         padding: 5px 0px;
@@ -56,7 +61,6 @@ HOME
         /* Set the maximum height if needed */
     }
 
-    /* ------------------------------------------------------ */
 
 
     .title {
@@ -188,6 +192,12 @@ flex-direction: column;
 
 <div class="clearfix "></div>
 
+
+
+
+
+
+
 @include('frontend.include.slider')
 {{-- @include('frontend\pages\about') --}}
 
@@ -210,7 +220,7 @@ flex-direction: column;
                         </div>
                         <div id="collapseOne" class="panel-collapse collapse" role="tabpanel"
                             aria-labelledby="work-process">
-                            <div class="panel-body pbody" style="border : 1px solid navy ; min-height:300px;">
+                            <div class="panel-body pbody" style="border : 1px solid black ; min-height:300px;">
                                 <em>"Embracing diversity is our guiding principle, and in our pursuit of excellence, let us not forget the extraordinary strength and resilience embodied by children with disabilities. Together, let's create an inclusive environment where every child, regardless of ability, thrives and reaches their full potential. Our commitment is unwavering—empowering every child, every step of the way."</em><br>
                                 <b>Chairman (AFDF)
                                     <br>
@@ -274,6 +284,12 @@ flex-direction: column;
     </div>
 </div>
 <style>
+    #accordion3 .panel-heading > .panel-title > a {
+    background: black;
+    }
+    #accordionR .panel-heading>.panel-title>a {
+     background: black;
+    }
     .img {
         height: 40px;
     }
@@ -304,6 +320,9 @@ margin-top: 10px;
 
 }
 </style>
+
+
+
 
 
 {{-- About odms --}}
@@ -562,7 +581,8 @@ width:20px;
 
         </div>
 
-  <h1 style="color: black">See all event</h1>
+
+        <h1 style="background-color: black;"> <a href=""> See all event </a> </h1>
 
   </section>
 
@@ -889,6 +909,8 @@ width:20px;
       loop: false, // Infinite loop for better UX
     });
   </script>
+
+
 
 
 @endsection
