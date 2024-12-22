@@ -256,33 +256,6 @@
 
 
 
-.container {
-  /* display: inline-block; */
-  cursor: pointer;
-  z-index: 10;
-  /* position: fixed; */
-
-  position: relative;
-}
-
-.bar1, .bar2, .bar3 {
-  width: 35px;
-  height: 5px;
-  background-color: #333;
-  margin: 6px 0;
-  transition: 0.4s;
-}
-
-.change .bar1 {
-  transform: translate(0, 11px) rotate(-45deg);
-}
-
-.change .bar2 {opacity: 0;}
-
-.change .bar3 {
-  transform: translate(0, -11px) rotate(45deg);
-}
-
 
 
 </style>
@@ -302,7 +275,7 @@
 
 
   </div>
-    <div class="navbar-container" style="margin-bottom:10px;">
+    <div class="navbar-container" id="topBar" style="margin-bottom:10px;">
         <!-- Logo -->
         <div class="logo" >
             <a class="navbar-brand"  href="{{ url('/') }}" style="margin: 10px; padding: 0;">
