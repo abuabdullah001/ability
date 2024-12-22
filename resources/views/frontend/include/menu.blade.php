@@ -38,10 +38,11 @@
         display: flex;
         gap: 25px;
         /* background-color: #ffffff; */
-        background-color:#393A3C;
+        background-color:white;
         padding: 10px 20px;
         border-radius: 25px;
         list-style: none;
+        margin-right: 500px;
     }
 
     .nav-links li {
@@ -51,7 +52,7 @@
     .nav-links a {
         text-decoration: none;
         /* color: #1d2a3a; */
-        color: white;
+        color: black;
         font-size: 16px;
         font-weight: 500;
         display: flex;
@@ -84,27 +85,50 @@
         position: absolute;
         padding: 2px;
         margin: 0px;
+        color: #393A3C;
+    }
+
+    .dropdown-menu .li .a{
+        color: black;
     }
 
     .nav-item:hover .dropdown-menu,
     .dropdown-menu:hover {
         display: block;
+        color: black;
     }
 
     .dropdown-item {
         display: block;
+        color: black;
     }
 
     .dropdown-item:hover {
-        background-color: #f8f9fa;
+        background-color: black;
     }
+
+
 
     /* Right Side Buttons */
     .nav-buttons {
         display: flex;
         align-items: center;
         gap: 20px;
+        margin-top: 20px;
+
     }
+
+
+    .nav-buttons {
+    z-index: 100;
+    position: fixed;
+    top: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+
+}
+
+
+
     .input-group .form-control:first-child, .input-group-addon:first-child, .input-group-btn:first-child>.btn, .input-group-btn:first-child>.btn-group>.btn, .input-group-btn:first-child>.dropdown-toggle, .input-group-btn:last-child>.btn-group:not(:last-child)>.btn, .input-group-btn:last-child>.btn:not(:last-child):not(.dropdown-toggle) {
     border-top-right-radius: -1px;
     border-bottom-right-radius: -1px;
@@ -219,7 +243,14 @@
         display: none;
     }
 }
+
+
 </style>
+
+{{-- <li class="dots-icon">
+    <a href="#" id="dotsIcon">&#x2022;&#x2022;&#x2022;</a>
+</li> --}}
+
 
 <nav class="navbar">
     @php

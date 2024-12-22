@@ -562,7 +562,7 @@ width:20px;
 
         </div>
 
-  <h1>See all event</h1>
+  <h1 style="color: black">See all event</h1>
 
   </section>
 
