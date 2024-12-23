@@ -11,16 +11,20 @@
         background-color: #f0f0f0;
     }
 
-    /* Navbar Styling */
+
+
     .navbar {
-        /* background-color: rgb(9, 19, 43); */
-        background-color:white;
+        position: relative;
+        /* min-height: 50px; */
+        margin-bottom: 0px;
+        border: 1px solid transparent;
+        background-color: #ffffff;
         padding: 30px;
     }
 
     .navbar-container {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
         align-items: center;
     }
 
@@ -31,22 +35,28 @@
         font-weight: bold;
         display: flex;
         align-items: center;
+
     }
 
-    /* Navigation Links Styling */
+
     .nav-links {
         display: flex;
         gap: 25px;
-        /* background-color: #ffffff; */
-        background-color:white;
+        /* background-color:white; */
         padding: 10px 20px;
         border-radius: 25px;
         list-style: none;
-        margin-right: 500px;
+        margin-right: 356px;
+        /* position: sticky; */
+        position: sticky;
+        top: 0;
+        z-index: 100;
+
     }
 
     .nav-links li {
         position: relative;
+
     }
 
     .nav-links a {
@@ -57,6 +67,7 @@
         font-weight: 500;
         display: flex;
         align-items: center;
+
     }
 
     .nav-links a::after {
@@ -67,7 +78,7 @@
     }
 
     /* Show arrow for items with submenus */
-    .has-submenu > a::after {
+    .has-submenu>a::after {
         content: '▼';
         /* color: rgb(29, 42, 58); */
         color: white;
@@ -75,12 +86,12 @@
     }
 
     /* Rotate arrow on hover */
-    .nav-item:hover > a::after {
+    .nav-item:hover>a::after {
         transform: rotate(180deg);
     }
 
-    .has-submenu > a::after {
-    color: black;
+    .has-submenu>a::after {
+        color: black;
     }
 
     /* Dropdown Menu */
@@ -92,7 +103,7 @@
         color: #393A3C;
     }
 
-    .dropdown-menu .li .a{
+    .dropdown-menu .li .a {
         color: black;
     }
 
@@ -111,7 +122,7 @@
         background-color: black;
     }
 
-    ul#navLink.nav-links{
+    ul#navLink.nav-links {
         margin-left: 40px;
     }
 
@@ -122,28 +133,44 @@
         display: flex;
         align-items: center;
         gap: 20px;
-        margin-top: 30px;
+        /* margin-top: 30px; */
 
     }
 
 
     .nav-buttons {
-    z-index: 50;
-    position: fixed;
-    top: 20px; /* Adjust as needed */
-    right: 20px; /* Adjust as needed */
+        z-index: 50;
+        /* position: fixed; */
+        top: 0px;
+        /* Adjust as needed */
+        right: 20px;
+        /* Adjust as needed */
 
-}
+    }
+
+    .buttonFixed {
+        position: fixed;
+        display: flex;
+        margin-left: 761px;
+        margin-top: -6px;
+    }
 
 
 
-    .input-group .form-control:first-child, .input-group-addon:first-child, .input-group-btn:first-child>.btn, .input-group-btn:first-child>.btn-group>.btn, .input-group-btn:first-child>.dropdown-toggle, .input-group-btn:last-child>.btn-group:not(:last-child)>.btn, .input-group-btn:last-child>.btn:not(:last-child):not(.dropdown-toggle) {
-    border-top-right-radius: -1px;
-    border-bottom-right-radius: -1px;
-}
+    .input-group .form-control:first-child,
+    .input-group-addon:first-child,
+    .input-group-btn:first-child>.btn,
+    .input-group-btn:first-child>.btn-group>.btn,
+    .input-group-btn:first-child>.dropdown-toggle,
+    .input-group-btn:last-child>.btn-group:not(:last-child)>.btn,
+    .input-group-btn:last-child>.btn:not(:last-child):not(.dropdown-toggle) {
+        border-top-right-radius: -1px;
+        border-bottom-right-radius: -1px;
+    }
+
     .btn-success {
         /* background-color: rgb(17, 183, 25); */
-        background-color:#393A3C;
+        background-color: #393A3C;
         border: none;
         padding: 10px 20px;
         border-radius: 20px;
@@ -174,90 +201,93 @@
     }
 
     @media (min-width: 768px) {
-    /* Show Hamburger Icon on Mobile */
-    .hamburger {
-        display: none;
 
+        /* Show Hamburger Icon on Mobile */
+        .hamburger {
+            display: none;
+
+        }
     }
-}
-@media (min-width: 768px) {
-    .navbar {
-        border-radius: 0px;
+
+    @media (min-width: 768px) {
+        .navbar {
+            border-radius: 0px;
+        }
     }
-}
+
     @media (max-width: 768px) {
-    /* Show Hamburger Icon on Mobile */
-    .hamburger {
-        display: block;
-        font-size: 24px;
-        cursor: pointer;
-        color: #ffc000;
+
+        /* Show Hamburger Icon on Mobile */
+        .hamburger {
+            display: block;
+            font-size: 24px;
+            cursor: pointer;
+            color: #ffc000;
+        }
+
+        /* Adjust the nav-links for overlay effect */
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            gap: 0;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: #ffffff;
+            border-radius: 0;
+            padding: 10px 20px;
+            z-index: 10;
+
+
+        }
+
+        /* Show nav links when toggled */
+        .nav-links.active {
+            display: flex;
+        }
+
+        /* Dropdown styling for mobile */
+        .dropdown-menu {
+            position: static;
+            background-color: #ffffff;
+        }
+
+        .nav-buttons {
+            display: none;
+        }
+
+        @media (max-width: 624px) {
+            body {
+                margin: 0px;
+            }
+
+        }
     }
 
-    /* Adjust the nav-links for overlay effect */
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        gap: 0;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: #ffffff;
-        border-radius: 0;
-        padding: 10px 20px;
-        z-index: 10;
-        margin-right: 438px !important;
-        margin-left: 50px !important;
+    .navbar {
+        position: relative;
+        /* min-height: 50px; */
+        margin-bottom: 0px;
+        border: 1px solid transparent;
     }
 
-    /* Show nav links when toggled */
-    .nav-links.active {
-        display: flex;
+    .modal .form-control {
+        height: 52px;
+        border: 1px solid #d7dfea;
+        color: #727272;
+        width: 70%;
+        font-size: 15px;
+        border-radius: 120px;
+        box-shadow: none;
+        margin-top: 50px;
     }
 
-    /* Dropdown styling for mobile */
-    .dropdown-menu {
-        position: static;
-        background-color: #ffffff;
-    }
-
-    .nav-buttons {
-        display: none;
-    }
-    @media (max-width: 624px) {
-    body {
-        margin: 0px;
-    }
-
-    }
-}
-.navbar {
-    position: relative;
-    /* min-height: 50px; */
-    margin-bottom: 0px;
-    border: 1px solid transparent;
-}
-.modal .form-control {
-    height: 52px;
-    border: 1px solid #d7dfea;
-    color: #727272;
-    width: 70%;
-    font-size: 15px;
-    border-radius: 120px;
-    box-shadow: none;
-    margin-top: 50px;
-}
-@media (min-width: 768px) {
+    @media (min-width: 768px) {
         .contact-info {
-        display: none;
+            display: none;
+        }
     }
-}
-
-
-
-
-
 </style>
 
 
@@ -267,45 +297,53 @@
 
 <nav class="navbar">
     @php
-    $footers = App\Models\contactUs::all();
+        $footers = App\Models\contactUs::all();
     @endphp
     @foreach ($footers as $footer)
-    <div class="contact-info">
-      <p class="text-white"><i class="fa-solid fa-square-phone"></i> Phone: {{ $footer->phone }}</p>
+        <div class="contact-info">
+            <p class="text-white"><i class="fa-solid fa-square-phone"></i> Phone: {{ $footer->phone }}</p>
 
 
-  </div>
-    <div class="navbar-container" id="topBar" style="margin-bottom:10px;">
-        <!-- Logo -->
-        <div class="logo" >
-            <a class="navbar-brand"  href="{{ url('/') }}" style="margin: 10px; padding: 0;">
-
-                <img style="height: 80px; " class="img-responsive" src="{{ URL::to('/') }}/images/2a6585d4-e9d0-40ef-98dd-d3afb105b76e.jpg" alt="">
-            </a>
         </div>
+        <div class="navbar-container" id="topBar">
+            <!-- Logo -->
+            <div class="logo">
+                <a class="" href="{{ url('/') }}">
 
-        @endforeach
-        <div class="hamburger" id="hamburger">&#9776;</div>
+                    <img style="height: 100px; " class="img-responsive img-fluid navbar-brand"
+                        src="{{ URL::to('/') }}/images/2a6585d4-e9d0-40ef-98dd-d3afb105b76e.jpg" alt="">
+                </a>
+            </div>
+    @endforeach
+    <div class="hamburger" id="hamburger">&#9776;</div>
+
+    {{-- donate button --}}
+    <div class="nav-buttons row">
+        {{-- donate button --}}
 
         <!-- Navigation Links -->
         <ul class="nav-links" id="navLinks">
+
+
             <li><a href="{{ url('/') }}">HOME</a></li>
             <li class="nav-item has-submenu">
                 <a href="#" class="dropdown-toggle">About Us</a>
                 <ul class="dropdown-menu">
                     @foreach (App\Models\Category::where('type', 'About')->get() as $anoutmenu)
-                    <li>
-                        <a class="dropdown-item" href="{{'/view_aboutepage/'.$anoutmenu->id}}">{{$anoutmenu->title}}</a>
-                    </li>
+                        <li>
+                            <a class="dropdown-item"
+                                href="{{ '/view_aboutepage/' . $anoutmenu->id }}">{{ $anoutmenu->title }}</a>
+                        </li>
                     @endforeach
                     @foreach (App\Models\Category::where('type', 'Committee')->get() as $committeemenu)
-                    <li>
-                        <a class="dropdown-item" href="{{ '/view_committeepage/' . $committeemenu->id }}">{{ $committeemenu->title }}</a>
-                    </li>
+                        <li>
+                            <a class="dropdown-item"
+                                href="{{ '/view_committeepage/' . $committeemenu->id }}">{{ $committeemenu->title }}</a>
+                        </li>
                     @endforeach
                     <li>
-                    <a href="{{ route('report') }}">Report</a>
-                </li>
+                        <a href="{{ route('report') }}">Report</a>
+                    </li>
                 </ul>
             </li>
             <li class="nav-item has-submenu">
@@ -337,37 +375,130 @@
                     <li><a href="{{ url('/All-Gallery') }}">GALLERY</a></li>
                     <li><a href="/All-Video">VIDEO</a></li>
                     <li><a href="{{ url('/news') }}">NEWS</a></li>
-                    <li><a href="{{ route('frontend.pages.blog')}}">BLOG</a></li>
+                    <li><a href="{{ route('frontend.pages.blog') }}">BLOG</a></li>
                 </ul>
             </li>
 
             <li><a href="{{ url('/Contact-Us') }}">CONTACT</a></li>
+
+            <div class="buttonFixed d-flex">
+
+                <a class="nav-item  ">
+                    <button class="btn btn-success text-white  " id="donateUsButton">
+                        Donate Us
+                    </button>
+                </a>
+                <li class="nav-item  ">
+                    <a href="{{ Route('sponsor_child') }}">
+                        <button class="btn btn-success text-white ">Sponsor</button>
+                    </a>
+                </li>
+                <li class="nav-item  ">
+                    <a href="{{Route('support.showForm')}}">
+                        <button class="btn btn-success text-white">Support us</button>
+                    </a>
+                </li>
+            </div>
+
+
         </ul>
 
-        <!-- Right Side Buttons -->
-        <div class="nav-buttons ml-3">
-             <a href="{{ Route('donate.index') }}">
-                <button class="btn btn-success text-white">Donate us</button>
-            </a>
 
-            <a href="{{ Route('sponsor_child') }}">
-                <button class="btn btn-success text-white">Sponsor</button>
-            </a>
 
-            <a href="{{Route('support.showForm')}}">
-                <button class="btn btn-success text-white">Support us</button>
-            </a>
+        <style>
+            .event-list {
 
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: #fff;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                padding: 10px;
+                width: 100%;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                z-index: 10;
+            }
+
+            .event-item {
+                display: flex;
+                align-items: center;
+                margin-bottom: 10px;
+            }
+
+            .event-item img {
+                width: 50px;
+                height: 50px;
+                object-fit: cover;
+                border-radius: 5px;
+                margin-right: 0px;
+            }
+
+            .event-item span {
+                font-size: 14px;
+                font-weight: 500;
+            }
+        </style>
+
+
+        @php
+            // Fetch the first 4 events
+            $events = App\Models\Event::take(4)->get();
+        @endphp
+
+        <div class="">
+            {{-- <button class="btn btn-success text-white buttonFixed" id="donateUsButton">
+                Donate Us
+            </button> --}}
+            <!-- Donate us button -->
+
+            <div id="eventList" class="event-list " style="display: flex; margin-top:0px;margin-left:00px;">
+
+                @foreach ($events as $event)
+                    <div class="event-item "
+                        style="display: flex; align-items: center; margin-bottom: 10px; width:100%;">
+                        <a href="{{ route('event.show', ['slug' => $event->slug]) }}">
+                            <img src="{{ asset($event->image) }}"
+                                style="width: 300px; height: 100px; object-fit: cover; border-radius: 5px; margin-right: 0px;"
+                                class="card-img-top img-responsive" alt="...">
+                            <div class="card-body">
+                                <h2 class="card-title">
+                                    {{ Str::limit($event->name, 30, '...') }}
+                                </h2>
+
+                            </div>
+                        </a>
+
+                    </div>
+                @endforeach
+                <div class="block">
+                <h3><a href="/event">See all event</a></h3>
+                </div>
+            </div>
+
+
+            {{-- <a href="{{ Route('sponsor_child') }}" class="">
+                <button class="btn btn-success text-white buttonFixed">Sponsor</button>
+            </a> --}}
+
+
+            {{-- <a href="{{ Route('support.showForm') }}">
+                <button class="btn btn-success text-white buttonFixed">Support us</button>
+            </a> --}}
         </div>
+    </div>
+
     </div>
 </nav>
 <style>
-    .input-group-append{
-margin-left:250px;
+    .input-group-append {
+        margin-left: 250px;
     }
 </style>
 <!-- Search Modal -->
-<div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+<div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -394,6 +525,7 @@ margin-left:250px;
 
 <script>
     $(document).ready(function() {
+
         $('#hamburger').click(function() {
             $('.nav-links').toggleClass('active');
         });
@@ -411,3 +543,33 @@ margin-left:250px;
     });
 </script>
 
+
+
+<script>
+    $(document).ready(function() {
+        const donateUsButton = $('#donateUsButton');
+        const eventList = $('#eventList');
+
+        // Show event list when hovering over the Donate Us button
+        donateUsButton.hover(
+            function() {
+                eventList.show();
+            },
+            function() {
+                // Mouse leaves button
+                // eventList.hide();
+            }
+        );
+
+        // Optional: Hide event list if mouse leaves the event list itself
+        eventList.hover(
+            function() {
+                // Mouse enters event list, do nothing
+            },
+            function() {
+                // Mouse leaves event list
+                eventList.hide();
+            }
+        );
+    });
+</script>
