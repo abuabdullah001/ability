@@ -500,91 +500,46 @@ width:20px;
    }
   </style>
 
+
+
 <!-- Slider -->
-<h1 style="color:black;margin-left:600px;" >   Current Event  </h1>
+
+<h1 style="color:black;margin-left:600px;">Current Event</h1>
+
 <section class="current_background">
-
-    <div class="swiper mySwiper" >
-
-      <div class="swiper-wrapper">
-        <!-- Slides -->
-
-        <div class="swiper-slide">
-
-            <div class="card" style="width:50%;padding:10px">
-                <img src="images/bangladesh-flooding-aerial.jpg" class="card-img-top" alt="..." style="height:300px">
-                <div class="card-body">
-                    <h1>lorem ipsum</h1>
-                  <p class="card-text text-justify-center" style="color: #222">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <button>lerarn more</button>
-                </div>
-              </div>
-    <!-- card-2 -->
-    <div class="card" style="width:50%;padding:10">
-    <img src="images/1732169911-Amphan-Effected-1.jpg" class="card-img-top" alt="..." style="height:300px">
-    <div class="card-body">
-        <h1>lorem ipsum</h1>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <button>lerarn more</button>
-    </div>
-    </div>
-            </div>
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            @foreach ($events as $event)
+            <!-- Each card becomes a slide -->
             <div class="swiper-slide">
-                <div class="card" style="width:50%;padding:10">
-                    <img src="images/1732167248-2019-09-Hurricane-Dorian-scaled.jpg" class="card-img-top" alt="..." style="height:300px">
-                    <div class="card-body">
-                        <h1>lorem ipsum</h1>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <button>lerarn more</button>
-                    </div>
+                <div class="card" style="width: 90%; padding: 10px; margin: auto;">
+                    <a href="{{ route('event.show', ['slug' => $event->slug]) }}">
+                        <img src="{{ $event->image ? asset($event->image) : asset('images/default.jpg') }}"
+                             class="card-img-top mb-2"
+                             alt="{{ $event->title }}"
+                             style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h2 class="card-title" style="color: black">
+                                {{ Str::limit($event->name, 30, '...') }}
+                            </h2>
+                        </div>
+                    </a>
                 </div>
-    <!-- card-2 -->
-    <div class="card" style="width:50%;padding:10">
-        <img src="images/bangladesh-flooding-aerial.jpg" class="card-img-top" alt="..." style="height:300px">
-        <div class="card-body">
-            <h1>lorem ipsum</h1>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <button>lerarn more</button>
-        </div>
-    </div>
             </div>
-            <div class="swiper-slide">
-                <div class="card" style="width:50%;padding:10">
-                    <img src="images/rajshahi_cold_jan10-05 (1).jpg" class="card-img-top" alt="..." style="height:300px">
-                    <div class="card-body">
-                        <h1>lorem ipsum</h1>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <button>lerarn more</button>
-                    </div>
-                </div>
-    <!-- card-2 -->
-    <div class="card" style="width:50%;padding:10">
-        <img src="images/bangladesh-flooding-aerial.jpg" class="card-img-top" alt="..." style="height:300px">
-        <div class="card-body">
-            <h1>lorem ipsum</h1>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <button>lerarn more</button>
-        </div>
-    </div>
-            </div>
-
-
+            @endforeach
         </div>
 
         <!-- Navigation buttons -->
-        <div id="nav1" class="swiper-button-next"></div>
-        <div id="nav2" class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
 
-        </div>
-    <!-- bg and the viewAll button -->
-        <div class="second_part">
-
-        </div>
-
-
-        <h1 style="background-color: black;"> <a href=""> See all event </a> </h1>
-
-  </section>
+    <!-- Background and View All Button -->
+    <hr>
+    <h1 style="background-color: black;">
+        <a href="/event" style="color: white; text-decoration: none;">See All Events</a>
+    </h1>
+</section>
 
 
 
@@ -896,20 +851,32 @@ width:20px;
 
 <!-- swiper script -->
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script>
-    var swiper = new Swiper(".mySwiper", {
-      // Enable navigation buttons
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      // Enable autoplay
+<!-- Include Swiper.js JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
-      loop: false, // Infinite loop for better UX
+
+<script>
+    const swiper = new Swiper('.mySwiper', {
+        loop: true, // Enables continuous loop mode
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        slidesPerView: 1, // Adjust to display more slides per view
+        spaceBetween: 20, // Space between slides in px
+        breakpoints: {
+            640: {
+                slidesPerView: , // Adjust for medium screens
+            },
+            1024: {
+                slidesPerView: 3, // Adjust for larger screens
+            }
+        }
     });
-  </script>
-
+        setTimeout(() => {
+        swiper.update(); // Ensure Swiper updates after rendering
+    }, 100);
+</script>
 
 
 

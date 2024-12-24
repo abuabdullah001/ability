@@ -414,7 +414,7 @@
                 left: 0;
                 background-color: #fff;
                 border: 1px solid #ddd;
-                border-radius: 8px;
+                border-radius: 0px;
                 padding: 10px;
                 width: 100%;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -448,12 +448,9 @@
         @endphp
 
         <div class="">
-            {{-- <button class="btn btn-success text-white buttonFixed" id="donateUsButton">
-                Donate Us
-            </button> --}}
-            <!-- Donate us button -->
 
-            <div id="eventList" class="event-list " style="display: flex; margin-top:0px;margin-left:00px;">
+
+      <div id="eventList" class="event-list " style="display: flex; margin-top:0px;margin-left:00px;">
 
                 @foreach ($events as $event)
                     <div class="event-item "
@@ -478,14 +475,7 @@
             </div>
 
 
-            {{-- <a href="{{ Route('sponsor_child') }}" class="">
-                <button class="btn btn-success text-white buttonFixed">Sponsor</button>
-            </a> --}}
 
-
-            {{-- <a href="{{ Route('support.showForm') }}">
-                <button class="btn btn-success text-white buttonFixed">Support us</button>
-            </a> --}}
         </div>
     </div>
 
