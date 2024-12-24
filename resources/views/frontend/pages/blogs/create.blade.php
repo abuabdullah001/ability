@@ -1,30 +1,37 @@
-{{-- @extends('admin.masterTemplate')
+@extends('frontend.masterTemp')
 
-@section('menu-name')
-Add Event
+@section('fmenuname')
+HOME
 @endsection
-@section('main-content')
+
+@section('front-main-content')
+<div class="clearfix"></div>
+
+<section>
+
 <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h5 class="m-0 text-dark">Blog</h5>
-                </div>
+                    {{-- <h5 class="m-0 text-dark">Blog</h5> --}}
+                </div><!-- /.col -->
 
-            </div>
-        </div>
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
         <hr class="style18">
     </div>
-
+    <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
             <div class="row">
 
+                <!-- /.col -->
                 <div class="col-md-1"></div>
                 <div class="col-md-10">
                     <div class="card">
-                        <div class="card-header bg-blue text-center"> ADD Blog</div>
+                        <div class="card-header bg-blue text-center"> <h1> ADD Blog </h1></div>
                         <div class="card-body">
                             <div class="tab-content">
                                 <div class="active tab-pane">
@@ -64,6 +71,7 @@ Add Event
 
                                         <div class="col-md-6 form-group">
                                             <label for="">Title</label>
+                                            {{-- <input type="text" name="title" class="form-control summernote"> --}}
                                             <textarea name="title" class="form-control summernote" id="" cols="30" rows="10"></textarea>
                                             @error('title')
                                             <div class="error text-red text-bold" style="padding: 0;">
@@ -74,6 +82,7 @@ Add Event
 
                                         <div class="col-md-6 form-group">
                                             <label for="">Description</label>
+                                            {{-- <input type="text" name="description" class="form-control summernote"> --}}
                                             <textarea name="description" id="" cols="30" class="form-control summernote" rows="10"></textarea>
                                             @error('title')
                                             <div class="error text-red text-bold" style="padding: 0;">
@@ -89,19 +98,24 @@ Add Event
                                     </form>
                                 </div>
                             </div>
+                            <!-- /.tab-pane -->
                         </div>
-                    </div>
+                        <!-- /.tab-content -->
+                    </div><!-- /.card-body -->
 
-
+                    <!-- /.col -->
                 </div>
-
-            </div>
-                </div>
+                <!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </div><!-- /.container-fluid -->
     </section>
-
+    <!-- /.content -->
 </div>
 
+</section>
+
 <script type="text/javascript" src="{{asset('editor/ckeditor.js')}}"></script>
+<!--<script src="https://cdn.ckeditor.com/ckeditor5/31.1.0/classic/ckeditor.js"></script>-->
 <script>
     var allEditors = document.querySelectorAll('.summernote');
     for (var i = 0; i < allEditors.length; ++i) {
@@ -120,4 +134,4 @@ Add Event
 
 
 @endsection
- --}}
+<!-- Content Wrapper. Contains page content -->

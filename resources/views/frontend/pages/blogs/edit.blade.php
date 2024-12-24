@@ -1,26 +1,33 @@
-{{-- @extends('admin.masterTemplate')
+@extends('frontend.masterTemp')
 
-@section('menu-name')
-Add Event
+@section('fmenuname')
+HOME
 @endsection
+
+@section('front-main-content')
+<div class="clearfix"></div>
+
+
 @section('main-content')
 <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <h5 class="m-0 text-dark">Blog</h5>
-                </div>
+                </div><!-- /.col -->
 
-            </div>
-        </div>
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
         <hr class="style18">
     </div>
-
+    <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
             <div class="row">
 
+                <!-- /.col -->
                 <div class="col-md-1"></div>
                 <div class="col-md-10">
                     <div class="card">
@@ -28,13 +35,14 @@ Add Event
                         <div class="card-body">
                             <div class="tab-content">
                                 <div class="active tab-pane">
-                                    <form class="form-horizontal" method="post"
-                                        action="{{Route('blog.store')}}" enctype="multipart/form-data">
+                                    <form class="form-horizontal" method="POST"
+                                        action="{{Route('blog.update',$blogs->id)}}" enctype="multipart/form-data">
                                         @csrf
+                                        @method('PUT')
 
                                         <div class="col-md-6 form-group">
-                                            <label for="">Name</label>
-                                            <input type="text" name="name" value="" class="form-control">
+                                            <label for="">Name*</label>
+                                            <input type="text" name="name" value="{{$blogs->name}}" class="form-control">
                                             @error('name')
                                             <div class="error text-red text-bold" style="padding: 0;">
                                                 <strong>     {{$message}}  </strong>
@@ -44,7 +52,7 @@ Add Event
 
                                         <div class="col-md-6 form-group">
                                             <label for="">Date</label>
-                                            <input type="date" name="date" class="form-control">
+                                            <input type="date" name="date" value="{{$blogs->date}}" class="form-control">
                                             @error('date')
                                             <div class="error text-red text-bold" style="padding: 0;">
                                                 <strong>     {{$message}}  </strong>
@@ -54,17 +62,20 @@ Add Event
 
                                         <div class="col-md-6 form-group">
                                             <label for="">Image</label>
-                                            <input type="file" name="image" class="form-control">
+                                            <input type="file" name="image" value="{{$blogs->image}}" class="form-control">
                                             @error('image')
                                             <div class="error text-red text-bold" style="padding: 0;">
                                                 <strong>     {{$message}}  </strong>
                                             </div>
                                             @enderror
                                         </div>
+                                        <div>
+                                            <img src="{{asset('images/post/'.$blogs->image)}}" alt="" style="height: 100px;width:100px;">
+                                        </div>
 
                                         <div class="col-md-6 form-group">
                                             <label for="">Title</label>
-                                            <textarea name="title" class="form-control summernote" id="" cols="30" rows="10"></textarea>
+                                            <textarea type="longText"  name="title"  class="summernote" id="" cols="30" rows="10">{{$blogs->title}}</textarea>
                                             @error('title')
                                             <div class="error text-red text-bold" style="padding: 0;">
                                                 <strong>     {{$message}}  </strong>
@@ -72,9 +83,10 @@ Add Event
                                             @enderror
                                         </div>
 
+
                                         <div class="col-md-6 form-group">
                                             <label for="">Description</label>
-                                            <textarea name="description" id="" cols="30" class="form-control summernote" rows="10"></textarea>
+                                            <textarea type="longText"  name="description"  class="summernote" id="" cols="30" rows="10">{{$blogs->description}}</textarea>
                                             @error('title')
                                             <div class="error text-red text-bold" style="padding: 0;">
                                                 <strong>     {{$message}}  </strong>
@@ -83,25 +95,28 @@ Add Event
                                         </div>
 
                                         <div>
-                                            <button class="btn btn-success">Submit</button>
+                                            <button class="btn btn-success">Update</button>
                                         </div>
 
                                     </form>
                                 </div>
                             </div>
+                            <!-- /.tab-pane -->
                         </div>
-                    </div>
+                        <!-- /.tab-content -->
+                    </div><!-- /.card-body -->
 
-
+                    <!-- /.col -->
                 </div>
-
-            </div>
-                </div>
+                <!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </div><!-- /.container-fluid -->
     </section>
-
+    <!-- /.content -->
 </div>
 
 <script type="text/javascript" src="{{asset('editor/ckeditor.js')}}"></script>
+<!--<script src="https://cdn.ckeditor.com/ckeditor5/31.1.0/classic/ckeditor.js"></script>-->
 <script>
     var allEditors = document.querySelectorAll('.summernote');
     for (var i = 0; i < allEditors.length; ++i) {
@@ -120,4 +135,4 @@ Add Event
 
 
 @endsection
- --}}
+<!-- Content Wrapper. Contains page content -->

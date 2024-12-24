@@ -145,10 +145,7 @@ class FrontEndController extends Controller
         $projects = Project::where('name', 'LIKE', "%{$query}%")->get();
         $champagnes = champaign::where('name', 'LIKE', "%{$query}%")->get();
         $news = News::where('name', 'LIKE', "%{$query}%")->get();
-
         return view('frontend.pages.search', get_defined_vars());
-
-
     }
 
     public function contact()

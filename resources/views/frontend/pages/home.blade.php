@@ -535,10 +535,10 @@ width:20px;
     </div>
 
     <!-- Background and View All Button -->
-    <hr>
+    <hr><button class="btn btn-success">
     <h1 style="background-color: black;">
         <a href="/event" style="color: white; text-decoration: none;">See All Events</a>
-    </h1>
+    </h1></button>
 </section>
 
 
@@ -862,11 +862,11 @@ width:20px;
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
-        slidesPerView: 1, // Adjust to display more slides per view
+        slidesPerView: 2, // Adjust to display more slides per view
         spaceBetween: 20, // Space between slides in px
         breakpoints: {
             640: {
-                slidesPerView: , // Adjust for medium screens
+                slidesPerView: 2, // Adjust for medium screens
             },
             1024: {
                 slidesPerView: 3, // Adjust for larger screens

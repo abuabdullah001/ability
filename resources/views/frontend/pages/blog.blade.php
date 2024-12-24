@@ -39,9 +39,11 @@ HOME
 
 
     <div class="container" style="margin-top: ;">
+        <div row>
         <h1 style="margin-left: 470px; margin-top:0px;margin-bottom:30px">BLOG</h1>
+        <button class="btn btn-success mb-3" style="margin-bottom:20px;margin-left:20px"><a href="{{route('blog.create')}}"> Create blog</a></button>
+        </div>
         @foreach ($blogs as $blog )
-
         <div class="col-md-3 hover-ca" style="padding: 20px">
 
             <img src="{{ asset('images/post/' . $blog->image) }}" style="height: 200px; width: 100%;" alt="Blog Image">

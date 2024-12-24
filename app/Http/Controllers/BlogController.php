@@ -9,7 +9,7 @@ class BlogController extends Controller
 {
     public function create(){
         $blogs=Blog::all();
-        return view('admin.pages.blog.create',compact('blogs'));
+        return view('frontend.pages.blogs.create',compact('blogs'));
     }
 
     public function store(Request $request){
@@ -40,7 +40,7 @@ class BlogController extends Controller
 
     public function edit($id){
         $blogs=Blog::findOrFail($id);
-        return view('admin.pages.blog.edit',compact('blogs'));
+        return view('frontend.pages.blogs.edit',compact('blogs'));
     }
 
     public function update(Request $request, $id){
