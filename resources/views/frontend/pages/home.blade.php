@@ -419,6 +419,36 @@ $events = App\Models\Event::take(3)->where('type','featured')->get();
 
 
 {{-- current and all Event --}}
+
+<style>
+    .event-item {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .event-item img {
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        max-width: 100%;
+        height: auto;
+    }
+
+    .event-item h2 {
+        margin-top: 10px;
+        font-size: 1.5em;
+        color: #333;
+    }
+
+    .event-item p {
+        color: #555;
+        font-size: 1em;
+        margin-top: 5px;
+    }
+    </style>
+
+@php
+$events = App\Models\Event::take(3)->where('type','current')->get();
+@endphp
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
 <style>
