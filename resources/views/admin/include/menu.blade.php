@@ -66,6 +66,7 @@
                         endif;
                         endforeach;
                         ?>
+
                     </ul>
                     <?php endif; ?>
                 </li>
@@ -183,6 +184,7 @@
                         <p>Profile</p>
                     </a>
                 </li>
+
                 {{-- <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-building"></i>
@@ -206,6 +208,10 @@
                         </li>
                     </ul>
                 </li> --}}
+            </ul>
+            <ul>
+                <li>red</li>
+                <p>all</p>
             </ul>
         </nav>
         @endif

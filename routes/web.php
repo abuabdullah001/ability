@@ -46,6 +46,7 @@ use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\GiftController;
 use App\Http\Controllers\IntroductionController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\OdmsController;
 use App\Http\Controllers\PhysicalgiftController;
 use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\ReportController;
@@ -57,6 +58,7 @@ use App\Http\Controllers\SslCommerzPaymentController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ServeController;
 use App\Http\Controllers\SupportController;
+
 
 
 
@@ -664,3 +666,12 @@ Route::get('feedback/index',[FeedbackController::class,'index'])->name('feedback
 Route::get('feedback/edit/{id}',[FeedbackController::class,'edit'])->name('feedback.edit');
 Route::put('feedback/update/{id}',[FeedbackController::class,'update'])->name('feedback.update');
 Route::get('feedback/delete/{id}',[FeedbackController::class,'delete'])->name('feedback.delete');
+
+
+//odms
+
+Route::get('odms/index',[OdmsController::class,'index'])->name('odms.index');
+Route::post('odms/store',[OdmsController::class,'store'])->name('odms.store');
+Route::get('odms/create',[OdmsController::class,'create'])->name('odms.create');
+
+Route::delete('odms/delete/{id}',[OdmsController::class,'delete'])->name('odms.delete');

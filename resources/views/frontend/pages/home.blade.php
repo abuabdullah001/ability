@@ -327,28 +327,23 @@ margin-top: 10px;
 
 {{-- About odms --}}
 
+@php
+    $odmss=App\Models\odms::all();
+@endphp
+
 <section class="" style="background-color: #f0f0f0">
 <div class="container">
   <div style="margin-top:50px " class="">
     <div class="row col-md-6" style="margin-top: 150px;">
-     <img style="width: 500px;height:400px" src="images/c83b6c16-62b3-43d3-ab6c-a88872fec5eb.jpeg" alt="">
+    @foreach ($odmss as $odms )
+     <img style="width: 500px;height:500px" src="{{ asset('images/post/' . $odms->image) }}" alt="">
     </div>
     <div class="row col-md-6">
-      <h1> About ODMS </h1>
-      <p style="text-size:12px;color:black;text-align: justify;" class="">About Us
-        Welcome to ODMS (Organization for Disaster Management Society) a dedicated organization committed to enhancing disaster management and resilience in coastal communities. Established in 2015, our mission is to empower at-risk populations through disaster preparedness, response, and recovery initiatives.
-        Our organization addresses the specific challenges that coastal regions face, which are frequently affected by natural disasters such as tropical cyclones, floods, environmental pollution, and sea level rise. We believe that effective disaster management starts with education and active community participation. Therefore, we collaborate with local communities to create customized strategies that not only tackle immediate dangers but also foster long-term sustainability.
-
-<hr>
-
-        At ODMS, we prioritize
-Coastal disaster resilience: developing community-based strategies to mitigate the impact of natural disasters in coastal areas. Implementing pre and post strategies and techniques to ensure the protection, safety and sustainability of vulnerable population.
-Environment and climate protection: Through innovative and smart solutions, protect the pollution and make the changes accustomed and sustainable to create the environment clean & green which ultimately impact positively to climate.
-Zero net carbon: Drawing inspiration from the visionary ideas of Nobel laureate professor Muhammad Yunus, we are devoted to achieve zero net carbon emissions through the advancement of social business model and inclusive initiatives with the aim of safeguarding a sustainable and green planet for generations to come.
-
-Join us in our mission to build safer, more resilient coastal areas & communities. Together, we can make a difference in the face of adversity. Your support is crucial to us achieve our goals and empower those who need it most.
-
-      </p>
+        {{-- <h1>{{$odms->title}}</h1> --}}
+        <h1>{!! Str::limit($odms->title, 5000) !!}</h1>
+      <p style="text-size:12px;color:black;text-align: justify;" class="">
+        {!! Str::limit( $odms->descrition, 5000) !!}   </p>
+    @endforeach
 
     </div>
 </div>
