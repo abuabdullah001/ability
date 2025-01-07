@@ -41,6 +41,7 @@ Add Event
                                                     <option value="">--None--</option>
                                                     <option value="current" {{ $event->type == 'current' ? 'selected' : '' }}>Current Event</option>
                                                     <option value="complite" {{ $event->type == 'complite' ? 'selected' : '' }}>Completed Event</option>
+                                                    <option value="complite" {{ $event->type == 'featured' ? 'selected' : '' }}>Featured Event</option>
                                                 </select>
                                                 @error('type')
                                                 <div class="error text-red text-bold" style="padding: 0;">

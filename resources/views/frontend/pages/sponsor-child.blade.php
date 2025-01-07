@@ -189,15 +189,15 @@ HOME
     <form action="{{Route('donate.store')}}" method="post" >
         @csrf
         <label for="first-name">First Name*</label>
-        <input type="text" id="first_name" name="first_name" required>
+        <input type="text" id="first_name" name="first_name" required class="form-control">
         <label for="last-name">Last Name*</label>
-        <input type="text" id="last_name" name="last_name" required>
+        <input type="text" id="last_name" name="last_name" required class="form-control">
         <label for="first-name">Email*</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" required class="form-control">
         <label for="first-name">Contact Number*</label>
-        <input type="number" id="number" name="number" required>
+        <input type="number" id="number" name="number" required class="form-control">
         <label for="first-name">Number of people You Want to sponsor*</label>
-        <select name="sponsor_number" id="sponsor_number" style="margin-bottom: 10px;border-radius: 5px;" required>
+        <select name="sponsor_number" id="sponsor_number" style="margin-bottom: 10px;border-radius: 5px;" required class="form-control">
             <option value="">--None--</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -211,7 +211,7 @@ HOME
             <option value="10">10</option>
         </select>
         <label for="first-name">Preferred Interval for needed*</label>
-        <select name="contribution_type" id="contribution_type" style="margin-bottom: 10px;border-radius: 5px;" required>
+        <select name="contribution_type" id="contribution_type" style="margin-bottom: 10px;border-radius: 5px;" required class="form-control">
             <option value="">--None--</option>
             <option value="Monthly">Monthly</option>
             <option value="Yearly">Yearly</option>

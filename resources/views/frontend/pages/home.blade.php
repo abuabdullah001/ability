@@ -340,7 +340,8 @@ margin-top: 10px;
     </div>
     <div class="row col-md-6">
         {{-- <h1>{{$odms->title}}</h1> --}}
-        <h1>{!! Str::limit($odms->title, 5000) !!}</h1>
+        <h1 style="font-size: 2em; color: black;">{!! Str::limit($odms->title, 5000) !!}</h1>
+        {{-- <h1 >{!! Str::limit($odms->title, 5000) !!}</h1> --}}
       <p style="text-size:12px;color:black;text-align: justify;" class="">
         {!! Str::limit( $odms->descrition, 5000) !!}   </p>
     @endforeach
@@ -378,7 +379,7 @@ margin-top: 10px;
     </style>
 
 @php
-$events = App\Models\Event::take(3)->get();
+$events = App\Models\Event::take(3)->where('type','featured')->get();
 @endphp
 <section class="brows-job-category">
    <div class="container" style="width: 1154px">
@@ -660,7 +661,7 @@ width:20px;
     <div class="container spidochetube" id="youtube">
         <div class="container-fluid pb-video-container">
             <div class="col-md- ">
-                <h3 class="text-center">ODMS Video</h3><br>
+                <h1 class="text-center">ODMS Video</h1><br>
                 <div id="gallery" style="">
                     <div class="container-fluid pb-video-container html5gallery" data-skin="darkness" data-width="480"
                         data-height="272">
@@ -691,7 +692,7 @@ width:20px;
                         </div>
                     </div>
 
-                    <h3 class="text-center mt-3" style="margin-top: 100px">ODMS Gallery</h3><br>
+                    <h1 class="text-center mt-3" style="margin-top: 100px">ODMS Gallery</h1><br>
                     <div class="i-box">
                         <div class="i-head">
                             <div class="i-body">
