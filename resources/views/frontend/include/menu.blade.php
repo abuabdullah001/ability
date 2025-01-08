@@ -376,12 +376,13 @@
                     <li><a href="/All-Video">VIDEO</a></li>
                     <li><a href="{{ url('/news') }}">NEWS</a></li>
                     <li><a href="{{ route('frontend.pages.blog') }}">BLOG</a></li>
+                    <li><a href="">Our Response</a></li>
                 </ul>
             </li>
 
             <li><a href="{{ url('/Contact-Us') }}">CONTACT</a></li>
 
-            <div class="buttonFixed d-flex">
+            <div class="buttonFixed d-flex" style="margin-right:20px ">
 
                 <a class="nav-item  ">
                     <button class="btn btn-success text-white  " id="donateUsButton">
@@ -393,9 +394,16 @@
                         <button class="btn btn-success text-white ">Sponsor</button>
                     </a>
                 </li>
-                <li class="nav-item  ">
+                {{-- <li class="nav-item" >
                     <a href="{{Route('support.showForm')}}">
-                        <button class="btn btn-success text-white">Support us</button>
+                        <button class="btn btn-success text-white" style="margin-right: 50px"> <span style="size: 20px">?</span> </button>
+                    </a>
+                </li> --}}
+                <li class="nav-item">
+                    <a href="{{ Route('support.showForm') }}">
+                        <button class="btn btn-success text-white" style="margin-right: 20px" data-bs-toggle="tooltip" data-bs-placement="top" title="Help" id="large-tooltip">
+                            <span style="font-size: 20px">?</span>
+                        </button>
                     </a>
                 </li>
             </div>
