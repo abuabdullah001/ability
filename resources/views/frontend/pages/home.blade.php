@@ -328,7 +328,7 @@ margin-top: 10px;
 {{-- About odms --}}
 
 @php
-    $odmss=App\Models\odms::all();
+    $odmss=App\Models\Odms::all();
 @endphp
 
 <section class="" style="background-color: #f0f0f0">
@@ -448,8 +448,7 @@ $events = App\Models\Event::take(3)->where('type','featured')->get();
 
 @php
 $events = App\Models\Event::take(3)->where('type','current')->get();
-@endphp
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+@endphp<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
 <style>
     /* Fullscreen Background */
