@@ -354,14 +354,14 @@
                     <li><a class="dropdown-item" href="{{ url('/project') }}">Projects</a></li>
                 </ul>
             </li>
-            <li class="nav-item has-submenu">
+            {{-- <li class="nav-item has-submenu">
                 <a href="#" class="dropdown-toggle">OUR RESPONSE</a>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="">How we serve</a></li>
                     <li><a class="dropdown-item" href="">Disaster Response</a></li>
                     <li><a class="dropdown-item" href="">Disaster</a></li>
                 </ul>
-            </li>
+            </li> --}}
             <li class="nav-item has-submenu">
                 <a href="#" class="dropdown-toggle">INVOLVED</a>
                 <ul class="dropdown-menu">
