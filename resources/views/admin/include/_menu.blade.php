@@ -24,10 +24,16 @@
                         <p>Users </p>
                     </a>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a href="{{ route('member-list') }}" class="nav-link">
                         <i class="nav-icon fas fa-user"></i>
                         <p>Member </p>
+                    </a>
+                </li> --}}
+                <li class="nav-item">
+                    <a href="" class="nav-link">
+                        <i class="nav-icon fas fa-user"></i>
+                        <p>jack </p>
                     </a>
                 </li>
                 <li class="nav-item">
