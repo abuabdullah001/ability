@@ -334,19 +334,17 @@ margin-top: 10px;
 <section class="" style="background-color: #f0f0f0">
 <div class="container">
   <div style="margin-top:50px " class="">
-    <div class="row col-md-6" style="margin-top: 150px;">
     @foreach ($odmss as $odms )
-     <img style="width: 500px;height:500px" src="{{ asset('images/post/' . $odms->image) }}" alt="">
+    <div class="row col-md-6" style="margin-top: 150px;">
+     <img style="width: 500px;height:400px" src="{{ asset('images/post/' . $odms->image) }}" alt="">
     </div>
-    <div class="row col-md-6">
-        {{-- <h1>{{$odms->title}}</h1> --}}
+    <div class="row col-md-6 " style="margin-top: 100px">
         <h1 style="font-size: 2em; color: black;">{!! Str::limit($odms->title, 5000) !!}</h1>
         {{-- <h1 >{!! Str::limit($odms->title, 5000) !!}</h1> --}}
       <p style="text-size:12px;color:black;text-align: justify;" class="">
         {!! Str::limit( $odms->descrition, 5000) !!}   </p>
-    @endforeach
-
     </div>
+    @endforeach
 </div>
 </div>
 </section>
