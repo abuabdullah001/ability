@@ -339,10 +339,9 @@ margin-top: 10px;
      <img style="width: 500px;height:400px" src="{{ asset('images/post/' . $odms->image) }}" alt="">
     </div>
     <div class="row col-md-6 " style="margin-top: 100px">
-        <h1 style="font-size: 2em; color: black;">{!! Str::limit($odms->title, 5000) !!}</h1>
-        {{-- <h1 >{!! Str::limit($odms->title, 5000) !!}</h1> --}}
+        <h1 style="font-size: 2em; color: black;">{!! Str::limit($odms->title, 100) !!}</h1>
       <p style="text-size:12px;color:black;text-align: justify;" class="">
-        {!! Str::limit( $odms->descrition, 5000) !!}   </p>
+        {!! Str::limit( $odms->descrition, 1200) !!}   </p>
     </div>
     @endforeach
 </div>
