@@ -8,7 +8,7 @@
 
 <section class="py-5 bg-light text-dark">
     <div class="container">
-        <h1 class="text-center fw-bold mb-4 " style="margin-bottom: 50px">ODMS: A Partner in Disaster Management</h1>
+        <h2 class="text-center fw-bold mb-4 " style="margin-bottom: 50px">ODMS: A Partner in Disaster Management</h2>
 
         <!-- Rapid Response in Crisis -->
         <div class="mb-4">
