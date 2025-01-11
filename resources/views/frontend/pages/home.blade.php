@@ -378,9 +378,8 @@ margin-top: 10px;
 $events = App\Models\Event::take(3)->where('type','featured')->get();
 @endphp
 <section class="brows-job-category">
+    <h2 class="" style="text-align:center">Featured Event</h2>
    <div class="container" style="width: 1154px">
-       <h1 class="" style="margin-left: 340px;margin-bottom:50px;">Featured Event</h1>
-
        <div class="ibox">
            <div class="i-body">
                <div class="row">
@@ -525,9 +524,10 @@ width:20px;
 
 <!-- Slider -->
 
-<h1 style="color:black;margin-left:600px;">Current Event</h1>
 
+<h2 style="color:black;margin-left:600px;">Current Event</h2>
 <section class="current_background">
+
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
             @foreach ($events as $event)
@@ -650,8 +650,8 @@ width:20px;
     }
 </style>
 
-<section>
-    <h1 class="section-title">Expert Feedback</h1>
+<section style="">
+    <h2 class="section-title " style="text-align: center">Expert Feedback</h2>
 
     @foreach ($feedbacks as $feedback)
     <div class="container">
@@ -686,7 +686,7 @@ width:20px;
     <div class="container spidochetube" id="youtube">
         <div class="container-fluid pb-video-container">
             <div class="col-md- ">
-                <h1 class="text-center">ODMS Video</h1><br>
+                <h2 class="text-center">ODMS Video</h2><br>
                 <div id="gallery" style="">
                     <div class="container-fluid pb-video-container html5gallery" data-skin="darkness" data-width="480"
                         data-height="272">
@@ -717,7 +717,7 @@ width:20px;
                         </div>
                     </div>
 
-                    <h1 class="text-center mt-3" style="margin-top: 100px">ODMS Gallery</h1><br>
+                    <h2 class="text-center mt-3" style="margin-top: 100px">ODMS Gallery</h2><br>
                     <div class="i-box">
                         <div class="i-head">
                             <div class="i-body">
@@ -760,7 +760,7 @@ width:20px;
 <section>
 
     <div class="container">
-        <h1 style="margin-left: 400px">Our partners</h1>
+        <h2 style="margin-left: 400px">Our partners</h2>
         <div class="swipers">
             <div class="swiper-wrapper">
                 <!-- Images -->
