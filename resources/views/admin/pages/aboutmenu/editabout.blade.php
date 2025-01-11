@@ -61,6 +61,16 @@ Edit About page
                                     </div>
                                 </div>
 
+                                <div class="col-md-6 form-group">
+                                    <label for="">Image</label>
+                                    <input type="file" name="image" value="{{$editpagemenu->image}}" class="form-control">
+                                    @error('image')
+                                    <div class="error text-red text-bold" style="padding: 0;">
+                                        <strong>    {{$message}}  </strong>
+                                    </div>
+                                    @enderror
+                                </div>
+
                                 <div class="form-group row">
                                     <label for="inputnumber" class="col-sm-3 col-form-label">Order No</label>
                                     <div class="col-sm-9">

@@ -26,13 +26,13 @@ ALL GALLERY IMAGES
             <!-- Info boxes -->
             <div class="row">
                 <!-- /.col -->
-                <div class="col-12 col-sm-6 col-md-12">    
+                <div class="col-12 col-sm-6 col-md-12">
                     @if(session()->has('success'))
                     <div class="alert alert-success">
                         {{ session()->get('success') }}
                     </div>
                     @endif
-                    
+
                     <div class="card">
                         <div class="card-header bg-cyan">
                             <h3 class="card-title"> <i class="fa fa-users"></i> Aboute page</h3>
@@ -45,15 +45,18 @@ ALL GALLERY IMAGES
                                         <th >SL</th>
                                         <th>Page</th>
                                         <th>Content</th>
+                                        <th>Image</th>
                                         <th style="width: 5%;">Plod</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($viewpage as $key=>$showlist)
                                     <tr>
+                                        {{-- @dd($showlist); --}}
                                         <td>{{$key + 1}}</td>
                                         <td>{{$showlist ->title}}</td>
-                                        <td>{!! $showlist ->content !!}</td>
+                                        <td>{!! $showlist->content !!}</td>
+                                        <td><img src="{{asset('/images/post'.$showlist->image)}}" alt=""></td>
                                         <td>
                                             <a href="{{'aboute_viewedit/'.$showlist->id}}" class="btn btn-ml btn-danger"><i class="fas fa-edit"></i></a>
                                             &nbsp;&nbsp;&nbsp;

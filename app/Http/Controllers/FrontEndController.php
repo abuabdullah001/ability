@@ -581,6 +581,10 @@ class FrontEndController extends Controller
         return view('frontend.pages.blog',compact('blogs'));
     }
 
+    public function response(){
+        return view('frontend.pages.response');
+    }
+
 
 
 }

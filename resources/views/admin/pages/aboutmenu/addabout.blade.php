@@ -55,13 +55,16 @@ GALLERY
                                 <div class="form-group row">
                                     <label for="inputName" class="col-sm-3 col-form-label">Page Content</label>
                                     <div class="col-sm-9">
-
                                         <textarea class="textarea" name="aboutecontent"
                                             placeholder="Place some text here"
                                             style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
                                      </textarea>
-
                                     </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="image">Image</label>
+                                    <input type="file" name="image" id="image" class="form-control">
                                 </div>
 
                                 <div class="form-group row">

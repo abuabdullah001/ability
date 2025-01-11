@@ -67,7 +67,7 @@ HOME
 @endphp
 
 
-<h1 style="margin-left: 500px;">See all blog</h1>
+<h1 style="text-align:center;">See all blog</h1>
 <section style="background-color: rgb(255, 255, 255);">
     <div class="container" style="margin-top: ;">
         @foreach ($blogs as $blog )

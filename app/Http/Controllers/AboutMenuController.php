@@ -113,10 +113,18 @@ class AboutMenuController extends Controller
 
     public function store(Request $request)
     {
-        // dd($request->all());
+
         $aboutMenu = new AboutMenu();
         $aboutMenu->menu = $request->menu_id;
         $aboutMenu->content = $request->aboutecontent;
+
+        $imageName='';
+        if($image=$request->file('image')){
+            $imageName=time().'-'.uniqid().'-'.$image->getClientOriginalExtension();
+            $image->move(public_path('/images/post'),$imageName);
+        }
+        $aboutMenu->image =$imageName;
+
         $aboutMenu->orderNo = $request->order_no;
         $aboutMenu->save();
         return redirect('All-Content');
@@ -158,10 +166,22 @@ class AboutMenuController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request)
+
     {
+
         $updateaboute = AboutMenu::find($request->id);
         $updateaboute->menu = $request->editmenu_id;
         $updateaboute->content = $request->aboutedit;
+
+        $imageName='';
+        if($image=$request->file('image')){
+            $imageName=time().'-'.uniqid().'-'.$image->getClientOriginalExtension();
+            $image->move(public_path('/images/post'),$imageName);
+        }else{
+         $updateaboute->image=$imageName;
+        }
+        $updateaboute->image =$imageName;
+
         $updateaboute->orderNo = $request->order_no;
         $updateaboute->save();
         return back();
@@ -179,6 +199,9 @@ class AboutMenuController extends Controller
         return back();
     }
 
-
     
+
+
+
+
 }

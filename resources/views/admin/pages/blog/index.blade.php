@@ -66,7 +66,7 @@ ALL Training
 
                                         <td>{{ $value->name }}</td>
                                         <td>{{ $value->date }}</td>
-                                        <td><img src="{{asset('images/post'.$value->image)}}" alt=""></td>
+                                        <td><img src="{{asset('/images/post'.$value->image)}}" alt=""></td>
                                         <td>{!! Str::limit($value->title, 5000) !!}</td>
                                         <td>{!! Str::limit($value->description, 5000) !!}</td>
 

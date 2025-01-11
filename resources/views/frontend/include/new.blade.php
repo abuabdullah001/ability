@@ -259,10 +259,10 @@
                                     @foreach (App\Models\Category::where('type', 'About')->get() as $anoutmenu)
                                     <li>
                                         <a class="dropdown-item" href="{{'/view_aboutepage/'.$anoutmenu->id}}">{{$anoutmenu->title}}</a>
-                </li>
-                @endforeach
-            </ul>
-        </div>
+                                            </li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
                             <div class="col-sm-6">
                                 <ul class="multi-column-dropdown">
                                     @foreach (App\Models\Category::where('type', 'Committee')->get() as $committeemenu)
@@ -291,7 +291,7 @@
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">INVOLVED </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-      
+
                         <li><a class="dropdown-item" href="{{ url('/volunteer') }}">Join as Volunteer</a></li>
                         <li><a class="dropdown-item" href="{{ url('/signin') }}">Join as Donor</a></li>
                     </ul>

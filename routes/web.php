@@ -58,10 +58,7 @@ use App\Http\Controllers\SslCommerzPaymentController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ServeController;
 use App\Http\Controllers\SupportController;
-
-
-
-
+use SebastianBergmann\Environment\Runtime;
 
 Route::get('/report', function () {
     return view('frontend.pages.report');
@@ -337,6 +334,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('aboute_viewdelete/{id}', [AboutMenuController::class, 'destroy']);
     Route::get('aboute_viewedit/{id}', [AboutMenuController::class, 'edit']);
 
+    // Route::get('about/response',[AboutMenuController::class,'response'])->name('aboutresponse');
+
 
     //   rabbi  /committee Menu
     Route::get('All-committee', [CommitteeMenuController::class, 'index'])->name('committee_index');
@@ -490,8 +489,11 @@ Route::get('/jobView/{media}', [FrontEndController::class, 'jobView'])->name('jo
 Route::post('seekerlogin', [FrontEndController::class, 'seekerlogin'])->name('seekerlogin');
 Route::post('applicationStore', [ApplyController::class, 'applicationStore'])->name('applicationStore');
 Route::post('/store/donate', [DonateController::class, 'store'])->name('donate.store');
-
 Route::get('/', [FrontEndController::class, 'index']);
+
+Route::get('/response',[FrontEndController::class,'response'])->name('frontend.pages.response');
+
+
 
 // Privacy Policy Routes
 Route::get('/all-privacy-policy', [FrontEndController::class, 'createPrivacyPolicy'])->name('privacy-policy.create');
@@ -675,3 +677,8 @@ Route::post('odms/store',[OdmsController::class,'store'])->name('odms.store');
 Route::get('odms/create',[OdmsController::class,'create'])->name('odms.create');
 
 Route::delete('odms/delete/{id}',[OdmsController::class,'delete'])->name('odms.delete');
+
+
+//response
+
+

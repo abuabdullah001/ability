@@ -354,14 +354,7 @@
                     <li><a class="dropdown-item" href="{{ url('/project') }}">Projects</a></li>
                 </ul>
             </li>
-            {{-- <li class="nav-item has-submenu">
-                <a href="#" class="dropdown-toggle">OUR RESPONSE</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="">How we serve</a></li>
-                    <li><a class="dropdown-item" href="">Disaster Response</a></li>
-                    <li><a class="dropdown-item" href="">Disaster</a></li>
-                </ul>
-            </li> --}}
+
             <li class="nav-item has-submenu">
                 <a href="#" class="dropdown-toggle">INVOLVED</a>
                 <ul class="dropdown-menu">
@@ -375,8 +368,8 @@
                     <li><a href="{{ url('/All-Gallery') }}">GALLERY</a></li>
                     <li><a href="/All-Video">VIDEO</a></li>
                     <li><a href="{{ url('/news') }}">NEWS</a></li>
-                    <li><a href="{{ route('frontend.pages.blog') }}">BLOG</a></li>
-                    <li><a href="">Our Response</a></li>
+                    <li><a href="{{ route('frontend.pages.blog') }}">   BLOG</a></li>
+                    <li><a href="/response">  Our Response</a></li>
                 </ul>
             </li>
 
