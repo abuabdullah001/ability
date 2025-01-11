@@ -764,10 +764,10 @@ width:20px;
         <div class="swipers">
             <div class="swiper-wrapper">
                 <!-- Images -->
-                <div class="swiper-slide"><img src="images/Picture1.png" alt="Apple Logo"></div>
-                <div class="swiper-slide"><img src="images/Picture2.png" alt="FedEx Logo"></div>
-                <div class="swiper-slide"><img src="images/Picture3.png" alt="Download"></div>
-                <div class="swiper-slide"><img src="images/Picture4.png" alt="Logo"></div>
+                <div class="swiper-slide"><img src="images/Picture1.png" alt="Apple Logo" style="height: 100px"></div>
+                <div class="swiper-slide"><img src="images/Picture2.png" alt="FedEx Logo" style="height: 100px"></div>
+                <div class="swiper-slide"><img src="images/Picture3.png" alt="Download" style="height: 100px"></div>
+                <div class="swiper-slide"><img src="images/Picture4.png" alt="Logo" style="height: 100px"></div>
 
             </div>
 
