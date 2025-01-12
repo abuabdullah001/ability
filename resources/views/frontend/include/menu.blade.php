@@ -375,31 +375,26 @@
 
             <li><a href="{{ url('/Contact-Us') }}">CONTACT</a></li>
 
-            <div class="buttonFixed d-flex" style="margin-right:20px ">
+                            <div class="buttonFixed d-flex" style="margin-right:20px ">
 
-                <a class="nav-item  ">
-                    <button class="btn btn-success text-white  " id="donateUsButton">
-                        Donate Us
-                    </button>
-                </a>
-                <li class="nav-item  ">
-                    <a href="{{ Route('sponsor_child') }}">
-                        <button class="btn btn-success text-white ">Sponsor</button>
-                    </a>
-                </li>
-                {{-- <li class="nav-item" >
-                    <a href="{{Route('support.showForm')}}">
-                        <button class="btn btn-success text-white" style="margin-right: 50px"> <span style="size: 20px">?</span> </button>
-                    </a>
-                </li> --}}
-                <li class="nav-item">
-                    <a href="{{ Route('support.showForm') }}">
-                        <button class="btn btn-success text-white" style="margin-right: 20px" data-bs-toggle="tooltip" data-bs-placement="top" title="Help" id="large-tooltip">
-                            <span style="font-size: 20px">?</span>
-                        </button>
-                    </a>
-                </li>
-            </div>
+                                <a class="nav-item  ">
+                                    <button class="btn btn-success text-white  " id="donateUsButton">
+                                        Donate Us
+                                    </button>
+                                </a>
+                                <li class="nav-item  ">
+                                    <a href="{{ Route('sponsor_child') }}">
+                                        <button class="btn btn-success text-white ">Sponsor</button>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ Route('support.showForm') }}">
+                                        <button class="btn btn-success text-white text-bold" style="margin-right: 20px" data-bs-toggle="tooltip"   data-bs-placement="top" title="For Any kind of help" id="large-tooltip">
+                                            <span style="font-size: 20px">?</span>
+                                        </button>
+                                    </a>
+                                </li>
+                            </div>
 
 
         </ul>
@@ -564,3 +559,6 @@
         );
     });
 </script>
+
+
+

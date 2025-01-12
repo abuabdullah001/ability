@@ -86,7 +86,7 @@ HOME
         margin: 100px auto 71px auto;
         padding: 20px;
         text-align: center;
-        background: black; /* Red to Blue gradient */
+        background:white; /* Red to Blue gradient */
         border-radius: 10px; /* Optional: to add rounded corners */
     }
 
@@ -99,7 +99,7 @@ HOME
 
     .sponsorship-form label {
         font-weight: bold;
-        color: white; /* Text color for labels */
+        color: black; /* Text color for labels */
     }
 
     .sponsorship-form input,
@@ -111,7 +111,7 @@ HOME
     }
 
     .submit-button {
-        background-color: #fd0505;
+        background-color: green;
         color: white;
         border: none;
         padding: 10px;
@@ -129,8 +129,10 @@ HOME
 <!-- Hero Section -->
 <section class="hero">
     <div class="overlay">
-        <h1 style="font-weight: 600;color: #ef018d;">HELP A disaster people for THEIR FUTURE</h1>
-        <p style="color: white;text-align: center;">Within every child lies boundless potential, and education is the key to unlocking opportunities that allow this potential to flourish. By sponsoring a child, you are providing marginalized children with essential tools that will empower them to change their reality and create a better and brighter future, not only for themselves and their families but also for their communities as a whole.</p>
+        <h1 style="font-weight: 600;color: #ef018d;">Help a disaster people for their future</h1>
+        <p style="color: white;text-align: center;">Within every disaster people lies boundless potential, and education is the key to unlocking opportunities that
+            allow this potential to flourish. By sponsoring a child, you are providing marginalized children with essential tools that will empower them to change their
+            reality and create a better and brighter future, not only for themselves and their families but also for their communities as a whole.</p>
     </div>
 </section>
 
@@ -172,7 +174,7 @@ HOME
 
 <!-- Support Us Form Section -->
 <section class="sponsorship-form">
-    <h3 style="color: white;">Custom Gift Form</h3>
+    <h3 style="color: black;">Custom Gift Form</h3>
     <form action="{{ route('physicalgifts.store') }}" method="post" enctype="multipart/form-data">
         @csrf
 

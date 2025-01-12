@@ -241,7 +241,7 @@
                   @foreach ($footers as $footer)
                   <div class="">
                     <p><i class="fa-solid fa-square-phone"></i> Phone: {{ $footer->phone }}</p>
-                    <p><i class="fa-solid fa-envelope"></i> Email: <a href="mailto:info@abilityfordisabilityfund.com">{{ $footer->email }}</a></p>
+                    <p><i class="fa-solid fa-envelope"></i> Email: <a href="mailto:info@odmsfund.com">{{ $footer->email }}</a></p>
                     <p><i class="fa-solid fa-location-dot"></i> {{ $footer->address_one }} </p>
                     <p>REG NO : Demo </p>
 
@@ -261,11 +261,11 @@
                 </div>
                 <ul>
                   <li><a href="#">Home</a></li>
-                  <li><a href="#">about</a></li>
-                  <li><a href="#">services</a></li>
+                  <li><a href="#">about us</a></li>
+                  <li><a href="#">Event</a></li>
                   <li><a href="#">portfolio</a></li>
-                  <li><a href="#">Contact</a></li>
-                  <li><a href="#">About us</a></li>
+                  <li><a href="#">Project</a></li>
+                  <li><a href="#">Campaign</a></li>
                   <li><a href="#">Our Services</a></li>
                   <li><a href="#">Expert Team</a></li>
                   <li><a href="#">Contact us</a></li>
@@ -286,7 +286,7 @@
             <div style="padding-bottom:15px">
                 <a href="{{Route('physicalgifts.create')}}" class="btn btn-success btn-lg">Donate Custom Gift</a>
             </div>
-            
+
              <button class="btn btn-success text-white"  data-toggle="modal" data-target="#searchModal">
                 <i class="fa fa-search"></i> <!-- Search icon -->
             </button>

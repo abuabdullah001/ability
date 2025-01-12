@@ -220,8 +220,9 @@ flex-direction: column;
                         <div id="collapseOne" class="panel-collapse collapse" role="tabpanel"
                             aria-labelledby="work-process">
                             <div class="panel-body pbody" style="border : 1px solid black ; min-height:300px;">
-                                <em>"Embracing diversity is our guiding principle, and in our pursuit of excellence, let us not forget the extraordinary strength and resilience embodied by children with disabilities. Together, let's create an inclusive environment where every child, regardless of ability, thrives and reaches their full potential. Our commitment is unwavering—empowering every child, every step of the way."</em><br>
-                                <b>Chairman (AFDF)
+                                <em>
+                                    "chairman message - The Organization for Disaster Management Society is devoted to saving lives, strengthening communities, and increasing disaster resilience. We think that preparation and collaboration may turn vulnerability into strength, providing at-risk groups with the resources they need to prepare and recover. Our aim is for a future in which communities thrive, ecosystems are protected, and calamities
+                                     are successfully managed. Join us in developing a resilient and inclusive future through compassion, creativity, and action."
                                     <br>
                                 </b>
                             </div>
@@ -270,8 +271,8 @@ flex-direction: column;
                         <div id="collapseROne" class="panel-collapse collapse " role="tabpanel"
                             aria-labelledby="work-process">
                             <div class="panel-body" style="border:1px solid #393A3C; min-height:316px;">
-                                <em>chairman message - The Organization for Disaster Management Society is devoted to saving lives, strengthening communities, and increasing disaster resilience. We think that preparation and collaboration may turn vulnerability into strength, providing at-risk groups with the resources they need to prepare and recover. Our aim is for a future in which communities thrive, ecosystems are protected, and calamities are successfully managed.
-                                    Join us in developing a resilient and inclusive future through compassion, creativity, and action.</em><br><br>
+                                <em>CEO message - The Organization for Disaster Management Society is devoted to saving lives, strengthening communities, and increasing disaster resilience. We think that preparation and collaboration may turn vulnerability into strength, providing at-risk groups with the resources they need to prepare and recover. Our aim is for a future in which communities thrive, ecosystems are protected, and calamities
+                                    are successfully managed. Join us in developing a resilient and inclusive future through compassion, creativity, and action.</em><br><br>
                                 <!--<b>Md. Aktaruzzaman Hero<br>-->
                                 </b>
                             </div>
@@ -338,8 +339,9 @@ margin-top: 10px;
      <img style="width: 500px;height:400px" src="{{ asset('images/post/' . $odms->image) }}" alt="">
     </div>
     <div class="row col-md-6 " style="margin-top: 100px">
-        <h1 style="font-size: 2em; color: black;">{!! Str::limit($odms->title, 100) !!}</h1>
-      <p style="text-size:12px;color:black;text-align: justify;" class="">
+        <h2>About ODMS</h2>
+        {{-- <h1 style="font-size: 2em; color: black;">{!! Str::limit($odms->title, 100) !!}</h1> --}}
+      <p style="text-size:12px;color:black;text-align: justify; font-family:Arial, Helvetica, sans-serif" class="">
         {!! Str::limit( $odms->descrition, 1200) !!}   </p>
     </div>
     @endforeach
@@ -378,7 +380,7 @@ margin-top: 10px;
 $events = App\Models\Event::take(3)->where('type','featured')->get();
 @endphp
 <section class="brows-job-category">
-    <h2 class="" style="text-align:center">Featured Event</h2>
+    <h2 class="" style="text-align:center;text-color:black;font-family:arial"> Featured Event </h2>
    <div class="container" style="width: 1154px">
        <div class="ibox">
            <div class="i-body">

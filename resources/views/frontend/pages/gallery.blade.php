@@ -37,13 +37,13 @@ HOME
 <div class="container">
     <div class="row" id="galleryContainer">
         @foreach($galleriImages as $gallery)
-            <div class="col-md-4 gallery-item" data-category="{{ $gallery->media_category_id }}">
+            <div class="col-md-3 gallery-item" data-category="{{ $gallery->media_category_id }}">
                 <div class="card mb-4">
                     <div class="card-body">
                         <h3>{{ $gallery->mediaCategory->name ?? '' }}</h3>
                              <img src="{{ asset('/uploads/gallery/' . $gallery->images) }}"
                              class="img-thumbnail"
-                             style="width: 100%; height: 300px; object-fit: cover;"
+                             style="width: 100%; height: 200px; object-fit: cover;"
                              alt="{{ $gallery->mediaCategory->name ?? 'Gallery Image' }}">
                     </div>
                 </div>

@@ -12,7 +12,8 @@
 
         .donation-section {
             display: flex;
-            background: linear-gradient(rgb(31, 67, 149), rgb(239, 49, 158)); /* Gradient background */
+            /* background: linear-gradient(rgb(31, 67, 149), rgb(239, 49, 158)); */
+            background: white;
             border-radius: 10px;
             padding: 20px;
             max-width: 1000px;
@@ -43,7 +44,7 @@
         .donation-options h2 {
             font-size: 1.8em;
             margin-bottom: 20px;
-            color: #ffffff;
+            color:black;
         }
 
         .form-group {
@@ -52,14 +53,14 @@
         }
 
         .form-group label {
-            color: white; /* Label color */
+            color: black; /* Label color */
             display: block; /* Make labels block for better spacing */
             margin-bottom: 8px; /* Space between label and input */
         }
 
         .donate-btn {
-            background: linear-gradient(rgb(31, 67, 149), rgb(31, 67, 149)); /* Gradient for the button */
-            color: #fff; /* Text color for better contrast */
+            /* background: linear-gradient(rgb(31, 67, 149), rgb(31, 67, 149));  */
+            color: black; /* Text color for better contrast */
             padding: 15px 30px;
             border: none;
             border-radius: 30px; /* Rounded corners for buttons */
@@ -105,7 +106,7 @@
         }
 
         .donate-btn:hover {
-            background: linear-gradient(135deg, rgb(239, 49, 158), rgb(31, 67, 149)); /* Reverse gradient on hover */
+            background: linear-gradient(135deg, rgb(239, 49, 158), rgb(31, 67, 149));
         }
     </style>
 
@@ -115,7 +116,7 @@
             <img src="{{ asset('child-imag.jpg') }}" alt="Smiling Child">
         </div>
         <div class="donation-options">
-            <h2 class="text-uppercase">Contribute any amount to support the well-being of children and youth with disabilities</h2>
+            <h2 class="text-uppercase">Contribute any amount to support the well-being of disaster people</h2>
 
             <form action="{{ route('pay') }}" method="POST">
                 @csrf <!-- CSRF token for security -->

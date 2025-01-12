@@ -115,26 +115,32 @@
                         </div>
                     </form>
 
+                    <style>
+                        button.btn.btn-success{
+                            margin-bottom: 20px;
+                        }
+                    </style>
+
                     <form action="{{ route('eventAmount.store') }}" method="POST">
 
                         @csrf
 
                         <div id="registered" class="col-md-6" style="display: none;">
-                            <h3>With Registration</h3>
+                            <h3>Without Registration</h3>
                             <div class="form-group mb-3">
                                 <input type="number" id="paid_amount" name="paid_amount" class="form-control">
 
                                 <label for="paid_amount_reg" class="form-label">Paid Amount</label>
                             </div>
-                            <button class="btn btn-success">Donate</button>
+                            <button class="btn btn-success mt-3 mb-3">Donate</button>
                         </div>
                     </div>
                 </form>
 
                 <!-- Section for Registered Users -->
-                <button id="btn-registered" class="btn btn-primary mt-4">Donate With Registration </button>
+                <button id="btn-registered" class="btn btn-primary mt-4">Donate Without Registration </button>
 
-                <button id="btn-non-registered" class="btn btn-primary mt-4">Donate Without Registration </button>
+                <button id="btn-non-registered" class="btn btn-primary mt-4">Donate With Registration </button>
 
                 {{-- registration --}}
 

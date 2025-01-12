@@ -26,7 +26,7 @@ if (!function_exists('imageupload')) {
 
     function sendEmail( $from , $messageBody, $name,$phone)
     {
-        $to = 'info@abilityfordisabilityfund.com';
+        $to = 'info@odmsfund.com';
         $notification = "Notification from " . $name;
 
 

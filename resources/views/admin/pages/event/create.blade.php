@@ -40,7 +40,7 @@ Add Event
                                                 <select name="type" id="type" style="margin-bottom: 10px;border-radius: 5px;" class="form-control">
                                                     <option value="">--None--</option>
                                                     <option value="current">Current Event</option>
-                                                    <option value="complite">Compited Event</option>
+                                                    <option value="complite">Complited Event</option>
                                                     <option value="featured">Featured Event</option>
                                                 </select>
                                                 @error('type')

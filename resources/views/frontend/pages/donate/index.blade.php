@@ -202,7 +202,7 @@
             <!-- Donation Amount Section -->
             <div class="donation-content row-cols-md-4">
                 <div class="donation-header">
-                    <h2>Contribute any amount to support the well-being of children and youth with disabilities</h2>
+                    <h2>Contribute any amount to support the well-being of disaster people</h2>
                 </div>
 
                 <div class="amount-input">

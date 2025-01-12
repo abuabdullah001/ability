@@ -84,8 +84,8 @@ HOME
         margin: 100px auto 71px auto;
         padding: 20px;
         text-align: center;
-        background: black;/* Red to Blue gradient */
-        border-radius: 10px; /* Optional: to add rounded corners */
+        background: white;
+        border-radius: 10px;
     }
 
     .sponsorship-form form {
@@ -97,7 +97,7 @@ HOME
 
     .sponsorship-form label {
         font-weight: bold;
-        color: white; /* Text color for labels */
+        color: black; /* Text color for labels */
     }
 
     .sponsorship-form input,
@@ -109,7 +109,7 @@ HOME
     }
 
     .submit-button {
-        background-color: #fd0505;
+        background-color: blue;
         color: white;
         border: none;
         padding: 10px;
@@ -131,8 +131,8 @@ HOME
 <!-- Hero Section -->
 <section class="hero">
     <div class="overlay">
-        <h1 style="font-weight: 600;color: #ef018d;">HELP A disaster people for THEIR FUTURE</h1>
-        <p style="color: white;text-align: center;">Within every child lies boundless potential, and education is the key to unlocking opportunities that allow this potential to flourish. By sponsoring a child, you are providing marginalised children with essential tools that will empower them to change their reality and create a better and brighter future, not only for themselves and their families but also for their communities as a whole.</p>
+        <h1 style="font-weight: 600;color: #ef018d;">Contribute any amount to support people's in disaster affected area.</h1>
+        <p style="color: white;text-align: center;">Within every disaster people lies boundless potential, and education is the key to unlocking opportunities that allow this potential to flourish. By sponsoring disaster people, you are providing marginalised children with essential tools that will empower them to change their reality and create a better and brighter future, not only for themselves and their families but also for their communities as a whole.</p>
     </div>
 </section>
 
@@ -140,12 +140,10 @@ HOME
 <!-- Icons Section -->
 <section class="icons">
     <div class="icon-item">
-        <img src="{{asset('frontend_assets/assets/icon/coach.png')}}" alt="Teacher">
-        <p>Coach</p>
+        <img width="64" height="64" src="https://img.icons8.com/external-photo3ideastudio-solid-photo3ideastudio/64/external-flood-natural-disaster-photo3ideastudio-solid-photo3ideastudio-1.png" alt="external-flood-natural-disaster-photo3ideastudio-solid-photo3ideastudio-1"/>        <p>Flood</p>
     </div>
     <div class="icon-item">
-        <img src="{{asset('frontend_assets/assets/icon/american-football-player.png')}}" alt="Sports-Geares">
-        <p>Sports Geares</p>
+        <img width="100" height="100" src="https://img.icons8.com/carbon-copy/100/winter.png" alt="winter"/>        <p>Winter wave</p>
     </div>
     <div class="icon-item">
         <img src="{{asset('frontend_assets/assets/icon/customer-service.png')}}" alt="Disability-Support">
@@ -175,7 +173,7 @@ HOME
 
 <!-- Support Us Form Section -->
 <section class="sponsorship-form">
-    <h3 style="color: white;">Support Us Form</h3>
+    <h3 style="color: black;">Support Us Form</h3>
     <form action="{{ route('support.store') }}" method="post">
         @csrf
         <label for="name">Name*</label>
@@ -193,7 +191,7 @@ HOME
         <label for="description">Why you need support*</label>
         <textarea id="description" name="support_reason" rows="4" required></textarea>
 
-        <button type="submit" class="submit-button">Submit</button>
+        <button type="submit" class="submit-button btn-success">Submit</button>
     </form>
 </section>
 
