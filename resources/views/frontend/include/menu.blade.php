@@ -352,6 +352,7 @@
                     <li><a class="dropdown-item" href="{{ url('/event') }}">Events</a></li>
                     <li><a class="dropdown-item" href="{{ url('/champaign') }}">Campaign</a></li>
                     <li><a class="dropdown-item" href="{{ url('/project') }}">Projects</a></li>
+                    <li><a href="/response">  Our Response</a></li>
                 </ul>
             </li>
 
@@ -369,7 +370,7 @@
                     <li><a href="/All-Video">VIDEO</a></li>
                     <li><a href="{{ url('/news') }}">NEWS</a></li>
                     <li><a href="{{ route('frontend.pages.blog') }}">   BLOG</a></li>
-                    <li><a href="/response">  Our Response</a></li>
+
                 </ul>
             </li>
 
@@ -377,9 +378,9 @@
 
                             <div class="buttonFixed d-flex" style="margin-right:20px ">
 
-                                <a class="nav-item  ">
+                                    <a class="nav-item" href="{{ url('/event') }}">
                                     <button class="btn btn-success text-white  " id="donateUsButton">
-                                        Donate Us
+                                       Donate Us
                                     </button>
                                 </a>
                                 <li class="nav-item  ">
@@ -389,14 +390,12 @@
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ Route('support.showForm') }}">
-                                        <button class="btn btn-success text-white text-bold" style="margin-right: 20px" data-bs-toggle="tooltip"   data-bs-placement="top" title="For Any kind of help" id="large-tooltip">
+                                        <button class="btn btn-success text-white text-bold" style="margin-right: 20px" data-bs-toggle="tooltip"   data-bs-placement="top" title="Ask what you need" id="large-tooltip">
                                             <span style="font-size: 20px">?</span>
                                         </button>
                                     </a>
                                 </li>
                             </div>
-
-
         </ul>
 
 
@@ -557,6 +556,13 @@
                 eventList.hide();
             }
         );
+        donateUsButton.on('click', function(donate) {
+            // Prevent default behavior if needed
+            // event.preventDefault();
+            $('html, body').animate({
+                scrollTop: $('#allEvents').offset().top
+            }, 800); // Smooth scroll to the all events section
+        });
     });
 </script>
 

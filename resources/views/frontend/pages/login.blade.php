@@ -9,7 +9,7 @@ SIGN IN
       background: #dfdede;  /* fallback for old browsers */
     /* background: -webkit-linear-gradient(to right, #EC6EAD, #3494E6);  Chrome 10-25, Safari 5.1-6 */
     /* background: linear-gradient(to right, #EC6EAD, #3494E6); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
+
     }
     h4{
       font-weight: bold;
@@ -26,18 +26,18 @@ SIGN IN
         color: #495057;
         background-color: #f1f1f1;
         border-color: none;
-    
+
     }
-    
+
     .form-control:focus {
         color: #495057;
         background-color: #ffffff;
         border:1px solid #b5b6b3;
         outline: 0;
         box-shadow: none;
-    
+
     }
-    
+
     .btn{
         font-size: 14px;
     }
@@ -49,7 +49,8 @@ SIGN IN
 </style>
 <section class="inner-header-title"  style="background-image:url(https://user-images.githubusercontent.com/513929/53929982-e5497700-404c-11e9-8393-dece0b196c98.png);">
     <div class="container">
-        <h2>Login Your Account</h2>
+        <h2  style="margin-bottom: 150px;">Login Your Account</h2>
+
     </div>
 </section>
 
@@ -74,7 +75,7 @@ SIGN IN
                     <div class="alert alert-danger" style="padding: 0;">
                         <strong>{{ $message }}</strong>
                     </div>
-                    @enderror 
+                    @enderror
                 </div>
             </div>
             <div class="row" style="margin: 0 ; padding: 0">
@@ -86,7 +87,7 @@ SIGN IN
                         <strong>{{ $message }}</strong>
                     </div>
                     @enderror
-                </div> 
+                </div>
             </div>
             <div class="row" style="margin: 0 ; padding: 0">
                 <div class="col-xs-12 mrg-top-5">
@@ -109,7 +110,7 @@ SIGN IN
                 <div class="col-md-12 text-center mrg-top-25">
                     <button type="submit" class="btn btn-success">LogIn</button>
                 </div>
-                
+
             </div>
         </form>
         </div>

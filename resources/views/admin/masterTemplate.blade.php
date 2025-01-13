@@ -48,7 +48,14 @@
             transform: scale(3.5);
             /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
         }
-    </style>
+
+        h1, h2, h3, h4, h5, h6, p {
+        font-family: Arial, sans-serif !important;
+        font-style: bold;
+        }
+
+</style>
+
 </head>
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
     <div class="wrapper">

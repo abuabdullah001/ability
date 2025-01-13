@@ -61,7 +61,7 @@ DASHBOARDss
                                                 </div>
                                                 @enderror
                                             </div>
-                                        </div> 
+                                        </div>
                                         <div class="row">
                                             <div class="col-md-6 col-xs-12 col-sm-12">
                                                 <label> Email </label>
@@ -166,7 +166,7 @@ DASHBOARDss
                                                 <div class="alert alert-danger" style="padding: 0;">
                                                     <strong>{{ $message }}</strong>
                                                 </div>
-                                                @enderror 
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="row" style="margin: 0 ; padding: 0">
@@ -178,7 +178,7 @@ DASHBOARDss
                                                     <strong>{{ $message }}</strong>
                                                 </div>
                                                 @enderror
-                                            </div> 
+                                            </div>
                                         </div>
                                         {{-- <div class="row" style="margin: 0 ; padding: 0">
                                             <div class="col-xs-12 mrg-top-5">
@@ -196,12 +196,13 @@ DASHBOARDss
                                               If you have no account? <a href="{{ route('signin') }}"
                                                     class="cl-success">Create an account</a>
                                             </div>
+                                        
                                         </div>
                                         <div class="row">
                                             <div class="col-md-12 text-center mrg-top-25">
                                                 <button type="submit" class="btn btn-success">LogIn</button>
                                             </div>
-                                            
+
                                         </div>
                                     </form>
                                 </div>

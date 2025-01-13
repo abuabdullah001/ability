@@ -243,7 +243,7 @@
                     <p><i class="fa-solid fa-square-phone"></i> Phone: {{ $footer->phone }}</p>
                     <p><i class="fa-solid fa-envelope"></i> Email: <a href="mailto:info@odmsfund.com">{{ $footer->email }}</a></p>
                     <p><i class="fa-solid fa-location-dot"></i> {{ $footer->address_one }} </p>
-                    <p>REG NO : Demo </p>
+                    {{-- <p>REG NO : Demo </p> --}}
 
                 </div>
                   @endforeach

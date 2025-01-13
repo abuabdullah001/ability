@@ -221,8 +221,13 @@ flex-direction: column;
                             aria-labelledby="work-process">
                             <div class="panel-body pbody" style="border : 1px solid black ; min-height:300px;">
                                 <em>
-                                    "chairman message - The Organization for Disaster Management Society is devoted to saving lives, strengthening communities, and increasing disaster resilience. We think that preparation and collaboration may turn vulnerability into strength, providing at-risk groups with the resources they need to prepare and recover. Our aim is for a future in which communities thrive, ecosystems are protected, and calamities
-                                     are successfully managed. Join us in developing a resilient and inclusive future through compassion, creativity, and action."
+                                    "chairman message - Welcome to The Organization of Disaster Management Society (ODMS). Since its establishment in 2015, ODMS gained high popularity as a dedicated organization committed to enhance disaster management and resilience in coastal communities. It has proved dedication empowering at-risk populations through disaster preparedness, response, and recovery initiatives. From the very beginning ODMS is hardly trying to promote sustainability and build resilience against disasters. The major ODMS events, such as disaster risk reduction programs, poster presentations, and sessions on planetary science in collaboration with esteemed government and non-government institutions. Through workshops, seminars, and awareness campaigns, the ODMS raises awareness and disseminates knowledge on coastal and urban resilience.
+                                    Bangladesh is susceptible to a variety of disasters including cyclones, earthquakes, droughts, storm-surge and flooding. Bangladesh is also vulnerable to climate change due to its location in South Asia. Climate change is a growing concern for Bangladesh because 90 percent of the country is approximately 10 feet above sea level. By 2050, approximately 20 percent of the inhabited land in Bangladesh will be inundated by the sea resulting in displacement for nearly 20 million people.
+                                    As we move into an uncertain future of stronger and more frequent disasters, government and non-government organization coordination prior to a disaster along with strengthening local capacity for disaster risk reduction and swift recovery have become ever more important. Therefore, the ultimate goal of ODMS is to create safer, more secure, peaceful, and healthy communities throughout the country. To achieve this goal, we must strengthen our partnerships with other government and non-government organizations on natural disaster risk reduction from local, regional and global perspective. We hope you will support ODMS in the pursuit of these goals and that you will join us in promoting disaster reduction efforts in communities around the world.
+                                    We invite you to explore our website and discover the diverse opportunities available within the Organization of Disaster Management Society. Together, let us embark on a journey toward a safer and more resilient future.
+                                    Warm regards,
+                                    M. Shafiqul Islam, PhD
+                                    "
                                     <br>
                                 </b>
                             </div>
@@ -472,6 +477,8 @@ $events = App\Models\Event::take(3)->where('type','current')->get();
       background-position: center;
       filter: blur(4px);
       z-index: 1;
+      margin-left: 160px;
+      margin-right: 160px;
     }
 
     /* Swiper Container */
@@ -529,6 +536,7 @@ width:20px;
 
 <h2 style="color:black;margin-left:600px;">Current Event</h2>
 <section class="current_background">
+    <div class="container">
 
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
@@ -558,10 +566,11 @@ width:20px;
     </div>
 
     <!-- Background and View All Button -->
-    <hr><button class="btn btn-success">
+    {{-- <hr><button class="btn btn-success">
     <h1 style="background-color: black;">
         <a href="/event" style="color: white; text-decoration: none;">See All Events</a>
-    </h1></button>
+    </h1></button> --}}
+</div>
 </section>
 
 

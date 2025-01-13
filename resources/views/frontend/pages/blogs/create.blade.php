@@ -71,7 +71,6 @@ HOME
 
                                         <div class="col-md-6 form-group">
                                             <label for="">Title</label>
-                                            {{-- <input type="text" name="title" class="form-control summernote"> --}}
                                             <textarea name="title" class="form-control summernote" id="" cols="30" rows="10"></textarea>
                                             @error('title')
                                             <div class="error text-red text-bold" style="padding: 0;">

@@ -223,19 +223,61 @@
                 @php
                 $datas = App\Models\Gift::all();
                 @endphp
-                <div class="gift-items">
+                {{-- <div class="gift-items">
                     @foreach ($datas as $item)
                         <div class="gift-item" data-price="{{ $item->price }}">
                             <img src="{{ asset($item->image) }}" height="50px" alt="Gift Item">
                             <p>{{ $item->name }} </p>
                             <p>({{ $item->price }} BDT)</p>
                             <div class="quantity-control">
+                                <p>Quantity:</p>
                                 <input type="number" name="gift_{{ $item->name }}" min="0" value="{{ $item->quanity }}" class="gift-quantity" style="width: 75px; text-align: center;">
                             </div>
                             <span class="checkmark">✔</span> <!-- Checkmark for selection -->
                         </div>
                     @endforeach
-                </div>
+                </div> --}}
+                <style>
+  .checkmark {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 20px;
+    color: #ccc; /* Default deselected state */
+    margin-left: 10px;
+    user-select: none;
+    transition: color 0.3s ease;
+}
+
+.checkmark.selected {
+    color: green; /* Selected state */
+    font-weight: bold;
+}
+
+
+                </style>
+
+<div class="gift-items">
+    @foreach ($datas as $item)
+        <div class="gift-item" data-price="{{ $item->price }}">
+            <img src="{{ asset($item->image) }}" height="50px" alt="Gift Item">
+            <p>{{ $item->name }}</p>
+            <p>(Single Price:{{ $item->price }} BDT)</p>
+            <div class="quantity-control">
+                <p>Quantity:</p>
+                <input
+                    type="number"
+                    name="gift_{{ $item->name }}"
+                    min="0"
+                    value="{{ $item->quanity }}"
+                    class="gift-quantity"
+                    style="width: 75px; text-align: center;">
+            </div>
+            <span class="checkmark" data-selected="false">✔</span>
+        </div>
+    @endforeach
+</div>
+<p>Total Quantity: <span id="total-quantity">0</span></p>
+
 
             </div>
         </div>
@@ -248,95 +290,126 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-$(document).ready(function() {
-    let baseAmount = 0; // This will hold the base amount from the clicked button
+        $(document).ready(function() {
+            let baseAmount = 0; // This will hold the base amount from the clicked button
 
-    // Handle amount button click
-    $('.amount-btn').on('click', function() {
-        baseAmount = parseFloat($(this).data('value')) || 0; // Get the base donation amount
-        $('#donationAmount').val(baseAmount.toFixed(2)); // Set the donation amount input field
-        $('.amount-btn').removeClass('active'); // Remove active class from all buttons
-        $(this).addClass('active'); // Add active class to the clicked button
-        updateTotalDonation(); // Update the total donation amount based on the new base amount
-    });
+            // Handle amount button click
+            $('.amount-btn').on('click', function() {
+                baseAmount = parseFloat($(this).data('value')) || 0; // Get the base donation amount
+                $('#donationAmount').val(baseAmount.toFixed(2)); // Set the donation amount input field
+                $('.amount-btn').removeClass('active'); // Remove active class from all buttons
+                $(this).addClass('active'); // Add active class to the clicked button
+                updateTotalDonation(); // Update the total donation amount based on the new base amount
+            });
 
-    // Function to update the total donation amount
-    function updateTotalDonation() {
-        let totalAmount = baseAmount; // Start with the base amount
+            // Function to update the total donation amount
+            function updateTotalDonation() {
+                let totalAmount = baseAmount; // Start with the base amount
 
-        // Loop through each selected gift item to add to the total
-        $('.gift-item.selected').each(function() {
-            var price = parseFloat($(this).data('price')) || 0; // Price of the selected gift item
-            var $quantityInput = $(this).find('.gift-quantity'); // Quantity input for the gift item
-            var currentQuantity = parseInt($quantityInput.val()) || 0; // Get current quantity
+                // Loop through each selected gift item to add to the total
+                $('.gift-item.selected').each(function() {
+                    var price = parseFloat($(this).data('price')) || 0; // Price of the selected gift item
+                    var $quantityInput = $(this).find('.gift-quantity'); // Quantity input for the gift item
+                    var currentQuantity = parseInt($quantityInput.val()) || 0; // Get current quantity
 
-            // Only add to total if quantity is greater than 0
-            if (currentQuantity > 0) {
-                totalAmount += price * currentQuantity; // Update totalAmount
+                    // Only add to total if quantity is greater than 0
+                    if (currentQuantity > 0) {
+                        totalAmount += price * currentQuantity; // Update totalAmount
+                    }
+                });
+
+                // Update the donation amount input
+                $('#donationAmount').val(totalAmount.toFixed(2)); // Update the input with the new total
             }
+
+            // Click event for gift items
+            $('.gift-item').on('click', function() {
+                if (!$(this).hasClass('selected')) {
+                    $(this).addClass('selected'); // Toggle selected class on click
+                }
+                updateTotalDonation(); // Update the total whenever a gift item is selected or deselected
+            });
+
+            // Change event for quantity input
+            $('.gift-quantity').on('input', function() {
+                let $this = $(this);
+                if ($this.val() === "") {
+                    $this.val(0); // Default to 0 if empty
+                }
+                updateTotalDonation(); // Update the total whenever the quantity changes
+            });
+
+            // Prevent quantity input from being changed when the item is selected
+            $('.gift-quantity').on('focus', function() {
+                let $parentGiftItem = $(this).closest('.gift-item');
+                if ($parentGiftItem.hasClass('selected')) {
+                    $(this).blur(); // Lose focus if selected, preventing input change
+                } else {
+                    $parentGiftItem.removeClass('selected'); // Deselect if quantity is clicked
+                    updateTotalDonation(); // Update the total donation
+                }
+            });
+
+            // Event handlers for increment and decrement buttons
+            $('.increment-btn').on('click', function() {
+                let $input = $(this).siblings('.gift-quantity'); // Find the associated quantity input
+                let currentVal = parseInt($input.val()) || 0; // Get the current value of the input
+                if (!$input.closest('.gift-item').hasClass('selected')) {
+                    $input.val(currentVal + 1); // Increment the value only if not selected
+                    updateTotalDonation(); // Update the total donation
+                }
+            });
+
+            $('.decrement-btn').on('click', function() {
+                let $input = $(this).siblings('.gift-quantity'); // Find the associated quantity input
+                let currentVal = parseInt($input.val()) || 0; // Get the current value of the input
+                if (currentVal > 0 && !$input.closest('.gift-item').hasClass('selected')) {
+                    $input.val(currentVal - 1); // Decrement the value if it's greater than 0 and not selected
+                    updateTotalDonation(); // Update the total donation
+                }
+            });
+
+            // Update donation amount immediately after blur to reflect accurate total
+            $('.gift-quantity').on('blur', function() {
+                updateTotalDonation(); // Recalculate the donation amount on blur
+            });
         });
+    </script>
 
-        // Update the donation amount input
-        $('#donationAmount').val(totalAmount.toFixed(2)); // Update the input with the new total
-    }
 
-    // Click event for gift items
-    $('.gift-item').on('click', function() {
-        if (!$(this).hasClass('selected')) {
-            $(this).addClass('selected'); // Toggle selected class on click
-        }
-        updateTotalDonation(); // Update the total whenever a gift item is selected or deselected
-    });
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const checkmarks = document.querySelectorAll('.checkmark');
+    const totalQuantityElement = document.getElementById('total-quantity');
 
-    // Change event for quantity input
-    $('.gift-quantity').on('input', function() {
-        let $this = $(this);
-        if ($this.val() === "") {
-            $this.val(0); // Default to 0 if empty
-        }
-        updateTotalDonation(); // Update the total whenever the quantity changes
-    });
+    let totalQuantity = 0; // Keeps track of the total quantity
 
-    // Prevent quantity input from being changed when the item is selected
-    $('.gift-quantity').on('focus', function() {
-        let $parentGiftItem = $(this).closest('.gift-item');
-        if ($parentGiftItem.hasClass('selected')) {
-            $(this).blur(); // Lose focus if selected, preventing input change
-        } else {
-            $parentGiftItem.removeClass('selected'); // Deselect if quantity is clicked
-            updateTotalDonation(); // Update the total donation
-        }
-    });
+    checkmarks.forEach(checkmark => {
+        checkmark.addEventListener('click', function () {
+            const giftItem = this.closest('.gift-item');
+            const quantityInput = giftItem.querySelector('.gift-quantity');
+            const quantity = parseInt(quantityInput.value) || 0;
 
-    // Event handlers for increment and decrement buttons
-    $('.increment-btn').on('click', function() {
-        let $input = $(this).siblings('.gift-quantity'); // Find the associated quantity input
-        let currentVal = parseInt($input.val()) || 0; // Get the current value of the input
-        if (!$input.closest('.gift-item').hasClass('selected')) {
-            $input.val(currentVal + 1); // Increment the value only if not selected
-            updateTotalDonation(); // Update the total donation
-        }
-    });
+            // Check if the current checkmark is selected
+            if (this.classList.contains('selected')) {
+                // Deselect: Remove the quantity
+                totalQuantity -= quantity;
+                this.classList.remove('selected');
+            } else {
+                // Select: Add the quantity
+                totalQuantity += quantity;
+                this.classList.add('selected');
+            }
 
-    $('.decrement-btn').on('click', function() {
-        let $input = $(this).siblings('.gift-quantity'); // Find the associated quantity input
-        let currentVal = parseInt($input.val()) || 0; // Get the current value of the input
-        if (currentVal > 0 && !$input.closest('.gift-item').hasClass('selected')) {
-            $input.val(currentVal - 1); // Decrement the value if it's greater than 0 and not selected
-            updateTotalDonation(); // Update the total donation
-        }
-    });
-
-    // Update donation amount immediately after blur to reflect accurate total
-    $('.gift-quantity').on('blur', function() {
-        updateTotalDonation(); // Recalculate the donation amount on blur
+            // Update the total quantity display
+            totalQuantityElement.textContent = totalQuantity;
+        });
     });
 });
 
-</script>
+        </script>
 
 
-    </script>
 
 
 

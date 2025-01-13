@@ -51,6 +51,7 @@
 </div>
 
 <!-- Carousel -->
+<div class="container">
 <div id="myCarousel" class="carousel slide">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -81,6 +82,7 @@
         <i class="fa-solid fa-angles-right glyphicon glyphicon-chevron-left" aria-hidden="true"></i>
         <span class="sr-only">Next</span>
     </a>
+</div>
 </div>
 
 <script>

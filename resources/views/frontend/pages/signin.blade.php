@@ -5,7 +5,8 @@ SIGN IN
 @section('front-main-content')
 <section class="inner-header-title"  style="background-image:url(https://user-images.githubusercontent.com/513929/53929982-e5497700-404c-11e9-8393-dece0b196c98.png);">
     <div class="container">
-        <h2>Create An Account</h2>
+        <h2 style="margin-bottom: 150px;">Create An Account</h2>
+
     </div>
 </section>
 <style>
