@@ -43,6 +43,7 @@ Add Donation
                                         <option value="Cold wave">Cold Wave</option>
                                         <option value="Storm">Storm</option>
                                         <option value="Flood">Flood</option>
+                                        <option value="Others">Others</option>
                                         <option value="All">All</option>
                                     </select>
                                 </div>
