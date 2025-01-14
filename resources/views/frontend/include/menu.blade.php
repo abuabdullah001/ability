@@ -347,14 +347,15 @@
                 </ul>
             </li>
             <li class="nav-item has-submenu">
-                <a href="#" class="dropdown-toggle">ACTIVITIES</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="{{ url('/event') }}">Events</a></li>
-                    <li><a class="dropdown-item" href="{{ url('/champaign') }}">Campaign</a></li>
-                    <li><a class="dropdown-item" href="{{ url('/project') }}">Projects</a></li>
-                    <li><a href="/response">  Our Response</a></li>
-                </ul>
-            </li>
+
+
+                {{-- activities --}}
+                <a class="nav-item2" id="donateUsButton23" href="{{ url('/champaign') }}">
+                     Activities
+                    </a>
+
+
+          </li>
 
             <li class="nav-item has-submenu">
                 <a href="#" class="dropdown-toggle">INVOLVED</a>
@@ -363,26 +364,25 @@
                     <li><a class="dropdown-item" href="{{ url('/signin') }}">Join as a Donor</a></li>
                 </ul>
             </li>
-            <li class="nav-item has-submenu">
-                <a href="#" class="dropdown-toggle">MEDIA</a>
-                <ul class="dropdown-menu">
-                    <li><a href="{{ url('/All-Gallery') }}">GALLERY</a></li>
-                    <li><a href="/All-Video">VIDEO</a></li>
-                    <li><a href="{{ url('/news') }}">NEWS</a></li>
-                    <li><a href="{{ route('frontend.pages.blog') }}">   BLOG</a></li>
 
-                </ul>
+            {{-- media --}}
+            <li class="nav-item has-submenu">
+
+                <a class="nav-item233" id="donateUsButton233" href="{{ url('/champaign') }}">
+                    Media
+                   </a>
+                {{-- <ul class="dropdown-menu">
+
+                </ul> --}}
             </li>
 
             <li><a href="{{ url('/Contact-Us') }}">CONTACT</a></li>
-
                             <div class="buttonFixed d-flex" style="margin-right:20px ">
-
                                     <a class="nav-item" href="{{ url('/event') }}">
-                                    <button class="btn btn-success text-white  " id="donateUsButton">
+                                    <button class="btn btn-success text-white" id="donateUsButton">
                                        Donate Us
                                     </button>
-                                </a>
+                                    </a>
                                 <li class="nav-item  ">
                                     <a href="{{ Route('sponsor_child') }}">
                                         <button class="btn btn-success text-white ">Sponsor</button>
@@ -421,6 +421,18 @@
                 align-items: center;
                 margin-bottom: 10px;
             }
+            .event-item2 {
+                display: flex;
+                justify-content:space-around;
+                align-items: center;
+                margin-bottom: 10px;
+            }
+            .event-item27 {
+                display: flex;
+                justify-content:space-around;
+                align-items: center;
+                margin-bottom: 10px;
+            }
 
             .event-item img {
                 width: 50px;
@@ -444,9 +456,8 @@
 
         <div class="">
 
-
+{{-- donate us button --}}
       <div id="eventList" class="event-list " style="display: flex; margin-top:0px;margin-left:00px;">
-
                 @foreach ($events as $event)
                     <div class="event-item "
                         style="display: flex; align-items: center; margin-bottom: 10px; width:100%;">
@@ -468,6 +479,69 @@
                 <h3><a href="/event">See all event</a></h3>
                 </div>
             </div>
+        </div>
+    </div>
+
+{{-- Acitivities --}}
+      <div id="all2222" class="event-list" style=" margin-top:0px;margin-left:00px;">
+<div class="event-item2 ">
+    <div>
+
+        <a class="dropdown-item" href="{{ url('/event') }}">
+            <img src="images/event/123.jpg" alt="" style="height: 100px;width:300px;">
+            <h3 style="text-align: center">Events</h3> </a>
+    </div>
+    <div>
+
+        <a class="dropdown-item" href="{{ url('/champaign') }}">
+            <img src="images/event/124.png" alt="" style="height: 100px;width:300px;">
+            <h3 style="text-align: center">Campaign</h3></a>
+    </div>
+    <div>
+
+        <a class="dropdown-item" href="{{ url('/project') }}">
+            <img src="images/event/125.png" alt="" style="height: 100px;width:300px;">
+            <h3 style="text-align: center">Projects</h3></a>
+    </div>
+    <div>
+
+        <a class="dropdown-item" href="/response">
+            <img src="images/event/126.png" alt="" style="height: 100px;width:300px;">
+            <h3 style="text-align: center">Our Response</h3></a>
+    </div>
+        </div>
+</div>
+
+
+
+
+{{-- Media start --}}
+    <div id="all23" class="event-list" style=" margin-top:0px;margin-left:00px;">
+            <div class="event-item27">
+                        <div>
+                            <a class="dropdown-item" href="{{ url('/All-Gallery') }}">
+                                <img src="images/event/130.jpeg" alt="" style="height: 100px;width:300px;">
+                                <h3 style="text-align: center">Gallery</h3> </a>
+                        </div>
+                        <div>
+                            <a class="dropdown-item" href="/All-Video">
+                                <img src="images/event/131.png" alt="" style="height: 100px;width:300px;">
+                                <h3 style="text-align: center">Video</h3></a>
+                        </div>
+                        <div>
+                            <a class="dropdown-item" href="{{ url('/news') }}">
+                                <img src="images/event/132.jpeg" alt="" style="height: 100px;width:300px;">
+                                <h3 style="text-align: center">News</h3></a>
+                        </div>
+                        <div>
+                            <a class="dropdown-item" href="{{ route('frontend.pages.blog') }}">
+                                <img src="images/event/133.png" alt="" style="height: 100px;width:300px;">
+                                <h3 style="text-align: center">Blog</h3></a>
+                        </div>
+            </div>
+    </div>
+
+{{--media end --}}
 
 
 
@@ -535,30 +609,93 @@
         const donateUsButton = $('#donateUsButton');
         const eventList = $('#eventList');
 
-        // Show event list when hovering over the Donate Us button
+
         donateUsButton.hover(
             function() {
                 eventList.show();
             },
             function() {
-                // Mouse leaves button
-                // eventList.hide();
+
             }
         );
-
-        // Optional: Hide event list if mouse leaves the event list itself
         eventList.hover(
             function() {
-                // Mouse enters event list, do nothing
+
             },
             function() {
-                // Mouse leaves event list
+
                 eventList.hide();
             }
         );
         donateUsButton.on('click', function(donate) {
-            // Prevent default behavior if needed
-            // event.preventDefault();
+            $('html, body').animate({
+                scrollTop: $('#allEvents').offset().top
+            }, 800); // Smooth scroll to the all events section
+        });
+    });
+</script>
+
+{{-- activities menu --}}
+<script>
+    $(document).ready(function() {
+        const donateUsButton = $('#donateUsButton23');
+        const eventList = $('#all2222');
+
+        eventList.hover(
+            function() {
+
+            },
+            function() {
+
+                eventList.hide();
+            }
+        );
+
+
+        donateUsButton.hover(
+            function() {
+                eventList.show();
+            },
+            function() {
+
+            }
+        );
+
+        donateUsButton.on('click', function(donate) {
+            $('html, body').animate({
+                scrollTop: $('#allEvents').offset().top
+            }, 800); // Smooth scroll to the all events section
+        });
+    });
+</script>
+
+{{-- media menu--}}
+<script>
+    $(document).ready(function() {
+        const donateUsButton = $('#donateUsButton233');
+        const eventList = $('#all23');
+
+        eventList.hover(
+            function() {
+
+            },
+            function() {
+
+                eventList.hide();
+            }
+        );
+
+
+        donateUsButton.hover(
+            function() {
+                eventList.show();
+            },
+            function() {
+
+            }
+        );
+
+        donateUsButton.on('click', function(donate) {
             $('html, body').animate({
                 scrollTop: $('#allEvents').offset().top
             }, 800); // Smooth scroll to the all events section
