@@ -119,7 +119,7 @@
     }
 
     .dropdown-item:hover {
-        background-color: black;
+        background-color: rgb(248, 248, 248);
     }
 
     ul#navLink.nav-links {
@@ -426,6 +426,7 @@
                 justify-content:space-around;
                 align-items: center;
                 margin-bottom: 10px;
+
             }
             .event-item27 {
                 display: flex;
