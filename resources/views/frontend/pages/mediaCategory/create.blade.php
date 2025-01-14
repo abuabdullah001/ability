@@ -1,7 +1,10 @@
-@extends('frontend.masterTemp')
+@extends('admin.masterTemplate')
 
-@section('front-main-content')
+@section('menu-name')
+Add Donation
+@endsection
 
+@section('main-content')
 
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <div class="content-wrapper">
@@ -13,7 +16,7 @@
                     <h5 class="m-0 text-dark">Add Media Category</h5>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
-                    <a href="{{route('mediaCategory.index')}}" class="btn btn-info btn-sm float-right">All Medua category</a>
+                    <a href="{{route('mediaCategory.index')}}" class="btn btn-info btn-sm float-right">All Media category</a>
                 </div><!-- /.col -->
 
             </div><!-- /.row -->

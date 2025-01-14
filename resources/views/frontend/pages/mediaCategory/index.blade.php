@@ -1,6 +1,10 @@
-@extends('frontend.masterTemp')
+@extends('admin.masterTemplate')
 
-@section('front-main-content')
+@section('menu-name')
+Add Donation
+@endsection
+
+@section('main-content')
 
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->

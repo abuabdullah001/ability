@@ -298,7 +298,7 @@ flex-direction: column;
     .img {
         height: 40px;
     }
-    h2{
+    h1,h2,h3,h4,h5,h6,p{
         font-style: normal;
     }
     /* General Styling Adjustments for Mobile */
@@ -556,6 +556,7 @@ width:20px;
                             <h2 class="card-title" style="color: black">
                                 {{ Str::limit($event->name, 30, '...') }}
                             </h2>
+                         
                         </div>
                     </a>
                 </div>

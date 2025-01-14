@@ -520,6 +520,7 @@ class FrontEndController extends Controller
     }
 
 
+    // mediaCategory
     public function mediaCategoryCreate(){
         return view('frontend.pages.mediaCategory.create');
     }

@@ -1,6 +1,10 @@
-@extends('frontend.masterTemp')
+@extends('admin.masterTemplate')
 
-@section('front-main-content')
+@section('menu-name')
+Add Donation
+@endsection
+
+@section('main-content')
 
 
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
