@@ -1,6 +1,6 @@
 @include('frontend.include.header')
 
-<div class="wrapper">
+<div class="">
     @include('frontend.include.menu')
 
     @yield('front-main-content')

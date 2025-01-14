@@ -13,8 +13,7 @@
     <link rel="stylesheet" href="{{ asset('admin_assets/assets/plugins/bootstrap-tags/bootstrap-tagsinput.css')}}">
     <link rel="stylesheet" href="{{ asset('admin_assets/assets/dist/css/adminlte.min.css')}}">
     <link rel="stylesheet" href="{{ asset('admin_assets/assets/plugins/daterangepicker/daterangepicker.css')}}">
-    <link rel="stylesheet"
-        href="{{ asset('admin_assets/assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('admin_assets/assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
     <link rel="stylesheet"
         href="{{ asset('admin_assets/assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
     <link rel="stylesheet" href="{{ asset('admin_assets/assets/plugins/summernote/summernote-bs4.min.css')}}">
@@ -46,14 +45,12 @@
         }
         .zoom:hover {
             transform: scale(3.5);
-            /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
         }
 
-        h1, h2, h3, h4, h5, h6, p {
+        /* h1, h2, h3, h4, h5, h6, p {
         font-family: Arial, sans-serif !important;
         font-style: bold;
-        }
-
+        } */
 </style>
 
 </head>

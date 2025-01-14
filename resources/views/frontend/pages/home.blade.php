@@ -298,6 +298,9 @@ flex-direction: column;
     .img {
         height: 40px;
     }
+    h2{
+        font-style: normal;
+    }
     /* General Styling Adjustments for Mobile */
 @media (max-width: 768px) {
     .gallery{
