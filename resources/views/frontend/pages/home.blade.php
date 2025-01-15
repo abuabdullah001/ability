@@ -388,7 +388,13 @@ margin-top: 10px;
 $events = App\Models\Event::take(3)->where('type','featured')->get();
 @endphp
 <section class="brows-job-category">
-    <h2 class="" style="text-align:center;text-color:black;font-family:arial"> Featured Event </h2>
+    <style>
+        .brows-job-category h2 {
+            color: black;
+            font-size: 35px;
+        }
+    </style>
+    <h2 class="" style="text-align:center;text-color:black;"> Featured Event </h2>
    <div class="container" style="width: 1154px">
        <div class="ibox">
            <div class="i-body">

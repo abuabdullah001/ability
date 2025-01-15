@@ -325,9 +325,15 @@
 
 
             <li><a href="{{ url('/') }}">HOME</a></li>
+
+            {{-- About us --}}
             <li class="nav-item has-submenu">
-                <a href="#" class="dropdown-toggle">About Us</a>
-                <ul class="dropdown-menu">
+                   {{-- activities --}}
+                   <a class="nav-item2" id="aboutus5" href="{{ url('/champaign') }}">
+                    About Us
+                   </a>
+                {{-- <a href="#" class="dropdown-toggle"></a> --}}
+                {{-- <ul class="dropdown-menu">
                     @foreach (App\Models\Category::where('type', 'About')->get() as $anoutmenu)
                         <li>
                             <a class="dropdown-item"
@@ -343,17 +349,15 @@
                     <li>
                         <a href="{{ route('report') }}">Report</a>
                     </li>
-                </ul>
+                </ul> --}}
             </li>
+
+
             <li class="nav-item has-submenu">
-
-
                 {{-- activities --}}
                 <a class="nav-item2" id="donateUsButton23" href="{{ url('/champaign') }}">
                      Activities
                     </a>
-
-
           </li>
 
           {{-- involved --}}
@@ -430,6 +434,13 @@
                 margin-bottom: 10px;
 
             }
+            .aboutus6 {
+                display: flex;
+                justify-content:space-around;
+                align-items: center;
+                margin-bottom: 10px;
+
+            }
             .event-item27 {
                 display: flex;
                 justify-content:space-around;
@@ -441,8 +452,8 @@
                 justify-content:space-around;
                 align-items: center;
                 margin-bottom: 10px;
-                margin-left: 200px;
-                margin-right: 200px;
+                /* margin-left: 200px;
+                margin-right: 200px; */
             }
 
             .event-item img {
@@ -493,9 +504,45 @@
         </div>
     </div>
 
+    {{-- about us start --}}
+    <div id="aboutus4" class="event-list" style=" margin-top:0px;margin-left:00px;">
+        <div class="aboutus6">
+            {{--
+        <li>
+            <a href="{{ route('report') }}">Report</a>
+        </li> --}}
+
+
+                    <div style="display: flex">
+                        @foreach (App\Models\Category::where('type', 'About')->get() as $anoutmenu)
+                        <a class="dropdown-item"
+                         href="{{ '/view_aboutepage/' . $anoutmenu->id }}">
+                         <img src="images/event/132.jpeg" alt="" style="height: 100px;width:200px;margin-right:15px">
+                          <h4 style="text-align: center">{{ $anoutmenu->title }}</h4>
+                        </a>
+                        @endforeach
+                        @foreach (App\Models\Category::where('type', 'Committee')->get() as $committeemenu)
+                            <a class="dropdown-item"
+                                href="{{ '/view_committeepage/' . $committeemenu->id }}">
+                                <img src="images/event/132.jpeg" alt="" style="height: 100px;width:200px;margin-right:15px">
+                               <h4 style="text-align: center">{{ $committeemenu->title }}</h4>
+                            </a>
+                        @endforeach
+                        <a class="dropdown-item" href="{{ route('report') }}">
+                            <img src="images/event/132.jpeg" alt="" style="height: 100px;width:200px;">
+                            <h4 style="text-align: center">Report</h4>
+                        </a>
+                    </div>
+
+
+        </div>
+</div>
+
+{{--about us end --}}
+
 {{-- Acitivities --}}
       <div id="all2222" class="event-list" style=" margin-top:0px;margin-left:00px;">
-<div class="event-item2 ">
+<div class="event-item2">
     <div>
 
         <a class="dropdown-item" href="{{ url('/event') }}">
@@ -523,7 +570,7 @@
         </div>
 </div>
 
-
+{{-- activities end --}}
 
 
 {{-- Media start --}}
@@ -560,12 +607,12 @@
             <div class="involved33">
                         <div>
                             <a class="dropdown-item" href="{{ url('/volunteer') }}">
-                                <img src="images/event/140.jpg" alt="" style="height: 100px;width:300px;">
+                                <img src="images/event/140.jpg" alt="" style="height: 100px;width:500px;">
                                 <h3 style="text-align: center">Join as a Volunteer</h3> </a>
                         </div>
                         <div>
                             <a class="dropdown-item" href="{{ url('/signin') }}">
-                                <img src="images/event/144.jpg" alt="" style="height: 100px;width:300px;">
+                                <img src="images/event/144.jpg" alt="" style="height: 100px;width:500px;">
                                 <h3 style="text-align: center">Join as a Donor</h3></a>
                         </div>
 
@@ -742,6 +789,40 @@
     $(document).ready(function() {
         const donateUsButton = $('#involvedID');
         const eventList = $('#involved3');
+
+        eventList.hover(
+            function() {
+
+            },
+            function() {
+
+                eventList.hide();
+            }
+        );
+
+
+        donateUsButton.hover(
+            function() {
+                eventList.show();
+            },
+            function() {
+
+            }
+        );
+
+        donateUsButton.on('click', function(donate) {
+            $('html, body').animate({
+                scrollTop: $('#allEvents').offset().top
+            }, 800); // Smooth scroll to the all events section
+        });
+    });
+</script>
+
+{{-- about us menu--}}
+<script>
+    $(document).ready(function() {
+        const donateUsButton = $('#aboutus5');
+        const eventList = $('#aboutus4');
 
         eventList.hover(
             function() {
