@@ -134,7 +134,6 @@
         align-items: center;
         gap: 20px;
         /* margin-top: 30px; */
-
     }
 
 
@@ -357,12 +356,15 @@
 
           </li>
 
+          {{-- involved --}}
             <li class="nav-item has-submenu">
-                <a href="#" class="dropdown-toggle">INVOLVED</a>
-                <ul class="dropdown-menu">
+                <a class="nav-item233" id="involvedID" href="{{ url('/champaign') }}">
+                    Involved
+                   </a>
+                {{-- <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="{{ url('/volunteer') }}">Join as a Volunteer</a></li>
                     <li><a class="dropdown-item" href="{{ url('/signin') }}">Join as a Donor</a></li>
-                </ul>
+                </ul> --}}
             </li>
 
             {{-- media --}}
@@ -433,6 +435,14 @@
                 justify-content:space-around;
                 align-items: center;
                 margin-bottom: 10px;
+            }
+            .involved33 {
+                display: flex;
+                justify-content:space-around;
+                align-items: center;
+                margin-bottom: 10px;
+                margin-left: 200px;
+                margin-right: 200px;
             }
 
             .event-item img {
@@ -543,6 +553,27 @@
     </div>
 
 {{--media end --}}
+
+
+{{-- Involved start --}}
+    <div id="involved3" class="event-list" style=" margin-top:0px;margin-left:00px;">
+            <div class="involved33">
+                        <div>
+                            <a class="dropdown-item" href="{{ url('/volunteer') }}">
+                                <img src="images/event/140.jpg" alt="" style="height: 100px;width:300px;">
+                                <h3 style="text-align: center">Join as a Volunteer</h3> </a>
+                        </div>
+                        <div>
+                            <a class="dropdown-item" href="{{ url('/signin') }}">
+                                <img src="images/event/141.jpg" alt="" style="height: 100px;width:300px;">
+                                <h3 style="text-align: center">Join as a Donor</h3></a>
+                        </div>
+
+
+            </div>
+    </div>
+
+{{--Involved end --}}
 
 
 
@@ -675,6 +706,42 @@
     $(document).ready(function() {
         const donateUsButton = $('#donateUsButton233');
         const eventList = $('#all23');
+
+        eventList.hover(
+            function() {
+
+            },
+            function() {
+
+                eventList.hide();
+            }
+        );
+
+
+        donateUsButton.hover(
+            function() {
+                eventList.show();
+            },
+            function() {
+
+            }
+        );
+
+        donateUsButton.on('click', function(donate) {
+            $('html, body').animate({
+                scrollTop: $('#allEvents').offset().top
+            }, 800); // Smooth scroll to the all events section
+        });
+    });
+</script>
+
+
+
+{{-- volunteer menu--}}
+<script>
+    $(document).ready(function() {
+        const donateUsButton = $('#involvedID');
+        const eventList = $('#involved3');
 
         eventList.hover(
             function() {
