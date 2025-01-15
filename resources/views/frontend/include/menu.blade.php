@@ -517,7 +517,7 @@
                         @foreach (App\Models\Category::where('type', 'About')->get() as $anoutmenu)
                         <a class="dropdown-item"
                          href="{{ '/view_aboutepage/' . $anoutmenu->id }}">
-                         <img src="images/event/132.jpeg" alt="" style="height: 100px;width:200px;margin-right:15px">
+                         <img src="images/event/151.jpg" alt="" style="height: 100px;width:200px;margin-right:15px">
                           <h4 style="text-align: center">{{ $anoutmenu->title }}</h4>
                         </a>
                         @endforeach
