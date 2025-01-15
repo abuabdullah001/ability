@@ -565,7 +565,7 @@
                         </div>
                         <div>
                             <a class="dropdown-item" href="{{ url('/signin') }}">
-                                <img src="images/event/141.jpg" alt="" style="height: 100px;width:300px;">
+                                <img src="images/event/144.jpg" alt="" style="height: 100px;width:300px;">
                                 <h3 style="text-align: center">Join as a Donor</h3></a>
                         </div>
 
