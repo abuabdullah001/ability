@@ -45,6 +45,7 @@ use App\Http\Controllers\ExpenseController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\GiftController;
 use App\Http\Controllers\IntroductionController;
+use App\Http\Controllers\ManualController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\OdmsController;
 use App\Http\Controllers\PhysicalgiftController;
@@ -679,6 +680,10 @@ Route::get('odms/create',[OdmsController::class,'create'])->name('odms.create');
 Route::delete('odms/delete/{id}',[OdmsController::class,'delete'])->name('odms.delete');
 
 
-//response
+//manual
+
+Route::get('manual/create',[ManualController::class,'create'])->name('manual.create');
+Route::post('manual/store',[ManualController::class,'store'])->name('manual.store');
+Route::get('manual/index',[ManualController::class,'index'])->name('manual.index');
 
 
