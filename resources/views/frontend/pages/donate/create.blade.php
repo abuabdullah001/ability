@@ -148,6 +148,8 @@
 
                 <div class="text-center">
                     <button type="submit" class="donate-btn">Submit</button>
+                    <button class="btn btn-info" style="margin-left: 10px"><a href="{{route('manual.create')}}">Manual payment </a> </button>
+
                 </div>
             </form>
         </div>

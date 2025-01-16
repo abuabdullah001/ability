@@ -35,6 +35,7 @@ HOME
                         <div class="card-body">
                             <div class="tab-content">
                                 <div class="active tab-pane">
+                                    
                                     <form class="form-horizontal" method="post"
                                         action="{{Route('manual.store')}}" enctype="multipart/form-data">
                                         @csrf
@@ -85,9 +86,9 @@ HOME
                                         <div class="col-md-6 form-group">
                                             <label for="">Payment methos</label>
                                             <select name="payment_method" id="payment_method" class="form-control">
-                                                <option value="1">Mobile Banking</option>
-                                                <option value="2">Bank</option>
-                                                <option value="3">Others</option>
+                                                <option value="Mobile Banking">Mobile Banking</option>
+                                                <option value="Bank">Bank</option>
+                                                <option value="Others">Others</option>
                                             </select>
                                             @error('image')
                                             <div class="error text-red text-bold" style="padding: 0;">
@@ -96,7 +97,15 @@ HOME
                                             @enderror
                                         </div>
 
-
+                                        <div class="col-md-6 form-group">
+                                            <label for="amount">Amount</label>
+                                            <input type="number" name="amount" class="form-control" step="0.01" value="{{ old('amount', $manuals->amount ?? '') }}">
+                                            @error('amount')
+                                            <div class="error text-red text-bold" style="padding: 0;">
+                                                <strong>{{ $message }}</strong>
+                                            </div>
+                                            @enderror
+                                        </div>
 
                                         <div class="col-md-6 form-group">
                                             <label for="">Transaction info</label>
@@ -120,13 +129,13 @@ HOME
                                         </div>
 
                                         <div class="col-md-6 form-group">
-                                            <label for="">Event type</label>
+                                            <label for="">Donation type</label>
                                             <select name="event_type" id="payment_method" class="form-control">
-                                                <option value="1">Event</option>
-                                                <option value="2">Project</option>
-                                                <option value="3">Sponsor</option>
-                                                <option value="4">Champaign</option>
-                                                <option value="5">Others</option>
+                                                <option value="Event">Event</option>
+                                                <option value="Project">Project</option>
+                                                <option value="Sponsor">Sponsor</option>
+                                                <option value="Champaign">Champaign</option>
+                                                <option value="Others">Others</option>
                                             </select>
                                             @error('image')
                                             <div class="error text-red text-bold" style="padding: 0;">

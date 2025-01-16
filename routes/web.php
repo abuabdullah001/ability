@@ -676,14 +676,15 @@ Route::get('feedback/delete/{id}',[FeedbackController::class,'delete'])->name('f
 Route::get('odms/index',[OdmsController::class,'index'])->name('odms.index');
 Route::post('odms/store',[OdmsController::class,'store'])->name('odms.store');
 Route::get('odms/create',[OdmsController::class,'create'])->name('odms.create');
-
 Route::delete('odms/delete/{id}',[OdmsController::class,'delete'])->name('odms.delete');
 
 
 //manual
-
 Route::get('manual/create',[ManualController::class,'create'])->name('manual.create');
 Route::post('manual/store',[ManualController::class,'store'])->name('manual.store');
 Route::get('manual/index',[ManualController::class,'index'])->name('manual.index');
+Route::get('manual/edit/{id}',[ManualController::class,'edit'])->name('manual.edit');
+Route::put('manual/update/{id}',[ManualController::class,'update'])->name('manual.update');
+Route::delete('manual/delete/{id}',[ManualController::class,'delete'])->name('manual.delete');
 
 

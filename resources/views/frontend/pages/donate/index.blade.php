@@ -108,7 +108,7 @@
         transition: background 0.3s ease;
         width: 100%;
         max-width: 300px;
-        margin: 0 auto;
+        /* margin: 0 auto; */
     }
 
     .gift-items {
@@ -283,6 +283,7 @@
         </div>
         <div class="donate-btn-wrapper">
             <button type="submit" class="donate-btn">Donate</button>
+            <button class="btn btn-info" style="margin-left: 10px"><a href="{{route('manual.create')}}">Manual payment</a> </button>
         </div>
     </form>
 

@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Manual extends Model
 {
     use HasFactory;
-    protected $fillable=['name','phone','email','address','payment_methood','transaction_info','payment_prrof','event_type'];
+    protected $fillable=['name','phone','email','address','payment_methood','amount','transaction_info','payment_prrof','event_type'];
 
 }

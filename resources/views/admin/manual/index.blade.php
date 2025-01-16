@@ -36,16 +36,16 @@ ALL Training
                         <div class="card-header bg-cyan">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <h3 class="card-title"> <i class="fa fa-users"></i> All Blogs</h3>
+                                    <h3 class="card-title"> <i class="fa fa-users"></i> All payable amount</h3>
                                 </div>
                                 <div class="col-md-6">
                                     <a href="{{route('manual.create')}}" class="btn btn-success float-right"> <i
-                                            class="fa fa-plus"></i> ADD Cash</a>
+                                            class="fa fa-plus"></i> ADD payable Cash</a>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="card-body">
+                        <div class="card-body table-responsive">
                             <table id="example1" class="table table-bordered table-striped  ">
                                 <thead>
                                     <tr>
@@ -55,6 +55,7 @@ ALL Training
                                         <th>Address</th>
                                         <th>Email</th>
                                         <th>Payment type</th>
+                                        <th>Amount</th>
                                         <th>Transaction info</th>
                                         <th>Payment proof</th>
                                         <th>Donation type</th>
@@ -70,17 +71,27 @@ ALL Training
                                         <td>{{ $value->phone }}</td>
                                         <td>{{ $value->address }}</td>
                                         <td>{{ $value->email }}</td>
-                                        <td>{{ $value->payments_method }}</td>
+                                        <td>{{ $value->payment_method}}</td>
+                                        <td>{{$value->amount}}</td>
                                         <td>{!! Str::limit($value->transaction_info, 5000) !!}</td>
-                                        <td><img src="{{asset('/images/post'.$value->payment_proof)}}" alt=""></td>
-                                        <td>{{$value->donation_type}} </td>
+                                        <td>
+                                            @if($value->payment_proof)
+                                                <img src="{{ asset($value->payment_proof) }}" alt="Payment Proof" height="50px">
+                                            @else
+                                                No proof uploaded
+                                            @endif
+                                        </td>                                        <td>{{$value->event_type}} </td>
 
                                         <td>
-                                             {{-- <a href="{{route('blog.edit',$value->id)}}"
-                                                class="btn btn-xs btn-info"><i class="fas fa-edit"></i></a> --}}
-                                            {{-- <a href="{{route('blog.delete',$value->id)}}"
-                                                onclick="return confirm('Are You sure')"
-                                                class="btn btn-xs btn-danger"><i class="fas fa-trash-alt"></i></a> --}}
+                                             <a href="{{route('manual.edit',$value->id)}}"
+                                                class="btn btn-xs btn-info"><i class="fas fa-edit"></i></a>
+
+                                                <form action="{{route('manual.delete',$value->id)}}" method="post" >
+                                                    @csrf
+                                                    @method('delete')
+                                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                                </form>
+
                                         </td>
                                     </tr>
                                     @endforeach

@@ -142,6 +142,9 @@
 
                 <button id="btn-non-registered" class="btn btn-primary mt-4">Donate With Registration </button>
 
+                <button class="btn btn-info" style="margin-left: 10px"><a href="{{route('manual.create')}}">Manual payment
+                </a> </button>
+
                 {{-- registration --}}
 
 
