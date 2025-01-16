@@ -48,6 +48,7 @@ Add About odms
                                                     <td>{!! Str::limit($odms->title, 5000) !!}</td>
                                                     <td>{!! Str::limit($odms->descrition, 5000) !!}</td>
                                                     <td>
+                                                        <a class="btn btn-success mb-2" href="{{route('odms.edit',$odms->id)}}">Edit</a>
                                                         <form action="{{ route('odms.delete', $odms->id) }}" method="POST" style="display: inline;" onsubmit="return confirm('Are you sure?')">
                                                             @csrf
                                                             @method('DELETE')

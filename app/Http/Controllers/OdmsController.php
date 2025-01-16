@@ -34,6 +34,32 @@ class OdmsController extends Controller
        return redirect()->route('odms.index')->with('success', 'ODMS created successfully!');
     }
 
+    public function edit($id){
+        $odmss=Odms::findOrFail($id);
+        return view('frontend.pages.odms.edit',compact('odmss'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $odmss = Odms::findOrFail($id);
+        if ($request->hasFile('image')) {
+
+            if (!empty($odmss->image) && file_exists(public_path('images/post/' . $odmss->image))) {
+                unlink(public_path('images/post/' . $odmss->image));
+            }
+            $image = $request->file('image');
+            $imageName = time() . '-' . uniqid() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('images/post'), $imageName);
+            $odmss->image = $imageName;
+        }
+        $odmss->title = $request->input('title');
+        $odmss->descrition = $request->input('descrition');
+        $odmss->update();
+
+        return redirect()->route('odms.index')->with('success', 'ODMS updated successfully!');
+    }
+
+
     public function delete($id){
       $odmss=Odms::find($id);
       $odmss->delete();

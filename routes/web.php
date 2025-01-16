@@ -672,10 +672,11 @@ Route::get('feedback/delete/{id}',[FeedbackController::class,'delete'])->name('f
 
 
 //odms
-
 Route::get('odms/index',[OdmsController::class,'index'])->name('odms.index');
 Route::post('odms/store',[OdmsController::class,'store'])->name('odms.store');
 Route::get('odms/create',[OdmsController::class,'create'])->name('odms.create');
+Route::get('odms/edit/{id}',[OdmsController::class,'edit'])->name('odms.edit');
+Route::put('odms/update/{id}',[OdmsController::class,'update'])->name('odms.update');
 Route::delete('odms/delete/{id}',[OdmsController::class,'delete'])->name('odms.delete');
 
 
