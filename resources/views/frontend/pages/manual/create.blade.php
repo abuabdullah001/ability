@@ -158,7 +158,7 @@ HOME
                                             </div>
 
                                             <!-- Submit Button -->
-                                            <div style="text-align: right; margin-top: 20px;">
+                                            <div style="text-align:left; margin-top: 20px;">
                                                 <button type="submit" class="btn btn-success" style="padding: 10px 20px; font-size: 16px;">Submit</button>
                                             </div>
                                         </form>

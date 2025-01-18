@@ -507,28 +507,44 @@
     <div id="aboutus4" class="event-list" style=" margin-top:0px;margin-left:00px;">
         <div class="aboutus6">
 
-                    <div style="display: flex">
-                        @foreach (App\Models\Category::where('type', 'About')->get() as $anoutmenu)
-                        <a class="dropdown-item"
-                         href="{{ '/view_aboutepage/' . $anoutmenu->id }}">
-                         <img src="images/event/151.jpg" alt="" style="height: 150px;width:250px;margin-left:10px;">
-                          <h4 style="text-align: center">{{ $anoutmenu->title }}</h4>
-                        </a>
-                        @endforeach
-                        @foreach (App\Models\Category::where('type', 'Committee')->get() as $committeemenu)
-                            <a class="dropdown-item"
-                                href="{{ '/view_committeepage/' . $committeemenu->id }}">
-                                <img src="images/event/152.jpeg" alt="" style="height: 150px;width:250px;margin-left:10px;">
-                               <h4 style="text-align: center">{{ $committeemenu->title }}</h4>
-                            </a>
-                        @endforeach
-                        <a class="dropdown-item" href="{{ route('report') }}">
-                            <img src="images/event/155.jpg" alt="" style="height: 150px;width:250px;margin-left:10px;margin-right:10px;">
-                            <h4 style="text-align: center">Report</h4>
-                        </a>
-                    </div>
+                <div style="display: flex">
+                    @foreach (App\Models\Category::where('type', 'About')->get() as $anoutmenu)
+                    <a class="dropdown-item"
+                     href="{{ '/view_aboutepage/' . $anoutmenu->id }}">
+                     <img src="images/event/151.jpg" alt="" style="height: 150px;width:300px;margin-left:30px;">
+                      <h4 style="text-align: center">{{ $anoutmenu->title }}</h4>
+                    </a>
+                    @endforeach
+
+                    <a class="dropdown-item" href="{{ route('report') }}">
+                        <img src="images/event/155.jpg" alt="" style="height: 150px;width:300px;margin-left:30px;margin-right:20px;">
+                        <h4 style="text-align: center">Report</h4>
+                    </a>
+                </div>
         </div>
-</div>
+
+        <div class="aboutus6">
+
+            <div style="display: flex">
+                @foreach (App\Models\Category::where('type', 'Committee')->get() as $committeemenu)
+                    <a class="dropdown-item"
+                       href="{{ '/view_committeepage/' . $committeemenu->id }}">
+                        <img src="images/event/152.jpeg" alt="" style="height: 150px;width:300px;margin-left:30px;">
+                        <h4 style="text-align: center">{{ $committeemenu->title }}</h4>
+                    </a>
+                @endforeach
+                    <a class="dropdown-item" href="{{ route('report') }}">
+                        <img src="images/event/165.jpg" alt="" style="height: 150px;width:300px;margin-left:30px;margin-right:20px;">
+                        <h4 style="text-align: center">Coming Soon</h4>
+                    </a>
+                    <a class="dropdown-item" href="{{ route('report') }}">
+                        <img src="images/event/165.jpg" alt="" style="height: 150px;width:300px;margin-left:30px;margin-right:20px;">
+                        <h4 style="text-align: center">Coming Soon</h4>
+                    </a>
+
+            </div>
+        </div>
+    </div>
 
 {{--about us end --}}
 
@@ -596,15 +612,26 @@
 {{-- Involved start --}}
     <div id="involved3" class="event-list" style=" margin-top:0px;margin-left:00px;">
             <div class="involved33">
-                        <div>
-                            <a class="dropdown-item" href="{{ url('/volunteer') }}">
-                                <img src="images/event/140.jpg" alt="" style="height: 150px;width:500px;">
-                                <h3 style="text-align: center">Join as a Volunteer</h3> </a>
-                        </div>
+
                         <div>
                             <a class="dropdown-item" href="{{ url('/signin') }}">
-                                <img src="images/event/144.jpg" alt="" style="height: 150px;width:500px;">
+                                <img src="images/event/144.jpg" alt="" style="height: 150px;width:300px;">
                                 <h3 style="text-align: center">Join as a Donor</h3></a>
+                        </div>
+                        <div>
+                            <a class="dropdown-item" href="">
+                                <img src="images/event/165.jpg" alt="" style="height: 150px;width:300px;">
+                                <h3 style="text-align: center">Upcoming</h3></a>
+                        </div>
+                        <div>
+                            <a class="dropdown-item" href="">
+                                <img src="images/event/165.jpg" alt="" style="height: 150px;width:300px;">
+                                <h3 style="text-align: center">Upcoming</h3></a>
+                        </div>
+                        <div>
+                            <a class="dropdown-item" href="{{ url('/volunteer') }}">
+                                <img src="images/event/140.jpg" alt="" style="height: 150px;width:300px;">
+                                <h3 style="text-align: center">Join as a Volunteer</h3> </a>
                         </div>
             </div>
     </div>
