@@ -552,13 +552,11 @@
       <div id="all2222" class="event-list" style=" margin-top:0px;margin-left:00px;">
 <div class="event-item2">
     <div>
-
         <a class="dropdown-item" href="{{ url('/event') }}">
             <img src="images/event/123.jpg" alt="" style="height: 150px;width:300px;">
             <h3 style="text-align: center">Events</h3> </a>
     </div>
     <div>
-
         <a class="dropdown-item" href="{{ url('/champaign') }}">
             <img src="images/event/124.png" alt="" style="height: 150px;width:300px;">
             <h3 style="text-align: center">Campaign</h3></a>
@@ -621,12 +619,12 @@
                         <div>
                             <a class="dropdown-item" href="">
                                 <img src="images/event/165.jpg" alt="" style="height: 150px;width:300px;">
-                                <h3 style="text-align: center">Upcoming</h3></a>
+                                <h3 style="text-align: center">Coming Soon</h3></a>
                         </div>
                         <div>
                             <a class="dropdown-item" href="">
                                 <img src="images/event/165.jpg" alt="" style="height: 150px;width:300px;">
-                                <h3 style="text-align: center">Upcoming</h3></a>
+                                <h3 style="text-align: center">Coming Soon</h3></a>
                         </div>
                         <div>
                             <a class="dropdown-item" href="{{ url('/volunteer') }}">

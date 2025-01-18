@@ -77,9 +77,6 @@
                                                         data-image="{{ asset($value->image) }}">
                                                         Show
                                                     </button>
-
-
-
                                                     <a href="{{ route('MannagementMember.edit', $value->id) }}"
                                                         class="btn btn-primary">Edit</a>
                                                 </td>
