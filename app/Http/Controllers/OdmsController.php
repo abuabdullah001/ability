@@ -42,8 +42,8 @@ class OdmsController extends Controller
     public function update(Request $request, $id)
     {
         $odmss = Odms::findOrFail($id);
-        if ($request->hasFile('image')) {
 
+        if ($request->hasFile('image')) {
             if (!empty($odmss->image) && file_exists(public_path('images/post/' . $odmss->image))) {
                 unlink(public_path('images/post/' . $odmss->image));
             }
@@ -55,7 +55,6 @@ class OdmsController extends Controller
         $odmss->title = $request->input('title');
         $odmss->descrition = $request->input('descrition');
         $odmss->update();
-
         return redirect()->route('odms.index')->with('success', 'ODMS updated successfully!');
     }
 

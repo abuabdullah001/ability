@@ -283,10 +283,10 @@
         </div>
         <div class="donate-btn-wrapper">
             <button type="submit" class="donate-btn">Donate</button>
-            <button class="btn btn-info" style="margin-left: 10px"><a href="{{route('manual.create')}}">Manual payment</a> </button>
         </div>
     </form>
 
+    <button class="btn btn-primary form-control mt-5" style="margin-left: 10px;margin-top:200px"><a href="{{route('manual.create')}}"><span style="color:white">Manual payment</span></a> </button>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+0G+SEiib2EBE7bY5N4E2W4r55y6b0gDbVgZxJ" crossorigin="anonymous"></script>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

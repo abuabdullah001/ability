@@ -34,123 +34,137 @@ HOME
                         <div class="card-header bg-blue text-center"> <h1> Donate manually </h1></div>
                         <div class="card-body">
                             <div class="tab-content">
-                                <div class="active tab-pane">
-                                    
-                                    <form class="form-horizontal" method="post"
-                                        action="{{Route('manual.store')}}" enctype="multipart/form-data">
-                                        @csrf
+                                <div class="active tab-pane row col-md-12" style="display: flex; gap: 20px; margin-top: 20px;">
+                                    <div style="width: 100%; height:400px; margin: 20px auto; border: 1px solid #ddd; padding: 20px; border-radius: 10px; background-color: #f9f9f9; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); text-align: center;">
+                                        <h2 style="margin-bottom: 20px; color: #333; font-family: Arial, sans-serif;">ODMS All Payment Details</h2>
+                                        <h4 style="margin-bottom: 10px; color: #555; font-family: Arial, sans-serif;">Bkash no: +88014454</h4>
+                                        <h4 style="margin-bottom: 10px; color: #555; font-family: Arial, sans-serif;">Rocket no: +8801456454</h4>
+                                        <h4 style="margin-bottom: 10px; color: #555; font-family: Arial, sans-serif;">Sonali Bank: 254652</h4>
+                                    </div>
 
-                                        <div class="col-md-6 form-group">
-                                            <label for="">Name</label>
-                                            <input type="text" name="name" value="" class="form-control">
-                                            @error('name')
-                                            <div class="error text-red text-bold" style="padding: 0;">
-                                                <strong>     {{$message}}  </strong>
+                                    <!-- Form Section -->
+                                    <div class="col-md-6" style="border: 1px solid #ddd;margin-top:20px; padding: 20px; border-radius: 10px; background-color: #ffffff; width:100% ;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                                        <form class="form-horizontal" method="post" action="{{ Route('manual.store') }}" enctype="multipart/form-data">
+                                            @csrf
+                                            <h2 style="margin-bottom: 20px; color: #333; font-family: Arial, sans-serif;">Manaually Payment Form</h2>
+
+                                            <!-- Name -->
+                                            <div class="form-group" style="margin-bottom: 15px;">
+                                                <label for="name" style="font-weight: bold;">Name</label>
+                                                <input type="text" name="name" class="form-control" style="padding: 10px; font-size: 14px;" value="">
+                                                @error('name')
+                                                <div class="error text-red text-bold" style="color: red; font-size: 12px; margin-top: 5px;">
+                                                    <strong>{{$message}}</strong>
+                                                </div>
+                                                @enderror
                                             </div>
-                                            @enderror
-                                        </div>
 
-                                        <div class="col-md-6 form-group">
-                                            <label for="">Email Address</label>
-                                            <input type="text" name="email" value="" class="form-control">
-                                            @error('name')
-                                            <div class="error text-red text-bold" style="padding: 0;">
-                                                <strong>     {{$message}}  </strong>
+                                            <!-- Email Address -->
+                                            <div class="form-group" style="margin-bottom: 15px;">
+                                                <label for="email" style="font-weight: bold;">Email Address</label>
+                                                <input type="text" name="email" class="form-control" style="padding: 10px; font-size: 14px;" value="">
+                                                @error('email')
+                                                <div class="error text-red text-bold" style="color: red; font-size: 12px; margin-top: 5px;">
+                                                    <strong>{{$message}}</strong>
+                                                </div>
+                                                @enderror
                                             </div>
-                                            @enderror
-                                        </div>
 
-                                        <div class="col-md-6 form-group">
-                                            <label for=""> Address</label>
-                                            <input type="text" name="address" value="" class="form-control">
-                                            @error('name')
-                                            <div class="error text-red text-bold" style="padding: 0;">
-                                                <strong>     {{$message}}  </strong>
+                                            <!-- Address -->
+                                            <div class="form-group" style="margin-bottom: 15px;">
+                                                <label for="address" style="font-weight: bold;">Address</label>
+                                                <input type="text" name="address" class="form-control" style="padding: 10px; font-size: 14px;" value="">
+                                                @error('address')
+                                                <div class="error text-red text-bold" style="color: red; font-size: 12px; margin-top: 5px;">
+                                                    <strong>{{$message}}</strong>
+                                                </div>
+                                                @enderror
                                             </div>
-                                            @enderror
-                                        </div>
 
-
-                                        <div class="col-md-6 form-group">
-                                            <label for=""> Phone</label>
-                                            <input type="text" name="phone" value="" class="form-control">
-                                            @error('name')
-                                            <div class="error text-red text-bold" style="padding: 0;">
-                                                <strong>     {{$message}}  </strong>
+                                            <!-- Phone -->
+                                            <div class="form-group" style="margin-bottom: 15px;">
+                                                <label for="phone" style="font-weight: bold;">Phone</label>
+                                                <input type="text" name="phone" class="form-control" style="padding: 10px; font-size: 14px;" value="">
+                                                @error('phone')
+                                                <div class="error text-red text-bold" style="color: red; font-size: 12px; margin-top: 5px;">
+                                                    <strong>{{$message}}</strong>
+                                                </div>
+                                                @enderror
                                             </div>
-                                            @enderror
-                                        </div>
 
-
-
-                                        <div class="col-md-6 form-group">
-                                            <label for="">Payment methos</label>
-                                            <select name="payment_method" id="payment_method" class="form-control">
-                                                <option value="Mobile Banking">Mobile Banking</option>
-                                                <option value="Bank">Bank</option>
-                                                <option value="Others">Others</option>
-                                            </select>
-                                            @error('image')
-                                            <div class="error text-red text-bold" style="padding: 0;">
-                                                <strong>     {{$message}}  </strong>
+                                            <!-- Payment Method -->
+                                            <div class="form-group" style="margin-bottom: 15px;">
+                                                <label for="payment_method" style="font-weight: bold;"> Payment Method</label>
+                                                <select name="payment_method" id="payment_method" class="form-control" style="padding: 10px; font-size: 14px;">
+                                                    <option value="Mobile Banking">Mobile Banking</option>
+                                                    <option value="Bank">Bank</option>
+                                                    <option value="Others">Others</option>
+                                                </select>
+                                                @error('payment_method')
+                                                <div class="error text-red text-bold" style="color: red; font-size: 12px; margin-top: 5px;">
+                                                    <strong>{{$message}}</strong>
+                                                </div>
+                                                @enderror
                                             </div>
-                                            @enderror
-                                        </div>
 
-                                        <div class="col-md-6 form-group">
-                                            <label for="amount">Amount</label>
-                                            <input type="number" name="amount" class="form-control" step="0.01" value="{{ old('amount', $manuals->amount ?? '') }}">
-                                            @error('amount')
-                                            <div class="error text-red text-bold" style="padding: 0;">
-                                                <strong>{{ $message }}</strong>
+                                            <!-- Amount -->
+                                            <div class="form-group" style="margin-bottom: 15px;">
+                                                <label for="amount" style="font-weight: bold;">Amount</label>
+                                                <input type="number" name="amount" class="form-control" style="padding: 10px; font-size: 14px;" step="0.01" value="{{ old('amount', $manuals->amount ?? '') }}">
+                                                @error('amount')
+                                                <div class="error text-red text-bold" style="color: red; font-size: 12px; margin-top: 5px;">
+                                                    <strong>{{$message}}</strong>
+                                                </div>
+                                                @enderror
                                             </div>
-                                            @enderror
-                                        </div>
 
-                                        <div class="col-md-6 form-group">
-                                            <label for="">Transaction info</label>
-                                            <textarea name="transaction_info" class="form-control summernote" id="" cols="30" rows="10"></textarea>
-                                            @error('title')
-                                            <div class="error text-red text-bold" style="padding: 0;">
-                                                <strong>     {{$message}}  </strong>
+                                            <!-- Transaction Info -->
+                                            <div class="form-group" style="margin-bottom: 15px;">
+                                                <label for="transaction_info" style="font-weight: bold;">Transaction Info</label>
+                                                <textarea name="transaction_info" class="form-control" style="padding: 10px; font-size: 14px;" rows="4"></textarea>
+                                                @error('transaction_info')
+                                                <div class="error text-red text-bold" style="color: red; font-size: 12px; margin-top: 5px;">
+                                                    <strong>{{$message}}</strong>
+                                                </div>
+                                                @enderror
                                             </div>
-                                            @enderror
-                                        </div>
 
-
-                                        <div class="col-md-6 form-group">
-                                            <label for="">Payment proof</label>
-                                            <input type="file" name="payment_proof" class="form-control">
-                                            @error('image')
-                                            <div class="error text-red text-bold" style="padding: 0;">
-                                                <strong>     {{$message}}  </strong>
+                                            <!-- Payment Proof -->
+                                            <div class="form-group" style="margin-bottom: 15px;">
+                                                <label for="payment_proof" style="font-weight: bold;">Payment Proof</label>
+                                                <input type="file" name="payment_proof" class="form-control" style="padding: 5px;">
+                                                @error('payment_proof')
+                                                <div class="error text-red text-bold" style="color: red; font-size: 12px; margin-top: 5px;">
+                                                    <strong>{{$message}}</strong>
+                                                </div>
+                                                @enderror
                                             </div>
-                                            @enderror
-                                        </div>
 
-                                        <div class="col-md-6 form-group">
-                                            <label for="">Donation type</label>
-                                            <select name="event_type" id="payment_method" class="form-control">
-                                                <option value="Event">Event</option>
-                                                <option value="Project">Project</option>
-                                                <option value="Sponsor">Sponsor</option>
-                                                <option value="Champaign">Champaign</option>
-                                                <option value="Others">Others</option>
-                                            </select>
-                                            @error('image')
-                                            <div class="error text-red text-bold" style="padding: 0;">
-                                                <strong>     {{$message}}  </strong>
+                                            <!-- Donation Type -->
+                                            <div class="form-group" style="margin-bottom: 15px;">
+                                                <label for="event_type" style="font-weight: bold;">Donation Type</label>
+                                                <select name="event_type" id="event_type" class="form-control" style="padding: 10px; font-size: 14px;">
+                                                    <option value="Event">Event</option>
+                                                    <option value="Project">Project</option>
+                                                    <option value="Sponsor">Sponsor</option>
+                                                    <option value="Champaign">Champaign</option>
+                                                    <option value="Others">Others</option>
+                                                </select>
+                                                @error('event_type')
+                                                <div class="error text-red text-bold" style="color: red; font-size: 12px; margin-top: 5px;">
+                                                    <strong>{{$message}}</strong>
+                                                </div>
+                                                @enderror
                                             </div>
-                                            @enderror
-                                        </div>
 
-
-                                        <div>
-                                            <button class="btn btn-success">Submit</button>
-                                        </div>
-
-                                    </form>
+                                            <!-- Submit Button -->
+                                            <div style="text-align: right; margin-top: 20px;">
+                                                <button type="submit" class="btn btn-success" style="padding: 10px 20px; font-size: 16px;">Submit</button>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
+
                             </div>
                             <!-- /.tab-pane -->
                         </div>

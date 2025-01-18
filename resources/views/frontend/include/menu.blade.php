@@ -573,18 +573,19 @@
                         </div>
                         <div>
                             <a class="dropdown-item" href="/All-Video">
-                                <img src="images/event/131.png" alt="" style="height: 150px;width:300px;">
+                                <img src="images/event/161.png" alt="" style="height: 150px;width:300px;">
                                 <h3 style="text-align: center">Video</h3></a>
                         </div>
                         <div>
                             <a class="dropdown-item" href="{{ url('/news') }}">
-                                <img src="images/event/132.jpeg" alt="" style="height: 150px;width:300px;">
+                                <img src="images/event/162.jpeg" alt="" style="height: 150px;width:300px;">
                                 <h3 style="text-align: center">News</h3></a>
                         </div>
                         <div>
                             <a class="dropdown-item" href="{{ route('frontend.pages.blog') }}">
-                                <img src="images/event/133.png" alt="" style="height: 150px;width:300px;">
-                                <h3 style="text-align: center">Blog</h3></a>
+                                <img src="images/event/163.png" alt="" style="height: 150px;width:300px;">
+                                <h3 style="text-align: center">Blog</h3>
+                            </a>
                         </div>
             </div>
     </div>
