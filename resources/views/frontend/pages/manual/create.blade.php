@@ -24,30 +24,29 @@ HOME
     </div>
     <!-- Main content -->
     <section class="content">
+        <div class="container" style="width: 70%; height:250px; margin: 20px auto; border: 1px solid #ddd; padding: 20px; border-radius: 10px; background-color: #f9f9f9; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); text-align: center;">
+            <h2 style="margin-bottom: 20px; color: #333; font-family: Arial, sans-serif;">ODMS All Payment Details</h2>
+            <h4 style="margin-bottom: 10px; color: #555; font-family: Arial, sans-serif;">Bkash no: +88014454</h4>
+            <h4 style="margin-bottom: 10px; color: #555; font-family: Arial, sans-serif;">Rocket no: +8801456454</h4>
+            <h4 style="margin-bottom: 10px; color: #555; font-family: Arial, sans-serif;">Sonali Bank: 254652</h4>
+        </div>
         <div class="container-fluid">
             <div class="row">
-
                 <!-- /.col -->
                 <div class="col-md-1"></div>
-                <div class="col-md-10">
+                <div class="col-md-12">
                     <div class="card">
                         <div class="card-header bg-blue text-center"> <h1> Donate manually </h1></div>
                         <div class="card-body">
                             <div class="tab-content">
-                                <div class="active tab-pane row col-md-12" style="display: flex; gap: 20px; margin-top: 20px;">
-                                    <div style="width: 100%; height:400px; margin: 20px auto; border: 1px solid #ddd; padding: 20px; border-radius: 10px; background-color: #f9f9f9; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); text-align: center;">
-                                        <h2 style="margin-bottom: 20px; color: #333; font-family: Arial, sans-serif;">ODMS All Payment Details</h2>
-                                        <h4 style="margin-bottom: 10px; color: #555; font-family: Arial, sans-serif;">Bkash no: +88014454</h4>
-                                        <h4 style="margin-bottom: 10px; color: #555; font-family: Arial, sans-serif;">Rocket no: +8801456454</h4>
-                                        <h4 style="margin-bottom: 10px; color: #555; font-family: Arial, sans-serif;">Sonali Bank: 254652</h4>
-                                    </div>
-
+                                <div class="active tab-pane row col-md-12 container" style="display: flex; gap: 20px; margin-top: 20px;">
                                     <!-- Form Section -->
                                     <div class="col-md-6" style="border: 1px solid #ddd;margin-top:20px; padding: 20px; border-radius: 10px; background-color: #ffffff; width:100% ;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
                                         <form class="form-horizontal" method="post" action="{{ Route('manual.store') }}" enctype="multipart/form-data">
                                             @csrf
-                                            <h2 style="margin-bottom: 20px; color: #333; font-family: Arial, sans-serif;">Manaually Payment Form</h2>
+                                            <h2 class="" style="margin-bottom: 20px; text-align:center; color: #333; font-family: Arial, sans-serif;">Manual Payment Form</h2>
 
+                                        <div class="col-md-6">
                                             <!-- Name -->
                                             <div class="form-group" style="margin-bottom: 15px;">
                                                 <label for="name" style="font-weight: bold;">Name</label>
@@ -96,8 +95,10 @@ HOME
                                             <div class="form-group" style="margin-bottom: 15px;">
                                                 <label for="payment_method" style="font-weight: bold;"> Payment Method</label>
                                                 <select name="payment_method" id="payment_method" class="form-control" style="padding: 10px; font-size: 14px;">
-                                                    <option value="Mobile Banking">Mobile Banking</option>
-                                                    <option value="Bank">Bank</option>
+                                                    <option value="bkash">Bkash</option>
+                                                    <option value="nagad">Nagad</option>
+                                                    <option value="rocket">Rocket</option>
+                                                    <option value="bank">Bank</option>
                                                     <option value="Others">Others</option>
                                                 </select>
                                                 @error('payment_method')
@@ -106,7 +107,10 @@ HOME
                                                 </div>
                                                 @enderror
                                             </div>
+                                            </div>
 
+
+                                            <div class="col-md-6">
                                             <!-- Amount -->
                                             <div class="form-group" style="margin-bottom: 15px;">
                                                 <label for="amount" style="font-weight: bold;">Amount</label>
@@ -157,10 +161,29 @@ HOME
                                                 @enderror
                                             </div>
 
+                                            {{-- choose event --}}
+                                            @php
+                                            $events = App\Models\Event::all();
+                                        @endphp
+
+                                        <div class="mt-5 form-group">
+                                            <label for="event_name" class="form-label fw-bold">Event Name</label>
+                                            <select name="event_name" id="event_name" class="form-select form-control form-select-lg">
+                                                <option selected disabled>Select an Event</option>
+                                                @foreach ($events as $event)
+                                                    <option value="{{ $event->id }}">{{ $event->name }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+
+                                             {{-- choose event --}}
+
+
                                             <!-- Submit Button -->
                                             <div style="text-align:left; margin-top: 20px;">
                                                 <button type="submit" class="btn btn-success" style="padding: 10px 20px; font-size: 16px;">Submit</button>
                                             </div>
+                                        </div>
                                         </form>
                                     </div>
                                 </div>

@@ -198,10 +198,5 @@ class AboutMenuController extends Controller
         AboutMenu::where('id', $id)->delete();
         return back();
     }
-
-
-
-
-
-
+    
 }

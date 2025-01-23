@@ -20,13 +20,13 @@ class BlogController extends Controller
         $blog->name=$request->name;
         $blog->date = date('Y-m-d', strtotime($request->date));
 
-        $imageName='';
-        if($image=$request->file('image')){
-            $imageName=time().'-'.uniqid().'-'.$image->getClientOriginalExtension();
-            $image->move(public_path('images/post'),$imageName);
+        if ($request->hasFile('image')) {
+            $img_ext = $request->file('image')->getClientOriginalExtension();
+            $filename = 'odms-' . time() . '.' . $img_ext;
+            $path = $request->file('image')->move(public_path('images/event'), $filename);
+            $imagepath = '/images/event/' . $filename;
+            $blog->image = $imagepath;
         }
-        $blog->image =$imageName;
-
         $blog->title=$request->title;
         $blog->description=$request->description;
         $blog->save();

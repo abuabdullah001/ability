@@ -1,7 +1,8 @@
-@extends('frontend.masterTemp')
-
-@section('front-main-content')
-
+@extends('admin.masterTemplate')
+@section('menu-name')
+ALL Training
+@endsection
+@section('main-content')
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">

@@ -44,8 +44,9 @@ Add About odms
                                                 @foreach ($odmss as $odms)
                                                 <tr>
                                                     <td>{{$odms->id}}</td>
-                                                    <td><img src="{{ asset('images/post/' . $odms->image) }}" alt="ODM Image" style="width: 100px; height: 200px;"></td>
-                                                    <td>{!! Str::limit($odms->title, 5000) !!}</td>
+                                                    <td>
+                                                        <img src="{{asset($odms->image)}}" alt="" width="100%">
+                                                    </td>                                                   <td>{!! Str::limit($odms->title, 5000) !!}</td>
                                                     <td>{!! Str::limit($odms->descrition, 5000) !!}</td>
                                                     <td>
                                                         <a class="btn btn-success mb-2" href="{{ route('odms.edit', $odms->id) }}">

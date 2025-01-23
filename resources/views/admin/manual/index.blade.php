@@ -59,6 +59,7 @@ ALL Training
                                         <th>Transaction info</th>
                                         <th>Payment proof</th>
                                         <th>Donation type</th>
+                                        <th>Payment status</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -80,18 +81,22 @@ ALL Training
                                             @else
                                                 No proof uploaded
                                             @endif
-                                        </td>                                        <td>{{$value->event_type}} </td>
-
+                                        </td>
+                                        <td>{{$value->event_type}} </td>
+                                        <td>
+                                            <select name="payment_status" id="payment_status_{{ $value->id }}" onchange="updatePaymentStatus({{ $value->id }}, this.value)">
+                                                <option value="pending" {{ $value->payment_status == 'pending' ? 'selected' : '' }}>Pending</option>
+                                                <option value="approved" {{ $value->payment_status == 'approved' ? 'selected' : '' }}>Approved</option>
+                                            </select>
+                                        </td>
                                         <td>
                                              <a href="{{route('manual.edit',$value->id)}}"
-                                                class="btn btn-xs btn-info"><i class="fas fa-edit"></i></a>
-
+                                                class="btn btn-xs btn-info">Edit</a>
                                                 <form action="{{route('manual.delete',$value->id)}}" method="post" >
                                                     @csrf
                                                     @method('delete')
                                                     <button type="submit" class="btn btn-danger">Delete</button>
                                                 </form>
-
                                         </td>
                                     </tr>
                                     @endforeach
@@ -105,3 +110,27 @@ ALL Training
     </section>
 </div>
 @endsection
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    function updatePaymentStatus(id, status) {
+        $.ajax({
+            url: "{{ route('donation.updatePaymentStatus') }}",
+            type: "POST",
+            data: {
+                _token: "{{ csrf_token() }}",
+                id: id,
+                payment_status: status
+            },
+            success: function(response) {
+                if (response.success) {
+                    alert(response.message);
+                } else {
+                    alert("Failed to update payment status. Please try again.");
+                }
+            },
+            error: function(xhr) {
+                alert("An error occurred: " + xhr.status + " " + xhr.statusText);
+            }
+        });
+    }
+</script>

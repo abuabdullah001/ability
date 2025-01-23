@@ -395,6 +395,10 @@ $events = App\Models\Event::take(3)->where('type','featured')->get();
         }
     </style>
     <h2 class="" style="text-align:center;text-color:black;"> Featured Event </h2>
+    <h4 class="container" style="text-align: center"> A "Featured Event" in disaster management focuses on critical initiatives
+        like emergency response planning, resilience building, or recovery efforts. It highlights key discussions, training, or innovations in disaster preparedness.
+         Such events aim to raise awareness, foster collaboration, and improve community resilience against disasters.
+    </h4>
    <div class="container" style="width: 1154px">
        <div class="ibox">
            <div class="i-body">
@@ -544,6 +548,10 @@ width:20px;
 
 
 <h2 style="color:black;margin-left:600px;">Current Event</h2>
+<h4 class="container">
+    In January 2025, Bangladesh is addressing several disaster management challenges. The government has closed its border with Myanmar, preventing Rohingya refugees from seeking safety amid escalating violence in Rakhine state.THE GUARDIAN
+     Additionally, the World Bank has pledged over $2 billion to support Bangladesh's flood response initiatives and other reforms.REUTERS
+     Furthermore, the European Investment Bank plans to double its funding to €2 billion to aid in infrastructure projects focused on climate change resilience. </h4>
 <section class="current_background">
     <div class="container">
 
@@ -673,6 +681,12 @@ width:20px;
 
 <section style="">
     <h2 class="section-title " style="text-align: center">Expert Feedback</h2>
+    <h4 class="container">
+        Experts commend Bangladesh's disaster management for significantly reducing fatalities from natural disasters, attributing this to comprehensive policies like the Standing Order on Disaster and the Disaster Management Act.
+THE FINANCIAL EXPRESS
+ However, challenges persist, including irregular disaster management committee meetings, bureaucratic hurdles, and corruption, which hinder effective policy implementation.
+RESEARCHGATE
+    </h4>
 
     @foreach ($feedbacks as $feedback)
     <div class="container">
@@ -782,6 +796,10 @@ width:20px;
 
     <div class="container">
         <h2 style="margin-left: 400px">Our partners</h2>
+        <h5 class="container">
+            Disaster management in Bangladesh involves key partners such as the Ministry of Disaster Management and Relief (MoDMR), NGOs like BDPC, and international organizations like the Asian Disaster Preparedness Center (ADPC). Collaborative efforts focus on preparedness, capacity building, and emergency
+             response. Humanitarian coordination teams and aid agencies like USAID play critical roles in strengthening resilience.
+        </h5>
         <div class="swipers">
             <div class="swiper-wrapper">
                 <!-- Images -->

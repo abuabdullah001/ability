@@ -679,6 +679,8 @@ Route::get('odms/edit/{id}',[OdmsController::class,'edit'])->name('odms.edit');
 Route::put('odms/update/{id}',[OdmsController::class,'update'])->name('odms.update');
 Route::delete('odms/delete/{id}',[OdmsController::class,'delete'])->name('odms.delete');
 
+Route::post('/donations/update-payment-status', [EventController::class, 'updatePaymentStatus'])->name('donation.updatePaymentStatus');
+
 
 //manual
 Route::get('manual/create',[ManualController::class,'create'])->name('manual.create');

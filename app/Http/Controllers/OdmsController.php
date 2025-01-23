@@ -10,7 +10,7 @@ class OdmsController extends Controller
     public function index(){
 
         $odmss=Odms::all();
-        // dd($odmss);
+
         return view('frontend.pages.odms.index',compact('odmss'));
     }
 
@@ -19,18 +19,19 @@ class OdmsController extends Controller
     }
 
     public function store(Request $request){
+        dd($request->all());
        $odms= new Odms;
-       $imageName='';
-       if($image=$request->file('image')){
-           $imageName=time().'-'.uniqid().'-'.$image->getClientOriginalExtension();
-           $image->move(public_path('images/post'),$imageName);
-       }
-       $odms->image =$imageName;
 
-       $odms->title= $request->title;
+       if ($request->hasFile('image')) {
+        $img_ext = $request->file('image')->getClientOriginalExtension();
+        $filename = 'odms-' . time() . '.' . $img_ext;
+        $path = $request->file('image')->move(public_path('images/post'), $filename);
+        $imagepath = '/images/event/' . $filename;
+        $odms->image = $imagepath;
+    }
+       $odms->title = $request->title;
        $odms->descrition=$request->descrition;
        $odms->save();
-
        return redirect()->route('odms.index')->with('success', 'ODMS created successfully!');
     }
 

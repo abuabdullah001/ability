@@ -1,7 +1,9 @@
 @extends('admin.masterTemplate')
+
 @section('menu-name')
 ALL Training
 @endsection
+
 @section('main-content')
 <style>
     .tablestyle3 {
@@ -18,10 +20,9 @@ ALL Training
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <h5 class="m-0 text-dark">All Blogs</h5>
-                </div><!-- /.col -->
-
-            </div><!-- /.row -->
-        </div><!-- /.container-fluid -->
+                </div>
+            </div>
+        </div>
         <hr class="style18">
     </div>
     <!-- Main content -->
@@ -30,23 +31,23 @@ ALL Training
             <div class="row">
                 <div class="col-md-12">
                     @if(session()->has('success'))
-                    <div class="alert alert-success">{{session()->get('success')}}</div>
+                    <div class="alert alert-success">{{ session()->get('success') }}</div>
                     @endif
                     <div class="card">
                         <div class="card-header bg-cyan">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <h3 class="card-title"> <i class="fa fa-users"></i> All Blogs</h3>
+                                    <h3 class="card-title"><i class="fa fa-users"></i> All Blogs</h3>
                                 </div>
                                 <div class="col-md-6">
-                                    <a href="{{route('blog.create')}}" class="btn btn-success float-right"> <i
-                                            class="fa fa-plus"></i> ADD Blog</a>
+                                    <a href="{{ route('blog.create') }}" class="btn btn-success float-right">
+                                        <i class="fa fa-plus"></i> ADD Blog
+                                    </a>
                                 </div>
                             </div>
                         </div>
-
                         <div class="card-body">
-                            <table id="example1" class="table table-bordered table-striped  ">
+                            <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
                                         <th>SL</th>
@@ -63,19 +64,15 @@ ALL Training
                                     @foreach ($blogs as $key => $value)
                                     <tr>
                                         <td>{{ $i++ }}</td>
-
                                         <td>{{ $value->name }}</td>
                                         <td>{{ $value->date }}</td>
-                                        <td><img src="{{asset('/images/post'.$value->image)}}" alt=""></td>
+                                        <td>
+                                             <img src="{{ asset($value->image) }}" alt="Blog Image" style="width: 100px; height: auto;">
+                                        </td>
                                         <td>{!! Str::limit($value->title, 5000) !!}</td>
                                         <td>{!! Str::limit($value->description, 5000) !!}</td>
-
                                         <td>
-                                             {{-- <a href="{{route('blog.edit',$value->id)}}"
-                                                class="btn btn-xs btn-info"><i class="fas fa-edit"></i></a> --}}
-                                            <a href="{{route('blog.delete',$value->id)}}"
-                                                onclick="return confirm('Are You sure')"
-                                                class="btn btn-xs btn-danger"><i class="fas fa-trash-alt"></i></a>
+                                            <!-- Add action buttons if needed -->
                                         </td>
                                     </tr>
                                     @endforeach

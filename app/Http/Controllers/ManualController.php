@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Manual;
 use Illuminate\Http\Request;
+use App\Models\EventAmount;
 
 class ManualController extends Controller
 {
@@ -11,7 +12,7 @@ class ManualController extends Controller
         return view('frontend.pages.manual.create');
     }
     public function store(Request $request){
-        // dd($request->all());
+
         $manual=new Manual;
 
         $manual->name=$request->name;
@@ -20,7 +21,7 @@ class ManualController extends Controller
         $manual->address=$request->address;
         $manual->payment_method=$request->payment_method;
         $manual->amount=$request->amount;
-
+        $manual->event_id=$request->event_name;
         if ($request->hasFile('payment_proof')) {
             $img_ext = $request->file('payment_proof')->getClientOriginalExtension();
             $filename = 'event-' . time() . '.' . $img_ext;
@@ -39,6 +40,7 @@ class ManualController extends Controller
         $manual->save();
         return redirect()->route('manual.create')->with('success','payment sucessgully done');
     }
+
 
     public function index(){
         $manuals=Manual::all();

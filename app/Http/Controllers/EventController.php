@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use App\Models\EventAmount;
+use App\Models\Manual;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -43,7 +45,6 @@ class EventController extends Controller
             $imagepath = '/images/event/' . $filename;
             $event->image = $imagepath;
         }
-
         $event->donation_amount=$request->donation_amount;
         $event->desc = $request->description;
         $event->meta = $request->meta;
@@ -51,6 +52,22 @@ class EventController extends Controller
 
         return redirect('/all-event-list')->with('success', 'Data stored successfully');
     }
+
+    public function updatePaymentStatus(Request $request)
+{
+    $donation = Manual::findOrFail($request->id); // Fetch donation record
+    $donation->payment_status = $request->payment_status;
+    if($request->payment_status == 'approved'){
+        $event = new EventAmount();
+        $event->event_id = $donation->event_id;
+        $event->paid_amount = $event->paid_amount +  $donation->amount;
+        $event->save();
+
+    } // Update payment status
+    $donation->save(); // Save changes
+
+    return response()->json(['success' => true, 'message' => 'Payment status updated successfully.']);
+}
 
     public function edit($id)
     {
