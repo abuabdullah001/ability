@@ -342,9 +342,8 @@ margin-top: 10px;
 <section class="" style="background-color: #f0f0f0">
 <div class="container">
   <div style="margin-top:50px " class="">
-    <h2 style="text-align: center">About ODMS</h2>
+    <h2 style="text-align: center;">About ODMS</h2>
     @foreach ($odmss as $odms )
-
     <div class="row col-md-6" style="margin-top: 150px;">
      <img style="width: 500px;height:400px" src="{{ asset('images/post/' . $odms->image) }}" alt="">
     </div>
@@ -402,7 +401,7 @@ $events = App\Models\Event::take(3)->where('type','featured')->get();
  <div class="container mt-5">
     <div class="text-center mb-4">
         <h2 style="font-weight: bold; color: #333;">Featured Event</h2>
-        <div class="" style="height: 10px;width:1150px;background-color:black">
+        <div class="" style="height: 5px;width:1150px;background-color:black">
 
         </div>
     </div>
@@ -568,7 +567,7 @@ width:20px;
 <div class="container mt-5">
     <div class="text-center mb-4">
         <h2 style="color: #333;font-weight:bold">Current Event</h2>
-        <div class="" style="height: 10px;width:1150px;background-color:black">
+        <div class="" style="height: 5px;width:1150px;background-color:black">
 
         </div>
     </div>
@@ -724,7 +723,7 @@ width:20px;
     <div class="container mt-5">
         <div class="text-center mb-4">
             <h2 class="section-title" style="font-weight: bold; color: #333;">Expert Feedback</h2>
-            <div class="" style="height: 10px;width:1150px;background-color:black">
+            <div class="" style="height: 5px;width:1150px;background-color:black">
             </div>
         </div>
         <div class="card shadow-sm">
@@ -812,7 +811,7 @@ width:20px;
                     <div class="container mt-5">
                         <div class="text-center mb-4">
                             <h2 style="font-weight: bold; color: #333;">ODMS gallery</h2>
-                            <div class="" style="height: 10px;width:1150px;background-color:black">
+                            <div class="" style="height: 5px;width:1150px;background-color:black">
 
                             </div>
                         </div>
