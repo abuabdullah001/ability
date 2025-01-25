@@ -590,7 +590,6 @@
                         <img src="{{asset('images/event/165.jpg')}}" alt="" style="height: 150px;width:300px;margin-left:30px;margin-right:20px;">
                         <h4 style="text-align: center">Coming Soon</h4>
                     </a>
-
             </div>
         </div>
     </div>
@@ -612,7 +611,7 @@
     </div>
     <div>
         <a class="dropdown-item" href="{{ url('/project') }}">
-            <img src="images/event/125.png" alt="" style="height: 150px;width:300px;">
+            <img src="{{asset('images/event/125.png')}}" alt="" style="height: 150px;width:300px;">
             <h3 style="text-align: center">Projects</h3></a>
     </div>
     <div>

@@ -9,7 +9,7 @@ HOME
 <section class="inner-header-title"
     style="background-image:url(https://user-images.githubusercontent.com/513929/53929982-e5497700-404c-11e9-8393-dece0b196c98.png);">
     <div class="container">
-        <h1>GALLERY</h1>
+        <h1 style="text-align: center;margin-top:30px">GALLERY</h1>
     </div>
 </section>
 

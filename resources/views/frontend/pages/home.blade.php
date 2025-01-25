@@ -342,15 +342,20 @@ margin-top: 10px;
 <section class="" style="background-color: #f0f0f0">
 <div class="container">
   <div style="margin-top:50px " class="">
+    <h2 style="text-align: center">About ODMS</h2>
     @foreach ($odmss as $odms )
+
     <div class="row col-md-6" style="margin-top: 150px;">
      <img style="width: 500px;height:400px" src="{{ asset('images/post/' . $odms->image) }}" alt="">
     </div>
     <div class="row col-md-6 " style="margin-top: 100px">
-        <h2>About ODMS</h2>
+
         {{-- <h1 style="font-size: 2em; color: black;">{!! Str::limit($odms->title, 100) !!}</h1> --}}
-      <p style="text-size:12px;color:black;text-align: justify; font-family:Arial, Helvetica, sans-serif" class="">
-        {!! Str::limit( $odms->descrition, 1200) !!}   </p>
+      <p style="text-size:12px;color:black;text-align: justify; font-family:Arial, Helvetica, sans-serif;margin-top:100px" class="mt-3">
+        {!! Str::limit( $odms->descrition, 800) !!}
+    </p>
+    <button class="btn btn-success">Read more</button>
+
     </div>
     @endforeach
 </div>
@@ -397,6 +402,9 @@ $events = App\Models\Event::take(3)->where('type','featured')->get();
  <div class="container mt-5">
     <div class="text-center mb-4">
         <h2 style="font-weight: bold; color: #333;">Featured Event</h2>
+        <div class="" style="height: 10px;width:1150px;background-color:black">
+
+        </div>
     </div>
     <div class="card shadow-sm">
         <div class="card-body">
@@ -559,7 +567,10 @@ width:20px;
 
 <div class="container mt-5">
     <div class="text-center mb-4">
-        <h2 style="color: #333;">Current Event</h2>
+        <h2 style="color: #333;font-weight:bold">Current Event</h2>
+        <div class="" style="height: 10px;width:1150px;background-color:black">
+
+        </div>
     </div>
     <div class="card shadow-sm">
         <div class="card-body">
@@ -713,6 +724,8 @@ width:20px;
     <div class="container mt-5">
         <div class="text-center mb-4">
             <h2 class="section-title" style="font-weight: bold; color: #333;">Expert Feedback</h2>
+            <div class="" style="height: 10px;width:1150px;background-color:black">
+            </div>
         </div>
         <div class="card shadow-sm">
             <div class="card-body">
@@ -796,7 +809,26 @@ width:20px;
                         </div>
                     </div>
 
-                    <h2 class="text-center mt-3" style="margin-top: 100px">ODMS Gallery</h2><br>
+                    <div class="container mt-5">
+                        <div class="text-center mb-4">
+                            <h2 style="font-weight: bold; color: #333;">ODMS gallery</h2>
+                            <div class="" style="height: 10px;width:1150px;background-color:black">
+
+                            </div>
+                        </div>
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <p style="font-size: 16px; color: #555; line-height: 1.8; text-align: justify;">
+                                    Disaster management in Bangladesh involves key partners such as the Ministry of Disaster Management
+                                    and Relief (MoDMR), NGOs like BDPC, and international organizations like the Asian Disaster Preparedness
+                                    Center (ADPC). Collaborative efforts focus on preparedness, capacity building, and emergency response.
+                                    Humanitarian coordination teams and aid agencies like USAID play critical roles in strengthening resilience.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{-- <h2 class="text-center mt-3" style="margin-top: 100px">ODMS Gallery</h2><br> --}}
                     <div class="i-box">
                         <div class="i-head">
                             <div class="i-body">
@@ -842,6 +874,9 @@ width:20px;
         <div class="container mt-5">
             <div class="text-center mb-4">
                 <h2 style="font-weight: bold; color: #333;">Our Partners</h2>
+                <div class="" style="height: 10px;width:1150px;background-color:black">
+
+                </div>
             </div>
             <div class="card shadow-sm">
                 <div class="card-body">
