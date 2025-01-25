@@ -60,6 +60,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ServeController;
 use App\Http\Controllers\SupportController;
 use SebastianBergmann\Environment\Runtime;
+use App\Http\Controllers\PartnerController;
 
 Route::get('/report', function () {
     return view('frontend.pages.report');
@@ -691,3 +692,8 @@ Route::put('manual/update/{id}',[ManualController::class,'update'])->name('manua
 Route::delete('manual/delete/{id}',[ManualController::class,'delete'])->name('manual.delete');
 
 
+// partner
+
+Route::get('partner/create',[PartnerController::class,'create'])->name('partner.create');
+Route::post('partner/store',[PartnerController::class,'create'])->name('partner.store');
+Route::get('partner/index',[PartnerController::class,'create'])->name('partner.index');

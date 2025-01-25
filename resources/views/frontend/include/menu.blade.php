@@ -255,6 +255,17 @@
         .nav-buttons {
             display: none;
         }
+        .inner-header-title:before {
+    position: absolute;
+    content: "";
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: none;
+    background: #242d3e;
+    opacity: .6;
+}
 
         @media (max-width: 624px) {
             body {
@@ -420,6 +431,20 @@
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
                 z-index: 10;
             }
+            .event-list2 {
+
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: #fff;
+                border: 1px solid #ddd;
+                border-radius: 0px;
+                padding: 10px;
+                width: 100%;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                z-index: 10;
+                display: none
+            }
 
             .event-item {
                 display: flex;
@@ -475,13 +500,12 @@
             $events = App\Models\Event::take(4)->get();
         @endphp
 
-        <div class="">
 
 {{-- donate us button --}}
-      <div id="eventList" class="event-list " style="display: flex; margin-top:0px;margin-left:00px;">
+      {{-- <div id="eventList" class="event-list2" style="display: flex; margin-top:0px;margin-left:00px;">
                 @foreach ($events as $event)
-                    <div class="event-item "
-                        style="display: flex; align-items: center; margin-bottom: 10px; width:100%;">
+                    <div class=""
+                        style="">
                         <a href="{{ route('event.show', ['slug' => $event->slug]) }}">
                             <img src="{{ asset($event->image) }}"
                                 style="width: 300px; height: 150px; object-fit: cover; border-radius: 5px; margin-right: 0px;"
@@ -501,7 +525,32 @@
                 </div>
             </div>
         </div>
+    </div> --}}
+    <div id="eventList" class="event-list" style="margin-top: 0px; margin-left: 0px;">
+        <div class="aboutus6">
+            @foreach ($events as $event)
+                <div>
+                    <a href="{{ route('event.show', ['slug' => $event->slug]) }}">
+                        <img src="{{ asset($event->image) }}"
+                             style="width: 300px; height: 150px; object-fit: cover; border-radius: 5px; margin-right: 0px;"
+                             class="card-img-top img-responsive" alt="...">
+                        <div class="card-body">
+                            <h2 class="card-title">
+                                {{ Str::limit($event->name, 30, '...') }}
+                            </h2>
+                        </div>
+                    </a>
+                </div>
+            @endforeach
+            <div class="block" >
+                <h3 ><a href="/event"><button class="btn btn-success" style="margin-bottom:120px">All event</button> </a></h3>
+                 </div>
+        </div>
+
+
     </div>
+
+
 
     {{-- about us start --}}
     <div id="aboutus4" class="event-list" style=" margin-top:0px;margin-left:00px;">
@@ -529,16 +578,16 @@
                 @foreach (App\Models\Category::where('type', 'Committee')->get() as $committeemenu)
                     <a class="dropdown-item"
                        href="{{ '/view_committeepage/' . $committeemenu->id }}">
-                        <img src="images/event/152.jpeg" alt="" style="height: 150px;width:300px;margin-left:30px;">
+                        <img src="{{asset('images/event/152.jpeg')}}" alt="" style="height: 150px;width:300px;margin-left:30px;">
                         <h4 style="text-align: center">{{ $committeemenu->title }}</h4>
                     </a>
                 @endforeach
                     <a class="dropdown-item" href="{{ route('report') }}">
-                        <img src="images/event/165.jpg" alt="" style="height: 150px;width:300px;margin-left:30px;margin-right:20px;">
+                        <img src="{{asset('images/event/165.jpg')}}" alt="" style="height: 150px;width:300px;margin-left:30px;margin-right:20px;">
                         <h4 style="text-align: center">Coming Soon</h4>
                     </a>
                     <a class="dropdown-item" href="{{ route('report') }}">
-                        <img src="images/event/165.jpg" alt="" style="height: 150px;width:300px;margin-left:30px;margin-right:20px;">
+                        <img src="{{asset('images/event/165.jpg')}}" alt="" style="height: 150px;width:300px;margin-left:30px;margin-right:20px;">
                         <h4 style="text-align: center">Coming Soon</h4>
                     </a>
 
@@ -553,12 +602,12 @@
 <div class="event-item2">
     <div>
         <a class="dropdown-item" href="{{ url('/event') }}">
-            <img src="images/event/123.jpg" alt="" style="height: 150px;width:300px;">
+            <img src="{{asset('images/event/123.jpg')}}" alt="" style="height: 150px;width:300px;">
             <h3 style="text-align: center">Events</h3> </a>
     </div>
     <div>
         <a class="dropdown-item" href="{{ url('/champaign') }}">
-            <img src="images/event/124.png" alt="" style="height: 150px;width:300px;">
+            <img src="{{asset('images/event/124.png')}}" alt="" style="height: 150px;width:300px;">
             <h3 style="text-align: center">Campaign</h3></a>
     </div>
     <div>
@@ -568,7 +617,7 @@
     </div>
     <div>
         <a class="dropdown-item" href="/response">
-            <img src="images/event/126.png" alt="" style="height: 150px;width:300px;">
+            <img src="{{asset('images/event/126.png')}}" alt="" style="height: 150px;width:300px;">
             <h3 style="text-align: center">Our Response</h3></a>
     </div>
         </div>
@@ -582,22 +631,22 @@
             <div class="event-item27">
                         <div>
                             <a class="dropdown-item" href="{{ url('/All-Gallery') }}">
-                                <img src="images/event/130.jpeg" alt="" style="height: 150px;width:300px;">
+                                <img src="{{asset('images/event/130.jpeg')}}" alt="" style="height: 150px;width:300px;">
                                 <h3 style="text-align: center">Gallery</h3> </a>
                         </div>
                         <div>
                             <a class="dropdown-item" href="/All-Video">
-                                <img src="images/event/161.png" alt="" style="height: 150px;width:300px;">
+                                <img src="{{asset('images/event/161.png')}}" alt="" style="height: 150px;width:300px;">
                                 <h3 style="text-align: center">Video</h3></a>
                         </div>
                         <div>
                             <a class="dropdown-item" href="{{ url('/news') }}">
-                                <img src="images/event/162.jpeg" alt="" style="height: 150px;width:300px;">
+                                <img src="{{asset('images/event/162.jpeg')}}" alt="" style="height: 150px;width:300px;">
                                 <h3 style="text-align: center">News</h3></a>
                         </div>
                         <div>
                             <a class="dropdown-item" href="{{ route('frontend.pages.blog') }}">
-                                <img src="images/event/163.png" alt="" style="height: 150px;width:300px;">
+                                <img src="{{asset('images/event/163.png')}}" alt="" style="height: 150px;width:300px;">
                                 <h3 style="text-align: center">Blog</h3>
                             </a>
                         </div>
@@ -613,22 +662,22 @@
 
                         <div>
                             <a class="dropdown-item" href="{{ url('/signin') }}">
-                                <img src="images/event/144.jpg" alt="" style="height: 150px;width:300px;">
+                                <img src="{{asset('images/event/144.jpg')}}" alt="" style="height: 150px;width:300px;">
                                 <h3 style="text-align: center">Join as a Donor</h3></a>
                         </div>
                         <div>
                             <a class="dropdown-item" href="">
-                                <img src="images/event/165.jpg" alt="" style="height: 150px;width:300px;">
+                                <img src="{{asset('images/event/165.jpg')}}" alt="" style="height: 150px;width:300px;">
                                 <h3 style="text-align: center">Coming Soon</h3></a>
                         </div>
                         <div>
                             <a class="dropdown-item" href="">
-                                <img src="images/event/165.jpg" alt="" style="height: 150px;width:300px;">
+                                <img src="{{asset('images/event/165.jpg')}}" alt="" style="height: 150px;width:300px;">
                                 <h3 style="text-align: center">Coming Soon</h3></a>
                         </div>
                         <div>
                             <a class="dropdown-item" href="{{ url('/volunteer') }}">
-                                <img src="images/event/140.jpg" alt="" style="height: 150px;width:300px;">
+                                <img src="{{asset('images/event/140.jpg')}}" alt="" style="height: 150px;width:300px;">
                                 <h3 style="text-align: center">Join as a Volunteer</h3> </a>
                         </div>
             </div>
@@ -674,197 +723,42 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
 <script>
     $(document).ready(function() {
+        function setupHoverMenu(buttonSelector, menuSelector) {
+            const button = $(buttonSelector);
+            const menu = $(menuSelector);
+            let timeout;
 
-        $('#hamburger').click(function() {
-            $('.nav-links').toggleClass('active');
-        });
+            button.mouseenter(function() {
+                clearTimeout(timeout); // Clear any previous timeout
+                menu.show();
+            });
 
-        let timer;
+            button.mouseleave(function() {
+                timeout = setTimeout(function() {
+                    menu.hide();
+                }, 1900); // Delay of 500ms before hiding the menu
+            });
 
-        $('.nav-item.has-submenu').hover(function() {
-            clearTimeout(timer);
-            $(this).children('.dropdown-menu').stop(true, true).slideDown();
-        }, function() {
-            timer = setTimeout(() => {
-                $(this).children('.dropdown-menu').stop(true, true).slideUp();
-            }, 300);
-        });
-    });
-</script>
+            menu.mouseleave(function() {
+                timeout = setTimeout(function() {
+                    menu.hide();
+                }, 1900); // Delay of 500ms before hiding the menu
+            });
+        }
 
+        setupHoverMenu('#donateUsButton', '#eventList');
+        setupHoverMenu('#donateUsButton23', '#all2222');
+        setupHoverMenu('#donateUsButton233', '#all23');
+        setupHoverMenu('#involvedID', '#involved3');
+        setupHoverMenu('#aboutus5', '#aboutus4');
 
-
-<script>
-    $(document).ready(function() {
-        const donateUsButton = $('#donateUsButton');
-        const eventList = $('#eventList');
-
-
-        donateUsButton.hover(
-            function() {
-                eventList.show();
-            },
-            function() {
-
-            }
-        );
-        eventList.hover(
-            function() {
-
-            },
-            function() {
-
-                eventList.hide();
-            }
-        );
-        donateUsButton.on('click', function(donate) {
+        // Smooth scroll functionality
+        $('[id^="donateUsButton"], #involvedID, #aboutus5').on('click', function() {
             $('html, body').animate({
-                scrollTop: $('#allEvents').offset().top
-            }, 800); // Smooth scroll to the all events section
+                scrollTop: $($(this).attr('href')).offset().top
+            }, 800);
         });
-    });
+    });
 </script>
-
-{{-- activities menu --}}
-<script>
-    $(document).ready(function() {
-        const donateUsButton = $('#donateUsButton23');
-        const eventList = $('#all2222');
-
-        eventList.hover(
-            function() {
-
-            },
-            function() {
-
-                eventList.hide();
-            }
-        );
-
-
-        donateUsButton.hover(
-            function() {
-                eventList.show();
-            },
-            function() {
-
-            }
-        );
-
-        donateUsButton.on('click', function(donate) {
-            $('html, body').animate({
-                scrollTop: $('#allEvents').offset().top
-            }, 800); // Smooth scroll to the all events section
-        });
-    });
-</script>
-
-{{-- media menu--}}
-<script>
-    $(document).ready(function() {
-        const donateUsButton = $('#donateUsButton233');
-        const eventList = $('#all23');
-
-        eventList.hover(
-            function() {
-
-            },
-            function() {
-
-                eventList.hide();
-            }
-        );
-
-
-        donateUsButton.hover(
-            function() {
-                eventList.show();
-            },
-            function() {
-
-            }
-        );
-
-        donateUsButton.on('click', function(donate) {
-            $('html, body').animate({
-                scrollTop: $('#allEvents').offset().top
-            }, 800); // Smooth scroll to the all events section
-        });
-    });
-</script>
-
-
-
-{{-- volunteer menu--}}
-<script>
-    $(document).ready(function() {
-        const donateUsButton = $('#involvedID');
-        const eventList = $('#involved3');
-
-        eventList.hover(
-            function() {
-
-            },
-            function() {
-
-                eventList.hide();
-            }
-        );
-
-
-        donateUsButton.hover(
-            function() {
-                eventList.show();
-            },
-            function() {
-
-            }
-        );
-
-        donateUsButton.on('click', function(donate) {
-            $('html, body').animate({
-                scrollTop: $('#allEvents').offset().top
-            }, 800); // Smooth scroll to the all events section
-        });
-    });
-</script>
-
-{{-- about us menu--}}
-<script>
-    $(document).ready(function() {
-        const donateUsButton = $('#aboutus5');
-        const eventList = $('#aboutus4');
-
-        eventList.hover(
-            function() {
-
-            },
-            function() {
-
-                eventList.hide();
-            }
-        );
-
-
-        donateUsButton.hover(
-            function() {
-                eventList.show();
-            },
-            function() {
-
-            }
-        );
-
-        donateUsButton.on('click', function(donate) {
-            $('html, body').animate({
-                scrollTop: $('#allEvents').offset().top
-            }, 800); // Smooth scroll to the all events section
-        });
-    });
-</script>
-
-
-

@@ -10,7 +10,7 @@ Add news
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h5 class="m-0 text-dark">news POST</h5>
+                    <h5 class="m-0 text-dark">Partner logo</h5>
                 </div><!-- /.col -->
 
             </div><!-- /.row -->
@@ -26,31 +26,18 @@ Add news
                 <div class="col-md-1"></div>
                 <div class="col-md-10">
                     <div class="card">
-                        <div class="card-header bg-blue text-center"> ADD news</div>
+                        <div class="card-header bg-blue text-center"> ADD Partners logo</div>
                         <div class="card-body">
                             <div class="tab-content">
                                 <div class="active tab-pane">
-                                    <form class="form-horizontal" method="post"
-                                        action="{{Route('news.store')}}"
-                                        enctype="multipart/form-data">
+                                    <form class="form-horizontal" method="post" action="{{Route('partner.store')}}" enctype="multipart/form-data">
                                         @csrf
                                         <div class="row">
 
 
                                             <div class="col-md-6 form-group">
-                                                <label for="first-name">Order By</label>
-                                                <input type="number" id="order_by" name="order_by" value="" class="form-control">
-                                                @error('order_by')
-                                                <div class="error text-red text-bold" style="padding: 0;">
-                                                    <strong>
-                                                        {{$message}}
-                                                    </strong>
-                                                </div>
-                                                @enderror
-                                            </div>
-                                            <div class="col-md-6 form-group">
-                                                <label for="">Name*</label>
-                                                <input type="text" name="name"
+                                                <label for="">Title*</label>
+                                                <input type="text" name="title"
                                                     value="" class="form-control">
                                                 @error('name')
                                                 <div class="error text-red text-bold" style="padding: 0;">
@@ -63,8 +50,8 @@ Add news
 
                                             <div class="col-md-6 form-group">
                                                 <label for="">Image*</label>
-                                                <input type="file" name="image"
-                                                    value="" class="form-control">
+                                                <input type="file" name="image[]"
+                                                    value="" class="form-control multiple">
                                                 @error('image')
                                                 <div class="error text-red text-bold" style="padding: 0;">
                                                     <strong>
@@ -83,18 +70,6 @@ Add news
                                                 @enderror
                                             </div>
 
-
-                                            <div class="col-md-12 form-group">
-                                                <label for="first-name">Meta</label>
-                                                <input type="text" id="meta" name="meta" value="" class="form-control">
-                                                @error('meta')
-                                                <div class="alert  alert-danger" style="padding: 0;">
-                                                    <strong>
-                                                        {{$message}}
-                                                    </strong>
-                                                </div>
-                                                @enderror
-                                            </div>
                                             <div class="col-md-12 form-group">
                                                 <button type="submit" class="btn btn-info">Submit</button>
                                             </div>

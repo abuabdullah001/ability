@@ -394,11 +394,21 @@ $events = App\Models\Event::take(3)->where('type','featured')->get();
             font-size: 35px;
         }
     </style>
-    <h2 class="" style="text-align:center;text-color:black;"> Featured Event </h2>
-    <h4 class="container" style="text-align: center"> A "Featured Event" in disaster management focuses on critical initiatives
-        like emergency response planning, resilience building, or recovery efforts. It highlights key discussions, training, or innovations in disaster preparedness.
-         Such events aim to raise awareness, foster collaboration, and improve community resilience against disasters.
-    </h4>
+ <div class="container mt-5">
+    <div class="text-center mb-4">
+        <h2 style="font-weight: bold; color: #333;">Featured Event</h2>
+    </div>
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <p style="font-size: 16px; color: #555; line-height: 1.8; text-align: center;">
+                A "Featured Event" in disaster management focuses on critical initiatives like emergency response planning,
+                resilience building, or recovery efforts. It highlights key discussions, training, or innovations in disaster preparedness.
+                Such events aim to raise awareness, foster collaboration, and improve community resilience against disasters.
+            </p>
+        </div>
+    </div>
+</div>
+
    <div class="container" style="width: 1154px">
        <div class="ibox">
            <div class="i-body">
@@ -547,11 +557,31 @@ width:20px;
 <!-- Slider -->
 
 
-<h2 style="color:black;margin-left:600px;">Current Event</h2>
-<h4 class="container">
-    In January 2025, Bangladesh is addressing several disaster management challenges. The government has closed its border with Myanmar, preventing Rohingya refugees from seeking safety amid escalating violence in Rakhine state.THE GUARDIAN
-     Additionally, the World Bank has pledged over $2 billion to support Bangladesh's flood response initiatives and other reforms.REUTERS
-     Furthermore, the European Investment Bank plans to double its funding to €2 billion to aid in infrastructure projects focused on climate change resilience. </h4>
+<div class="container mt-5">
+    <div class="text-center mb-4">
+        <h2 style="color: #333;">Current Event</h2>
+    </div>
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <p style="font-size: 16px; color: #555; line-height: 1.8;">
+                In January 2025, Bangladesh is addressing several disaster management challenges. The government has
+                closed its border with Myanmar, preventing Rohingya refugees from seeking safety amid escalating
+                violence in Rakhine state.
+                <strong class="text-muted">THE GUARDIAN</strong>
+            </p>
+            <p style="font-size: 16px; color: #555; line-height: 1.8;">
+                Additionally, the World Bank has pledged over $2 billion to support Bangladesh's flood response
+                initiatives and other reforms.
+                <strong class="text-muted">REUTERS</strong>
+            </p>
+            <p style="font-size: 16px; color: #555; line-height: 1.8;">
+                Furthermore, the European Investment Bank plans to double its funding to €2 billion to aid in
+                infrastructure projects focused on climate change resilience.
+            </p>
+        </div>
+    </div>
+</div>
+
 <section class="current_background">
     <div class="container">
 
@@ -680,13 +710,27 @@ width:20px;
 </style>
 
 <section style="">
-    <h2 class="section-title " style="text-align: center">Expert Feedback</h2>
-    <h4 class="container">
-        Experts commend Bangladesh's disaster management for significantly reducing fatalities from natural disasters, attributing this to comprehensive policies like the Standing Order on Disaster and the Disaster Management Act.
-THE FINANCIAL EXPRESS
- However, challenges persist, including irregular disaster management committee meetings, bureaucratic hurdles, and corruption, which hinder effective policy implementation.
-RESEARCHGATE
-    </h4>
+    <div class="container mt-5">
+        <div class="text-center mb-4">
+            <h2 class="section-title" style="font-weight: bold; color: #333;">Expert Feedback</h2>
+        </div>
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <p style="font-size: 16px; color: #555; line-height: 1.8; text-align: justify;">
+                    Experts commend Bangladesh's disaster management for significantly reducing fatalities from natural
+                    disasters, attributing this to comprehensive policies like the Standing Order on Disaster and the
+                    Disaster Management Act.
+                    <strong class="text-muted">THE FINANCIAL EXPRESS</strong>
+                </p>
+                <p style="font-size: 16px; color: #555; line-height: 1.8; text-align: justify;">
+                    However, challenges persist, including irregular disaster management committee meetings, bureaucratic
+                    hurdles, and corruption, which hinder effective policy implementation.
+                    <strong class="text-muted">RESEARCHGATE</strong>
+                </p>
+            </div>
+        </div>
+    </div>
+
 
     @foreach ($feedbacks as $feedback)
     <div class="container">
@@ -795,11 +839,22 @@ RESEARCHGATE
 <section>
 
     <div class="container">
-        <h2 style="margin-left: 400px">Our partners</h2>
-        <h5 class="container">
-            Disaster management in Bangladesh involves key partners such as the Ministry of Disaster Management and Relief (MoDMR), NGOs like BDPC, and international organizations like the Asian Disaster Preparedness Center (ADPC). Collaborative efforts focus on preparedness, capacity building, and emergency
-             response. Humanitarian coordination teams and aid agencies like USAID play critical roles in strengthening resilience.
-        </h5>
+        <div class="container mt-5">
+            <div class="text-center mb-4">
+                <h2 style="font-weight: bold; color: #333;">Our Partners</h2>
+            </div>
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <p style="font-size: 16px; color: #555; line-height: 1.8; text-align: justify;">
+                        Disaster management in Bangladesh involves key partners such as the Ministry of Disaster Management
+                        and Relief (MoDMR), NGOs like BDPC, and international organizations like the Asian Disaster Preparedness
+                        Center (ADPC). Collaborative efforts focus on preparedness, capacity building, and emergency response.
+                        Humanitarian coordination teams and aid agencies like USAID play critical roles in strengthening resilience.
+                    </p>
+                </div>
+            </div>
+        </div>
+
         <div class="swipers">
             <div class="swiper-wrapper">
                 <!-- Images -->
