@@ -226,6 +226,7 @@ flex-direction: column;
                                      through disaster preparedness, response, and recovery initiatives. From the very beginning ODMS is hardly trying to promote sustainability and build resilience against
                                       disasters. The major ODMS events, such as disaster risk reduction programs, poster presentations, and sessions on planetary science in collaboration with esteemed government and non-government institutions."
                                     <br>
+                                    <button class="btn btn-success">Read more</button>
                                 </b>
                             </div>
                         </div>
@@ -277,6 +278,7 @@ flex-direction: column;
                                     are successfully managed. Join us in developing a resilient and inclusive future through compassion, creativity, and action.</em><br><br>
                                 <!--<b>Md. Aktaruzzaman Hero<br>-->
                                 </b>
+                                <button class="btn btn-success">Read more</button>
                             </div>
                         </div>
                     </div>
