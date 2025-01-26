@@ -303,7 +303,7 @@
 
 
 
-<section style="background-color: black; color: white; padding: 15px 20px;">
+<section style="background-color: black; color: white; padding: 10px 20px;">
     <div style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: auto; flex-wrap: wrap; gap: 20px;">
         <!-- Social Media Icons -->
         <div style="display: flex; gap: 15px;">
