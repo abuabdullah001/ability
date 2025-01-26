@@ -343,6 +343,8 @@ margin-top: 10px;
 <div class="container">
   <div style="margin-top:50px " class="">
     <h2 style="text-align: center;padding-top: 10px">About ODMS</h2>
+    <div class="" style="height: 2px;width:150px;background-color:black; margin:auto;margin-bottom:60px">
+    </div>
     @foreach ($odmss as $odms )
     <div class="row col-md-6" style="margin-top: 30px;">
      <img style="width: 500px;height:400px" src="{{ asset('images/post/' . $odms->image) }}" alt="">
@@ -389,7 +391,7 @@ margin-top: 10px;
 @php
 $events = App\Models\Event::take(3)->where('type','featured')->get();
 @endphp
-<section class="brows-job-category">
+<section class="brows-job-category" style="padding-top: 20px">
     <style>
         .brows-job-category h2 {
             color: black;
@@ -430,7 +432,7 @@ $events = App\Models\Event::take(3)->where('type','featured')->get();
                                            <h2 class="card-title">
                                                {{ Str::limit($project->name, 30, '...') }} <!-- Limit the title to 30 characters -->
                                            </h2>
-                                           <a href="{{ route('event.show', ['slug' => $project->slug]) }}" class="btn btn-link" style="color:blue">
+                                           <a href="{{ route('event.show', ['slug' => $project->slug]) }}" class="btn btn-link" style="color:blue" style=>
                                                Read More
                                            </a>
                                        </div>
@@ -565,9 +567,8 @@ width:20px;
 
 <div class="container mt-5">
     <div class="text-center mb-4">
-        <h2 style="color: #333;font-weight:bold">Current Event</h2>
-        <div class="" style="height: 2px;width:750px;background-color:black">
-
+        <h2 style="color: #333;font-weight:bold;margin-top:100px;">Current Event</h2>
+        <div class="" style="height: 2px;width:150px;background-color:black; margin:auto; margin-bottom:50px">
         </div>
     </div>
     <div class="card shadow-sm">
@@ -721,8 +722,8 @@ width:20px;
 <section style="">
     <div class="container mt-5">
         <div class="text-center mb-4">
-            <h2 class="section-title" style="font-weight: bold; color: #333;">Expert Feedback</h2>
-            <div class="" style="height: 2px;width:750px;background-color:black">
+            <h2 class="section-title" style="font-weight: bold; color: #333;margin-top:100px">Expert Feedback</h2>
+            <div class="" style="height: 2px;width:150px;background-color:black; margin:auto;margin-bottom:50px">
             </div>
         </div>
         <div class="card shadow-sm">
@@ -779,13 +780,12 @@ width:20px;
                 <div class="container mt-5">
                     <div class="text-center mb-4">
                         <h2 style="font-weight: bold; color: #333;">ODMS Video</h2>
-                        <div class="mb-2" style="height: 2px;width:750px;background-color:black">
-
+                        <div class="" style="height: 2px;width:150px;background-color:black; margin:auto;margin-bottom:50px">
                         </div>
                     </div>
                     <div class="card shadow-sm">
                         <div class="card-body">
-                            <p style="font-size: 16px; color: #555; line-height: 1.8; text-align: justify;">
+                            <p style="font-size: 16px; color: #555; line-height: 1.8; text-align: justify;margin-bottom:30px">
                                 Disaster management in Bangladesh involves key partners such as the Ministry of Disaster Management
                                 and Relief (MoDMR), NGOs like BDPC, and international organizations like the Asian Disaster Preparedness
                                 Center (ADPC). Collaborative efforts focus on preparedness, capacity building, and emergency response.
@@ -826,14 +826,13 @@ width:20px;
 
                     <div class="container mt-5">
                         <div class="text-center mb-4">
-                            <h2 style="font-weight: bold; color: #333;">ODMS gallery</h2>
-                            <div class="" style="height: 2px;width:750px;background-color:black">
-
+                            <h2 style="font-weight: bold; color: #333;margin-top:100px">ODMS gallery</h2>
+                            <div class="" style="height: 2px;width:150px;background-color:black; margin:auto;margin-bottom:50px">
                             </div>
                         </div>
                         <div class="card shadow-sm">
                             <div class="card-body">
-                                <p style="font-size: 16px; color: #555; line-height: 1.8; text-align: justify;">
+                                <p style="font-size: 16px; color: #555; line-height: 1.8; text-align: justify;margin-bottom:50px">
                                     Disaster management in Bangladesh involves key partners such as the Ministry of Disaster Management
                                     and Relief (MoDMR), NGOs like BDPC, and international organizations like the Asian Disaster Preparedness
                                     Center (ADPC). Collaborative efforts focus on preparedness, capacity building, and emergency response.
@@ -889,7 +888,7 @@ width:20px;
         <div class="container mt-5">
             <div class="text-center mb-4">
                 <h2 style="font-weight: bold; color: #333;">Our Partners</h2>
-                <div class="" style="height: 2px;width:750px;background-color:black">
+                <div class="" style="height: 2px;width:150px;background-color:black; margin:auto">
                 </div>
             </div>
             <div class="card shadow-sm">
