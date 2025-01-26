@@ -19,7 +19,6 @@
         margin-bottom: 0px;
         border: 1px solid transparent;
         background-color: #ffffff;
-        padding: 30px;
     }
 
     .navbar-container {
