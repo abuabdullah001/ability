@@ -401,19 +401,20 @@ $events = App\Models\Event::take(3)->where('type','featured')->get();
  <div class="container mt-5">
     <div class="text-center mb-4">
         <h2 style="font-weight: bold; color: #333;">Featured Event</h2>
-        <div class="" style="height: 5px;width:1150px;background-color:black">
-
+        <div class="" style="height: 2px;width:750px;background-color:black">
         </div>
     </div>
-    <div class="card shadow-sm">
-        <div class="card-body">
-            <p style="font-size: 16px; color: #555; line-height: 1.8; text-align: center;">
-                A "Featured Event" in disaster management focuses on critical initiatives like emergency response planning,
-                resilience building, or recovery efforts. It highlights key discussions, training, or innovations in disaster preparedness.
-                Such events aim to raise awareness, foster collaboration, and improve community resilience against disasters.
+    <div class="card shadow-lg border-0 rounded-lg">
+        <div class="card-body px-4 py-5 bg-light">
+            <p class="text-lg text-gray-700 leading-relaxed text-align-center font-serif">
+                <strong>"Featured Event"</strong> in disaster management focuses on critical initiatives like
+                <em>emergency response planning</em>, resilience building, or recovery efforts. It highlights key discussions, training,
+                or innovations in disaster preparedness. Such events aim to raise awareness, foster collaboration, and improve community
+                resilience against disasters.
             </p>
         </div>
     </div>
+
 </div>
 
    <div class="container" style="width: 1154px">
@@ -567,7 +568,7 @@ width:20px;
 <div class="container mt-5">
     <div class="text-center mb-4">
         <h2 style="color: #333;font-weight:bold">Current Event</h2>
-        <div class="" style="height: 5px;width:1150px;background-color:black">
+        <div class="" style="height: 2px;width:750px;background-color:black">
 
         </div>
     </div>
@@ -723,7 +724,7 @@ width:20px;
     <div class="container mt-5">
         <div class="text-center mb-4">
             <h2 class="section-title" style="font-weight: bold; color: #333;">Expert Feedback</h2>
-            <div class="" style="height: 5px;width:1150px;background-color:black">
+            <div class="" style="height: 2px;width:750px;background-color:black">
             </div>
         </div>
         <div class="card shadow-sm">
@@ -777,7 +778,24 @@ width:20px;
     <div class="container spidochetube" id="youtube">
         <div class="container-fluid pb-video-container">
             <div class="col-md- ">
-                <h2 class="text-center">ODMS Video</h2><br>
+                <div class="container mt-5">
+                    <div class="text-center mb-4">
+                        <h2 style="font-weight: bold; color: #333;">ODMS Video</h2>
+                        <div class="mb-2" style="height: 2px;width:750px;background-color:black">
+
+                        </div>
+                    </div>
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <p style="font-size: 16px; color: #555; line-height: 1.8; text-align: justify;">
+                                Disaster management in Bangladesh involves key partners such as the Ministry of Disaster Management
+                                and Relief (MoDMR), NGOs like BDPC, and international organizations like the Asian Disaster Preparedness
+                                Center (ADPC). Collaborative efforts focus on preparedness, capacity building, and emergency response.
+                                Humanitarian coordination teams and aid agencies like USAID play critical roles in strengthening resilience.
+                            </p>
+                        </div>
+                    </div>
+                </div>
                 <div id="gallery" style="">
                     <div class="container-fluid pb-video-container html5gallery" data-skin="darkness" data-width="480"
                         data-height="272">
@@ -811,7 +829,7 @@ width:20px;
                     <div class="container mt-5">
                         <div class="text-center mb-4">
                             <h2 style="font-weight: bold; color: #333;">ODMS gallery</h2>
-                            <div class="" style="height: 5px;width:1150px;background-color:black">
+                            <div class="" style="height: 2px;width:750px;background-color:black">
 
                             </div>
                         </div>
@@ -873,8 +891,7 @@ width:20px;
         <div class="container mt-5">
             <div class="text-center mb-4">
                 <h2 style="font-weight: bold; color: #333;">Our Partners</h2>
-                <div class="" style="height: 10px;width:1150px;background-color:black">
-
+                <div class="" style="height: 2px;width:750px;background-color:black">
                 </div>
             </div>
             <div class="card shadow-sm">
@@ -889,14 +906,22 @@ width:20px;
             </div>
         </div>
 
+
         <div class="swipers">
             <div class="swiper-wrapper">
                 <!-- Images -->
-                <div class="swiper-slide"><img src="images/Picture1.png" alt="Apple Logo" style="height: 100px"></div>
-                <div class="swiper-slide"><img src="images/Picture2.png" alt="FedEx Logo" style="height: 100px"></div>
-                <div class="swiper-slide"><img src="images/Picture3.png" alt="Download" style="height: 100px"></div>
-                <div class="swiper-slide"><img src="images/Picture4.png" alt="Logo" style="height: 100px"></div>
-
+                <div class="swiper-slide">
+                    <img src="images/Picture1.png" alt="Apple Logo" style="height: 150px; width: 150px;">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/Picture2.png" alt="FedEx Logo" style="height: 150px; width: 150px;">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/Picture3.png" alt="Download" style="height: 150px; width: 150px;">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/Picture4.png" alt="Logo" style="height: 150px; width: 150px;">
+                </div>
             </div>
 
             <!-- Swiper navigation buttons -->
@@ -906,6 +931,7 @@ width:20px;
             <!-- Swiper pagination -->
             <div class="swiper-pagination"></div>
         </div>
+
     </div>
 </section>
 
@@ -929,8 +955,6 @@ width:20px;
         </div>
     </div>
 </section>
-
-
 
 
 {{-- js part start --}}
@@ -973,12 +997,13 @@ width:20px;
 {{-- logo js start --}}
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
+
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        const swipers = new Swiper('.swipers', {
-            slidesPerView: 3,
-            spaceBetween: 30,
-            loop: true,
+        const swiper = new Swiper('.swipers', {
+            slidesPerView: 4, // Show 4 slides at a time
+            spaceBetween: 10, // Space between slides
+            loop: true, // Enable infinite looping
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
@@ -988,12 +1013,13 @@ width:20px;
                 clickable: true,
             },
             autoplay: {
-                delay: 2000,
+                delay: 2000, // Autoplay delay (2 seconds)
                 disableOnInteraction: false,
             },
         });
     });
-</script>
+    </script>
+
 
 
 {{-- logo js end --}}
@@ -1018,7 +1044,7 @@ width:20px;
                 slidesPerView: 2, // Adjust for medium screens
             },
             1024: {
-                slidesPerView: 3, // Adjust for larger screens
+                slidesPerView: 4, // Adjust for larger screens
             }
         }
     });
