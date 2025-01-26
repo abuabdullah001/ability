@@ -406,7 +406,7 @@ $events = App\Models\Event::take(3)->where('type','featured')->get();
     </div>
     <div class="card shadow-lg border-0 rounded-lg">
         <div class="card-body px-4 py-5 bg-light">
-            <p class="text-lg text-gray-700 leading-relaxed text-align-center font-serif py-3" style="margin-top: 50px">
+            <p class="text-lg text-gray-700 leading-relaxed text-align-center font-serif py-3" style="margin-top: 50px;margin-bottom:50px">
                 <strong>"Featured Event"</strong> in disaster management focuses on critical initiatives like
                 <em>emergency response planning</em>, resilience building, or recovery efforts. It highlights key discussions, training,
                 or innovations in disaster preparedness. Such events aim to raise awareness, foster collaboration, and improve community
@@ -584,7 +584,7 @@ width:20px;
                 initiatives and other reforms.
                 <strong class="text-muted">REUTERS</strong>
             </p>
-            <p style="font-size: 16px; color: #555; line-height: 1.8;">
+            <p style="font-size: 16px; color: #555; line-height: 1.8;margin-bottom:50px">
                 Furthermore, the European Investment Bank plans to double its funding to €2 billion to aid in
                 infrastructure projects focused on climate change resilience.
             </p>
@@ -734,7 +734,7 @@ width:20px;
                     Disaster Management Act.
                     <strong class="text-muted">THE FINANCIAL EXPRESS</strong>
                 </p>
-                <p style="font-size: 16px; color: #555; line-height: 1.8; text-align: justify;">
+                <p style="font-size: 16px; color: #555; line-height: 1.8; text-align: justify;margin-bottom:50px">
                     However, challenges persist, including irregular disaster management committee meetings, bureaucratic
                     hurdles, and corruption, which hinder effective policy implementation.
                     <strong class="text-muted">RESEARCHGATE</strong>
@@ -785,7 +785,7 @@ width:20px;
                     </div>
                     <div class="card shadow-sm">
                         <div class="card-body">
-                            <p style="font-size: 16px; color: #555; line-height: 1.8; text-align: justify;margin-bottom:30px">
+                            <p style="font-size: 16px; color: #555; line-height: 1.8; text-align: justify;margin-bottom:50px">
                                 Disaster management in Bangladesh involves key partners such as the Ministry of Disaster Management
                                 and Relief (MoDMR), NGOs like BDPC, and international organizations like the Asian Disaster Preparedness
                                 Center (ADPC). Collaborative efforts focus on preparedness, capacity building, and emergency response.
@@ -826,7 +826,7 @@ width:20px;
 
                     <div class="container mt-5">
                         <div class="text-center mb-4">
-                            <h2 style="font-weight: bold; color: #333;margin-top:100px">ODMS gallery</h2>
+                            <h2 style="font-weight: bold; color: #333;margin-top:100px">ODMS Gallery</h2>
                             <div class="" style="height: 2px;width:150px;background-color:black; margin:auto;margin-bottom:50px">
                             </div>
                         </div>
@@ -893,7 +893,7 @@ width:20px;
             </div>
             <div class="card shadow-sm">
                 <div class="card-body">
-                    <p style="font-size: 16px; color: #555; line-height: 1.8; text-align: justify;">
+                    <p style="font-size: 16px; color: #555; line-height: 1.8; text-align: justify;margin-bottom:50px">
                         Disaster management in Bangladesh involves key partners such as the Ministry of Disaster Management
                         and Relief (MoDMR), NGOs like BDPC, and international organizations like the Asian Disaster Preparedness
                         Center (ADPC). Collaborative efforts focus on preparedness, capacity building, and emergency response.
