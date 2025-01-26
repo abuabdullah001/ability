@@ -342,17 +342,15 @@ margin-top: 10px;
 <section class="" style="background-color: #f0f0f0">
 <div class="container">
   <div style="margin-top:50px " class="">
-    <h2 style="text-align: center;">About ODMS</h2>
+    <h2 style="text-align: center;padding-top: 10px">About ODMS</h2>
     @foreach ($odmss as $odms )
-    <div class="row col-md-6" style="margin-top: 150px;">
+    <div class="row col-md-6" style="margin-top: 30px;">
      <img style="width: 500px;height:400px" src="{{ asset('images/post/' . $odms->image) }}" alt="">
     </div>
-    <div class="row col-md-6 " style="margin-top: 100px">
-
-        {{-- <h1 style="font-size: 2em; color: black;">{!! Str::limit($odms->title, 100) !!}</h1> --}}
-      <p style="text-size:12px;color:black;text-align: justify; font-family:Arial, Helvetica, sans-serif;margin-top:100px" class="mt-3">
+    <div class="row col-md-6 " style="margin-top: 60px">
+      <p style="text-size:12px;color:black;text-align: justify; font-family:Arial, Helvetica, sans-serif;margin-top:px" class="mt-3">
         {!! Str::limit( $odms->descrition, 800) !!}
-    </p>
+     </p>
     <button class="btn btn-success">Read more</button>
 
     </div>
@@ -400,13 +398,13 @@ $events = App\Models\Event::take(3)->where('type','featured')->get();
     </style>
  <div class="container mt-5">
     <div class="text-center mb-4">
-        <h2 style="font-weight: bold; color: #333;">Featured Event</h2>
-        <div class="" style="height: 2px;width:750px;background-color:black">
+        <h2 style="font-weight: bold; color: #333;padding-top:60px">Featured Event</h2>
+        <div class="" style="height: 2px;width:150px;background-color:black; margin:auto">
         </div>
     </div>
     <div class="card shadow-lg border-0 rounded-lg">
         <div class="card-body px-4 py-5 bg-light">
-            <p class="text-lg text-gray-700 leading-relaxed text-align-center font-serif">
+            <p class="text-lg text-gray-700 leading-relaxed text-align-center font-serif py-3" style="margin-top: 50px">
                 <strong>"Featured Event"</strong> in disaster management focuses on critical initiatives like
                 <em>emergency response planning</em>, resilience building, or recovery efforts. It highlights key discussions, training,
                 or innovations in disaster preparedness. Such events aim to raise awareness, foster collaboration, and improve community
