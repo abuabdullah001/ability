@@ -303,6 +303,37 @@
 
 
 
+<section style="background-color: black; color: white; padding: 15px 20px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: auto; flex-wrap: wrap; gap: 20px;">
+        <!-- Social Media Icons -->
+        <div style="display: flex; gap: 15px;">
+            <a href="https://facebook.com" target="_blank" style="text-decoration: none; color: white;">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank" style="text-decoration: none; color: white;">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" style="text-decoration: none; color: white;">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" style="text-decoration: none; color: white;">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
+
+        <!-- Phone Number -->
+        <div class="" style="display:flex">
+        <div style1="font-size: 14px;">
+            📞 <a href="tel:+1234567890" style="text-decoration: none; color: white;">+1 234 567 890</a>
+        </div>
+
+        <!-- Address -->
+        <div style2="font-size: 14px;" style="margin-left: 15px">
+            📍 123 Main Street, City, Country
+        </div>
+    </div>
+    </div>
+</section>
 
 
 <nav class="navbar">
