@@ -590,13 +590,13 @@
                     @foreach (App\Models\Category::where('type', 'About')->get() as $anoutmenu)
                     <a class="dropdown-item"
                      href="{{ '/view_aboutepage/' . $anoutmenu->id }}">
-                     <img src="images/event/151.jpg" alt="" style="height: 150px;width:300px;margin-left:30px;">
+                     <img src="{{asset('images/event/151.jpg')}}" alt="" style="height: 150px;width:300px;margin-left:30px;">
                       <h4 style="text-align: center">{{ $anoutmenu->title }}</h4>
                     </a>
                     @endforeach
 
                     <a class="dropdown-item" href="{{ route('report') }}">
-                        <img src="images/event/155.jpg" alt="" style="height: 150px;width:300px;margin-left:30px;margin-right:20px;">
+                        <img src="{{asset('images/event/155.jpg')}}" alt="" style="height: 150px;width:300px;margin-left:30px;margin-right:20px;">
                         <h4 style="text-align: center">Report</h4>
                     </a>
                 </div>
