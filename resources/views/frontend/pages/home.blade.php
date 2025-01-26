@@ -221,7 +221,10 @@ flex-direction: column;
                             aria-labelledby="work-process">
                             <div class="panel-body pbody" style="border : 1px solid black ; min-height:300px;">
                                 <em>
-                                    "chairman message - Welcome to The Organization of Disaster Management Society (ODMS). Since its establishment in 2015, ODMS gained high popularity as a dedicated organization committed to enhance disaster management and resilience in coastal communities. It has proved dedication empowering at-risk populations through disaster preparedness, response, and recovery initiatives. From the very beginning ODMS is hardly trying to promote sustainability and build resilience against disasters. The major ODMS events, such as disaster risk reduction programs, poster presentations, and sessions on planetary science in collaboration with esteemed government and non-government institutions."
+                                    "chairman message - Welcome to The Organization of Disaster Management Society (ODMS). Since its establishment in 2015, ODMS gained high popularity as
+                                     a dedicated organization committed to enhance disaster management and resilience in coastal communities. It has proved dedication empowering at-risk populations
+                                     through disaster preparedness, response, and recovery initiatives. From the very beginning ODMS is hardly trying to promote sustainability and build resilience against
+                                      disasters. The major ODMS events, such as disaster risk reduction programs, poster presentations, and sessions on planetary science in collaboration with esteemed government and non-government institutions."
                                     <br>
                                 </b>
                             </div>
@@ -740,9 +743,7 @@ width:20px;
 
     @foreach ($feedbacks as $feedback)
     <div class="container">
-
         <div class="row">
-
             <!-- First Card -->
             <div class="col-md-3">
                 <div class="hover-card">
@@ -902,17 +903,21 @@ width:20px;
             <div class="swiper-wrapper">
                 <!-- Images -->
                 <div class="swiper-slide">
-                    <img src="images/Picture1.png" alt="Apple Logo" style="height: 150px; width: 150px;">
+                    <img src="images/Picture4.png" alt="Logo" style="height: 100px; width: 150px;">
                 </div>
                 <div class="swiper-slide">
-                    <img src="images/Picture2.png" alt="FedEx Logo" style="height: 150px; width: 150px;">
+                    <img src="images/Picture1.png" alt="Apple Logo" style="height: 100px; width: 150px;">
                 </div>
                 <div class="swiper-slide">
-                    <img src="images/Picture3.png" alt="Download" style="height: 150px; width: 150px;">
+                    <img src="images/Picture2.png" alt="FedEx Logo" style="height: 100px; width: 150px;">
                 </div>
                 <div class="swiper-slide">
-                    <img src="images/Picture4.png" alt="Logo" style="height: 150px; width: 150px;">
+                    <img src="images/Picture3.png" alt="Download" style="height: 100px; width: 150px;">
                 </div>
+                <div class="swiper-slide">
+                    <img src="images/Picture4.png" alt="Logo" style="height: 100px; width: 150px;">
+                </div>
+
             </div>
 
             <!-- Swiper navigation buttons -->
