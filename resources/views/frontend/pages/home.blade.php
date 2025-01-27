@@ -495,9 +495,10 @@ $events = App\Models\Event::take(3)->where('type','current')->get();
     /* Fullscreen Background */
     .current_background {
       position: relative;
-      height: 100vh;
+      height: 140vh;
       width: 100%;
       overflow: hidden; /* Ensures the background doesn't spill out */
+      z-index: 1;
     }
 
 
@@ -515,10 +516,10 @@ $events = App\Models\Event::take(3)->where('type','current')->get();
       background-size: cover;
       background-position: center;
       filter: blur(4px);
-      z-index: 1;
+      z-index: -1;
       margin-left: 160px;
       margin-right: 160px;
-      height: 90vh;
+      height: auto;
     }
 
     /* Swiper Container */
@@ -574,35 +575,37 @@ width:20px;
 <!-- Slider -->
 
 
-<div class="container mt-5">
-    <div class="text-center mb-4">
-        <h2 style="color: #333;font-weight:bold;margin-top:100px;">Current Event</h2>
-        <div class="" style="height: 2px;width:150px;background-color:black; margin:auto; margin-bottom:50px">
-        </div>
-    </div>
-    <div class="card shadow-sm">
-        <div class="card-body">
-            <p style="font-size: 16px; color: #555; line-height: 1.8;">
-                In January 2025, Bangladesh is addressing several disaster management challenges. The government has
-                closed its border with Myanmar, preventing Rohingya refugees from seeking safety amid escalating
-                violence in Rakhine state.
-                <strong class="text-muted">THE GUARDIAN</strong>
-            </p>
-            <p style="font-size: 16px; color: #555; line-height: 1.8;">
-                Additionally, the World Bank has pledged over $2 billion to support Bangladesh's flood response
-                initiatives and other reforms.
-                <strong class="text-muted">REUTERS</strong>
-            </p>
-            <p style="font-size: 16px; color: #555; line-height: 1.8;margin-bottom:50px">
-                Furthermore, the European Investment Bank plans to double its funding to €2 billion to aid in
-                infrastructure projects focused on climate change resilience.
-            </p>
-        </div>
-    </div>
-</div>
 
-<section class="current_background">
+
+<section class="current_background bg-black" >
     <div class="container">
+
+        <div class="container mt-5">
+            <div class="text-center mb-4">
+                <h2 style="color: #333;font-weight:bold;margin-top:100px;">Current Event</h2>
+                <div class="" style="height: 2px;width:150px;background-color:black; margin:auto; margin-bottom:50px">
+                </div>
+            </div>
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <p style="font-size: 16px; color: #555; line-height: 1.8;">
+                        In January 2025, Bangladesh is addressing several disaster management challenges. The government has
+                        closed its border with Myanmar, preventing Rohingya refugees from seeking safety amid escalating
+                        violence in Rakhine state.
+                        <strong class="text-muted">THE GUARDIAN</strong>
+                    </p>
+                    <p style="font-size: 16px; color: #555; line-height: 1.8;">
+                        Additionally, the World Bank has pledged over $2 billion to support Bangladesh's flood response
+                        initiatives and other reforms.
+                        <strong class="text-muted">REUTERS</strong>
+                    </p>
+                    <p style="font-size: 16px; color: #555; line-height: 1.8;margin-bottom:50px">
+                        Furthermore, the European Investment Bank plans to double its funding to €2 billion to aid in
+                        infrastructure projects focused on climate change resilience.
+                    </p>
+                </div>
+            </div>
+        </div>
 
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
