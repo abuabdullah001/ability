@@ -6,6 +6,12 @@ HOME
 
 @section('front-main-content')
 
+<style>
+    .card-body {
+    padding: 0px;
+    }
+</style>
+
 <section class="inner-header-title"
     style="background-image:url(https://user-images.githubusercontent.com/513929/53929982-e5497700-404c-11e9-8393-dece0b196c98.png);">
     <div class="container">
@@ -41,8 +47,7 @@ HOME
                 <div class="card mb-4">
                     <div class="card-body">
                         <h3>{{ $gallery->mediaCategory->name ?? '' }}</h3>
-                             <img src="{{ asset('/uploads/gallery/' . $gallery->images) }}"
-                             class="img-thumbnail"
+                             <img src="{{ asset('/uploads/gallery/' . $gallery->images) }}" class="img-thumbnail"
                              style="width: 100%; height: 200px; object-fit: cover;"
                              alt="{{ $gallery->mediaCategory->name ?? 'Gallery Image' }}">
                     </div>
