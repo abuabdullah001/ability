@@ -517,8 +517,8 @@ $events = App\Models\Event::take(3)->where('type','current')->get();
       background-position: center;
       filter: blur(4px);
       z-index: -1;
-      margin-left: 160px;
-      margin-right: 160px;
+      margin-left: 0px;
+      margin-right: 0px;
       height: auto;
     }
 
@@ -580,7 +580,7 @@ width:20px;
 <section class="current_background bg-black" >
     <div class="container">
 
-        <div class="container mt-5">
+        <div class="container mt-5" >
             <div class="text-center mb-4">
                 <h2 style="color: #333;font-weight:bold;margin-top:50px;">Current Event</h2>
                 <div class="" style="height: 2px;width:150px;background-color:black; margin:auto; margin-bottom:50px">

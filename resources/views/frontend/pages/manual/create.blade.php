@@ -26,9 +26,11 @@ HOME
     <section class="content">
         <div class="container" style="width: 70%; height:250px; margin: 20px auto; border: 1px solid #ddd; padding: 20px; border-radius: 10px; background-color: #f9f9f9; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); text-align: center;">
             <h2 style="margin-bottom: 20px; color: #333; font-family: Arial, sans-serif;">ODMS All Payment Details</h2>
-            <h4 style="margin-bottom: 10px; color: #555; font-family: Arial, sans-serif;">Bkash no: +88014454</h4>
-            <h4 style="margin-bottom: 10px; color: #555; font-family: Arial, sans-serif;">Rocket no: +8801456454</h4>
-            <h4 style="margin-bottom: 10px; color: #555; font-family: Arial, sans-serif;">Sonali Bank: 254652</h4>
+            {{-- <h4 style="margin-bottom: 10px; color: #555; font-family: Arial, sans-serif;">Bkash no: +88014454</h4>
+            <h4 style="margin-bottom: 10px; color: #555; font-family: Arial, sans-serif;">Rocket no: +8801456454</h4> --}}
+            <h4 style="margin-bottom: 10px; color: #555; font-family: Arial, sans-serif;">0642901091487
+                Odms(organization for Disaster management society)</h4>
+            <h4 style="margin-bottom: 10px; color: #555; font-family: Arial, sans-serif;">Pubali bank,khatungonj branch</h4>
         </div>
         <div class="container-fluid">
             <div class="row">
@@ -36,7 +38,7 @@ HOME
                 <div class="col-md-1"></div>
                 <div class="col-md-12">
                     <div class="card">
-                        <div class="card-header bg-blue text-center"> <h1> Donate manually </h1></div>
+
                         <div class="card-body">
                             <div class="tab-content">
                                 <div class="active tab-pane row col-md-12 container" style="display: flex; gap: 20px; margin-top: 20px;">
@@ -44,7 +46,9 @@ HOME
                                     <div class="col-md-6" style="border: 1px solid #ddd;margin-top:20px; padding: 20px; border-radius: 10px; background-color: #ffffff; width:100% ;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
                                         <form class="form-horizontal" method="post" action="{{ Route('manual.store') }}" enctype="multipart/form-data">
                                             @csrf
-                                            <h2 class="" style="margin-bottom: 20px; text-align:center; color: #333; font-family: Arial, sans-serif;">Manual Payment Form</h2>
+                                            <h2 style="text-align: center"> Donate manually </h2>
+                                            <div style="background-color:black;height:2px;width:100px;margin-left:600px;margin-bottom:50px;"></div>
+                                            {{-- <h4 class="" style="margin-bottom: 20px; text-align:center; color: #333; font-family: Arial, sans-serif;">Manual Payment Form</h4> --}}
 
                                         <div class="col-md-6">
                                             <!-- Name -->
