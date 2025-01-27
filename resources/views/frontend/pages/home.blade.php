@@ -940,14 +940,18 @@ width:20px;
                     <img src="images/Picture4.png" alt="Logo" style="height: 100px; width: 150px;">
                 </div>
 
+                <div class="swiper-slide">
+                    <img src="images/Picture4.png" alt="Logo" style="height: 100px; width: 150px;">
+                </div>
+
             </div>
 
             <!-- Swiper navigation buttons -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+            {{-- <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div> --}}
 
             <!-- Swiper pagination -->
-            <div class="swiper-pagination"></div>
+           
         </div>
 
     </div>
@@ -1051,18 +1055,16 @@ width:20px;
 <script>
     const swiper = new Swiper('.mySwiper', {
         loop: true, // Enables continuous loop mode
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
+        navigation:
+           false,
         slidesPerView: 2, // Adjust to display more slides per view
-        spaceBetween: 20, // Space between slides in px
+        spaceBetween: 0, // Space between slides in px
         breakpoints: {
             640: {
                 slidesPerView: 2, // Adjust for medium screens
             },
             1024: {
-                slidesPerView: 4, // Adjust for larger screens
+                slidesPerView: 5, // Adjust for larger screens
             }
         }
     });
