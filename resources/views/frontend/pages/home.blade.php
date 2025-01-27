@@ -582,7 +582,7 @@ width:20px;
 
         <div class="container mt-5">
             <div class="text-center mb-4">
-                <h2 style="color: #333;font-weight:bold;margin-top:100px;">Current Event</h2>
+                <h2 style="color: #333;font-weight:bold;margin-top:50px;">Current Event</h2>
                 <div class="" style="height: 2px;width:150px;background-color:black; margin:auto; margin-bottom:50px">
                 </div>
             </div>
