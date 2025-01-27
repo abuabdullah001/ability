@@ -341,7 +341,7 @@ margin-top: 10px;
 <section class="" style="background-color: #f0f0f0">
 <div class="container">
   <div style="margin-top:50px " class="">
-    <h2 style="text-align: center;padding-top: 10px">About ODMS</h2>
+    <h2 style="text-align: center;padding-top: 10px;"> <span style="font-weight:700">About ODMS</span></h2>
     <div class="" style="height: 2px;width:150px;background-color:black; margin:auto;margin-bottom:60px">
     </div>
     @foreach ($odmss as $odms )
@@ -609,6 +609,7 @@ width:20px;
                             <h2 class="card-title" style="color: black">
                                 {{ Str::limit($event->name, 30, '...') }}
                             </h2>
+                            <p>sdfkgjdkls</p>
 
                         </div>
                     </a>
