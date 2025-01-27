@@ -742,7 +742,7 @@ width:20px;
     }
 </style>
 
-<section style="">
+<section style="background-color:#F0F0F0; " >
     <div class="container mt-5">
         <div class="text-center mb-4">
             <h2 class="section-title" style="font-weight: bold; color: #333;margin-top:100px">Expert Feedback</h2>
@@ -794,7 +794,7 @@ width:20px;
 
 {{-- video  --}}
 <div class="clearfix"></div>
-<section id="testimonial">
+<section id="testimonial" style="padding-top: 70px">
     <div class="container spidochetube" id="youtube">
         <div class="container-fluid pb-video-container">
             <div class="col-md- ">
@@ -844,7 +844,10 @@ width:20px;
                             </div>
                         </div>
                     </div>
+                </section>
 
+
+                    <section style="background-color: #f0f0f0; padding-bottom:200px">
                     <div class="container mt-5">
                         <div class="text-center mb-4">
                             <h2 style="font-weight: bold; color: #333;margin-top:100px">ODMS Gallery</h2>
@@ -887,6 +890,7 @@ width:20px;
                         class="btn btn-success col-md-2 col-md-offset-5 col-sm-12 col-xm-12">See More Gallery</a>
                 </div>
             </div>
+
 </section>
 
 
@@ -897,7 +901,7 @@ width:20px;
 {{-- all partner logo --}}
 
 
-<section>
+<section style="padding-top:60px ">
 
     <div class="container">
         <div class="container mt-5">
@@ -967,7 +971,7 @@ width:20px;
 
 {{-- memeber --}}
 
-<section style="background-color: #F0F0F0;">
+<section style="background-color: #F0F0F0;padding-top:40px">
     <div class="container">
         <div class="col-md-4">
             <h1>125687</h1>
