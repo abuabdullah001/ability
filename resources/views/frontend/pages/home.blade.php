@@ -431,7 +431,7 @@ $events = App\Models\Event::take(3)->where('type','featured')->get();
                                            <h2 class="card-title">
                                                {{ Str::limit($project->name, 30, '...') }} <!-- Limit the title to 30 characters -->
                                            </h2>
-                                           <a href="{{ route('event.show', ['slug' => $project->slug]) }}" class="btn btn-link" style="color:blue" style=>
+                                           <a href="{{ route('event.show', ['slug' => $project->slug]) }}" class="btn btn-link" style="color:blue">
                                                Read More
                                            </a>
                                        </div>
@@ -509,12 +509,13 @@ $events = App\Models\Event::take(3)->where('type','current')->get();
       z-index: 1;
       margin-left: 160px;
       margin-right: 160px;
+      height: 90vh;
     }
 
     /* Swiper Container */
     .swiper {
       width: 90%;
-      height: 400px;
+      height: 600px;
       margin: auto;
       margin-top: 50px;
     }
@@ -605,16 +606,24 @@ width:20px;
                              class="card-img-top mb-2"
                              alt="{{ $event->title }}"
                              style="height: 250px; object-fit: cover;">
-                        <div class="card-body">
+                        <div class="card-body " style="height: 1000px !important">
                             <h2 class="card-title" style="color: black">
                                 {{ Str::limit($event->name, 30, '...') }}
                             </h2>
+                            <style>
+                                .card-body a.dld{
+                                    color: #222 !important;
+                                    background-color:white;
+                                    width: 150px;
+                                    border-radius:2px;
+                                    margin: auto;
+                                    padding: 10px 15px;
 
-                            <a href="{{ route('event.show', ['slug' => $event->slug]) }}" class="btn btn-link" style="color:blue" style=>
+                                }
+                            </style>
+                           <a href="{{ route('event.show', ['slug' => $event->slug]) }}" class="dld" style="color:white;display:block;margin-top:20px">
                                 Read More
                             </a>
-                         
-
                         </div>
                     </a>
                 </div>
@@ -623,6 +632,12 @@ width:20px;
         </div>
 
         <!-- Navigation buttons -->
+        <style>
+            .swiper-button-next,.swiper-button-prev{
+             margin-top: -120px;
+             color: black;
+            }
+        </style>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
     </div>
