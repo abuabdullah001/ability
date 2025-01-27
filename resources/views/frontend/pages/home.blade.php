@@ -609,7 +609,11 @@ width:20px;
                             <h2 class="card-title" style="color: black">
                                 {{ Str::limit($event->name, 30, '...') }}
                             </h2>
-                            <p>sdfkgjdkls</p>
+
+                            <a href="{{ route('event.show', ['slug' => $event->slug]) }}" class="btn btn-link" style="color:blue" style=>
+                                Read More
+                            </a>
+                         
 
                         </div>
                     </a>
