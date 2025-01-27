@@ -847,7 +847,7 @@ width:20px;
                 </section>
 
 
-                    <section style="background-color: #f0f0f0; padding-bottom:200px">
+                    <section style="background-color: #f0f0f0; padding-bottom:200px;margin-left:20px">
                     <div class="container mt-5">
                         <div class="text-center mb-4">
                             <h2 style="font-weight: bold; color: #333;margin-top:100px">ODMS Gallery</h2>
