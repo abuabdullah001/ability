@@ -187,6 +187,14 @@ flex-direction: column;
   }
 
   }
+  .card-body a.dld{
+    color: #222 !important;
+    background-color:white;
+    width: 150px;
+    border-radius:2px;
+    margin: auto;
+    padding: 10px 15px;
+  }
 </style>
 
 <div class="clearfix "></div>
@@ -431,6 +439,7 @@ $events = App\Models\Event::take(3)->where('type','featured')->get();
                                            <h2 class="card-title">
                                                {{ Str::limit($project->name, 30, '...') }} <!-- Limit the title to 30 characters -->
                                            </h2>
+                                           <p style="color:black">{{ Str::limit(strip_tags($project->desc), 100, '...') }}</p>
                                            <a href="{{ route('event.show', ['slug' => $project->slug]) }}" class="btn btn-link" style="color:blue">
                                                Read More
                                            </a>
@@ -610,17 +619,9 @@ width:20px;
                             <h2 class="card-title" style="color: black">
                                 {{ Str::limit($event->name, 30, '...') }}
                             </h2>
-                            <style>
-                                .card-body a.dld{
-                                    color: #222 !important;
-                                    background-color:white;
-                                    width: 150px;
-                                    border-radius:2px;
-                                    margin: auto;
-                                    padding: 10px 15px;
+                            <p style="color:black">{{ Str::limit(strip_tags($event->desc), 100, '...') }}</p>
 
-                                }
-                            </style>
+
                            <a href="{{ route('event.show', ['slug' => $event->slug]) }}" class="dld" style="color:white;display:block;margin-top:20px">
                                 Read More
                             </a>
@@ -892,12 +893,6 @@ width:20px;
 
 {{-- all partner logo --}}
 
-<style>
-    .swiper-slide img {
-        height: 150px;
-        display: inline-block;
-    }
-</style>
 
 <section>
 
@@ -919,9 +914,17 @@ width:20px;
                 </div>
             </div>
         </div>
+<style>
+    .swiper-slide {
+            padding: 0px !important;
+            margin-right: 0px !important;
+            justify-content: center !important;
+
+        }
+</style>
 
 
-        <div class="swipers">
+        <div class="swipers " style="text-align: center">
             <div class="swiper-wrapper">
                 <!-- Images -->
                 <div class="swiper-slide">
@@ -951,7 +954,7 @@ width:20px;
             <div class="swiper-button-prev"></div> --}}
 
             <!-- Swiper pagination -->
-           
+
         </div>
 
     </div>
@@ -1054,15 +1057,20 @@ width:20px;
 
 <script>
     const swiper = new Swiper('.mySwiper', {
-        loop: true, // Enables continuous loop mode
+        loop: false, // Enables continuous loop mode
         navigation:
            false,
+
         slidesPerView: 2, // Adjust to display more slides per view
-        spaceBetween: 0, // Space between slides in px
+        spaceBetween: 10, // Space between slides in px
         breakpoints: {
             640: {
                 slidesPerView: 2, // Adjust for medium screens
             },
+            768: {
+                slidesPerView: 5, // Adjust for medium screens
+            },
+
             1024: {
                 slidesPerView: 5, // Adjust for larger screens
             }
