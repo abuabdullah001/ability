@@ -181,11 +181,19 @@
             <div class="container">
                 <div class="row row-bottom">
                     @if ($pagename != 42)
-                    <h2 class="detail-title">{{ App\Models\Category::where('id', $pagename)->pluck('title')->first() }}</h2>
+                    {{-- <h2 class="detail-title" style="margin-left:680px">{{ App\Models\Category::where('id', $pagename)->pluck('title')->first() }}</h2> --}}
                     @endif
                     @foreach ($viewpageedit as $description)
                         @if ($pagename != 42)
-                            <p>{!! $description->content !!}</p>
+                        <div class="col-md-12" style="margin-top: 120px;margin-bottom:60px">
+                            <div class="col-md-6">
+                             <p> <td><img src="{{asset($description->image)}}" alt="" style="height: 400px;width:auto"></td> </p>
+                            </div>
+                            <div class="col-md-6" style="margin-top: 60px">
+                            <h1 style="font-size: 24px;">{!! $description->content !!}</h1
+                            >
+                            </div>
+                        </div>
                             <br><br>
                         @endif
                     @endforeach

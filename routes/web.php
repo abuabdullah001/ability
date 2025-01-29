@@ -328,6 +328,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('category', [CategoryController::class, 'index'])->name('category-index');
     Route::post('Add-category', [CategoryController::class, 'store'])->name('addcategory');
     Route::get('deletecategory/{id}', [CategoryController::class, 'destroy']);
+
+
     //rabbi // about menu
     Route::get('All-Content', [AboutMenuController::class, 'index'])->name('aboutindex');
     Route::get('Add-Content', [AboutMenuController::class, 'create'])->name('addaboutcontent');
@@ -337,7 +339,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('aboute_viewedit/{id}', [AboutMenuController::class, 'edit']);
 
     // Route::get('about/response',[AboutMenuController::class,'response'])->name('aboutresponse');
-
 
     //   rabbi  /committee Menu
     Route::get('All-committee', [CommitteeMenuController::class, 'index'])->name('committee_index');
