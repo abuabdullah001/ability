@@ -227,16 +227,42 @@ flex-direction: column;
                         </div>
                         <div id="collapseOne" class="panel-collapse collapse" role="tabpanel"
                             aria-labelledby="work-process">
-                            <div class="panel-body pbody" style="border : 1px solid black ; min-height:300px;">
+                            <div class="panel-body pbody" style="border: 1px solid black; min-height:300px;">
+                                @php
+                                    $content = "chairman message - Welcome to The Organization of Disaster Management Society (ODMS). Since its establishment in 2015, ODMS gained high popularity as
+                                                a dedicated organization committed to enhance disaster management and resilience in coastal communities. It has proved dedication empowering at-risk populations
+                                                through disaster preparedness, response, and recovery initiatives. From the very beginning ODMS is hardly trying to promote sustainability and build resilience against
+                                                disasters. The major ODMS events, such as disaster risk reduction programs, poster presentations, and sessions on planetary science in collaboration with esteemed government and non-government institutions.";
+                                    $shortContent = Str::limit($content, 100); // Truncate to 100 characters
+                                @endphp
+
                                 <em>
-                                    "chairman message - Welcome to The Organization of Disaster Management Society (ODMS). Since its establishment in 2015, ODMS gained high popularity as
-                                     a dedicated organization committed to enhance disaster management and resilience in coastal communities. It has proved dedication empowering at-risk populations
-                                     through disaster preparedness, response, and recovery initiatives. From the very beginning ODMS is hardly trying to promote sustainability and build resilience against
-                                      disasters. The major ODMS events, such as disaster risk reduction programs, poster presentations, and sessions on planetary science in collaboration with esteemed government and non-government institutions."
-                                    <br>
-                                    <button class="btn btn-success">Read more</button>
-                                </b>
+                                    <!-- Display the truncated content -->
+                                    "{{ $shortContent }}"
+
+                                    <!-- Full content hidden initially -->
+                                    <span id="full-content" style="display: none;">{{ $content }}</span>
+                                </em>
+                                <br>
+                                <!-- Read more button to toggle content visibility -->
+                                <button class="btn btn-success" onclick="toggleContent()">Read more</button>
                             </div>
+
+                            <script>
+                                function toggleContent() {
+                                    var fullContent = document.getElementById('full-content');
+                                    var readMoreBtn = document.querySelector('.btn.btn-success');
+
+                                    if (fullContent.style.display === "none") {
+                                        fullContent.style.display = "inline";
+                                        readMoreBtn.innerHTML = "Read Less";
+                                    } else {
+                                        fullContent.style.display = "none";
+                                        readMoreBtn.innerHTML = "Read more";
+                                    }
+                                }
+                            </script>
+
                         </div>
                     </div>
                 </div>
@@ -800,7 +826,7 @@ width:20px;
             <div class="col-md- ">
                 <div class="container mt-5">
                     <div class="text-center mb-4">
-                        <h2 style="font-weight: bold; color: #333;">ODMS Video</h2>
+                        <h2 style="font-weight: bold; color: #333;"> Video Gallery</h2>
                         <div class="" style="height: 2px;width:150px;background-color:black; margin:auto;margin-bottom:50px">
                         </div>
                     </div>
@@ -850,7 +876,7 @@ width:20px;
                     <section style="background-color: #f0f0f0; padding-bottom:200px;margin-left:20px">
                     <div class="container mt-5">
                         <div class="text-center mb-4">
-                            <h2 style="font-weight: bold; color: #333;margin-top:100px">ODMS Gallery</h2>
+                            <h2 style="font-weight: bold; color: #333;margin-top:100px">Photo Gallery</h2>
                             <div class="" style="height: 2px;width:150px;background-color:black; margin:auto;margin-bottom:50px">
                             </div>
                         </div>

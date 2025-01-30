@@ -154,7 +154,7 @@
                     @else
                         @foreach ($members as $value)
                             <div class="col-md-4 mb-4">
-                                <div class="card shadow-sm border-light" >
+                                <div class="card shadow-sm border-light">
                                     <img src="{{ $value->image ? asset($value->image) : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png' }}"
                                         class="card-img-top" alt="{{ $value->name }}'s Image">
                                     <div class="card-body" style="height: 300px">
@@ -177,39 +177,75 @@
     <div class="clearfix"></div>
 
     @if (count($viewpageedit) > 0)
-    <section class="full-detail-description full-detail">
-        <div class="container">
-            <div class="d-flex flex-column">
-                @if ($pagename != 42)
-                    {{-- Uncomment if needed --}}
-                    <h2 class="detail-title text-center">
-                        {{ App\Models\Category::where('id', $pagename)->pluck('title')->first() }}
-                    </h2>
-
-                @endif
-
-                @foreach ($viewpageedit as $description)
+        <section class="full-detail-description full-detail">
+            <div class="container">
+                <div class="d-flex flex-column">
                     @if ($pagename != 42)
-                        <div class="row d-flex align-items-center my-5">
-                            <!-- Image Column -->
-                            <div class="col-md-6 text-center d-flex justify-content-center align-items-center" style="margin-top: 60px">
-                                <img src="{{ asset($description->image) }}" alt="Image" class="img-fluid" style="max-height: 400px;">
-                            </div>
-
-                            <!-- Content Column -->
-                            <div class="col-md-6" style="margin-top: 60px">
-                                <h1 class="fs-4">{!! strip_tags($description->content, '<p><br><b><strong><i><em>') !!}</h1>
-                            </div>
-                        </div>
+                        {{-- Uncomment if needed --}}
+                        <h1 class="detail-title text-center">
+                            {{ App\Models\Category::where('id', $pagename)->pluck('title')->first() }}
+                        </h1>
                     @endif
-                @endforeach
-            </div>
-        </div>
-    </section>
 
-@endif
+                    @foreach ($viewpageedit as $description)
+                        @if ($pagename != 42)
+                            <div class="row d-flex align-items-center my-5">
+                                <!-- Image Column -->
+                                <div class="col-md-6 text-center d-flex justify-content-center align-items-center"
+                                    style="margin-top: 60px">
+                                    <img src="{{ asset($description->image) }}" alt="Image" class="img-fluid"
+                                        style="max-height: 400px;">
+                                </div>
+
+                                <!-- Content Column -->
+
+                                <div class="col-md-6" style="margin-top: 60px">
+                                    @php
+                                        $contentw = $description->content;
+                                        // Remove HTML tags to get plain text
+                                        $content = html_entity_decode(strip_tags($contentw));
+                                        $shortContent = Str::limit($content, 300);
+                                    @endphp
+
+                                    <h4 class="fs-4">
+                                        <span id="short-content">{{ $shortContent}}</span>
+                                        <span id="full-content" style="display: none;">{{ $content }}</span>
+                                    </h4>
+
+                                    @if (strlen($content) > 300)
+                                        <button id="read-more-btn" class="btn btn-primary" onclick="toggleContent()">Read
+                                            More</button>
+                                    @endif
+                                </div>
+                               
+                            </div>
+                        @endif
+                    @endforeach
+                </div>
+            </div>
+        </section>
+    @endif
 
 
 
     <div class="clearfix"></div>
 @endsection
+
+
+<script>
+    function toggleContent() {
+        var shortContent = document.getElementById("short-content");
+        var fullContent = document.getElementById("full-content");
+        var btn = document.getElementById("read-more-btn");
+
+        if (shortContent.style.display === "none") {
+            shortContent.style.display = "inline";
+            fullContent.style.display = "none";
+            btn.innerText = "Read More";
+        } else {
+            shortContent.style.display = "none";
+            fullContent.style.display = "inline";
+            btn.innerText = "Show Less";
+        }
+    }
+</script>
