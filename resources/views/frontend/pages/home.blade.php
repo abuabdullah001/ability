@@ -240,10 +240,12 @@ flex-direction: column;
                                 <br>
 
                                 @if(strlen($content) > 300)
-                                   <a href="">  <button class="btn btn-success">Read More</button> </a> 
+                                    <button class="btn btn-success">Read More</button>
                                 @endif
                             </div>
+
                         </div>
+
 
 
                     </div>
@@ -275,6 +277,7 @@ flex-direction: column;
                 </div>
             </div>
         </div>
+
         <div class="col-md-3 col-sm-12 col-xs-12">
             <div class="simple-tab">
                 <div class="panel-group" id="accordionR" role="tablist" aria-multiselectable="true">
@@ -282,27 +285,40 @@ flex-direction: column;
                         <div class="panel-heading" role="tab" id="work-process">
                             <h4 class="panel-title">
                                 <a role="button" data-toggle="collapse" data-parent="#accordionR" href="#collapseROne"
-                                    aria-expanded="true" aria-controls="collapseOne">
+                                    aria-expanded="true" aria-controls="collapseROne">
                                     CEO Message
                                 </a>
                             </h4>
                         </div>
-                        <div id="collapseROne" class="panel-collapse collapse " role="tabpanel"
-                        aria-labelledby="work-process">
-                        <div class="panel-body" style="border:1px solid #393A3C; max-height:316px;">
-                            <em id="ceoMessage">CEO message - The Organization for Disaster Management Society is devoted to saving lives, strengthening communities, and increasing disaster resilience. We think that preparation and collaboration may turn vulnerability into strength, providing at-risk groups with the resources they need to prepare and recover...</em><br><br>
-                            <button class="btn btn-success">Read more</button>
+
+                         <!-- Collapsible Content -->
+                         <div id="collapseROne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="work-process">
+                            <div class="panel-body" style="border:1px solid #393A3C; max-height:316px;">
+                                <em id="ceoMessage">
+                                    CEO message - The Organization for Disaster Management Society is devoted to saving lives, strengthening communities, and increasing disaster resilience. We think that preparation and collaboration may turn vulnerability into strength, providing at-risk groups with the resources they need to prepare and recover...
+                                </em>
+                                <br><br>
+                                <button class="btn btn-success">Read more</button>
+                            </div>
                         </div>
 
+                        <!-- JavaScript to Limit Text to 300 Characters -->
                         <script>
-                            var message = document.getElementById('ceoMessage');
-                            message.innerHTML = message.innerHTML.substring(0, 300) + "...";
+                            document.addEventListener("DOMContentLoaded", function () {
+                                var message = document.getElementById('ceoMessage');
+                                if (message.innerHTML.length > 300) {
+                                    message.innerHTML = message.innerHTML.substring(0, 300) + "...";
+                                }
+                            });
                         </script>
-                    </div>
+                        
                     </div>
                 </div>
             </div>
         </div>
+
+
+
     </div>
 </div>
 <style>
