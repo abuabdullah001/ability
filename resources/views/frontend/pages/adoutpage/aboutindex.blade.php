@@ -177,30 +177,38 @@
     <div class="clearfix"></div>
 
     @if (count($viewpageedit) > 0)
-        <section class="full-detail-description full-detail">
-            <div class="container">
-                <div class="row row-bottom">
+    <section class="full-detail-description full-detail">
+        <div class="container">
+            <div class="d-flex flex-column">
+                @if ($pagename != 42)
+                    {{-- Uncomment if needed --}}
+                    <h2 class="detail-title text-center">
+                        {{ App\Models\Category::where('id', $pagename)->pluck('title')->first() }}
+                    </h2>
+
+                @endif
+
+                @foreach ($viewpageedit as $description)
                     @if ($pagename != 42)
-                    {{-- <h2 class="detail-title" style="margin-left:680px">{{ App\Models\Category::where('id', $pagename)->pluck('title')->first() }}</h2> --}}
-                    @endif
-                    @foreach ($viewpageedit as $description)
-                        @if ($pagename != 42)
-                        <div class="col-md-12" style="margin-top: 120px;margin-bottom:60px">
-                            <div class="col-md-6">
-                             <p> <td><img src="{{asset($description->image)}}" alt="" style="height: 400px;width:auto"></td> </p>
+                        <div class="row d-flex align-items-center my-5">
+                            <!-- Image Column -->
+                            <div class="col-md-6 text-center d-flex justify-content-center align-items-center" style="margin-top: 60px">
+                                <img src="{{ asset($description->image) }}" alt="Image" class="img-fluid" style="max-height: 400px;">
                             </div>
+
+                            <!-- Content Column -->
                             <div class="col-md-6" style="margin-top: 60px">
-                            <h1 style="font-size: 24px;">{!! $description->content !!}</h1
-                            >
+                                <h1 class="fs-4">{!! strip_tags($description->content, '<p><br><b><strong><i><em>') !!}</h1>
                             </div>
                         </div>
-                            <br><br>
-                        @endif
-                    @endforeach
-                </div>
+                    @endif
+                @endforeach
             </div>
-        </section>
-    @endif
+        </div>
+    </section>
+
+@endif
+
 
 
     <div class="clearfix"></div>

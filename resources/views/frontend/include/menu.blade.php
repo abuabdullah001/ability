@@ -506,8 +506,8 @@
                 justify-content:space-around;
                 align-items: center;
                 margin-bottom: 10px;
-                /* margin-left: 200px;
-                margin-right: 200px; */
+                margin-left: 350px;
+                margin-right: 350px;
             }
 
             .event-item img {
@@ -612,14 +612,14 @@
                         <h4 style="text-align: center">{{ $committeemenu->title }}</h4>
                     </a>
                 @endforeach
-                    <a class="dropdown-item" href="{{ route('report') }}">
+                    {{-- <a class="dropdown-item" href="{{ route('report') }}">
                         <img src="{{asset('images/event/165.jpg')}}" alt="" style="height: 150px;width:300px;margin-left:30px;margin-right:20px;">
                         <h4 style="text-align: center">Coming Soon</h4>
                     </a>
                     <a class="dropdown-item" href="{{ route('report') }}">
                         <img src="{{asset('images/event/165.jpg')}}" alt="" style="height: 150px;width:300px;margin-left:30px;margin-right:20px;">
                         <h4 style="text-align: center">Coming Soon</h4>
-                    </a>
+                    </a> --}}
             </div>
         </div>
     </div>
@@ -695,20 +695,21 @@
                                 <h3 style="text-align: center">Join as a Donor</h3></a>
                         </div>
                         <div>
-                            <a class="dropdown-item" href="">
-                                <img src="{{asset('images/event/165.jpg')}}" alt="" style="height: 150px;width:300px;">
-                                <h3 style="text-align: center">Coming Soon</h3></a>
-                        </div>
-                        <div>
-                            <a class="dropdown-item" href="">
-                                <img src="{{asset('images/event/165.jpg')}}" alt="" style="height: 150px;width:300px;">
-                                <h3 style="text-align: center">Coming Soon</h3></a>
-                        </div>
-                        <div>
                             <a class="dropdown-item" href="{{ url('/volunteer') }}">
                                 <img src="{{asset('images/event/140.jpg')}}" alt="" style="height: 150px;width:300px;">
                                 <h3 style="text-align: center">Join as a Volunteer</h3> </a>
                         </div>
+                        {{-- <div>
+                            <a class="dropdown-item" href="">
+                                <img src="{{asset('images/event/165.jpg')}}" alt="" style="height: 150px;width:300px;">
+                                <h3 style="text-align: center">Coming Soon</h3></a>
+                        </div>
+                        <div>
+                            <a class="dropdown-item" href="">
+                                <img src="{{asset('images/event/165.jpg')}}" alt="" style="height: 150px;width:300px;">
+                                <h3 style="text-align: center">Coming Soon</h3></a>
+                        </div> --}}
+
             </div>
     </div>
 
