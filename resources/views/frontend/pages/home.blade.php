@@ -225,45 +225,27 @@ flex-direction: column;
                                 </a>
                             </h4>
                         </div>
-                        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel"
-                            aria-labelledby="work-process">
-                            <div class="panel-body pbody" style="border: 1px solid black; min-height:300px;">
+                        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="work-process">
+                            <div class="panel-body pbody" style="border: 1px solid black; max-height: 500px;">
                                 @php
                                     $content = "chairman message - Welcome to The Organization of Disaster Management Society (ODMS). Since its establishment in 2015, ODMS gained high popularity as
                                                 a dedicated organization committed to enhance disaster management and resilience in coastal communities. It has proved dedication empowering at-risk populations
                                                 through disaster preparedness, response, and recovery initiatives. From the very beginning ODMS is hardly trying to promote sustainability and build resilience against
                                                 disasters. The major ODMS events, such as disaster risk reduction programs, poster presentations, and sessions on planetary science in collaboration with esteemed government and non-government institutions.";
-                                    $shortContent = Str::limit($content, 100); // Truncate to 100 characters
+                                    $shortContent = Str::limit($content, 300); // Show only 300 characters initially
                                 @endphp
-
                                 <em>
-                                    <!-- Display the truncated content -->
-                                    "{{ $shortContent }}"
-
-                                    <!-- Full content hidden initially -->
-                                    <span id="full-content" style="display: none;">{{ $content }}</span>
+                                    {{ $shortContent }}...
                                 </em>
                                 <br>
-                                <!-- Read more button to toggle content visibility -->
-                                <button class="btn btn-success" onclick="toggleContent()">Read more</button>
+
+                                @if(strlen($content) > 300)
+                                   <a href="">  <button class="btn btn-success">Read More</button> </a> 
+                                @endif
                             </div>
-
-                            <script>
-                                function toggleContent() {
-                                    var fullContent = document.getElementById('full-content');
-                                    var readMoreBtn = document.querySelector('.btn.btn-success');
-
-                                    if (fullContent.style.display === "none") {
-                                        fullContent.style.display = "inline";
-                                        readMoreBtn.innerHTML = "Read Less";
-                                    } else {
-                                        fullContent.style.display = "none";
-                                        readMoreBtn.innerHTML = "Read more";
-                                    }
-                                }
-                            </script>
-
                         </div>
+
+
                     </div>
                 </div>
             </div>
@@ -306,15 +288,17 @@ flex-direction: column;
                             </h4>
                         </div>
                         <div id="collapseROne" class="panel-collapse collapse " role="tabpanel"
-                            aria-labelledby="work-process">
-                            <div class="panel-body" style="border:1px solid #393A3C; min-height:316px;">
-                                <em>CEO message - The Organization for Disaster Management Society is devoted to saving lives, strengthening communities, and increasing disaster resilience. We think that preparation and collaboration may turn vulnerability into strength, providing at-risk groups with the resources they need to prepare and recover. Our aim is for a future in which communities thrive, ecosystems are protected, and calamities
-                                    are successfully managed. Join us in developing a resilient and inclusive future through compassion, creativity, and action.</em><br><br>
-                                <!--<b>Md. Aktaruzzaman Hero<br>-->
-                                </b>
-                                <button class="btn btn-success">Read more</button>
-                            </div>
+                        aria-labelledby="work-process">
+                        <div class="panel-body" style="border:1px solid #393A3C; max-height:316px;">
+                            <em id="ceoMessage">CEO message - The Organization for Disaster Management Society is devoted to saving lives, strengthening communities, and increasing disaster resilience. We think that preparation and collaboration may turn vulnerability into strength, providing at-risk groups with the resources they need to prepare and recover...</em><br><br>
+                            <button class="btn btn-success">Read more</button>
                         </div>
+
+                        <script>
+                            var message = document.getElementById('ceoMessage');
+                            message.innerHTML = message.innerHTML.substring(0, 300) + "...";
+                        </script>
+                    </div>
                     </div>
                 </div>
             </div>

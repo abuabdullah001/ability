@@ -61,6 +61,7 @@ use App\Http\Controllers\ServeController;
 use App\Http\Controllers\SupportController;
 use SebastianBergmann\Environment\Runtime;
 use App\Http\Controllers\PartnerController;
+use FontLib\Table\Type\name;
 
 Route::get('/report', function () {
     return view('frontend.pages.report');
@@ -475,7 +476,7 @@ Route::group(['middleware' => ['auth']], function () {
     // introduction page route
     Route::get('/admin/introduction', [IntroductionController::class, 'introduction']);
 });
-Route::get('view_aboutepage/{id}', [AboutMenuController::class, 'fontview']);
+Route::get('view_aboutepage/{id}', [AboutMenuController::class, 'fontview'])->name('member.fontview');
 
 Route::get('view-management-memeber', [AboutMenuController::class, 'management'])->name('MannagementMember.all');
 Route::post('store-management-member', [AboutMenuController::class, 'storemannagement'])->name('MannagementMember.store');
