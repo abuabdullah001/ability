@@ -620,15 +620,45 @@
                     </a>
 
                         @php
-                            $notice=App\Models\Notice::get();
+                            $notice=App\Models\Notice::first();
                         @endphp
 
-                   @foreach ($notice as $notice)
-                    <a class="dropdown-item" href="{{ route('frontend.notice_details', ['id' => $notice->id]) }}">
-                        <img src="{{ asset('images/event/200.png') }}" alt="" style="height: 150px;width:300px;margin-left:30px;margin-right:20px;">
-                        <h4 style="text-align: center"> {{ $notice->title }}</h4>
-                    </a>
-                   @endforeach
+                        <a class="dropdown-item" href="{{ route('frontend.pages.notice_show', ['id' => $notice->id]) }}">
+                            <img src="{{ asset('images/event/200.png') }}" alt="" style="height: 150px;width:300px;margin-left:30px;margin-right:20px;">
+                            <h4 style="text-align: center"> Notice</h4>
+                        </a>
+
+
+
+                   {{-- <div class="container" style="width: 1154px">
+                    <div class="ibox">
+                        <div class="i-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        @foreach($notice as $notice)
+                                        <div class="col-md-4 col-sm-6 mb-4"> <!-- col-md-4 ensures 3 cards per row -->
+                                            <div class="card" >
+                                                <a href="{{ route('notice.show', ['slug' => $notice->slug]) }}">
+                                                    <div class="card-body">
+                                                        <h2 class="card-title">
+                                                            {{ Str::limit($notice->name, 30, '...') }} <!-- Limit the title to 30 characters -->
+                                                        </h2>
+                                                        <p style="color:black">{{ Str::limit(strip_tags($notice->desctiption), 100, '...') }}</p>
+                                                        <a href="{{ route('event.show', ['slug' => $notice->slug]) }}" class="btn btn-link" style="color:blue">
+                                                            Read More
+                                                        </a>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        @endforeach
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> --}}
 
 
 

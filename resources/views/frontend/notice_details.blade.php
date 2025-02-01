@@ -7,29 +7,23 @@ HOME
 @section('front-main-content')
 <div class="clearfix"></div>
 
-
-
-<style>
-
-</style>
+@php
+    $notices = App\Models\Notice::take(3)->get(); // Fetch multiple notices
+@endphp
 
 
 <section style="background-color: rgb(255, 255, 255);">
-    <div class="container ">
+    <div class="container">
         <div class="row">
-            <div class=" col-md-12">
-                <h1>Notice</h1>
-                <p>
-                   Dear Community Members,
-                   We are pleased to announce the establishment of our Disability Fund, aimed at supporting individuals facing financial challenges due to disabilities. This fund strives to empower and uplift those in need by providing financial assistance for medical expenses, adaptive equipment, and essential services.
-                   If you or someone you know requires support, we encourage you to apply for assistance through our Disability Fund page. Together, let's foster a community where everyone has the opportunity to thrive, regardless of their abilities.
-                   Visit [website link] to learn more and access the application form. Your contribution and support are vital in making a difference in the lives of those facing disabilities.
-                   Thank you for joining us in this important initiative.
-                </p>
-             </div>
+            <h1 style="margin-left: 470px; margin-top:0px;margin-bottom:30px">Notice</h1>
         </div>
-    </div>
- </section>
 
- </section>
+
+            <div class="">
+                {{-- <h3>{{ Str::limit(strip_tags($notice->title ?? 'Default Title'), 100) }}</h3> --}}
+                <p>{{ (strip_tags($notice->descriptino ?? 'Default Description')) }}</p>
+            </div>
+
+    </div>
+</section>
 @endsection

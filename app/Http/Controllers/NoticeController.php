@@ -116,6 +116,11 @@ class NoticeController extends Controller
     // }
 
     public function show($id) {
+        $notice = Notice::all(); // Fetch a single notice by ID
+        return view('frontend.pages.notice_show', compact('notice')); // Return the correct variable
+    }
+    
+    public function details($id) {
         $notice = Notice::findOrFail($id); // Fetch a single notice by ID
         return view('frontend.notice_details', compact('notice')); // Return the correct variable
     }

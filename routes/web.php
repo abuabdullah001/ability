@@ -390,9 +390,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/editnotice/{id}', [NoticeController::class, 'edit']);
     Route::post('/store_notice', [NoticeController::class, 'store'])->name('storenotice');
     Route::put('/updatenotice/{id}', [NoticeController::class, 'update']);
-    // Route::get('/frontend/notice_details/{id}', [NoticeController::class, 'details'])->name('frontend.notice_details');
 
-     Route::get('/frontend/notice_details/{id}', [NoticeController::class, 'show'])->name('frontend.notice_details');
 
 
     //   Rabbi // Reference
@@ -705,7 +703,13 @@ Route::delete('manual/delete/{id}',[ManualController::class,'delete'])->name('ma
 
 
 // partner
-
 Route::get('partner/create',[PartnerController::class,'create'])->name('partner.create');
 Route::post('partner/store',[PartnerController::class,'create'])->name('partner.store');
 Route::get('partner/index',[PartnerController::class,'create'])->name('partner.index');
+
+
+
+// notice
+  Route::get('/frontend/notice_details/{id}', [NoticeController::class, 'details'])->name('frontend.notice_details');
+  Route::get('/frontend/notice_show/{id}', [NoticeController::class, 'show'])->name('frontend.pages.notice_show');
+
