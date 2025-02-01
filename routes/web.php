@@ -67,6 +67,12 @@ Route::get('/report', function () {
     return view('frontend.pages.report');
 })->name('report');
 
+
+Route::get('/whatwedo', function () {
+    return view('frontend.pages.whatwedo');
+})->name('whatwedo');
+
+
 Route::get('/support', [SupportController::class, 'create'])->name('support.showForm');
 Route::post('/support', [SupportController::class, 'store'])->name('support.store');
 Route::resource('account', AccountsController::class);
@@ -384,6 +390,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/editnotice/{id}', [NoticeController::class, 'edit']);
     Route::post('/store_notice', [NoticeController::class, 'store'])->name('storenotice');
     Route::put('/updatenotice/{id}', [NoticeController::class, 'update']);
+    // Route::get('/frontend/notice_details/{id}', [NoticeController::class, 'details'])->name('frontend.notice_details');
+
+     Route::get('/frontend/notice_details/{id}', [NoticeController::class, 'show'])->name('frontend.notice_details');
+
 
     //   Rabbi // Reference
     Route::get('/Reference-list', [IncentiveController::class, 'index'])->name('reference_list');

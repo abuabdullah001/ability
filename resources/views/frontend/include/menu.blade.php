@@ -599,6 +599,7 @@
                         <img src="{{asset('images/event/155.jpg')}}" alt="" style="height: 150px;width:300px;margin-left:30px;margin-right:20px;">
                         <h4 style="text-align: center">Report</h4>
                     </a>
+
                 </div>
         </div>
 
@@ -612,14 +613,25 @@
                         <h4 style="text-align: center">{{ $committeemenu->title }}</h4>
                     </a>
                 @endforeach
-                    {{-- <a class="dropdown-item" href="{{ route('report') }}">
-                        <img src="{{asset('images/event/165.jpg')}}" alt="" style="height: 150px;width:300px;margin-left:30px;margin-right:20px;">
-                        <h4 style="text-align: center">Coming Soon</h4>
+
+                   <a class="dropdown-item" href="/whatwedo">
+                        <img src="{{asset('images/event/201.jpeg')}}" alt="" style="height: 150px;width:300px;margin-left:30px;margin-right:20px;">
+                        <h4 style="text-align: center">What we do</h4>
                     </a>
-                    <a class="dropdown-item" href="{{ route('report') }}">
-                        <img src="{{asset('images/event/165.jpg')}}" alt="" style="height: 150px;width:300px;margin-left:30px;margin-right:20px;">
-                        <h4 style="text-align: center">Coming Soon</h4>
-                    </a> --}}
+
+                        @php
+                            $notice=App\Models\Notice::get();
+                        @endphp
+
+                   @foreach ($notice as $notice)
+                    <a class="dropdown-item" href="{{ route('frontend.notice_details', ['id' => $notice->id]) }}">
+                        <img src="{{ asset('images/event/200.png') }}" alt="" style="height: 150px;width:300px;margin-left:30px;margin-right:20px;">
+                        <h4 style="text-align: center"> {{ $notice->title }}</h4>
+                    </a>
+                   @endforeach
+
+
+
             </div>
         </div>
     </div>
