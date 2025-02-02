@@ -618,10 +618,29 @@
                         <img src="{{asset('images/event/201.jpeg')}}" alt="" style="height: 150px;width:300px;margin-left:30px;margin-right:20px;">
                         <h4 style="text-align: center">What we do</h4>
                     </a>
-                   <a class="dropdown-item" href="/whatwedo">
-                        <img src="{{asset('images/event/204.jpeg')}}" alt="" style="height: 150px;width:300px;margin-left:30px;margin-right:20px;">
-                        <h4 style="text-align: center">About ODMS</h4>
+
+                    {{-- @php
+                    $odms = App\Models\Odms::all();
+                @endphp
+
+                @foreach($odms as $odm)
+                    <a class="dropdown-item" href="{{ route('odms.show', ['id' => $odm->id]) }}">
+                        <img src="{{ asset('images/event/204.jpeg') }}" alt="" style="height: 150px;width:300px;margin-left:30px;margin-right:20px;">
+                        <h4 style="text-align: center">About ODMS - {{ $odm->id }}</h4>
                     </a>
+                @endforeach --}}
+
+
+                @php
+                $odms=App\Models\Odms::first();
+                @endphp
+
+
+                <a class="dropdown-item" href="{{ route('frontend.pages.odms.show', ['id' => $odms->id]) }}">
+                    <img src="{{asset('images/event/204.jpeg')}}" alt="" style="height: 150px;width:300px;">
+                    <h4 style="text-align: center">About ODMS</h4>
+                </a>
+
 
                         @php
                             $notice=App\Models\Notice::first();

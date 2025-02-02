@@ -692,7 +692,7 @@ Route::get('odms/edit/{id}',[OdmsController::class,'edit'])->name('odms.edit');
 Route::put('odms/update/{id}',[OdmsController::class,'update'])->name('odms.update');
 Route::delete('odms/delete/{id}',[OdmsController::class,'delete'])->name('odms.delete');
 
-Route::get('odms/show/{id}',[OdmsController::class,'show'])->name('odms.show');
+Route::get('odms/show/{id}',[OdmsController::class,'show'])->name('frontend.pages.odms.show');
 
 Route::post('/donations/update-payment-status', [EventController::class, 'updatePaymentStatus'])->name('donation.updatePaymentStatus');
 
