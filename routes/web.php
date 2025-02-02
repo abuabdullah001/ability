@@ -73,6 +73,8 @@ Route::get('/whatwedo', function () {
 })->name('whatwedo');
 
 
+
+
 Route::get('/support', [SupportController::class, 'create'])->name('support.showForm');
 Route::post('/support', [SupportController::class, 'store'])->name('support.store');
 Route::resource('account', AccountsController::class);
@@ -689,6 +691,8 @@ Route::get('odms/create',[OdmsController::class,'create'])->name('odms.create');
 Route::get('odms/edit/{id}',[OdmsController::class,'edit'])->name('odms.edit');
 Route::put('odms/update/{id}',[OdmsController::class,'update'])->name('odms.update');
 Route::delete('odms/delete/{id}',[OdmsController::class,'delete'])->name('odms.delete');
+
+Route::get('odms/show/{id}',[OdmsController::class,'show'])->name('odms.show');
 
 Route::post('/donations/update-payment-status', [EventController::class, 'updatePaymentStatus'])->name('donation.updatePaymentStatus');
 

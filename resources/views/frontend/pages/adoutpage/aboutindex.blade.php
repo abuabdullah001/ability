@@ -217,7 +217,7 @@
                                             More</button>
                                     @endif
                                 </div>
-                               
+
                             </div>
                         @endif
                     @endforeach
