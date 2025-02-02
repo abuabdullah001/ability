@@ -292,7 +292,7 @@ flex-direction: column;
                         </div>
 
                          <!-- Collapsible Content -->
-                         <div id="collapseROne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="work-process">
+                         <div id="collapseROne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="work-process">
                             <div class="panel-body" style="border:1px solid #393A3C; max-height:316px;">
                                 <em id="ceoMessage">
                                     CEO message - The Organization for Disaster Management Society is devoted to saving lives, strengthening communities, and increasing disaster resilience. We think that preparation and collaboration may turn vulnerability into strength, providing at-risk groups with the resources they need to prepare and recover...
@@ -311,7 +311,7 @@ flex-direction: column;
                                 }
                             });
                         </script>
-                        
+
                     </div>
                 </div>
             </div>
@@ -1117,7 +1117,3 @@ width:20px;
 
 
 @endsection
-
-
-
-
