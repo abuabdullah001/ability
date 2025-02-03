@@ -365,6 +365,10 @@ margin-top: 10px;
 }
 
 }
+.para-16{
+    font-size: 16px!important;
+    line-height: 1.8!important;
+}
 </style>
 
 
@@ -377,27 +381,30 @@ margin-top: 10px;
     $odmss=App\Models\Odms::all();
 @endphp
 
-<section class="" style="background-color: #f0f0f0">
-<div class="container">
-  <div style="margin-top:50px " class="">
-    <h2 style="text-align: center;padding-top: 0px;"> <span style="font-weight:700">About ODMS</span></h2>
-    <div class="" style="height: 2px;width:150px;background-color:black; margin:auto;margin-bottom:60px">
-    </div>
-    @foreach ($odmss as $odms )
-    <div class="row col-md-6" style="margin-top: 10px;">
-     <img style="width: 500px;height:400px" src="{{ asset('images/post/' . $odms->image) }}" alt="">
-    </div>
-    <div class="row col-md-6 " style="margin-top: 0px">
-      <p style="margin-top: 0px;margin-bottom:0px;font-size: 16px; color: #555; line-height: 1.8;" class="mt-3">
-        {!! Str::limit( $odms->descrition,1000) !!}
-     </p>
-    <button class="btn btn-success">Read more</button>
+<section style="background-color: #f0f0f0">
+    <div class="container">
+      <div style="margin-top:50px">
+        <h2 style="text-align: center; padding-top: 0px;">
+          <span style="font-weight:700">About ODMS</span>
+        </h2>
+        <div style="height: 2px; width:150px; background-color:black; margin:auto; margin-bottom:60px"></div>
 
+        @foreach ($odmss as $odms)
+        <div class="row">
+          <div class="col-md-6" style="margin-top: 10px;">
+            <img style="width: 500px; height:400px" src="{{ asset('images/post/' . $odms->image) }}" alt="">
+          </div>
+          <div class="col-md-6" style="margin-top: 0px">
+            <p class="para-16" style="font-size: 16px!important; color: #555!important; line-height: 1.8!important;" class="mt-3">
+              {!! Str::limit($odms->descrition, 1000) !!}
+            </p>
+            <button class="btn btn-success">Read more</button>
+          </div>
+        </div>
+        @endforeach
+      </div>
     </div>
-    @endforeach
-</div>
-</div>
-</section>
+  </section>
 
 {{-- Featured event --}}
 <style>
