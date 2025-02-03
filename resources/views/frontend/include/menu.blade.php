@@ -328,7 +328,7 @@
 
         <!-- Address -->
         <div style2="font-size: 14px;" style="margin-left: 15px">
-            📍 123 Main Street, City, Country
+         || 123 Main Street, City, Country
         </div>
     </div>
     </div>
