@@ -579,14 +579,13 @@
     </div>
 
 
-
     {{-- about us start --}}
     <div id="aboutus4" class="event-list" style=" margin-top:0px;margin-left:00px;">
         <div class="aboutus6">
             <div style="display: flex">
                 @foreach (App\Models\Category::where('type', 'About')->orderBy('order_by', 'ASC')->get() as $anoutmenu)
                     <a class="dropdown-item" href="{{ '/view_aboutepage/' . $anoutmenu->id }}">
-                        <img src="{{ asset($anoutmenu->image) }}" alt="" style="height: 150px;width:300px;margin-left:30px;">
+                        <img src="{{ asset($anoutmenu->image) }}" alt="" style="height: 150px;width:50px;margin-left:30px;">
                         <h4 style="text-align: center">{{ $anoutmenu->title }}</h4>
                     </a>
                 @endforeach
