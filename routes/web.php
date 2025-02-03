@@ -710,8 +710,8 @@ Route::delete('manual/delete/{id}',[ManualController::class,'delete'])->name('ma
 
 // partner
 Route::get('partner/create',[PartnerController::class,'create'])->name('partner.create');
-Route::post('partner/store',[PartnerController::class,'create'])->name('partner.store');
-Route::get('partner/index',[PartnerController::class,'create'])->name('partner.index');
+Route::post('partner/store',[PartnerController::class,'store'])->name('partner.store');
+Route::get('partner/index',[PartnerController::class,'index'])->name('partner.index');
 
 
 

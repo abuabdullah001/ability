@@ -64,18 +64,12 @@ ALL Training
                                         <td>{{ $value->title }}</td>
                                         <td>{!! Str::limit($value->description, 200) !!}</td>
                                         <td>
-                                            @if($value->images && is_array(json_decode($value->images)))
-                                                @foreach(json_decode($value->images) as $image)
-                                                    <img src="{{ asset($image) }}" alt="Partner Image" style="width: 80px; height: 80px; margin: 5px;">
-                                                @endforeach
-                                            @else
-                                                <p>No Images Available</p>
-                                            @endif
+                                          <img src="{{asset($value->image)}}" alt="" style="height: 120px">
                                         </td>
 
                                         <td>
-                                            <a href="{{ route('partner.edit', $value->id) }}" class="btn btn-xs btn-info"><i class="fas fa-edit"></i></a>
-                                            <a href="{{ route('partner.delete', $value->id) }}" onclick="return confirm('Are you sure?')" class="btn btn-xs btn-danger"><i class="fas fa-trash-alt"></i></a>
+                                            {{-- <a href="{{ route('partner.edit', $value->id) }}" class="btn btn-xs btn-info"><i class="fas fa-edit"></i></a>
+                                            <a href="{{ route('partner.delete', $value->id) }}" onclick="return confirm('Are you sure?')" class="btn btn-xs btn-danger"><i class="fas fa-trash-alt"></i></a> --}}
                                         </td>
                                     </tr>
                                     @endforeach
