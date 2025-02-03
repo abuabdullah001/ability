@@ -220,6 +220,13 @@
                                         $content = html_entity_decode(strip_tags($contentw));
                                         $shortContent = Str::limit($content, 300);
                                     @endphp
+                                    <style>
+                                        span{
+                                            font-family: Arial, Helvetica, sans-serif;
+                                            font-size: 15px;
+                                            line-height: 24px;
+                                        }
+                                    </style>
                                     <h4 class="fs-4"  style="text-align: justify">
                                         <span class="short-content">{{ $shortContent }}</span>
                                         <span class="full-content" style="display: none;">{{ $content }}</span>
