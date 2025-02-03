@@ -445,7 +445,7 @@ $events = App\Models\Event::take(3)->where('type','featured')->get();
     <div class="card shadow-lg border-0 rounded-lg">
         <div class="card-body px-4 py-5 bg-light">
             <p class="text-lg text-gray-700 leading-relaxed text-align-center font-serif py-3" style="margin-top: 50px;margin-bottom:50px">
-                <strong>"Featured Event"</strong> in disaster management focuses on critical initiatives like
+                <strong>Featured Event</strong> in disaster management focuses on critical initiatives like
                 <em>emergency response planning</em>, resilience building, or recovery efforts. It highlights key discussions, training,
                 or innovations in disaster preparedness. Such events aim to raise awareness, foster collaboration, and improve community
                 resilience against disasters.

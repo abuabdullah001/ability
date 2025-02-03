@@ -506,7 +506,6 @@
                 justify-content:space-around;
                 align-items: center;
                 margin-bottom: 10px;
-              
             }
 
             .event-item img {
