@@ -197,7 +197,8 @@
                                     <img src="{{ asset($description->image) }}" alt="Image" class="img-fluid" style="max-height: 400px;width:600px">
                                 </div>
                                 <!-- Content Column -->
-                                <div class="col-md-6" style="margin-top: 60px">
+                                <div class="col-md-6" style="margin-top: 60px     text-align: justify;
+" >
                                     @php
                                         $contentw = $description->content;
                                         $content = html_entity_decode(strip_tags($contentw));
@@ -214,7 +215,7 @@
                                 </div>
                             @else
                                 <!-- For odd iterations (1, 3, 5, etc.), image on the right -->
-                                <div class="col-md-6" style="margin-top: 60px">
+                                <div class="col-md-6 " style="margin-top: 60px;     text-align: justify;">
                                     @php
                                         $contentw = $description->content;
                                         $content = html_entity_decode(strip_tags($contentw));
@@ -288,4 +289,4 @@
             btn.innerText = "Show Less";
         }
     }
-</script> --}}
+</script> --}}
