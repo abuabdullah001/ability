@@ -173,6 +173,38 @@
         </section>
 
     @endif
+    @if ($pagename == 45)
+        @php
+            $members = App\Models\Partner::all();
+        @endphp
+
+        <section class="member-list">
+            <div class="container">
+                <div class="row mb-4"> <!-- Add mb-4 for gap -->
+                    @if ($members->isEmpty())
+                        <h1 class="text-center" style="opacity: 0.5; width: 100%;"><b>Nothing Found</b></h1>
+                    @else
+                        @foreach ($members as $value)
+                            <div class="col-md-4 mb-4">
+                                <div class="card shadow-sm border-light">
+                                    <img src="{{ $value->image ? asset($value->image) : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png' }}"
+                                        class="card-img-top" alt="{{ $value->name }}'s Image">
+                                    <div class="card-body" style="height: 300px">
+                                        <h6 class="card-title"><strong>Name:</strong> {{ $value->name }}</h6>
+                                        <p class="card-text"><strong>Designation:</strong> {{ $value->designation }}</p>
+                                        <p class="card-text"><strong>Phone:</strong> {{ $value->phone }}</p>
+                                        <p class="card-text"><strong>Email:</strong> {{ $value->email }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    @endif
+                </div>
+
+            </div>
+        </section>
+
+    @endif
 
     <div class="clearfix"></div>
 
