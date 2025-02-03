@@ -239,9 +239,14 @@ flex-direction: column;
                                 </em>
                                 <br>
 
+                                @php
+                                $odms=App\Models\Odms::first();
+                                @endphp
+
                                 @if(strlen($content) > 300)
-                                    <button class="btn btn-success">Read More</button>
+                                   <a href="{{ route('frontend.pages.odms.show', ['id' => $odms->id]) }}"> <button class="btn btn-success">Read More</button> </a>
                                 @endif
+
                             </div>
 
                         </div>
