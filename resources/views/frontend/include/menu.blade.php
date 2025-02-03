@@ -328,7 +328,11 @@
 
         <!-- Address -->
         <div style2="font-size: 14px;" style="margin-left: 15px">
+<<<<<<< HEAD
             📍 123 Main Street, City, Country
+=======
+         || 123 Main Street, City, Country
+>>>>>>> 5e4c98bf483c0d27945b5185cbee39ae103951f3
         </div>
     </div>
     </div>
