@@ -380,11 +380,11 @@ margin-top: 10px;
 <section class="" style="background-color: #f0f0f0">
 <div class="container">
   <div style="margin-top:50px " class="">
-    <h2 style="text-align: center;padding-top: 10px;"> <span style="font-weight:700">About ODMS</span></h2>
+    <h2 style="text-align: center;padding-top: 0px;"> <span style="font-weight:700">About ODMS</span></h2>
     <div class="" style="height: 2px;width:150px;background-color:black; margin:auto;margin-bottom:60px">
     </div>
     @foreach ($odmss as $odms )
-    <div class="row col-md-6" style="margin-top: 30px;">
+    <div class="row col-md-6" style="margin-top: 10px;">
      <img style="width: 500px;height:400px" src="{{ asset('images/post/' . $odms->image) }}" alt="">
     </div>
     <div class="row col-md-6 " style="margin-top: 0px">
