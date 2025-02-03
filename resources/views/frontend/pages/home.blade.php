@@ -444,7 +444,7 @@ $events = App\Models\Event::take(3)->where('type','featured')->get();
     </div>
     <div class="card shadow-lg border-0 rounded-lg">
         <div class="card-body px-4 py-5 bg-light">
-            <p class="text-lg text-gray-700 leading-relaxed text-align-center font-serif py-3" style="margin-top: 50px;margin-bottom:50px">
+            <p class="text-lg text-gray-700 leading-relaxed text-align-center font-serif py-3" style="margin-top: 50px;margin-bottom:50px;font-size: 16px; color: #555; line-height: 1.8;" >
                 <strong>Featured Event</strong> in disaster management focuses on critical initiatives like
                 <em>emergency response planning</em>, resilience building, or recovery efforts. It highlights key discussions, training,
                 or innovations in disaster preparedness. Such events aim to raise awareness, foster collaboration, and improve community
@@ -623,12 +623,12 @@ width:20px;
                         In January 2025, Bangladesh is addressing several disaster management challenges. The government has
                         closed its border with Myanmar, preventing Rohingya refugees from seeking safety amid escalating
                         violence in Rakhine state.
-                        <strong class="text-muted">THE GUARDIAN</strong>
+
                     </p>
                     <p style="font-size: 16px; color: #555; line-height: 1.8;">
                         Additionally, the World Bank has pledged over $2 billion to support Bangladesh's flood response
                         initiatives and other reforms.
-                        <strong class="text-muted">REUTERS</strong>
+
                     </p>
                     <p style="font-size: 16px; color: #555; line-height: 1.8;margin-bottom:50px">
                         Furthermore, the European Investment Bank plans to double its funding to €2 billion to aid in
@@ -786,12 +786,12 @@ width:20px;
                     Experts commend Bangladesh's disaster management for significantly reducing fatalities from natural
                     disasters, attributing this to comprehensive policies like the Standing Order on Disaster and the
                     Disaster Management Act.
-                    <strong class="text-muted">THE FINANCIAL EXPRESS</strong>
+
                 </p>
                 <p style="font-size: 16px; color: #555; line-height: 1.8; text-align: justify;margin-bottom:50px">
                     However, challenges persist, including irregular disaster management committee meetings, bureaucratic
                     hurdles, and corruption, which hinder effective policy implementation.
-                    <strong class="text-muted">RESEARCHGATE</strong>
+
                 </p>
             </div>
         </div>
@@ -838,10 +838,10 @@ width:20px;
                     <div class="card shadow-sm">
                         <div class="card-body">
                             <p style="font-size: 16px; color: #555; line-height: 1.8; text-align: justify;margin-bottom:50px">
-                                Disaster management in Bangladesh involves key partners such as the Ministry of Disaster Management
-                                and Relief (MoDMR), NGOs like BDPC, and international organizations like the Asian Disaster Preparedness
-                                Center (ADPC). Collaborative efforts focus on preparedness, capacity building, and emergency response.
-                                Humanitarian coordination teams and aid agencies like USAID play critical roles in strengthening resilience.
+                                Disaster Management and Support involves planning, coordination, and response to natural or man-made disasters. It includes
+                                 preparedness, emergency response, recovery, and risk reduction efforts to minimize damage and protect communities. Effective
+                                 disaster management relies on early warning systems, resource mobilization, humanitarian aid, and collaboration between
+                                  governments, NGOs, and volunteers.
                             </p>
                         </div>
                     </div>
@@ -888,10 +888,10 @@ width:20px;
                         <div class="card shadow-sm">
                             <div class="card-body">
                                 <p style="font-size: 16px; color: #555; line-height: 1.8; text-align: justify;margin-bottom:50px">
-                                    Disaster management in Bangladesh involves key partners such as the Ministry of Disaster Management
-                                    and Relief (MoDMR), NGOs like BDPC, and international organizations like the Asian Disaster Preparedness
-                                    Center (ADPC). Collaborative efforts focus on preparedness, capacity building, and emergency response.
-                                    Humanitarian coordination teams and aid agencies like USAID play critical roles in strengthening resilience.
+                                    Technology plays a vital role in disaster management by improving early warning systems, communication, and response efficiency.
+                                     Satellite imaging, artificial intelligence, and data analytics help predict disasters and assess damage. Mobile apps and social
+                                     media platforms enable real-time information sharing, ensuring swift emergency response. Drones, GIS mapping,
+                                     and remote sensing aid in rescue operations, making disaster management more effective, coordinated, and life-saving.
                                 </p>
                             </div>
                         </div>
@@ -944,10 +944,10 @@ width:20px;
             <div class="card shadow-sm">
                 <div class="card-body">
                     <p style="font-size: 16px; color: #555; line-height: 1.8; text-align: justify;margin-bottom:50px;">
-                        Disaster management in Bangladesh involves key partners such as the Ministry of Disaster Management
-                        and Relief (MoDMR), NGOs like BDPC, and international organizations like the Asian Disaster Preparedness
-                        Center (ADPC). Collaborative efforts focus on preparedness, capacity building, and emergency response.
-                        Humanitarian coordination teams and aid agencies like USAID play critical roles in strengthening resilience.
+                        Effective disaster management relies on collaboration between governments, NGOs, international organizations, and local
+                         communities. Key partners include the United Nations and humanitarian agencies, which provide emergency aid and
+                          resources. Private sector involvement enhances technological and logistical support, while community volunteers strengthen
+                           on-the-ground response. These partnershipsensure coordinated efforts in disaster preparedness, response, and recovery, minimizing the impact on affected populations.
                     </p>
                 </div>
             </div>
