@@ -591,10 +591,7 @@
                     </a>
                 @endforeach
     
-                <a class="dropdown-item" href="{{ route('report') }}">
-                    <img src="{{ asset('images/event/155.jpg') }}" alt="" style="height: 150px;width:300px;margin-left:30px;margin-right:20px;">
-                    <h4 style="text-align: center">Report</h4>
-                </a>
+             
             </div>
         </div>
     
