@@ -388,7 +388,7 @@ margin-top: 10px;
      <img style="width: 500px;height:400px" src="{{ asset('images/post/' . $odms->image) }}" alt="">
     </div>
     <div class="row col-md-6 " style="margin-top: 0px">
-      <p style="margin-top: 50px;margin-bottom:50px;font-size: 16px; color: #555; line-height: 1.8;" class="mt-3">
+      <p style="margin-top: 0px;margin-bottom:0px;font-size: 16px; color: #555; line-height: 1.8;" class="mt-3">
         {!! Str::limit( $odms->descrition,1000) !!}
      </p>
     <button class="btn btn-success">Read more</button>
