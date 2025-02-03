@@ -328,11 +328,7 @@
 
         <!-- Address -->
         <div style2="font-size: 14px;" style="margin-left: 15px">
-<<<<<<< HEAD
             📍 123 Main Street, City, Country
-=======
-         || 123 Main Street, City, Country
->>>>>>> 5e4c98bf483c0d27945b5185cbee39ae103951f3
         </div>
     </div>
     </div>
@@ -625,10 +621,7 @@
                     <h4 style="text-align: center">About ODMS</h4>
                 </a>
     
-                <a class="dropdown-item" href="">
-                    <img src="{{ asset('images/event/211.jpeg') }}" alt="" style="height: 150px;width:300px;margin-left:30px;margin-right:20px;">
-                    <h4 style="text-align: center"> Partners</h4>
-                </a>
+             
             </div>
         </div>
     </div>
