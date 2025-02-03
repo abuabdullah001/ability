@@ -197,14 +197,13 @@
                                     <img src="{{ asset($description->image) }}" alt="Image" class="img-fluid" style="max-height: 400px;width:600px">
                                 </div>
                                 <!-- Content Column -->
-                                <div class="col-md-6" style="margin-top: 60px     text-align: justify;
-" >
+                                <div class="col-md-6" style="margin-top: 60px " >
                                     @php
                                         $contentw = $description->content;
                                         $content = html_entity_decode(strip_tags($contentw));
                                         $shortContent = Str::limit($content, 300);
                                     @endphp
-                                    <h4 class="fs-4">
+                                    <h4 class="fs-4" style="text-align: justify">
                                         <span class="short-content">{{ $shortContent }}</span>
                                         <span class="full-content" style="display: none;">{{ $content }}</span>
                                     </h4>
@@ -221,7 +220,7 @@
                                         $content = html_entity_decode(strip_tags($contentw));
                                         $shortContent = Str::limit($content, 300);
                                     @endphp
-                                    <h4 class="fs-4">
+                                    <h4 class="fs-4"  style="text-align: justify">
                                         <span class="short-content">{{ $shortContent }}</span>
                                         <span class="full-content" style="display: none;">{{ $content }}</span>
                                     </h4>
