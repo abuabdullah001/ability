@@ -192,7 +192,7 @@
                                     <div class="card-body" style="height: 300px">
                                         <h6 class="card-title"><strong>Title:</strong> {{ $value->title }}</h6>
                                         <p class="card-text"><strong>Description:</strong> {!! $value->description !!}</p>
-                                        >
+                                        
                                         
                                     </div>
                                 </div>
