@@ -187,40 +187,57 @@
                         </h1>
                     @endif
 
-                    @foreach ($viewpageedit as $description)
-                        @if ($pagename != 42)
-                            <div class="row d-flex align-items-center my-5">
-                                <!-- Image Column -->
-                                <div class="col-md-6 text-center d-flex justify-content-center align-items-center"
-                                    style="margin-top: 60px">
-                                    <img src="{{ asset($description->image) }}" alt="Image" class="img-fluid"
-                                        style="max-height: 400px;">
+                    @foreach ($viewpageedit as $index => $description)
+                    @if ($pagename != 42)
+                        <div class="row d-flex align-items-center my-5">
+                            <!-- Image Column (Switch sides based on iteration) -->
+                            @if ($index % 2 == 0)
+                                <!-- For even iterations (0, 2, 4, etc.), image on the left -->
+                                <div class="col-md-6 text-center d-flex justify-content-center align-items-center" style="margin-top: 60px">
+                                    <img src="{{ asset($description->image) }}" alt="Image" class="img-fluid" style="max-height: 400px;width:600px">
                                 </div>
-
                                 <!-- Content Column -->
-
                                 <div class="col-md-6" style="margin-top: 60px">
                                     @php
                                         $contentw = $description->content;
-                                        // Remove HTML tags to get plain text
                                         $content = html_entity_decode(strip_tags($contentw));
                                         $shortContent = Str::limit($content, 300);
                                     @endphp
-
                                     <h4 class="fs-4">
-                                        <span id="short-content">{{ $shortContent}}</span>
-                                        <span id="full-content" style="display: none;">{{ $content }}</span>
+                                        <span class="short-content">{{ $shortContent }}</span>
+                                        <span class="full-content" style="display: none;">{{ $content }}</span>
                                     </h4>
 
                                     @if (strlen($content) > 300)
-                                        <button id="read-more-btn" class="btn btn-primary" onclick="toggleContent()">Read
-                                            More</button>
+                                        <button class="btn btn-primary read-more-btn">Read More</button>
                                     @endif
                                 </div>
+                            @else
+                                <!-- For odd iterations (1, 3, 5, etc.), image on the right -->
+                                <div class="col-md-6" style="margin-top: 60px">
+                                    @php
+                                        $contentw = $description->content;
+                                        $content = html_entity_decode(strip_tags($contentw));
+                                        $shortContent = Str::limit($content, 300);
+                                    @endphp
+                                    <h4 class="fs-4">
+                                        <span class="short-content">{{ $shortContent }}</span>
+                                        <span class="full-content" style="display: none;">{{ $content }}</span>
+                                    </h4>
 
-                            </div>
-                        @endif
-                    @endforeach
+                                    @if (strlen($content) > 300)
+                                        <button class="btn btn-primary read-more-btn">Read More</button>
+                                    @endif
+                                </div>
+                                <!-- Image Column -->
+                                <div class="col-md-6 text-center d-flex justify-content-center align-items-center" style="margin-top: 60px">
+                                    <img src="{{ asset($description->image) }}" alt="Image" class="img-fluid" style="max-height: 400px;width:600px">
+                                </div>
+                            @endif
+                        </div>
+                    @endif
+                @endforeach
+
                 </div>
             </div>
         </section>
@@ -230,8 +247,31 @@
 
     <div class="clearfix"></div>
 @endsection
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const buttons = document.querySelectorAll('.read-more-btn');
 
+    buttons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            const shortContent = this.closest('.col-md-6').querySelector('.short-content');
+            const fullContent = this.closest('.col-md-6').querySelector('.full-content');
+            const contentButton = this;
 
+            if (shortContent.style.display === "none") {
+                shortContent.style.display = "inline";
+                fullContent.style.display = "none";
+                contentButton.innerText = "Read More";
+            } else {
+                shortContent.style.display = "none";
+                fullContent.style.display = "inline";
+                contentButton.innerText = "Show Less";
+            }
+        });
+    });
+});
+
+</script>
+{{--
 <script>
     function toggleContent() {
         var shortContent = document.getElementById("short-content");
@@ -248,4 +288,4 @@
             btn.innerText = "Show Less";
         }
     }
-</script>
+</script> --}}
