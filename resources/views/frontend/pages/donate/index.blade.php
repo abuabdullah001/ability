@@ -7,6 +7,7 @@
         justify-content: center;
         padding: 60px 0;
         background: #f5f5f5;
+        margin-left: 180px;
     }
 
     .donation-section {
@@ -193,100 +194,113 @@
         cursor: pointer;
         font-size: 1em;
     }
+
 </style>
 
 <div class="containers">
-    <form action="{{ route('donation.confirm') }}" method="POST" id="donationForm">
-        @csrf
-        <div class="donation-section">
-            <!-- Donation Amount Section -->
-            <div class="donation-content row-cols-md-4">
-                <div class="donation-header">
-                    <h2>Contribute any amount to support the well-being of disaster people</h2>
-                </div>
-
-                <div class="amount-input">
-                    <input type="number" name="donation_amount" id="donationAmount" placeholder="Enter Amount" min="1" required >
-                </div>
-
-                <div class="amount-buttons">
-                    <div class="amount-btn" data-value="500">500 BDT</div>
-                    <div class="amount-btn active" data-value="2500">2500 BDT</div>
-                    <div class="amount-btn" data-value="5000">5000 BDT</div>
-                </div>
-            </div>
-
-            <div class="divider"></div>
-
-            <div class="gift-content col-md-4">
-                <h3>Select Gift Items</h3>
-                @php
-                $datas = App\Models\Gift::all();
-                @endphp
-                {{-- <div class="gift-items">
-                    @foreach ($datas as $item)
-                        <div class="gift-item" data-price="{{ $item->price }}">
-                            <img src="{{ asset($item->image) }}" height="50px" alt="Gift Item">
-                            <p>{{ $item->name }} </p>
-                            <p>({{ $item->price }} BDT)</p>
-                            <div class="quantity-control">
-                                <p>Quantity:</p>
-                                <input type="number" name="gift_{{ $item->name }}" min="0" value="{{ $item->quanity }}" class="gift-quantity" style="width: 75px; text-align: center;">
-                            </div>
-                            <span class="checkmark">✔</span> <!-- Checkmark for selection -->
+    <div class="row">
+        <div class="cols-md-12">
+            <form action="{{ route('donation.confirm') }}" method="POST" id="donationForm">
+                @csrf
+                <div class="donation-section">
+                    <!-- Donation Amount Section -->
+                    <div class="donation-content row-cols-md-4">
+                        <div class="donation-header">
+                            <h2>Contribute any amount to support the well-being of disaster people</h2>
                         </div>
-                    @endforeach
-                </div> --}}
-                <style>
-  .checkmark {
-    display: inline-block;
-    cursor: pointer;
-    font-size: 20px;
-    color: #ccc; /* Default deselected state */
-    margin-left: 10px;
-    user-select: none;
-    transition: color 0.3s ease;
-}
 
-.checkmark.selected {
-    color: green; /* Selected state */
-    font-weight: bold;
-}
+                        <div class="amount-input">
+                            <input type="number" name="donation_amount" id="donationAmount" placeholder="Enter Amount" min="1" required >
+                        </div>
+
+                        <div class="amount-buttons">
+                            <div class="amount-btn" data-value="500">500 BDT</div>
+                            <div class="amount-btn active" data-value="2500">2500 BDT</div>
+                            <div class="amount-btn" data-value="5000">5000 BDT</div>
+                        </div>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="gift-content col-md-4">
+                        <h3>Select Gift Items</h3>
+                        @php
+                            $datas = App\Models\Gift::all();
+                        @endphp
+                        {{-- <div class="gift-items">
+                            @foreach ($datas as $item)
+                                <div class="gift-item" data-price="{{ $item->price }}">
+                                    <img src="{{ asset($item->image) }}" height="50px" alt="Gift Item">
+                                    <p>{{ $item->name }} </p>
+                                    <p>({{ $item->price }} BDT)</p>
+                                    <div class="quantity-control">
+                                        <p>Quantity:</p>
+                                        <input type="number" name="gift_{{ $item->name }}" min="0" value="{{ $item->quanity }}" class="gift-quantity" style="width: 75px; text-align: center;">
+                                    </div>
+                                    <span class="checkmark">✔</span> <!-- Checkmark for selection -->
+                                </div>
+                            @endforeach
+                        </div> --}}
+                        <style>
+                            .checkmark {
+                                display: inline-block;
+                                cursor: pointer;
+                                font-size: 20px;
+                                color: #ccc; /* Default deselected state */
+                                margin-left: 10px;
+                                user-select: none;
+                                transition: color 0.3s ease;
+                            }
+
+                            .checkmark.selected {
+                                color: green; /* Selected state */
+                                font-weight: bold;
+                            }
 
 
-                </style>
+                        </style>
 
-<div class="gift-items">
-    @foreach ($datas as $item)
-        <div class="gift-item" data-price="{{ $item->price }}">
-            <img src="{{ asset($item->image) }}" height="50px" alt="Gift Item">
-            <p>{{ $item->name }}</p>
-            <p>(Single Price:{{ $item->price }} BDT)</p>
-            <div class="quantity-control">
-                <p>Quantity:</p>
-                <input
-                    type="number"
-                    name="gift_{{ $item->name }}"
-                    min="0"
-                    value="{{ $item->quanity }}"
-                    class="gift-quantity"
-                    style="width: 75px; text-align: center;">
-            </div>
-            <span class="checkmark" data-selected="false">✔</span>
+                        <div class="gift-items">
+                            @foreach ($datas as $item)
+                                <div class="gift-item" data-price="{{ $item->price }}">
+                                    <img src="{{ asset($item->image) }}" height="50px" alt="Gift Item">
+                                    <p>{{ $item->name }}</p>
+                                    <p>(Single Price:{{ $item->price }} BDT)</p>
+                                    <div class="quantity-control">
+                                        <p>Quantity:</p>
+                                        <input
+                                            type="number"
+                                            name="gift_{{ $item->name }}"
+                                            min="0"
+                                            value="{{ $item->quanity }}"
+                                            class="gift-quantity"
+                                            style="width: 75px; text-align: center;">
+                                    </div>
+                                    <span class="checkmark" data-selected="false">✔</span>
+                                </div>
+                            @endforeach
+                        </div>
+                        <p>Total Quantity: <span id="total-quantity">0</span></p>
+
+
+                    </div>
+                </div>
+                <div class="donate-btn-wrapper">
+                    <button type="submit" class="donate-btn">Donate</button>
+                </div>
+            </form>
+            <button type="submit" class="donate-btn" style="margin-left: 450px; margin-top: 10px">
+                <a href="{{route('manual.create')}}">
+                    <span style="color:white">Manual payment</span>
+                </a>
+            </button>
         </div>
-    @endforeach
-</div>
-<p>Total Quantity: <span id="total-quantity">0</span></p>
+    </div>
 
 
-            </div>
-        </div>
-        <div class="donate-btn-wrapper">
-            <button type="submit" class="donate-btn">Donate</button>
-        </div>
-    </form>
 
-    <button class="btn btn-primary form-control mt-5" style="margin-left: 10px;margin-top:200px"><a href="{{route('manual.create')}}"><span style="color:white">Manual payment</span></a> </button>
+
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+0G+SEiib2EBE7bY5N4E2W4r55y6b0gDbVgZxJ" crossorigin="anonymous"></script>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

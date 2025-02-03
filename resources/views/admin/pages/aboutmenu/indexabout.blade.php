@@ -56,7 +56,7 @@ ALL GALLERY IMAGES
                                         <td>{{$key + 1}}</td>
                                         <td>{{$showlist ->title}}</td>
                                         <td>{!! $showlist->content !!}</td>
-                                        <td><img src="{{asset('/images/post'.$showlist->image)}}" alt=""></td>
+                                        <td><img src="{{asset($showlist->image)}}" alt="" style="height: 120px"></td>
                                         <td>
                                             <a href="{{'aboute_viewedit/'.$showlist->id}}" class="btn btn-ml btn-danger"><i class="fas fa-edit"></i></a>
                                             &nbsp;&nbsp;&nbsp;

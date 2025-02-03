@@ -37,8 +37,7 @@ GALLERY
                     <!-- Profile Image -->
                     <div class="card card-primary card-outline">
                         <div class="card-body">
-                            <form class="form-horizontal" method="post" action="{{ route('abouteaddcontent')}}"
-                                enctype="multipart/form-data">
+                            <form class="form-horizontal" method="post" action="{{ route('abouteaddcontent')}}" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group row">
                                     <label for="inputName" class="col-sm-3 col-form-label">Menu</label>

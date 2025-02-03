@@ -19,13 +19,13 @@ class OdmsController extends Controller
     }
 
     public function store(Request $request){
-        dd($request->all());
+
        $odms= new Odms;
 
        if ($request->hasFile('image')) {
         $img_ext = $request->file('image')->getClientOriginalExtension();
-        $filename = 'odms-' . time() . '.' . $img_ext;
-        $path = $request->file('image')->move(public_path('images/post'), $filename);
+        $filename = 'event-' . time() . '.' . $img_ext;
+        $path = $request->file('image')->move(public_path('images/event'), $filename);
         $imagepath = '/images/event/' . $filename;
         $odms->image = $imagepath;
     }
@@ -45,13 +45,20 @@ class OdmsController extends Controller
         $odmss = Odms::findOrFail($id);
 
         if ($request->hasFile('image')) {
-            if (!empty($odmss->image) && file_exists(public_path('images/post/' . $odmss->image))) {
-                unlink(public_path('images/post/' . $odmss->image));
+            $oldImagePath = $odmss->image;
+            $img_ext = $request->file('image')->getClientOriginalExtension();
+            $filename = 'event-' . time() . '.' . $img_ext;
+            $path = $request->file('image')->move(public_path('images/event'), $filename);
+            $imagepath = '/images/event/' . $filename;
+            $odmss->image = $imagepath;
+
+            // Delete old image if it exists
+            if ($oldImagePath) {
+                $fullOldImagePath = public_path($oldImagePath);
+                if (file_exists($fullOldImagePath)) {
+                    unlink($fullOldImagePath);
+                }
             }
-            $image = $request->file('image');
-            $imageName = time() . '-' . uniqid() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('images/post'), $imageName);
-            $odmss->image = $imageName;
         }
         $odmss->title = $request->input('title');
         $odmss->descrition = $request->input('descrition');
@@ -66,4 +73,10 @@ class OdmsController extends Controller
 
       return redirect()->back()->with('success', 'ODMS created successfully!');
     }
+
+    public Function show(){
+        $odms=Odms::first();
+        return view('frontend.pages.odms.show',compact('odms'));
+    }
+
 }

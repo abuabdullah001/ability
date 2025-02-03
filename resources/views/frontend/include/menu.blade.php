@@ -19,7 +19,6 @@
         margin-bottom: 0px;
         border: 1px solid transparent;
         background-color: #ffffff;
-        padding: 30px;
     }
 
     .navbar-container {
@@ -255,6 +254,17 @@
         .nav-buttons {
             display: none;
         }
+        .inner-header-title:before {
+    position: absolute;
+    content: "";
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: none;
+    background: #242d3e;
+    opacity: .6;
+}
 
         @media (max-width: 624px) {
             body {
@@ -292,6 +302,37 @@
 
 
 
+<section style="background-color: black; color: white; padding: 10px 20px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: auto; flex-wrap: wrap; gap: 20px;">
+        <!-- Social Media Icons -->
+        <div style="display: flex; gap: 15px;">
+            <a href="https://facebook.com" target="_blank" style="text-decoration: none; color: white;">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank" style="text-decoration: none; color: white;">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" style="text-decoration: none; color: white;">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" style="text-decoration: none; color: white;">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
+
+        <!-- Phone Number -->
+        <div class="" style="display:flex">
+        <div style1="font-size: 14px;">
+            📞 <a href="tel:+1234567890" style="text-decoration: none; color: white;">+1 234 567 890</a>
+        </div>
+
+        <!-- Address -->
+        <div style2="font-size: 14px;" style="margin-left: 15px">
+            📍 123 Main Street, City, Country
+        </div>
+    </div>
+    </div>
+</section>
 
 
 <nav class="navbar">
@@ -420,6 +461,20 @@
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
                 z-index: 10;
             }
+            .event-list2 {
+
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: #fff;
+                border: 1px solid #ddd;
+                border-radius: 0px;
+                padding: 10px;
+                width: 100%;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                z-index: 10;
+                display: none
+            }
 
             .event-item {
                 display: flex;
@@ -451,8 +506,6 @@
                 justify-content:space-around;
                 align-items: center;
                 margin-bottom: 10px;
-                /* margin-left: 200px;
-                margin-right: 200px; */
             }
 
             .event-item img {
@@ -475,13 +528,12 @@
             $events = App\Models\Event::take(4)->get();
         @endphp
 
-        <div class="">
 
 {{-- donate us button --}}
-      <div id="eventList" class="event-list " style="display: flex; margin-top:0px;margin-left:00px;">
+      {{-- <div id="eventList" class="event-list2" style="display: flex; margin-top:0px;margin-left:00px;">
                 @foreach ($events as $event)
-                    <div class="event-item "
-                        style="display: flex; align-items: center; margin-bottom: 10px; width:100%;">
+                    <div class=""
+                        style="">
                         <a href="{{ route('event.show', ['slug' => $event->slug]) }}">
                             <img src="{{ asset($event->image) }}"
                                 style="width: 300px; height: 150px; object-fit: cover; border-radius: 5px; margin-right: 0px;"
@@ -501,50 +553,82 @@
                 </div>
             </div>
         </div>
+    </div> --}}
+    <div id="eventList" class="event-list" style="margin-top: 0px; margin-left: 0px;">
+        <div class="aboutus6">
+            @foreach ($events as $event)
+                <div>
+                    <a href="{{ route('event.show', ['slug' => $event->slug]) }}">
+                        <img src="{{ asset($event->image) }}"
+                             style="width: 300px; height: 150px; object-fit: cover; border-radius: 5px; margin-right: 0px;"
+                             class="card-img-top img-responsive" alt="...">
+                        <div class="card-body">
+                            <h2 class="card-title">
+                                {{ Str::limit($event->name, 30, '...') }}
+                            </h2>
+                        </div>
+                    </a>
+                </div>
+            @endforeach
+            <div class="block" >
+                <h3 ><a href="/event"><button class="btn btn-success" style="margin-bottom:120px">All event</button> </a></h3>
+                 </div>
+        </div>
+
+
     </div>
+
+
 
     {{-- about us start --}}
     <div id="aboutus4" class="event-list" style=" margin-top:0px;margin-left:00px;">
         <div class="aboutus6">
-
-                <div style="display: flex">
-                    @foreach (App\Models\Category::where('type', 'About')->get() as $anoutmenu)
-                    <a class="dropdown-item"
-                     href="{{ '/view_aboutepage/' . $anoutmenu->id }}">
-                     <img src="images/event/151.jpg" alt="" style="height: 150px;width:300px;margin-left:30px;">
-                      <h4 style="text-align: center">{{ $anoutmenu->title }}</h4>
-                    </a>
-                    @endforeach
-
-                    <a class="dropdown-item" href="{{ route('report') }}">
-                        <img src="images/event/155.jpg" alt="" style="height: 150px;width:300px;margin-left:30px;margin-right:20px;">
-                        <h4 style="text-align: center">Report</h4>
-                    </a>
-                </div>
-        </div>
-
-        <div class="aboutus6">
-
             <div style="display: flex">
-                @foreach (App\Models\Category::where('type', 'Committee')->get() as $committeemenu)
-                    <a class="dropdown-item"
-                       href="{{ '/view_committeepage/' . $committeemenu->id }}">
-                        <img src="images/event/152.jpeg" alt="" style="height: 150px;width:300px;margin-left:30px;">
+                @foreach (App\Models\Category::where('type', 'About')->orderBy('order_by', 'ASC')->get() as $anoutmenu)
+                    <a class="dropdown-item" href="{{ '/view_aboutepage/' . $anoutmenu->id }}">
+                        <img src="{{ asset($anoutmenu->image) }}" alt="" style="height: 150px;width:300px;margin-left:30px;">
+                        <h4 style="text-align: center">{{ $anoutmenu->title }}</h4>
+                    </a>
+                @endforeach
+    
+                <a class="dropdown-item" href="{{ route('report') }}">
+                    <img src="{{ asset('images/event/155.jpg') }}" alt="" style="height: 150px;width:300px;margin-left:30px;margin-right:20px;">
+                    <h4 style="text-align: center">Report</h4>
+                </a>
+            </div>
+        </div>
+    
+        <div class="aboutus6">
+            <div style="display: flex">
+                @foreach (App\Models\Category::where('type', 'Committee')->orderBy('order_by', 'ASC')->get() as $committeemenu)
+                    <a class="dropdown-item" href="{{ '/view_committeepage/' . $committeemenu->id }}">
+                        <img src="{{ asset($committeemenu->image) }}" alt="" style="height: 150px;width:300px;margin-left:30px;">
                         <h4 style="text-align: center">{{ $committeemenu->title }}</h4>
                     </a>
                 @endforeach
-                    <a class="dropdown-item" href="{{ route('report') }}">
-                        <img src="images/event/165.jpg" alt="" style="height: 150px;width:300px;margin-left:30px;margin-right:20px;">
-                        <h4 style="text-align: center">Coming Soon</h4>
-                    </a>
-                    <a class="dropdown-item" href="{{ route('report') }}">
-                        <img src="images/event/165.jpg" alt="" style="height: 150px;width:300px;margin-left:30px;margin-right:20px;">
-                        <h4 style="text-align: center">Coming Soon</h4>
-                    </a>
-
+    
+                <a class="dropdown-item" href="/whatwedo">
+                    <img src="{{ asset('images/event/201.jpeg') }}" alt="" style="height: 150px;width:300px;margin-left:30px;margin-right:20px;">
+                    <h4 style="text-align: center">What we do</h4>
+                </a>
+    
+                @php
+                    $odms = App\Models\Odms::first();
+                @endphp
+    
+                <a class="dropdown-item" href="{{ route('frontend.pages.odms.show', ['id' => $odms->id]) }}">
+                    <img src="{{ asset('images/event/204.jpeg') }}" alt="" style="height: 150px;width:300px;">
+                    <h4 style="text-align: center">About ODMS</h4>
+                </a>
+    
+                <a class="dropdown-item" href="">
+                    <img src="{{ asset('images/event/211.jpeg') }}" alt="" style="height: 150px;width:300px;margin-left:30px;margin-right:20px;">
+                    <h4 style="text-align: center"> Partners</h4>
+                </a>
             </div>
         </div>
     </div>
+    
 
 {{--about us end --}}
 
@@ -553,22 +637,22 @@
 <div class="event-item2">
     <div>
         <a class="dropdown-item" href="{{ url('/event') }}">
-            <img src="images/event/123.jpg" alt="" style="height: 150px;width:300px;">
+            <img src="{{asset('images/event/123.jpg')}}" alt="" style="height: 150px;width:300px;">
             <h3 style="text-align: center">Events</h3> </a>
     </div>
     <div>
         <a class="dropdown-item" href="{{ url('/champaign') }}">
-            <img src="images/event/124.png" alt="" style="height: 150px;width:300px;">
+            <img src="{{asset('images/event/124.png')}}" alt="" style="height: 150px;width:300px;">
             <h3 style="text-align: center">Campaign</h3></a>
     </div>
     <div>
         <a class="dropdown-item" href="{{ url('/project') }}">
-            <img src="images/event/125.png" alt="" style="height: 150px;width:300px;">
+            <img src="{{asset('images/event/125.png')}}" alt="" style="height: 150px;width:300px;">
             <h3 style="text-align: center">Projects</h3></a>
     </div>
     <div>
         <a class="dropdown-item" href="/response">
-            <img src="images/event/126.png" alt="" style="height: 150px;width:300px;">
+            <img src="{{asset('images/event/126.png')}}" alt="" style="height: 150px;width:300px;">
             <h3 style="text-align: center">Our Response</h3></a>
     </div>
         </div>
@@ -582,22 +666,22 @@
             <div class="event-item27">
                         <div>
                             <a class="dropdown-item" href="{{ url('/All-Gallery') }}">
-                                <img src="images/event/130.jpeg" alt="" style="height: 150px;width:300px;">
+                                <img src="{{asset('images/event/130.jpeg')}}" alt="" style="height: 150px;width:300px;">
                                 <h3 style="text-align: center">Gallery</h3> </a>
                         </div>
                         <div>
                             <a class="dropdown-item" href="/All-Video">
-                                <img src="images/event/161.png" alt="" style="height: 150px;width:300px;">
+                                <img src="{{asset('images/event/161.png')}}" alt="" style="height: 150px;width:300px;">
                                 <h3 style="text-align: center">Video</h3></a>
                         </div>
                         <div>
                             <a class="dropdown-item" href="{{ url('/news') }}">
-                                <img src="images/event/162.jpeg" alt="" style="height: 150px;width:300px;">
+                                <img src="{{asset('images/event/162.jpeg')}}" alt="" style="height: 150px;width:300px;">
                                 <h3 style="text-align: center">News</h3></a>
                         </div>
                         <div>
                             <a class="dropdown-item" href="{{ route('frontend.pages.blog') }}">
-                                <img src="images/event/163.png" alt="" style="height: 150px;width:300px;">
+                                <img src="{{asset('images/event/163.png')}}" alt="" style="height: 150px;width:300px;">
                                 <h3 style="text-align: center">Blog</h3>
                             </a>
                         </div>
@@ -613,24 +697,38 @@
 
                         <div>
                             <a class="dropdown-item" href="{{ url('/signin') }}">
-                                <img src="images/event/144.jpg" alt="" style="height: 150px;width:300px;">
+                                <img src="{{asset('images/event/144.jpg')}}" alt="" style="height: 150px;width:300px;">
                                 <h3 style="text-align: center">Join as a Donor</h3></a>
                         </div>
                         <div>
-                            <a class="dropdown-item" href="">
-                                <img src="images/event/165.jpg" alt="" style="height: 150px;width:300px;">
-                                <h3 style="text-align: center">Coming Soon</h3></a>
-                        </div>
-                        <div>
-                            <a class="dropdown-item" href="">
-                                <img src="images/event/165.jpg" alt="" style="height: 150px;width:300px;">
-                                <h3 style="text-align: center">Coming Soon</h3></a>
-                        </div>
-                        <div>
                             <a class="dropdown-item" href="{{ url('/volunteer') }}">
-                                <img src="images/event/140.jpg" alt="" style="height: 150px;width:300px;">
+                                <img src="{{asset('images/event/140.jpg')}}" alt="" style="height: 150px;width:300px;">
                                 <h3 style="text-align: center">Join as a Volunteer</h3> </a>
                         </div>
+                        <div>
+                            <a class="dropdown-item" href="">
+                                <img src="{{asset('images/event/212.jpeg')}}" alt="" style="height: 150px;width:300px;">
+                                <h3 style="text-align: center">Carrer</h3> </a>
+                        </div>
+                        @php
+                        $notice=App\Models\Notice::first();
+                        @endphp
+
+                    <a class="dropdown-item" href="{{ route('frontend.pages.notice_show', ['id' => $notice->id]) }}">
+                        <img src="{{ asset('images/event/200.png') }}" alt="" style="height: 150px;width:300px;margin-left:30px;margin-right:20px;">
+                        <h3 style="text-align: center"> Notice</h3>
+                    </a>
+                        {{-- <div>
+                            <a class="dropdown-item" href="">
+                                <img src="{{asset('images/event/165.jpg')}}" alt="" style="height: 150px;width:300px;">
+                                <h3 style="text-align: center">Coming Soon</h3></a>
+                        </div>
+                        <div>
+                            <a class="dropdown-item" href="">
+                                <img src="{{asset('images/event/165.jpg')}}" alt="" style="height: 150px;width:300px;">
+                                <h3 style="text-align: center">Coming Soon</h3></a>
+                        </div> --}}
+
             </div>
     </div>
 
@@ -674,197 +772,42 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
 <script>
     $(document).ready(function() {
+        function setupHoverMenu(buttonSelector, menuSelector) {
+            const button = $(buttonSelector);
+            const menu = $(menuSelector);
+            let timeout;
 
-        $('#hamburger').click(function() {
-            $('.nav-links').toggleClass('active');
-        });
+            button.mouseenter(function() {
+                clearTimeout(timeout); // Clear any previous timeout
+                menu.show();
+            });
 
-        let timer;
+            button.mouseleave(function() {
+                timeout = setTimeout(function() {
+                    menu.hide();
+                }, 1900); // Delay of 500ms before hiding the menu
+            });
 
-        $('.nav-item.has-submenu').hover(function() {
-            clearTimeout(timer);
-            $(this).children('.dropdown-menu').stop(true, true).slideDown();
-        }, function() {
-            timer = setTimeout(() => {
-                $(this).children('.dropdown-menu').stop(true, true).slideUp();
-            }, 300);
-        });
-    });
-</script>
+            menu.mouseleave(function() {
+                timeout = setTimeout(function() {
+                    menu.hide();
+                }, 1900); // Delay of 500ms before hiding the menu
+            });
+        }
 
+        setupHoverMenu('#donateUsButton', '#eventList');
+        setupHoverMenu('#donateUsButton23', '#all2222');
+        setupHoverMenu('#donateUsButton233', '#all23');
+        setupHoverMenu('#involvedID', '#involved3');
+        setupHoverMenu('#aboutus5', '#aboutus4');
 
-
-<script>
-    $(document).ready(function() {
-        const donateUsButton = $('#donateUsButton');
-        const eventList = $('#eventList');
-
-
-        donateUsButton.hover(
-            function() {
-                eventList.show();
-            },
-            function() {
-
-            }
-        );
-        eventList.hover(
-            function() {
-
-            },
-            function() {
-
-                eventList.hide();
-            }
-        );
-        donateUsButton.on('click', function(donate) {
+        // Smooth scroll functionality
+        $('[id^="donateUsButton"], #involvedID, #aboutus5').on('click', function() {
             $('html, body').animate({
-                scrollTop: $('#allEvents').offset().top
-            }, 800); // Smooth scroll to the all events section
+                scrollTop: $($(this).attr('href')).offset().top
+            }, 800);
         });
-    });
+    });
 </script>
-
-{{-- activities menu --}}
-<script>
-    $(document).ready(function() {
-        const donateUsButton = $('#donateUsButton23');
-        const eventList = $('#all2222');
-
-        eventList.hover(
-            function() {
-
-            },
-            function() {
-
-                eventList.hide();
-            }
-        );
-
-
-        donateUsButton.hover(
-            function() {
-                eventList.show();
-            },
-            function() {
-
-            }
-        );
-
-        donateUsButton.on('click', function(donate) {
-            $('html, body').animate({
-                scrollTop: $('#allEvents').offset().top
-            }, 800); // Smooth scroll to the all events section
-        });
-    });
-</script>
-
-{{-- media menu--}}
-<script>
-    $(document).ready(function() {
-        const donateUsButton = $('#donateUsButton233');
-        const eventList = $('#all23');
-
-        eventList.hover(
-            function() {
-
-            },
-            function() {
-
-                eventList.hide();
-            }
-        );
-
-
-        donateUsButton.hover(
-            function() {
-                eventList.show();
-            },
-            function() {
-
-            }
-        );
-
-        donateUsButton.on('click', function(donate) {
-            $('html, body').animate({
-                scrollTop: $('#allEvents').offset().top
-            }, 800); // Smooth scroll to the all events section
-        });
-    });
-</script>
-
-
-
-{{-- volunteer menu--}}
-<script>
-    $(document).ready(function() {
-        const donateUsButton = $('#involvedID');
-        const eventList = $('#involved3');
-
-        eventList.hover(
-            function() {
-
-            },
-            function() {
-
-                eventList.hide();
-            }
-        );
-
-
-        donateUsButton.hover(
-            function() {
-                eventList.show();
-            },
-            function() {
-
-            }
-        );
-
-        donateUsButton.on('click', function(donate) {
-            $('html, body').animate({
-                scrollTop: $('#allEvents').offset().top
-            }, 800); // Smooth scroll to the all events section
-        });
-    });
-</script>
-
-{{-- about us menu--}}
-<script>
-    $(document).ready(function() {
-        const donateUsButton = $('#aboutus5');
-        const eventList = $('#aboutus4');
-
-        eventList.hover(
-            function() {
-
-            },
-            function() {
-
-                eventList.hide();
-            }
-        );
-
-
-        donateUsButton.hover(
-            function() {
-                eventList.show();
-            },
-            function() {
-
-            }
-        );
-
-        donateUsButton.on('click', function(donate) {
-            $('html, body').animate({
-                scrollTop: $('#allEvents').offset().top
-            }, 800); // Smooth scroll to the all events section
-        });
-    });
-</script>
-
-
-

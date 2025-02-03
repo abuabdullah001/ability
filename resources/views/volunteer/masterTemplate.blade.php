@@ -192,7 +192,7 @@
                 $(this).bootstrapSwitch('state', $(this).prop('checked'));
             });
         })
-    </script> 
+    </script>
     <script>
         $(function () {
             $("#example1").DataTable({

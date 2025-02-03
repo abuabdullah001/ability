@@ -187,6 +187,14 @@ flex-direction: column;
   }
 
   }
+  .card-body a.dld{
+    color: #222 !important;
+    background-color:white;
+    width: 150px;
+    border-radius:2px;
+    margin: auto;
+    padding: 10px 15px;
+  }
 </style>
 
 <div class="clearfix "></div>
@@ -217,21 +225,34 @@ flex-direction: column;
                                 </a>
                             </h4>
                         </div>
-                        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel"
-                            aria-labelledby="work-process">
-                            <div class="panel-body pbody" style="border : 1px solid black ; min-height:300px;">
+                        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="work-process">
+                            <div class="panel-body pbody" style="border: 1px solid black; max-height: 500px;">
+                                @php
+                                    $content = "chairman message - Welcome to The Organization of Disaster Management Society (ODMS). Since its establishment in 2015, ODMS gained high popularity as
+                                                a dedicated organization committed to enhance disaster management and resilience in coastal communities. It has proved dedication empowering at-risk populations
+                                                through disaster preparedness, response, and recovery initiatives. From the very beginning ODMS is hardly trying to promote sustainability and build resilience against
+                                                disasters. The major ODMS events, such as disaster risk reduction programs, poster presentations, and sessions on planetary science in collaboration with esteemed government and non-government institutions.";
+                                    $shortContent = Str::limit($content, 300); // Show only 300 characters initially
+                                @endphp
                                 <em>
-                                    "chairman message - Welcome to The Organization of Disaster Management Society (ODMS). Since its establishment in 2015, ODMS gained high popularity as a dedicated organization committed to enhance disaster management and resilience in coastal communities. It has proved dedication empowering at-risk populations through disaster preparedness, response, and recovery initiatives. From the very beginning ODMS is hardly trying to promote sustainability and build resilience against disasters. The major ODMS events, such as disaster risk reduction programs, poster presentations, and sessions on planetary science in collaboration with esteemed government and non-government institutions. Through workshops, seminars, and awareness campaigns, the ODMS raises awareness and disseminates knowledge on coastal and urban resilience.
-                                    Bangladesh is susceptible to a variety of disasters including cyclones, earthquakes, droughts, storm-surge and flooding. Bangladesh is also vulnerable to climate change due to its location in South Asia. Climate change is a growing concern for Bangladesh because 90 percent of the country is approximately 10 feet above sea level. By 2050, approximately 20 percent of the inhabited land in Bangladesh will be inundated by the sea resulting in displacement for nearly 20 million people.
-                                    As we move into an uncertain future of stronger and more frequent disasters, government and non-government organization coordination prior to a disaster along with strengthening local capacity for disaster risk reduction and swift recovery have become ever more important. Therefore, the ultimate goal of ODMS is to create safer, more secure, peaceful, and healthy communities throughout the country. To achieve this goal, we must strengthen our partnerships with other government and non-government organizations on natural disaster risk reduction from local, regional and global perspective. We hope you will support ODMS in the pursuit of these goals and that you will join us in promoting disaster reduction efforts in communities around the world.
-                                    We invite you to explore our website and discover the diverse opportunities available within the Organization of Disaster Management Society. Together, let us embark on a journey toward a safer and more resilient future.
-                                    Warm regards,
-                                    M. Shafiqul Islam, PhD
-                                    "
-                                    <br>
-                                </b>
+                                    {{ $shortContent }}...
+                                </em>
+                                <br>
+
+                                @php
+                                $odms=App\Models\Odms::first();
+                                @endphp
+
+                                @if(strlen($content) > 300)
+                                   <a href="{{ route('frontend.pages.odms.show', ['id' => $odms->id]) }}"> <button class="btn btn-success">Read More</button> </a>
+                                @endif
+
                             </div>
+
                         </div>
+
+
+
                     </div>
                 </div>
             </div>
@@ -261,6 +282,7 @@ flex-direction: column;
                 </div>
             </div>
         </div>
+
         <div class="col-md-3 col-sm-12 col-xs-12">
             <div class="simple-tab">
                 <div class="panel-group" id="accordionR" role="tablist" aria-multiselectable="true">
@@ -268,24 +290,40 @@ flex-direction: column;
                         <div class="panel-heading" role="tab" id="work-process">
                             <h4 class="panel-title">
                                 <a role="button" data-toggle="collapse" data-parent="#accordionR" href="#collapseROne"
-                                    aria-expanded="true" aria-controls="collapseOne">
+                                    aria-expanded="true" aria-controls="collapseROne">
                                     CEO Message
                                 </a>
                             </h4>
                         </div>
-                        <div id="collapseROne" class="panel-collapse collapse " role="tabpanel"
-                            aria-labelledby="work-process">
-                            <div class="panel-body" style="border:1px solid #393A3C; min-height:316px;">
-                                <em>CEO message - The Organization for Disaster Management Society is devoted to saving lives, strengthening communities, and increasing disaster resilience. We think that preparation and collaboration may turn vulnerability into strength, providing at-risk groups with the resources they need to prepare and recover. Our aim is for a future in which communities thrive, ecosystems are protected, and calamities
-                                    are successfully managed. Join us in developing a resilient and inclusive future through compassion, creativity, and action.</em><br><br>
-                                <!--<b>Md. Aktaruzzaman Hero<br>-->
-                                </b>
+
+                         <!-- Collapsible Content -->
+                         <div id="collapseROne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="work-process">
+                            <div class="panel-body" style="border:1px solid #393A3C; max-height:316px;">
+                                <em id="ceoMessage">
+                                    CEO message - The Organization for Disaster Management Society is devoted to saving lives, strengthening communities, and increasing disaster resilience. We think that preparation and collaboration may turn vulnerability into strength, providing at-risk groups with the resources they need to prepare and recover...
+                                </em>
+                                <br><br>
+                                <button class="btn btn-success">Read more</button>
                             </div>
                         </div>
+
+                        <!-- JavaScript to Limit Text to 300 Characters -->
+                        <script>
+                            document.addEventListener("DOMContentLoaded", function () {
+                                var message = document.getElementById('ceoMessage');
+                                if (message.innerHTML.length > 300) {
+                                    message.innerHTML = message.innerHTML.substring(0, 300) + "...";
+                                }
+                            });
+                        </script>
+
                     </div>
                 </div>
             </div>
         </div>
+
+
+
     </div>
 </div>
 <style>
@@ -327,6 +365,10 @@ margin-top: 10px;
 }
 
 }
+.para-16{
+    font-size: 16px!important;
+    line-height: 1.8!important;
+}
 </style>
 
 
@@ -339,23 +381,30 @@ margin-top: 10px;
     $odmss=App\Models\Odms::all();
 @endphp
 
-<section class="" style="background-color: #f0f0f0">
-<div class="container">
-  <div style="margin-top:50px " class="">
-    @foreach ($odmss as $odms )
-    <div class="row col-md-6" style="margin-top: 150px;">
-     <img style="width: 500px;height:400px" src="{{ asset('images/post/' . $odms->image) }}" alt="">
+<section style="background-color: #f0f0f0">
+    <div class="container">
+      <div style="margin-top:50px">
+        <h2 style="text-align: center; padding-top: 0px;">
+          <span style="font-weight:700">About ODMS</span>
+        </h2>
+        <div style="height: 2px; width:150px; background-color:black; margin:auto; margin-bottom:60px"></div>
+
+        @foreach ($odmss as $odms)
+        <div class="row">
+          <div class="col-md-6" style="margin-top: 10px;">
+            <img style="width: 500px; height:400px" src="{{ asset('images/post/' . $odms->image) }}" alt="">
+          </div>
+          <div class="col-md-6" style="margin-top: 0px">
+            <p class="para-16" style="font-size: 16px!important; color: #555!important; line-height: 1.8!important;" class="mt-3">
+              {!! Str::limit($odms->descrition, 1000) !!}
+            </p>
+            <button class="btn btn-success">Read more</button>
+          </div>
+        </div>
+        @endforeach
+      </div>
     </div>
-    <div class="row col-md-6 " style="margin-top: 100px">
-        <h2>About ODMS</h2>
-        {{-- <h1 style="font-size: 2em; color: black;">{!! Str::limit($odms->title, 100) !!}</h1> --}}
-      <p style="text-size:12px;color:black;text-align: justify; font-family:Arial, Helvetica, sans-serif" class="">
-        {!! Str::limit( $odms->descrition, 1200) !!}   </p>
-    </div>
-    @endforeach
-</div>
-</div>
-</section>
+  </section>
 
 {{-- Featured event --}}
 <style>
@@ -387,18 +436,32 @@ margin-top: 10px;
 @php
 $events = App\Models\Event::take(3)->where('type','featured')->get();
 @endphp
-<section class="brows-job-category">
+<section class="brows-job-category" style="padding-top: 20px">
     <style>
         .brows-job-category h2 {
             color: black;
             font-size: 35px;
         }
     </style>
-    <h2 class="" style="text-align:center;text-color:black;"> Featured Event </h2>
-    <h4 class="container" style="text-align: center"> A "Featured Event" in disaster management focuses on critical initiatives
-        like emergency response planning, resilience building, or recovery efforts. It highlights key discussions, training, or innovations in disaster preparedness.
-         Such events aim to raise awareness, foster collaboration, and improve community resilience against disasters.
-    </h4>
+ <div class="container mt-5">
+    <div class="text-center mb-4">
+        <h2 style="font-weight: bold; color: #333;padding-top:60px">Featured Event</h2>
+        <div class="" style="height: 2px;width:150px;background-color:black; margin:auto">
+        </div>
+    </div>
+    <div class="card shadow-lg border-0 rounded-lg">
+        <div class="card-body px-4 py-5 bg-light">
+            <p class="text-lg text-gray-700 leading-relaxed text-align-center font-serif py-3" style="margin-top: 50px;margin-bottom:50px;font-size: 16px; color: #555; line-height: 1.8;" >
+                <strong>Featured Event</strong> in disaster management focuses on critical initiatives like
+                <em>emergency response planning</em>, resilience building, or recovery efforts. It highlights key discussions, training,
+                or innovations in disaster preparedness. Such events aim to raise awareness, foster collaboration, and improve community
+                resilience against disasters.
+            </p>
+        </div>
+    </div>
+
+</div>
+
    <div class="container" style="width: 1154px">
        <div class="ibox">
            <div class="i-body">
@@ -414,6 +477,7 @@ $events = App\Models\Event::take(3)->where('type','featured')->get();
                                            <h2 class="card-title">
                                                {{ Str::limit($project->name, 30, '...') }} <!-- Limit the title to 30 characters -->
                                            </h2>
+                                           <p style="color:black">{{ Str::limit(strip_tags($project->desc), 100, '...') }}</p>
                                            <a href="{{ route('event.show', ['slug' => $project->slug]) }}" class="btn btn-link" style="color:blue">
                                                Read More
                                            </a>
@@ -469,9 +533,10 @@ $events = App\Models\Event::take(3)->where('type','current')->get();
     /* Fullscreen Background */
     .current_background {
       position: relative;
-      height: 100vh;
+      height: 140vh;
       width: 100%;
       overflow: hidden; /* Ensures the background doesn't spill out */
+      z-index: 1;
     }
 
 
@@ -489,15 +554,16 @@ $events = App\Models\Event::take(3)->where('type','current')->get();
       background-size: cover;
       background-position: center;
       filter: blur(4px);
-      z-index: 1;
-      margin-left: 160px;
-      margin-right: 160px;
+      z-index: -1;
+      margin-left: 0px;
+      margin-right: 0px;
+      height: auto;
     }
 
     /* Swiper Container */
     .swiper {
       width: 90%;
-      height: 400px;
+      height: 600px;
       margin: auto;
       margin-top: 50px;
     }
@@ -547,13 +613,37 @@ width:20px;
 <!-- Slider -->
 
 
-<h2 style="color:black;margin-left:600px;">Current Event</h2>
-<h4 class="container">
-    In January 2025, Bangladesh is addressing several disaster management challenges. The government has closed its border with Myanmar, preventing Rohingya refugees from seeking safety amid escalating violence in Rakhine state.THE GUARDIAN
-     Additionally, the World Bank has pledged over $2 billion to support Bangladesh's flood response initiatives and other reforms.REUTERS
-     Furthermore, the European Investment Bank plans to double its funding to €2 billion to aid in infrastructure projects focused on climate change resilience. </h4>
-<section class="current_background">
+
+
+<section class="current_background bg-black" >
     <div class="container">
+
+        <div class="container mt-5" >
+            <div class="text-center mb-4">
+                <h2 style="color: #333;font-weight:bold;margin-top:50px;">Current Event</h2>
+                <div class="" style="height: 2px;width:150px;background-color:black; margin:auto; margin-bottom:50px">
+                </div>
+            </div>
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <p style="font-size: 16px; color: #555; line-height: 1.8;">
+                        In January 2025, Bangladesh is addressing several disaster management challenges. The government has
+                        closed its border with Myanmar, preventing Rohingya refugees from seeking safety amid escalating
+                        violence in Rakhine state.
+
+                    </p>
+                    <p style="font-size: 16px; color: #555; line-height: 1.8;">
+                        Additionally, the World Bank has pledged over $2 billion to support Bangladesh's flood response
+                        initiatives and other reforms.
+
+                    </p>
+                    <p style="font-size: 16px; color: #555; line-height: 1.8;margin-bottom:50px">
+                        Furthermore, the European Investment Bank plans to double its funding to €2 billion to aid in
+                        infrastructure projects focused on climate change resilience.
+                    </p>
+                </div>
+            </div>
+        </div>
 
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
@@ -566,11 +656,16 @@ width:20px;
                              class="card-img-top mb-2"
                              alt="{{ $event->title }}"
                              style="height: 250px; object-fit: cover;">
-                        <div class="card-body">
+                        <div class="card-body " style="height: 1000px !important">
                             <h2 class="card-title" style="color: black">
                                 {{ Str::limit($event->name, 30, '...') }}
                             </h2>
+                            <p style="color:black">{{ Str::limit(strip_tags($event->desc), 100, '...') }}</p>
 
+
+                           <a href="{{ route('event.show', ['slug' => $event->slug]) }}" class="dld" style="color:white;display:block;margin-top:20px">
+                                Read More
+                            </a>
                         </div>
                     </a>
                 </div>
@@ -579,6 +674,12 @@ width:20px;
         </div>
 
         <!-- Navigation buttons -->
+        <style>
+            .swiper-button-next,.swiper-button-prev{
+             margin-top: -120px;
+             color: black;
+            }
+        </style>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
     </div>
@@ -679,20 +780,34 @@ width:20px;
     }
 </style>
 
-<section style="">
-    <h2 class="section-title " style="text-align: center">Expert Feedback</h2>
-    <h4 class="container">
-        Experts commend Bangladesh's disaster management for significantly reducing fatalities from natural disasters, attributing this to comprehensive policies like the Standing Order on Disaster and the Disaster Management Act.
-THE FINANCIAL EXPRESS
- However, challenges persist, including irregular disaster management committee meetings, bureaucratic hurdles, and corruption, which hinder effective policy implementation.
-RESEARCHGATE
-    </h4>
+<section style="background-color:#F0F0F0; " >
+    <div class="container mt-5">
+        <div class="text-center mb-4">
+            <h2 class="section-title" style="font-weight: bold; color: #333;margin-top:100px">Expert Feedback</h2>
+            <div class="" style="height: 2px;width:150px;background-color:black; margin:auto;margin-bottom:50px">
+            </div>
+        </div>
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <p style="font-size: 16px; color: #555; line-height: 1.8; text-align: justify;">
+                    Experts commend Bangladesh's disaster management for significantly reducing fatalities from natural
+                    disasters, attributing this to comprehensive policies like the Standing Order on Disaster and the
+                    Disaster Management Act.
+
+                </p>
+                <p style="font-size: 16px; color: #555; line-height: 1.8; text-align: justify;margin-bottom:50px">
+                    However, challenges persist, including irregular disaster management committee meetings, bureaucratic
+                    hurdles, and corruption, which hinder effective policy implementation.
+
+                </p>
+            </div>
+        </div>
+    </div>
+
 
     @foreach ($feedbacks as $feedback)
     <div class="container">
-
         <div class="row">
-
             <!-- First Card -->
             <div class="col-md-3">
                 <div class="hover-card">
@@ -717,11 +832,27 @@ RESEARCHGATE
 
 {{-- video  --}}
 <div class="clearfix"></div>
-<section id="testimonial">
+<section id="testimonial" style="padding-top: 70px">
     <div class="container spidochetube" id="youtube">
         <div class="container-fluid pb-video-container">
             <div class="col-md- ">
-                <h2 class="text-center">ODMS Video</h2><br>
+                <div class="container mt-5">
+                    <div class="text-center mb-4">
+                        <h2 style="font-weight: bold; color: #333;"> Video Gallery</h2>
+                        <div class="" style="height: 2px;width:150px;background-color:black; margin:auto;margin-bottom:50px">
+                        </div>
+                    </div>
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <p style="font-size: 16px; color: #555; line-height: 1.8; text-align: justify;margin-bottom:50px">
+                                Disaster Management and Support involves planning, coordination, and response to natural or man-made disasters. It includes
+                                 preparedness, emergency response, recovery, and risk reduction efforts to minimize damage and protect communities. Effective
+                                 disaster management relies on early warning systems, resource mobilization, humanitarian aid, and collaboration between
+                                  governments, NGOs, and volunteers.
+                            </p>
+                        </div>
+                    </div>
+                </div>
                 <div id="gallery" style="">
                     <div class="container-fluid pb-video-container html5gallery" data-skin="darkness" data-width="480"
                         data-height="272">
@@ -751,8 +882,29 @@ RESEARCHGATE
                             </div>
                         </div>
                     </div>
+                </section>
 
-                    <h2 class="text-center mt-3" style="margin-top: 100px">ODMS Gallery</h2><br>
+
+                    <section style="background-color: #f0f0f0; padding-bottom:200px;margin-left:20px">
+                    <div class="container mt-5">
+                        <div class="text-center mb-4">
+                            <h2 style="font-weight: bold; color: #333;margin-top:100px">Photo Gallery</h2>
+                            <div class="" style="height: 2px;width:150px;background-color:black; margin:auto;margin-bottom:50px">
+                            </div>
+                        </div>
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <p style="font-size: 16px; color: #555; line-height: 1.8; text-align: justify;margin-bottom:50px">
+                                    Technology plays a vital role in disaster management by improving early warning systems, communication, and response efficiency.
+                                     Satellite imaging, artificial intelligence, and data analytics help predict disasters and assess damage. Mobile apps and social
+                                     media platforms enable real-time information sharing, ensuring swift emergency response. Drones, GIS mapping,
+                                     and remote sensing aid in rescue operations, making disaster management more effective, coordinated, and life-saving.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{-- <h2 class="text-center mt-3" style="margin-top: 100px">ODMS Gallery</h2><br> --}}
                     <div class="i-box">
                         <div class="i-head">
                             <div class="i-body">
@@ -776,6 +928,7 @@ RESEARCHGATE
                         class="btn btn-success col-md-2 col-md-offset-5 col-sm-12 col-xm-12">See More Gallery</a>
                 </div>
             </div>
+
 </section>
 
 
@@ -785,38 +938,70 @@ RESEARCHGATE
 
 {{-- all partner logo --}}
 
-<style>
-    .swiper-slide img {
-        height: 150px;
-        display: inline-block;
-    }
-</style>
 
-<section>
+<section style="padding-top:60px ">
 
     <div class="container">
-        <h2 style="margin-left: 400px">Our partners</h2>
-        <h5 class="container">
-            Disaster management in Bangladesh involves key partners such as the Ministry of Disaster Management and Relief (MoDMR), NGOs like BDPC, and international organizations like the Asian Disaster Preparedness Center (ADPC). Collaborative efforts focus on preparedness, capacity building, and emergency
-             response. Humanitarian coordination teams and aid agencies like USAID play critical roles in strengthening resilience.
-        </h5>
-        <div class="swipers">
+        <div class="container mt-5">
+            <div class="text-center mb-4">
+                <h2 style="font-weight: bold; color: #333;">Our Partners</h2>
+                <div class="" style="height: 2px;width:150px;background-color:black; margin:auto;margin-bottom:50px">
+                </div>
+            </div>
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <p style="font-size: 16px; color: #555; line-height: 1.8; text-align: justify;margin-bottom:50px;">
+                        Effective disaster management relies on collaboration between governments, NGOs, international organizations, and local
+                         communities. Key partners include the United Nations and humanitarian agencies, which provide emergency aid and
+                          resources. Private sector involvement enhances technological and logistical support, while community volunteers strengthen
+                           on-the-ground response. These partnershipsensure coordinated efforts in disaster preparedness, response, and recovery, minimizing the impact on affected populations.
+                    </p>
+                </div>
+            </div>
+        </div>
+<style>
+    .swiper-slide {
+            padding: 0px !important;
+            margin-right: 0px !important;
+            justify-content: center !important;
+
+        }
+</style>
+
+
+        <div class="swipers " style="text-align: center">
             <div class="swiper-wrapper">
                 <!-- Images -->
-                <div class="swiper-slide"><img src="images/Picture1.png" alt="Apple Logo" style="height: 100px"></div>
-                <div class="swiper-slide"><img src="images/Picture2.png" alt="FedEx Logo" style="height: 100px"></div>
-                <div class="swiper-slide"><img src="images/Picture3.png" alt="Download" style="height: 100px"></div>
-                <div class="swiper-slide"><img src="images/Picture4.png" alt="Logo" style="height: 100px"></div>
+                <div class="swiper-slide">
+                    <img src="images/Picture4.png" alt="Logo" style="height: 100px; width: 150px;">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/Picture1.png" alt="Apple Logo" style="height: 100px; width: 150px;">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/Picture2.png" alt="FedEx Logo" style="height: 100px; width: 150px;">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/Picture3.png" alt="Download" style="height: 100px; width: 150px;">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/Picture4.png" alt="Logo" style="height: 100px; width: 150px;">
+                </div>
+
+                <div class="swiper-slide">
+                    <img src="images/Picture4.png" alt="Logo" style="height: 100px; width: 150px;">
+                </div>
 
             </div>
 
             <!-- Swiper navigation buttons -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+            {{-- <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div> --}}
 
             <!-- Swiper pagination -->
-            <div class="swiper-pagination"></div>
+
         </div>
+
     </div>
 </section>
 
@@ -824,7 +1009,7 @@ RESEARCHGATE
 
 {{-- memeber --}}
 
-<section style="background-color: #F0F0F0;">
+<section style="background-color: #F0F0F0;padding-top:40px">
     <div class="container">
         <div class="col-md-4">
             <h1>125687</h1>
@@ -840,8 +1025,6 @@ RESEARCHGATE
         </div>
     </div>
 </section>
-
-
 
 
 {{-- js part start --}}
@@ -884,12 +1067,13 @@ RESEARCHGATE
 {{-- logo js start --}}
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
+
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        const swipers = new Swiper('.swipers', {
-            slidesPerView: 3,
-            spaceBetween: 30,
-            loop: true,
+        const swiper = new Swiper('.swipers', {
+            slidesPerView: 4, // Show 4 slides at a time
+            spaceBetween: 10, // Space between slides
+            loop: true, // Enable infinite looping
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
@@ -899,12 +1083,13 @@ RESEARCHGATE
                 clickable: true,
             },
             autoplay: {
-                delay: 2000,
+                delay: 2000, // Autoplay delay (2 seconds)
                 disableOnInteraction: false,
             },
         });
     });
-</script>
+    </script>
+
 
 
 {{-- logo js end --}}
@@ -917,19 +1102,22 @@ RESEARCHGATE
 
 <script>
     const swiper = new Swiper('.mySwiper', {
-        loop: true, // Enables continuous loop mode
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
+        loop: false, // Enables continuous loop mode
+        navigation:
+           false,
+
         slidesPerView: 2, // Adjust to display more slides per view
-        spaceBetween: 20, // Space between slides in px
+        spaceBetween: 10, // Space between slides in px
         breakpoints: {
             640: {
                 slidesPerView: 2, // Adjust for medium screens
             },
+            768: {
+                slidesPerView: 5, // Adjust for medium screens
+            },
+
             1024: {
-                slidesPerView: 3, // Adjust for larger screens
+                slidesPerView: 5, // Adjust for larger screens
             }
         }
     });
@@ -941,7 +1129,3 @@ RESEARCHGATE
 
 
 @endsection
-
-
-
-

@@ -60,10 +60,20 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ServeController;
 use App\Http\Controllers\SupportController;
 use SebastianBergmann\Environment\Runtime;
+use App\Http\Controllers\PartnerController;
+use FontLib\Table\Type\name;
 
 Route::get('/report', function () {
     return view('frontend.pages.report');
 })->name('report');
+
+
+Route::get('/whatwedo', function () {
+    return view('frontend.pages.whatwedo');
+})->name('whatwedo');
+
+
+
 
 Route::get('/support', [SupportController::class, 'create'])->name('support.showForm');
 Route::post('/support', [SupportController::class, 'store'])->name('support.store');
@@ -327,6 +337,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('category', [CategoryController::class, 'index'])->name('category-index');
     Route::post('Add-category', [CategoryController::class, 'store'])->name('addcategory');
     Route::get('deletecategory/{id}', [CategoryController::class, 'destroy']);
+    Route::put('updatecategory/{id}', [CategoryController::class, 'update'])->name('updatecategory');
+
+
+
     //rabbi // about menu
     Route::get('All-Content', [AboutMenuController::class, 'index'])->name('aboutindex');
     Route::get('Add-Content', [AboutMenuController::class, 'create'])->name('addaboutcontent');
@@ -336,7 +350,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('aboute_viewedit/{id}', [AboutMenuController::class, 'edit']);
 
     // Route::get('about/response',[AboutMenuController::class,'response'])->name('aboutresponse');
-
 
     //   rabbi  /committee Menu
     Route::get('All-committee', [CommitteeMenuController::class, 'index'])->name('committee_index');
@@ -381,6 +394,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/editnotice/{id}', [NoticeController::class, 'edit']);
     Route::post('/store_notice', [NoticeController::class, 'store'])->name('storenotice');
     Route::put('/updatenotice/{id}', [NoticeController::class, 'update']);
+
+
 
     //   Rabbi // Reference
     Route::get('/Reference-list', [IncentiveController::class, 'index'])->name('reference_list');
@@ -473,7 +488,7 @@ Route::group(['middleware' => ['auth']], function () {
     // introduction page route
     Route::get('/admin/introduction', [IntroductionController::class, 'introduction']);
 });
-Route::get('view_aboutepage/{id}', [AboutMenuController::class, 'fontview']);
+Route::get('view_aboutepage/{id}', [AboutMenuController::class, 'fontview'])->name('member.fontview');
 
 Route::get('view-management-memeber', [AboutMenuController::class, 'management'])->name('MannagementMember.all');
 Route::post('store-management-member', [AboutMenuController::class, 'storemannagement'])->name('MannagementMember.store');
@@ -679,6 +694,8 @@ Route::get('odms/edit/{id}',[OdmsController::class,'edit'])->name('odms.edit');
 Route::put('odms/update/{id}',[OdmsController::class,'update'])->name('odms.update');
 Route::delete('odms/delete/{id}',[OdmsController::class,'delete'])->name('odms.delete');
 
+Route::get('odms/show/{id}',[OdmsController::class,'show'])->name('frontend.pages.odms.show');
+
 Route::post('/donations/update-payment-status', [EventController::class, 'updatePaymentStatus'])->name('donation.updatePaymentStatus');
 
 
@@ -690,4 +707,15 @@ Route::get('manual/edit/{id}',[ManualController::class,'edit'])->name('manual.ed
 Route::put('manual/update/{id}',[ManualController::class,'update'])->name('manual.update');
 Route::delete('manual/delete/{id}',[ManualController::class,'delete'])->name('manual.delete');
 
+
+// partner
+Route::get('partner/create',[PartnerController::class,'create'])->name('partner.create');
+Route::post('partner/store',[PartnerController::class,'create'])->name('partner.store');
+Route::get('partner/index',[PartnerController::class,'create'])->name('partner.index');
+
+
+
+// notice
+  Route::get('/frontend/notice_details/{id}', [NoticeController::class, 'details'])->name('frontend.notice_details');
+  Route::get('/frontend/notice_show/{id}', [NoticeController::class, 'show'])->name('frontend.pages.notice_show');
 

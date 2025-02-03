@@ -114,16 +114,19 @@ class AboutMenuController extends Controller
     public function store(Request $request)
     {
 
+
         $aboutMenu = new AboutMenu();
         $aboutMenu->menu = $request->menu_id;
         $aboutMenu->content = $request->aboutecontent;
 
-        $imageName='';
-        if($image=$request->file('image')){
-            $imageName=time().'-'.uniqid().'-'.$image->getClientOriginalExtension();
-            $image->move(public_path('/images/post'),$imageName);
+        $imagepath = '' ;
+        if ($request->hasFile('image')) {
+            $img_ext = $request->file('image')->getClientOriginalExtension();
+            $filename = 'event-' . time() . '.' . $img_ext;
+            $path = $request->file('image')->move(public_path('images/event'), $filename);
+            $imagepath = '/images/event/' . $filename;
         }
-        $aboutMenu->image =$imageName;
+        $aboutMenu->image = $imagepath;
 
         $aboutMenu->orderNo = $request->order_no;
         $aboutMenu->save();
@@ -168,20 +171,26 @@ class AboutMenuController extends Controller
     public function update(Request $request)
 
     {
-
         $updateaboute = AboutMenu::find($request->id);
         $updateaboute->menu = $request->editmenu_id;
         $updateaboute->content = $request->aboutedit;
 
-        $imageName='';
-        if($image=$request->file('image')){
-            $imageName=time().'-'.uniqid().'-'.$image->getClientOriginalExtension();
-            $image->move(public_path('/images/post'),$imageName);
-        }else{
-         $updateaboute->image=$imageName;
-        }
-        $updateaboute->image =$imageName;
+        if ($request->hasFile('image')) {
+            $oldImagePath = $updateaboute->image;
+            $img_ext = $request->file('image')->getClientOriginalExtension();
+            $filename = 'event-' . time() . '.' . $img_ext;
+            $path = $request->file('image')->move(public_path('images/event'), $filename);
+            $imagepath = '/images/event/' . $filename;
+            $updateaboute->image = $imagepath;
 
+            // Delete old image if it exists
+            if ($oldImagePath) {
+                $fullOldImagePath = public_path($oldImagePath);
+                if (file_exists($fullOldImagePath)) {
+                    unlink($fullOldImagePath);
+                }
+            }
+        }
         $updateaboute->orderNo = $request->order_no;
         $updateaboute->save();
         return back();
@@ -198,5 +207,5 @@ class AboutMenuController extends Controller
         AboutMenu::where('id', $id)->delete();
         return back();
     }
-    
+
 }

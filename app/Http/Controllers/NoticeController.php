@@ -49,10 +49,7 @@ class NoticeController extends Controller
      * @param  \App\Models\Notice  $notice
      * @return \Illuminate\Http\Response
      */
-    public function show(Notice $notice)
-    {
-        //
-    }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -90,7 +87,7 @@ class NoticeController extends Controller
     // $update->title=$request->title;
     // $update->descriptino=$request->descriptino;
     // $update->save();
-    
+
     // return redirect('Notice');
     // }
 
@@ -113,6 +110,22 @@ class NoticeController extends Controller
      * @param  \App\Models\Notice  $notice
      * @return \Illuminate\Http\Response
      */
+    // public function details($id) {
+    //     $notice = Notice::all();
+    //     return view('frontend.notice_details', compact('notice'));
+    // }
+
+    public function show($id) {
+        $notice = Notice::all(); // Fetch a single notice by ID
+        return view('frontend.pages.notice_show', compact('notice')); // Return the correct variable
+    }
+    
+    public function details($id) {
+        $notice = Notice::findOrFail($id); // Fetch a single notice by ID
+        return view('frontend.notice_details', compact('notice')); // Return the correct variable
+    }
+
+
     public function destroy($notice)
     {
         Notice::where('id',$notice)->delete();
