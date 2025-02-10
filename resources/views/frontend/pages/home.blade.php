@@ -1126,6 +1126,13 @@ width:20px;
     }, 100);
 </script>
 
+<script>
+    document.addEventListener("contextmenu", function(event) {
+        event.preventDefault(); // Prevent the default context menu
+        window.open(window.location.href, "_blank"); // Open the same page in a new tab
+    });
+</script>
+
 
 
 @endsection
