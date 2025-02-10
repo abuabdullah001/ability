@@ -256,9 +256,9 @@
                                 <div class="col-md-6 text-center d-flex justify-content-center align-items-center" style="margin-top: 60px">
                                     <img src="{{ asset($description->image) }}" alt="Image" class="img-fluid" style="max-height: 400px;width:600px">
                                 </div>
-                                <div class="col-md-6" style="margin-top: 60px">
+                                <div class="col-md-6" style="margin-top: 30px">
                             @else
-                                <div class="col-md-6" style="margin-top: 60px; text-align: justify;">
+                                <div class="col-md-6" style="margin-top: 30px; text-align: justify;">
                             @endif
                                     @php
                                         $contentw = $description->content;
