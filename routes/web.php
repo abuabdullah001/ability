@@ -61,10 +61,6 @@ use App\Http\Controllers\ServeController;
 use App\Http\Controllers\SupportController;
 use SebastianBergmann\Environment\Runtime;
 use App\Http\Controllers\PartnerController;
-<<<<<<< HEAD
-=======
-use App\Http\Controllers\ReportAddController;
->>>>>>> b265f680ad3ba62a48647321309898f1ca8ed001
 use FontLib\Table\Type\name;
 
 Route::get('/report', function () {
@@ -341,11 +337,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('category', [CategoryController::class, 'index'])->name('category-index');
     Route::post('Add-category', [CategoryController::class, 'store'])->name('addcategory');
     Route::get('deletecategory/{id}', [CategoryController::class, 'destroy']);
-<<<<<<< HEAD
-    Route::put('updatecategory/{id}', [CategoryController::class, 'update'])->name('updatecategory');
-
-=======
->>>>>>> b265f680ad3ba62a48647321309898f1ca8ed001
 
 
     //rabbi // about menu
@@ -719,23 +710,6 @@ Route::delete('manual/delete/{id}',[ManualController::class,'delete'])->name('ma
 Route::get('partner/create',[PartnerController::class,'create'])->name('partner.create');
 Route::post('partner/store',[PartnerController::class,'store'])->name('partner.store');
 Route::get('partner/index',[PartnerController::class,'index'])->name('partner.index');
-<<<<<<< HEAD
-=======
-Route::get('partner/edit/{id}',[PartnerController::class,'edit'])->name('partner.edit');
-Route::put('partner/update/{id}',[PartnerController::class,'update'])->name('partner.update');
-Route::delete('partner/delete/{id}',[PartnerController::class,'delete'])->name('partner.delete');
-
-
-
-// reportadd
-Route::get('repo/create',[ReportAddController::class,'create'])->name('repo.create');
-Route::post('repo/store',[ReportAddController::class,'store'])->name('repo.store');
-Route::get('repo/index',[ReportAddController::class,'index'])->name('repo.index');
-Route::get('repo/edit/{id}',[ReportAddController::class,'edit'])->name('repo.edit');
-Route::put('repo/update/{id}',[ReportAddController::class,'update'])->name('repo.update');
-Route::delete('repo/delete/{id}',[ReportAddController::class,'delete'])->name('repo.delete');
-Route::get('repo/view/{id}',[ReportAddController::class,'view'])->name('repo.view');
->>>>>>> b265f680ad3ba62a48647321309898f1ca8ed001
 
 
 
