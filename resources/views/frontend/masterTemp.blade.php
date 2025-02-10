@@ -1,4 +1,3 @@
-
 @include('frontend.include.header')
 
 <div class="">

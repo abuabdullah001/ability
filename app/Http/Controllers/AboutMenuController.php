@@ -119,6 +119,7 @@ class AboutMenuController extends Controller
         $aboutMenu->menu = $request->menu_id;
         $aboutMenu->content = $request->aboutecontent;
 
+        $imagepath = '' ;
         if ($request->hasFile('image')) {
             $img_ext = $request->file('image')->getClientOriginalExtension();
             $filename = 'event-' . time() . '.' . $img_ext;
