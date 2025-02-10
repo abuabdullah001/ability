@@ -264,14 +264,14 @@
                                         @php
                                             $contentw = $description->content;
                                             $content = html_entity_decode(strip_tags($contentw));
-                                            $shortContent = Str::limit($content, 1000);
+                                            $shortContent = Str::limit($content, 500);
                                         @endphp
                                         <h4 class="fs-4" style="text-align: justify">
                                             <span class="short-content">{{ $shortContent }}</span>
                                             <span class="full-content" >{{ $content }}</span>
                                         </h4>
 
-                                        @if (strlen($content) > 1000)
+                                        @if (strlen($content) > 500)
                                             <button class="btn btn-primary read-more-btn">Read More</button>
                                         @endif
                                     </div>
@@ -282,7 +282,7 @@
                                         @php
                                             $contentw = $description->content;
                                             $content = html_entity_decode(strip_tags($contentw));
-                                            $shortContent = Str::limit($content, 1000);
+                                            $shortContent = Str::limit($content, 500);
                                         @endphp
                                         <style>
                                             span {
@@ -296,7 +296,7 @@
                                             <span class="full-content" style="display: none;">{{ $content }}</span>
                                         </h4>
 
-                                        @if (strlen($content) > 1000)
+                                        @if (strlen($content) > 500)
                                             <button class="btn btn-primary read-more-btn">Read More</button>
                                         @endif
                                     </div>
