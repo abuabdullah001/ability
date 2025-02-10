@@ -12,7 +12,9 @@
     </div>
 </section>
 
-<div class="clearfix"> </div>
+<div class="clearfix"> 
+    
+</div>
 
 @if( count($viewpageedit) == 0) 
 <br>
