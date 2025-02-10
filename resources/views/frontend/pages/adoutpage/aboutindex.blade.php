@@ -208,7 +208,7 @@
     @if ($pagename == 46)
      @include('frontend.pages.report');
 
-      
+
 
     @endif
     @if ($pagename == 47)
@@ -247,10 +247,14 @@
                     </h1>
                 @endif
 
+
+
                 @foreach ($viewpageedit as $index => $description)
                     @if ($pagename != 42)
                         <div class="row d-flex align-items-center my-5">
                             @if ($index % 2 == 0)
+
+
                                 <div class="col-md-6 text-center d-flex justify-content-center align-items-center" style="margin-top: 60px">
                                     <img src="{{ asset($description->image) }}" alt="Image" class="img-fluid" style="max-height: 400px;width:600px">
                                 </div>
@@ -264,6 +268,8 @@
                                         $shortContent = Str::limit($content, 900);
                                     @endphp
                                     <h4 class="fs-4" style="text-align: justify">
+                                        <span>                                {{$description->title}}
+                                        </span>
                                         <span class="short-content">{{ $shortContent }}</span>
                                         <span class="full-content" style="display: none;">{{ $content }}</span>
                                     </h4>
@@ -272,6 +278,8 @@
                                     @endif
                             @if ($index % 2 != 0)
                                 </div>
+                                <span>                                {{$description->title}}
+                                </span>
                                 <div class="col-md-6 text-center d-flex justify-content-center align-items-center" style="margin-top: 60px">
                                     <img src="{{ asset($description->image) }}" alt="Image" class="img-fluid" style="max-height: 400px;width:600px">
                                 </div>
@@ -311,7 +319,7 @@
     });
 </script>
 
-{{-- 
+{{--
 <script>
     function toggleContent() {
         var shortContent = document.getElementById("short-content");

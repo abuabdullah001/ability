@@ -52,6 +52,11 @@ GALLERY
                                 </div>
 
                                 <div class="form-group row">
+                                    <label for="" class="col-ms-3 col-form-label">Title</label>
+                                    <input type="text" name="title" class="form-control">
+                                </div>
+
+                                <div class="form-group row">
                                     <label for="inputName" class="col-sm-3 col-form-label">Page Content</label>
                                     <div class="col-sm-9">
                                         <textarea class="textarea" name="aboutecontent"
