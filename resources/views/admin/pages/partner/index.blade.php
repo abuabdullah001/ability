@@ -68,8 +68,14 @@ ALL Training
                                         </td>
 
                                         <td>
-                                            {{-- <a href="{{ route('partner.edit', $value->id) }}" class="btn btn-xs btn-info"><i class="fas fa-edit"></i></a>
-                                            <a href="{{ route('partner.delete', $value->id) }}" onclick="return confirm('Are you sure?')" class="btn btn-xs btn-danger"><i class="fas fa-trash-alt"></i></a> --}}
+                                             <a href="{{ route('partner.edit', $value->id) }}" class="btn btn-xs btn-info"><i class="fas fa-edit"></i></a>
+                                             <form action="{{ route('partner.delete', $value->id) }}" method="POST" style="display: inline;" onsubmit="return confirm('Are you sure?')">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-xs btn-danger">
+                                                    <i class="fas fa-trash-alt"></i>
+                                                </button>
+                                            </form>
                                         </td>
                                     </tr>
                                     @endforeach

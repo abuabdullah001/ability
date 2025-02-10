@@ -50,8 +50,7 @@ Add news
 
                                             <div class="col-md-6 form-group">
                                                 <label for="">Image*</label>
-                                                <input type="file" name="image[]"
-                                                    value="" class="form-control multiple">
+                                               <input type="file" name="image" class="form-control">
                                                 @error('image')
                                                 <div class="error text-red text-bold" style="padding: 0;">
                                                     <strong>

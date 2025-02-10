@@ -17,7 +17,7 @@ ALL Training
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h5 class="m-0 text-dark">All Partners</h5>
+                    <h5 class="m-0 text-dark">All Report</h5>
                 </div><!-- /.col -->
 
             </div><!-- /.row -->
@@ -39,7 +39,7 @@ ALL Training
                                     <h3 class="card-title"> <i class="fa fa-users"></i> All Report</h3>
                                 </div>
                                 <div class="col-md-6">
-                                    <a href="" class="btn btn-success float-right"> <i
+                                    <a href="{{route('repo.create')}}" class="btn btn-success float-right"> <i
                                             class="fa fa-plus"></i> ADD Report</a>
                                 </div>
                             </div>
@@ -74,7 +74,14 @@ ALL Training
                                         </td>
 
                                         <td>
-                                            <a href="{{ route('repo.view', $value->id) }}" class="btn btn-xs btn-info"><i class="fas fa-edit"></i></a>
+                                         <a href="{{ route('repo.view', $value->id) }}" class="btn btn-xs btn-info"><img width="20" height="20" src="https://img.icons8.com/ios-glyphs/30/visible--v1.png" alt="visible--v1"/></a>
+                                              <a href="{{ route('repo.edit', $value->id) }}" class="btn btn-xs btn-info"><i class="fas fa-edit"></i></a>
+                                             <form action="{{ route('repo.delete', $value->id) }}" method="POST" style="display: inline;" onsubmit="return confirm('Are you sure?')">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-xs btn-danger">
+                                                    <i class="fas fa-trash-alt"></i>
+                                                </button>
                                             </form>
                                         </td>
                                     </tr>

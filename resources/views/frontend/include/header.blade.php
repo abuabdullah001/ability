@@ -19,6 +19,10 @@
     <script type="text/javascript" src="{{ asset('frontend_assets/assets/plugins/js/jquery.min.js')}}"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" rel="stylesheet">
+<<<<<<< HEAD
+=======
+    
+>>>>>>> b265f680ad3ba62a48647321309898f1ca8ed001
 
     <style>
         .carousel-inner > .item > img,

@@ -436,7 +436,6 @@
                 </a>
             </div>
     @endforeach
-
     <div class="hamburger" id="hamburger">&#9776;</div>
 
     {{-- donate button --}}

@@ -10,7 +10,7 @@ Add news
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h5 class="m-0 text-dark">Partner logo</h5>
+                    <h5 class="m-0 text-dark">Report</h5>
                 </div><!-- /.col -->
 
             </div><!-- /.row -->
@@ -26,7 +26,7 @@ Add news
                 <div class="col-md-1"></div>
                 <div class="col-md-10">
                     <div class="card">
-                        <div class="card-header bg-blue text-center"> ADD Partners logo</div>
+                        <div class="card-header bg-blue text-center"> ADD Report</div>
                         <div class="card-body">
                             <div class="tab-content">
                                 <div class="active tab-pane">
