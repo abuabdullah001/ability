@@ -33,7 +33,7 @@ ALL GALLERY IMAGES
                     </div>
                     @endif
 
-                    <div class="card">
+                    <div class="card" class="">
                         <div class="card-header bg-cyan">
                             <h3 class="card-title"> <i class="fa fa-users"></i> Aboute page</h3>
                         </div>

@@ -248,7 +248,6 @@
                 @endif
 
 
-
                 @foreach ($viewpageedit as $index => $description)
                     @if ($pagename != 42)
                         <div class="row d-flex align-items-center my-5">
