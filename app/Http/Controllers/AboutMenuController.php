@@ -87,7 +87,7 @@ class AboutMenuController extends Controller
         $viewpage = DB::table('categories')
             ->join('about_menus', 'about_menus.menu', '=', 'categories.id')
             ->where('type', 'about')
-            ->orderBy('order_by','DESC')
+            
             ->get();
         // dd($viewpage);
         return view('admin/pages/aboutmenu/indexabout', get_defined_vars());
