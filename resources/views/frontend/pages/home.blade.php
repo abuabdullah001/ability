@@ -197,10 +197,13 @@ flex-direction: column;
   }
 </style>
 
-
-
 <div class="clearfix "></div>
-<a href="http://127.0.0.1:8000/" id="myLink"></a>
+
+
+
+
+
+
 
 @include('frontend.include.slider')
 {{-- @include('frontend\pages\about') --}}
@@ -247,6 +250,8 @@ flex-direction: column;
                             </div>
 
                         </div>
+
+
 
                     </div>
                 </div>
@@ -368,6 +373,8 @@ margin-top: 10px;
 
 
 
+
+
 {{-- About odms --}}
 
 @php
@@ -455,7 +462,7 @@ $events = App\Models\Event::take(3)->where('type','featured')->get();
 
 </div>
 
-   <div class="container" style="width: 1155px">
+   <div class="container" style="width: 1154px">
        <div class="ibox">
            <div class="i-body">
                <div class="row">
@@ -841,7 +848,7 @@ width:20px;
                                 Disaster Management and Support involves planning, coordination, and response to natural or man-made disasters. It includes
                                  preparedness, emergency response, recovery, and risk reduction efforts to minimize damage and protect communities. Effective
                                  disaster management relies on early warning systems, resource mobilization, humanitarian aid, and collaboration between
-                                  governments, NGOs, and volunteers.
+                                  governments, NGOs, and volunteers.
                             </p>
                         </div>
                     </div>
@@ -891,7 +898,7 @@ width:20px;
                                     Technology plays a vital role in disaster management by improving early warning systems, communication, and response efficiency.
                                      Satellite imaging, artificial intelligence, and data analytics help predict disasters and assess damage. Mobile apps and social
                                      media platforms enable real-time information sharing, ensuring swift emergency response. Drones, GIS mapping,
-                                     and remote sensing aid in rescue operations, making disaster management more effective, coordinated, and life-saving.
+                                     and remote sensing aid in rescue operations, making disaster management more effective, coordinated, and life-saving.
                                 </p>
                             </div>
                         </div>
@@ -947,7 +954,7 @@ width:20px;
                         Effective disaster management relies on collaboration between governments, NGOs, international organizations, and local
                          communities. Key partners include the United Nations and humanitarian agencies, which provide emergency aid and
                           resources. Private sector involvement enhances technological and logistical support, while community volunteers strengthen
-                           on-the-ground response. These partnershipsensure coordinated efforts in disaster preparedness, response, and recovery, minimizing the impact on affected populations.
+                           on-the-ground response. These partnershipsensure coordinated efforts in disaster preparedness, response, and recovery, minimizing the impact on affected populations.
                     </p>
                 </div>
             </div>
@@ -1119,12 +1126,6 @@ width:20px;
     }, 100);
 </script>
 
-<script>
-    document.addEventListener("contextmenu", function(event) {
-        event.preventDefault(); // Prevent the default context menu
-        window.open(window.location.href, "_blank"); // Open the same page in a new tab
-    });
-</script>
 
 
 @endsection
