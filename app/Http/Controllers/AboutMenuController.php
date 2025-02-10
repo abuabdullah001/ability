@@ -118,6 +118,7 @@ class AboutMenuController extends Controller
 
         $aboutMenu = new AboutMenu();
         $aboutMenu->menu = $request->menu_id;
+        $aboutMenu->title = $request->title;
         $aboutMenu->content = $request->aboutecontent;
 
         $imagepath = '' ;
@@ -175,6 +176,7 @@ class AboutMenuController extends Controller
         $updateaboute = AboutMenu::find($request->id);
         $updateaboute->menu = $request->editmenu_id;
         $updateaboute->content = $request->aboutedit;
+        $updateaboute->title = $request->title;
 
         if ($request->hasFile('image')) {
             $oldImagePath = $updateaboute->image;

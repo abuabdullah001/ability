@@ -49,6 +49,17 @@ Edit About page
                                     </div>
                                 </div>
 
+
+                                <div class="form-group row">
+                                    <label for="inputName" class="col-sm-3 col-form-label">Title</label>
+                                    <div class="col-sm-9">
+
+                                        <input class="" name="title" value="{{ $editpagemenu->title}}"
+                                            style="width: 100%; height: 50px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
+                                    </input>
+                                    </div>
+                                </div>
+
                                 <div class="form-group row">
                                     <label for="inputName" class="col-sm-3 col-form-label">Page Content</label>
                                     <div class="col-sm-9">
@@ -60,6 +71,7 @@ Edit About page
 
                                     </div>
                                 </div>
+
 
                                 <div class="col-md-6 form-group">
                                     <label for="">Image</label>
