@@ -455,7 +455,7 @@ $events = App\Models\Event::take(3)->where('type','featured')->get();
 
 </div>
 
-   <div class="container" style="width: 1154px">
+   <div class="container" style="width: 1155px">
        <div class="ibox">
            <div class="i-body">
                <div class="row">
