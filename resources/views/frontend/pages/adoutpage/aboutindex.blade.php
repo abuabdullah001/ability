@@ -248,10 +248,11 @@
                 @endif
 
                 @foreach ($viewpageedit as $index => $description)
-                
                     @if ($pagename != 42)
                         <div class="row d-flex align-items-center my-5">
                             @if ($index % 2 == 0)
+
+
                                 <div class="col-md-6 text-center d-flex justify-content-center align-items-center" style="margin-top: 60px">
                                     <img src="{{ asset($description->image) }}" alt="Image" class="img-fluid" style="max-height: 400px;width:600px">
                                 </div>
@@ -265,6 +266,9 @@
                                         $shortContent = Str::limit($content, 900);
                                     @endphp
                                     <h4 class="fs-4" style="text-align: justify">
+
+                                        <h2 style=""> {{$description->title}}</h2>
+
                                         <span class="short-content">{{ $shortContent }}</span>
                                         <span class="full-content" style="display: none;">{{ $content }}</span>
                                     </h4>
@@ -273,6 +277,7 @@
                                     @endif
                             @if ($index % 2 != 0)
                                 </div>
+                                {{-- <h4 style="margin-top: 50px"> {{$description->title}} </h4> --}}
                                 <div class="col-md-6 text-center d-flex justify-content-center align-items-center" style="margin-top: 60px">
                                     <img src="{{ asset($description->image) }}" alt="Image" class="img-fluid" style="max-height: 400px;width:600px">
                                 </div>
