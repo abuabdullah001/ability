@@ -208,7 +208,7 @@
     @if ($pagename == 46)
      @include('frontend.pages.report');
 
-
+      
 
     @endif
     @if ($pagename == 47)
@@ -247,7 +247,6 @@
                     </h1>
                 @endif
 
-
                 @foreach ($viewpageedit as $index => $description)
                     @if ($pagename != 42)
                         <div class="row d-flex align-items-center my-5">
@@ -266,8 +265,12 @@
                                         $content = html_entity_decode(strip_tags($contentw));
                                         $shortContent = Str::limit($content, 900);
                                     @endphp
+<<<<<<< HEAD
 
                                         <h2 style=""> {{$description->title}}</h2>
+=======
+                                        <h2 class="text-center" style=""> {{$description->title}}</h2>
+>>>>>>> f9e362701caa27d735ca7b80da9e4e18d51eebb6
 
                                         <span class="short-content">{{ $shortContent }}</span>
                                         <span class="full-content" style="display: none;">{{ $content }}</span>
@@ -317,7 +320,7 @@
     });
 </script>
 
-{{--
+{{-- 
 <script>
     function toggleContent() {
         var shortContent = document.getElementById("short-content");
