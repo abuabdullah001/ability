@@ -265,8 +265,6 @@
                                         $content = html_entity_decode(strip_tags($contentw));
                                         $shortContent = Str::limit($content, 900);
                                     @endphp
-                                    <h4 class="fs-4" style="text-align: justify">
-
                                         <h2 style=""> {{$description->title}}</h2>
 
                                         <span class="short-content">{{ $shortContent }}</span>
