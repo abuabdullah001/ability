@@ -268,8 +268,9 @@
                                         $shortContent = Str::limit($content, 900);
                                     @endphp
                                     <h4 class="fs-4" style="text-align: justify">
-                                        <span>                                {{$description->title}}
-                                        </span>
+
+                                        <h2 style="margin-top: 50px"> {{$description->title}}</h2>
+
                                         <span class="short-content">{{ $shortContent }}</span>
                                         <span class="full-content" style="display: none;">{{ $content }}</span>
                                     </h4>
@@ -278,8 +279,7 @@
                                     @endif
                             @if ($index % 2 != 0)
                                 </div>
-                                <span>                                {{$description->title}}
-                                </span>
+                                {{-- <h4 style="margin-top: 50px"> {{$description->title}} </h4> --}}
                                 <div class="col-md-6 text-center d-flex justify-content-center align-items-center" style="margin-top: 60px">
                                     <img src="{{ asset($description->image) }}" alt="Image" class="img-fluid" style="max-height: 400px;width:600px">
                                 </div>
