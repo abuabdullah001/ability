@@ -208,7 +208,7 @@
     @if ($pagename == 46)
      @include('frontend.pages.report');
 
-      
+
 
     @endif
     @if ($pagename == 47)
@@ -260,7 +260,10 @@
                                             style="max-height: 400px;width:600px">
                                     </div>
                                     <!-- Content Column -->
-                                    <div class="col-md-6" style="margin-top: 60px ">
+                                    <div class="col-md-6" style="margin-top: 60px">
+                                        {{html_entity_decode(strip_tags( $description->content))}}
+                                    </div>
+                                    {{-- <div class="col-md-6" style="margin-top: 60px ">
                                         @php
                                             $contentw = $description->content;
                                             $content = html_entity_decode(strip_tags($contentw));
@@ -275,9 +278,10 @@
                                             <button class="btn btn-primary read-more-btn">Read More</button>
                                         @endif
                                     </div>
-                                @else
+
+                                @else --}}
                                     <!-- For odd iterations (1, 3, 5, etc.), image on the right -->
-                                    <div class="col-md-6 " style="margin-top: 60px;     text-align: justify;">
+                                    {{-- <div class="col-md-6 " style="margin-top: 60px;     text-align: justify;">
                                         @php
                                             $contentw = $description->content;
                                             $content = html_entity_decode(strip_tags($contentw));
@@ -298,7 +302,7 @@
                                         @if (strlen($content) > 300)
                                             <button class="btn btn-primary read-more-btn">Read More</button>
                                         @endif
-                                    </div>
+                                    </div> --}}
                                     <!-- Image Column -->
                                     <div class="col-md-6 text-center d-flex justify-content-center align-items-center"
                                         style="margin-top: 60px">
@@ -342,7 +346,7 @@
         });
     });
 </script>
-{{-- 
+{{--
 <script>
     function toggleContent() {
         var shortContent = document.getElementById("short-content");
