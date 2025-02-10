@@ -265,7 +265,7 @@
                                         $content = html_entity_decode(strip_tags($contentw));
                                         $shortContent = Str::limit($content, 900);
                                     @endphp
-                                        <h2 style=""> {{$description->title}}</h2>
+                                        <h2 class="text-center" style=""> {{$description->title}}</h2>
 
                                         <span class="short-content">{{ $shortContent }}</span>
                                         <span class="full-content" style="display: none;">{{ $content }}</span>
