@@ -269,7 +269,7 @@
                                     @endphp
                                     <h4 class="fs-4" style="text-align: justify">
 
-                                        <h2 style="margin-top: 50px"> {{$description->title}}</h2>
+                                        <h2 style=""> {{$description->title}}</h2>
 
                                         <span class="short-content">{{ $shortContent }}</span>
                                         <span class="full-content" style="display: none;">{{ $content }}</span>
