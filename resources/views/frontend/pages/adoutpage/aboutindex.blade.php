@@ -173,6 +173,93 @@
         </section>
 
     @endif
+    @if ($pagename == 45)
+        @php
+            $members = App\Models\Partner::all();
+        @endphp
+
+        <section class="member-list">
+            <div class="container">
+                <div class="row mb-4"> <!-- Add mb-4 for gap -->
+                    @if ($members->isEmpty())
+                        <h1 class="text-center" style="opacity: 0.5; width: 100%;"><b>Nothing Found</b></h1>
+                    @else
+                        @foreach ($members as $value)
+                            <div class="col-md-4 mb-4">
+                                <div class="card shadow-sm border-light">
+                                    <img src="{{ $value->image ? asset($value->image) : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png' }}"
+                                        class="card-img-top" alt="{{ $value->name }}'s Image">
+                                    <div class="card-body" style="height: 300px">
+                                        <h6 class="card-title"><strong>Title:</strong> {{ $value->title }}</h6>
+                                        <p class="card-text"><strong>Description:</strong> {!! $value->description !!}</p>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    @endif
+                </div>
+
+            </div>
+        </section>
+
+    @endif
+    @if ($pagename == 46)
+        @php
+            $members = App\Models\Report::all();
+        @endphp
+
+        <section class="member-list">
+            <div class="container">
+                <div class="row mb-4"> <!-- Add mb-4 for gap -->
+                    @if ($members->isEmpty())
+                        <h1 class="text-center" style="opacity: 0.5; width: 100%;"><b>Nothing Found</b></h1>
+                    @else
+                        @foreach ($members as $value)
+                            <div class="col-md-4 mb-4">
+                                <div class="card shadow-sm border-light">
+                                    <img src="{{ $value->image ? asset($value->image) : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png' }}"
+                                        class="card-img-top" alt="{{ $value->name }}'s Image">
+                                    <div class="card-body" style="height: 300px">
+                                        <h6 class="card-title"><strong>Title:</strong> {{ $value->title }}</h6>
+                                        <p class="card-text"><strong>Description:</strong> {!! $value->description !!}</p>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    @endif
+                </div>
+
+            </div>
+        </section>
+
+    @endif
+    @if ($pagename == 47)
+    @php
+        $odms = App\Models\Odms::first();
+    @endphp
+    <section class="member-list">
+        <div class="container">
+            <div class="row mb-4"> <!-- This creates a gap between the rows -->
+                <div class="col-md-12"> <!-- Full width column -->
+                    <p class="card-text">{!! $odms->description !!}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+@endif
+    @if ($pagename == 48)
+    @php
+    @endphp
+    <section class="member-list">
+        <div class="container">
+           @include('frontend.pages.whatwedo')
+    </section>
+@endif
+
 
     <div class="clearfix"></div>
 
@@ -187,40 +274,68 @@
                         </h1>
                     @endif
 
-                    @foreach ($viewpageedit as $description)
+                    @foreach ($viewpageedit as $index => $description)
                         @if ($pagename != 42)
                             <div class="row d-flex align-items-center my-5">
-                                <!-- Image Column -->
-                                <div class="col-md-6 text-center d-flex justify-content-center align-items-center"
-                                    style="margin-top: 60px">
-                                    <img src="{{ asset($description->image) }}" alt="Image" class="img-fluid"
-                                        style="max-height: 400px;">
-                                </div>
+                                <!-- Image Column (Switch sides based on iteration) -->
+                                @if ($index % 2 == 0)
+                                    <!-- For even iterations (0, 2, 4, etc.), image on the left -->
+                                    <div class="col-md-6 text-center d-flex justify-content-center align-items-center"
+                                        style="margin-top: 60px">
+                                        <img src="{{ asset($description->image) }}" alt="Image" class="img-fluid"
+                                            style="max-height: 400px;width:600px">
+                                    </div>
+                                    <!-- Content Column -->
+                                    <div class="col-md-6" style="margin-top: 60px ">
+                                        @php
+                                            $contentw = $description->content;
+                                            $content = html_entity_decode(strip_tags($contentw));
+                                            $shortContent = Str::limit($content, 300);
+                                        @endphp
+                                        <h4 class="fs-4" style="text-align: justify">
+                                            <span class="short-content">{{ $shortContent }}</span>
+                                            <span class="full-content" style="display: none;">{{ $content }}</span>
+                                        </h4>
 
-                                <!-- Content Column -->
+                                        @if (strlen($content) > 300)
+                                            <button class="btn btn-primary read-more-btn">Read More</button>
+                                        @endif
+                                    </div>
+                                @else
+                                    <!-- For odd iterations (1, 3, 5, etc.), image on the right -->
+                                    <div class="col-md-6 " style="margin-top: 60px;     text-align: justify;">
+                                        @php
+                                            $contentw = $description->content;
+                                            $content = html_entity_decode(strip_tags($contentw));
+                                            $shortContent = Str::limit($content, 300);
+                                        @endphp
+                                        <style>
+                                            span {
+                                                font-family: Arial, Helvetica, sans-serif;
+                                                font-size: 15px;
+                                                line-height: 24px;
+                                            }
+                                        </style>
+                                        <h4 class="fs-4" style="text-align: justify">
+                                            <span class="short-content">{{ $shortContent }}</span>
+                                            <span class="full-content" style="display: none;">{{ $content }}</span>
+                                        </h4>
 
-                                <div class="col-md-6" style="margin-top: 60px">
-                                    @php
-                                        $contentw = $description->content;
-                                        // Remove HTML tags to get plain text
-                                        $content = html_entity_decode(strip_tags($contentw));
-                                        $shortContent = Str::limit($content, 300);
-                                    @endphp
-
-                                    <h4 class="fs-4">
-                                        <span id="short-content">{{ $shortContent}}</span>
-                                        <span id="full-content" style="display: none;">{{ $content }}</span>
-                                    </h4>
-
-                                    @if (strlen($content) > 300)
-                                        <button id="read-more-btn" class="btn btn-primary" onclick="toggleContent()">Read
-                                            More</button>
-                                    @endif
-                                </div>
-                               
+                                        @if (strlen($content) > 300)
+                                            <button class="btn btn-primary read-more-btn">Read More</button>
+                                        @endif
+                                    </div>
+                                    <!-- Image Column -->
+                                    <div class="col-md-6 text-center d-flex justify-content-center align-items-center"
+                                        style="margin-top: 60px">
+                                        <img src="{{ asset($description->image) }}" alt="Image" class="img-fluid"
+                                            style="max-height: 400px;width:600px">
+                                    </div>
+                                @endif
                             </div>
                         @endif
                     @endforeach
+
                 </div>
             </div>
         </section>
@@ -230,8 +345,30 @@
 
     <div class="clearfix"></div>
 @endsection
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const buttons = document.querySelectorAll('.read-more-btn');
 
+        buttons.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                const shortContent = this.closest('.col-md-6').querySelector('.short-content');
+                const fullContent = this.closest('.col-md-6').querySelector('.full-content');
+                const contentButton = this;
 
+                if (shortContent.style.display === "none") {
+                    shortContent.style.display = "inline";
+                    fullContent.style.display = "none";
+                    contentButton.innerText = "Read More";
+                } else {
+                    shortContent.style.display = "none";
+                    fullContent.style.display = "inline";
+                    contentButton.innerText = "Show Less";
+                }
+            });
+        });
+    });
+</script>
+{{-- 
 <script>
     function toggleContent() {
         var shortContent = document.getElementById("short-content");
@@ -248,4 +385,4 @@
             btn.innerText = "Show Less";
         }
     }
-</script>
+</script> --}}

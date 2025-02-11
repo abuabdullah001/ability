@@ -5,8 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Partner extends Model
+class ReportAdd extends Model
 {
     use HasFactory;
-    protected $fillable=['title','description','image'];
+    protected $fillable=['name','description','image','pdf'];
 }

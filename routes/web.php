@@ -73,6 +73,8 @@ Route::get('/whatwedo', function () {
 })->name('whatwedo');
 
 
+
+
 Route::get('/support', [SupportController::class, 'create'])->name('support.showForm');
 Route::post('/support', [SupportController::class, 'store'])->name('support.store');
 Route::resource('account', AccountsController::class);
@@ -335,6 +337,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('category', [CategoryController::class, 'index'])->name('category-index');
     Route::post('Add-category', [CategoryController::class, 'store'])->name('addcategory');
     Route::get('deletecategory/{id}', [CategoryController::class, 'destroy']);
+    Route::put('updatecategory/{id}', [CategoryController::class, 'update'])->name('updatecategory');
+
 
 
     //rabbi // about menu
@@ -690,6 +694,8 @@ Route::get('odms/edit/{id}',[OdmsController::class,'edit'])->name('odms.edit');
 Route::put('odms/update/{id}',[OdmsController::class,'update'])->name('odms.update');
 Route::delete('odms/delete/{id}',[OdmsController::class,'delete'])->name('odms.delete');
 
+Route::get('odms/show/{id}',[OdmsController::class,'show'])->name('frontend.pages.odms.show');
+
 Route::post('/donations/update-payment-status', [EventController::class, 'updatePaymentStatus'])->name('donation.updatePaymentStatus');
 
 
@@ -704,8 +710,8 @@ Route::delete('manual/delete/{id}',[ManualController::class,'delete'])->name('ma
 
 // partner
 Route::get('partner/create',[PartnerController::class,'create'])->name('partner.create');
-Route::post('partner/store',[PartnerController::class,'create'])->name('partner.store');
-Route::get('partner/index',[PartnerController::class,'create'])->name('partner.index');
+Route::post('partner/store',[PartnerController::class,'store'])->name('partner.store');
+Route::get('partner/index',[PartnerController::class,'index'])->name('partner.index');
 
 
 

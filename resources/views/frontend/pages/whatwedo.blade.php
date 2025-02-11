@@ -8,6 +8,9 @@ HOME
 <div class="clearfix"></div>
 
 <style>
+  .pt-10{;
+  padding-top:10px;
+}
 section.sp-120{
   section-padding:120px;
 }
@@ -40,6 +43,8 @@ span.subborder {
 h2.detail-title.pt-5 {
     padding-top: 50px;
 }
+
+
 </style>
 
 
@@ -51,7 +56,7 @@ h2.detail-title.pt-5 {
       <div class="border" style="height: 2px;width:150px;background-color:black;margin:auto"></div>
     </div>
   </div><!-- row -->
-  <div class="row d-flex">
+  <div class="row d-flex pt-10">
     <div class="col-md-6">
       <p> Sustainable disaster risk management focuses on reducing environmental degradation while enhancing resilience to natural and human-made disasters.
       Key strategies include developing resilient infrastructure, promoting eco-friendly urban planning, and implementing early warning systems.
@@ -64,7 +69,7 @@ h2.detail-title.pt-5 {
        </p>
      </div>
      <div class="col-md-6">
-    <P> IMAGE </P>
+      <img class="singleImg" src="{{asset('images/event/220.jpg')}}" alt="" style="height: 320px;width:100%;">
     </div>
   </div>
     <!-- row -->
@@ -75,9 +80,9 @@ h2.detail-title.pt-5 {
       <div class="border" style="height: 2px;width:150px;background-color:black;margin:auto"></div>
     </div>
   </div><!-- row -->
-  <div class="row  d-flex">
+  <div class="row  d-flex  pt-10">
     <div class="col-md-6">
-    <P> IMAGE </P>
+    <img class="singleImg" src="{{asset('images/event/221.jpg')}}" alt="" style="height: 320px;width:100%;">
      </div>
      <div class="col-md-6">
      <p> Disaster response refers to the immediate and coordinated efforts undertaken to address the impacts of natural or human-made disasters. It involves emergency actions aimed at saving lives, reducing suffering, and minimizing damage to property and the environment.
@@ -94,14 +99,14 @@ Governments, humanitarian organizations, and local communities work together to 
       <div class="border" style="height: 2px;width:150px;background-color:black;margin:auto"></div>
     </div>
   </div><!-- row -->
-  <div class="row d-flex">
+  <div class="row d-flex pt-10">
   <div class="col-md-6">
       <p>
         Disaster management training prepares individuals and organizations to effectively respond to emergencies such as earthquakes, floods, fires, and pandemics. It includes risk assessment, emergency response planning, evacuation drills, and first aid training. For example, during a fire drill in a workplace, employees practice safe evacuation procedures, learn how to use fire extinguishers, and understand emergency exits.
        </p>
     </div>
      <div class="col-md-6">
-     <p> Image </p>
+     <img class="singleImg" src="{{asset('images/event/222.jpg')}}" alt="" style="height: 320px;width:100%;">
     </div>
   </div>
     <!-- row -->
@@ -112,9 +117,9 @@ Governments, humanitarian organizations, and local communities work together to 
       <div class="border" style="height: 2px;width:150px;background-color:black;margin:auto"></div>
     </div>
   </div><!-- row -->
-  <div class="row d-flex">
+  <div class="row d-flex pt-10">
     <div class="col-md-6">
-     Image
+    <img class="singleImg" src="{{asset('images/event/223.jpg')}}" alt="" style="height: 320px;width:100%;">
      </div>
      <div class="col-md-6">
       <p>Cross–cutting issues are those areas that affect all aspects of a programme that need special attention. Keeping the facts in Strategic Plan, We should working with the following areas which is covering major cross cutting issues of the organization is dealing with though different projects and programs.
@@ -131,7 +136,7 @@ Governments, humanitarian organizations, and local communities work together to 
       <div class="border" style="height: 2px;width:150px;background-color:black;margin:auto"></div>
     </div>
   </div><!-- row -->
-  <div class="row d-flex">
+  <div class="row d-flex pt-10">
     <div class="col-md-6">
       <p>
 The Planning and Development department plays a vital role in driving organizational growth and improvement by ensuring the effective coordination of key initiatives across all areas.
@@ -141,8 +146,7 @@ The department works towards improving management systems for efficient and acco
       </p>
      </div>
      <div class="col-md-6">
-      <p> Image
-       </p>
+     <img class="singleImg" src="{{asset('images/event/224.jpg')}}" alt="" style="height: 320px;width:100%;">
     </div>
   </div>
     <!-- row -->
@@ -155,7 +159,7 @@ The department works towards improving management systems for efficient and acco
   </div><!-- row -->
   <div class="row d-flex">
     <div class="col-md-6">
-     Image
+    <img class="singleImg" src="{{asset('images/event/225.jpg')}}" alt="" style="height: 320px;width:100%;">
      </div>
      <div class="col-md-6">
       <p> Healthcare systems play a critical role in disaster management by providing medical assistance, emergency response, and disease control during crises. It covers hospital preparedness, deployment of medical teams, resource allocation, and mental health support for disaster victims. Some Key Points are Mentioned below in brief.
@@ -177,7 +181,7 @@ Urban empowerment projects play a key role in disaster management by strengtheni
       <div class="border" style="height: 2px;width:150px;background-color:black;margin:auto"></div>
     </div>
   </div><!-- row -->
-  <div class="row d-flex">
+  <div class="row d-flex pt-10">
     <div class="col-md-6">
       <p> Youth and volunteers play a vital role in disaster management by assisting in preparedness, response, and recovery efforts. Their energy, skills, and community connections help in emergency relief operations, such as distributing aid, conducting rescue missions, and raising awareness.
 
@@ -185,7 +189,7 @@ Urban empowerment projects play a key role in disaster management by strengtheni
 
      </div>
      <div class="col-md-6">
-     Image
+     <img class="singleImg" src="{{asset('images/event/226.jpg')}}" alt="" style="height: 320px;width:100%;">
     </div>
   </div>
     <!-- row -->
@@ -196,9 +200,9 @@ Urban empowerment projects play a key role in disaster management by strengtheni
       <div class="border" style="height: 2px;width:150px;background-color:black;margin:auto"></div>
     </div>
   </div><!-- row -->
-  <div class="row d-flex">
+  <div class="row d-flex pt-10">
     <div class="col-md-6">
-     Image
+    <img class="singleImg" src="{{asset('images/event/230.jpeg')}}" alt="" style="height: 320px;width:100%;">
      </div>
      <div class="col-md-6">
       <p>Community development plays a vital role in disaster management by building resilience, enhancing preparedness, and fostering long-term recovery. It involves empowering communities to take an active role in disaster response, risk reduction, and reconstruction.

@@ -14,25 +14,19 @@ class PartnerController extends Controller
 
     public function store(Request $request)
     {
-    
 
         $partner = new Partner;
 
         $partner->title = $request->title;
         $partner->description = $request->description;
 
-        $imagePaths = [];
         if ($request->hasFile('image')) {
-            foreach ($request->file('image') as $image) {
-                $filename = 'partner-' . time() . '-' . uniqid() . '.' . $image->getClientOriginalExtension();
-                $path = $image->move(public_path('images/partners'), $filename);
-                $imagePaths[] = '/images/partners/' . $filename;
-            }
+            $img_ext = $request->file('image')->getClientOriginalExtension();
+            $filename = time() . '.' . $img_ext;
+            $request->file('image')->move(public_path('images/event'), $filename);
+            $partner->image = '/images/event/' . $filename;
         }
-
-        $partner->images = $imagePaths;
         $partner->save();
-
         return redirect()->route('partner.index')->with('success', 'Partner added successfully.');
     }
     public function index()
@@ -40,4 +34,12 @@ class PartnerController extends Controller
         $partners = Partner::all();
         return view('admin.pages.partner.index', compact('partners'));
     }
+
+    public function edit($id){
+        $partners=Partner::findOrFail($id);
+        return view('admin.pages.partner.edit',compact('partners'));
+    }
+
+ 
+
 }

@@ -36,11 +36,11 @@ ALL Training
                         <div class="card-header bg-cyan">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <h3 class="card-title"> <i class="fa fa-users"></i> All Partners</h3>
+                                    <h3 class="card-title"> <i class="fa fa-users"></i> All Report</h3>
                                 </div>
                                 <div class="col-md-6">
-                                    <a href="{{route('partner.create')}}" class="btn btn-success float-right"> <i
-                                            class="fa fa-plus"></i> ADD Partner</a>
+                                    <a href="" class="btn btn-success float-right"> <i
+                                            class="fa fa-plus"></i> ADD Report</a>
                                 </div>
                             </div>
                         </div>
@@ -50,26 +50,32 @@ ALL Training
                                 <thead>
                                     <tr>
                                         <th>SL</th>
-                                        <th>Title</th>
+                                        <th>Name</th>
                                         <th>Description</th>
                                         <th>Images</th>
+                                        <th>Pdf</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php $i = 1; ?>
-                                    @foreach ($partners as $key => $value)
+                                    @foreach ($repos as $key => $value)
                                     <tr>
                                         <td>{{ $i++ }}</td>
-                                        <td>{{ $value->title }}</td>
+                                        <td>{{ $value->name }}</td>
                                         <td>{!! Str::limit($value->description, 200) !!}</td>
                                         <td>
                                           <img src="{{asset($value->image)}}" alt="" style="height: 120px">
                                         </td>
+                                        <td>
+                                            <a href="{{ asset($value->pdf) }}" target="_blank" download>
+                                                <img src="{{ asset('free-pdf-download-icon-2617-thumb.png') }}" alt="PDF" style="height: 120px;">
+                                            </a>
+                                        </td>
 
                                         <td>
-                                            {{-- <a href="{{ route('partner.edit', $value->id) }}" class="btn btn-xs btn-info"><i class="fas fa-edit"></i></a>
-                                            <a href="{{ route('partner.delete', $value->id) }}" onclick="return confirm('Are you sure?')" class="btn btn-xs btn-danger"><i class="fas fa-trash-alt"></i></a> --}}
+                                            <a href="{{ route('repo.view', $value->id) }}" class="btn btn-xs btn-info"><i class="fas fa-edit"></i></a>
+                                            </form>
                                         </td>
                                     </tr>
                                     @endforeach
