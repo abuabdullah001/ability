@@ -550,7 +550,7 @@ $events = App\Models\Event::take(3)->where('type','current')->get();
       bottom: 0;
       background-image:
         linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)),
-        url("https://i.ibb.co/drWry8K/image.png");
+        url('public/images/event/511.jpg'); 
       background-size: cover;
       background-position: center;
       filter: blur(4px);

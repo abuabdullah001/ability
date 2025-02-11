@@ -98,7 +98,7 @@
     }
 
     .donate-btn {
-        background: rgb(236, 11, 141);
+        background: black;
         color: #fff;
         padding: 15px 30px;
         border: none;
@@ -285,11 +285,11 @@
 
                     </div>
                 </div>
-                <div class="donate-btn-wrapper">
+                <div class="donate-btn-wrapper" style="color: #666!important">
                     <button type="submit" class="donate-btn">Donate</button>
                 </div>
             </form>
-            <button type="submit" class="donate-btn" style="margin-left: 450px; margin-top: 10px">
+            <button type="submit" class="donate-btn" style="margin-left: 450px; margin-top: 10px" >
                 <a href="{{route('manual.create')}}">
                     <span style="color:white">Manual payment</span>
                 </a>

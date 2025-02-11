@@ -168,7 +168,7 @@ HOME
                                             {{-- choose event --}}
                                             @php
                                             $events = App\Models\Event::all();
-                                        @endphp
+                                            @endphp
 
                                         <div class="mt-5 form-group">
                                             <label for="event_name" class="form-label fw-bold">Event Name</label>
