@@ -239,14 +239,9 @@ flex-direction: column;
                                 </em>
                                 <br>
 
-                                @php
-                                $odms=App\Models\Odms::first();
-                                @endphp
-
                                 @if(strlen($content) > 300)
-                                   <a href="{{ route('frontend.pages.odms.show', ['id' => $odms->id]) }}"> <button class="btn btn-success">Read More</button> </a>
+                                    <button class="btn btn-success">Read More</button>
                                 @endif
-
                             </div>
 
                         </div>
@@ -365,10 +360,6 @@ margin-top: 10px;
 }
 
 }
-.para-16{
-    font-size: 16px!important;
-    line-height: 1.8!important;
-}
 </style>
 
 
@@ -381,30 +372,26 @@ margin-top: 10px;
     $odmss=App\Models\Odms::all();
 @endphp
 
-<section style="background-color: #f0f0f0">
-    <div class="container">
-      <div style="margin-top:50px">
-        <h2 style="text-align: center; padding-top: 0px;">
-          <span style="font-weight:700">About ODMS</span>
-        </h2>
-        <div style="height: 2px; width:150px; background-color:black; margin:auto; margin-bottom:60px"></div>
-
-        @foreach ($odmss as $odms)
-        <div class="row">
-          <div class="col-md-6" style="margin-top: 10px;">
-            <img style="width: 500px; height:400px" src="{{ asset('images/post/' . $odms->image) }}" alt="">
-          </div>
-          <div class="col-md-6" style="margin-top: 0px">
-            <p class="para-16" style="font-size: 16px!important; color: #555!important; line-height: 1.8!important;" class="mt-3">
-              {!! Str::limit($odms->descrition, 1000) !!}
-            </p>
-            <a class="btn btn-success" href="/view_aboutepage/39">Read more</button>
-          </div>
-        </div>
-        @endforeach
-      </div>
+<section class="" style="background-color: #f0f0f0">
+<div class="container">
+  <div style="margin-top:50px " class="">
+    <h2 style="text-align: center;padding-top: 10px;"> <span style="font-weight:700">About ODMS</span></h2>
+    <div class="" style="height: 2px;width:150px;background-color:black; margin:auto;margin-bottom:60px">
     </div>
-  </section>
+    @foreach ($odmss as $odms )
+    <div class="row col-md-6" style="margin-top: 30px;">
+     <img style="width: 500px;height:400px" src="{{ asset('images/post/' . $odms->image) }}" alt="">
+    </div>
+    <div class="row col-md-6 " style="margin-top: 60px">
+      <p style="text-size:12px;color:black;text-align: justify; font-family:Arial, Helvetica, sans-serif;margin-top:px" class="mt-3">
+        {!! Str::limit( $odms->descrition, 700) !!}
+     </p>
+<a href="view_aboutepage/39" class="btn btn-success">Read More</a>
+    </div>
+    @endforeach
+</div>
+</div>
+</section>
 
 {{-- Featured event --}}
 <style>
@@ -451,8 +438,8 @@ $events = App\Models\Event::take(3)->where('type','featured')->get();
     </div>
     <div class="card shadow-lg border-0 rounded-lg">
         <div class="card-body px-4 py-5 bg-light">
-            <p class="text-lg text-gray-700 leading-relaxed text-align-center font-serif py-3" style="margin-top: 50px;margin-bottom:50px;font-size: 16px; color: #555; line-height: 1.8;" >
-                <strong>Featured Event</strong> in disaster management focuses on critical initiatives like
+            <p class="text-lg text-gray-700 leading-relaxed text-align-center font-serif py-3" style="margin-top: 50px;margin-bottom:50px">
+                <strong>"Featured Event"</strong> in disaster management focuses on critical initiatives like
                 <em>emergency response planning</em>, resilience building, or recovery efforts. It highlights key discussions, training,
                 or innovations in disaster preparedness. Such events aim to raise awareness, foster collaboration, and improve community
                 resilience against disasters.
@@ -630,12 +617,12 @@ width:20px;
                         In January 2025, Bangladesh is addressing several disaster management challenges. The government has
                         closed its border with Myanmar, preventing Rohingya refugees from seeking safety amid escalating
                         violence in Rakhine state.
-
+                        <strong class="text-muted">THE GUARDIAN</strong>
                     </p>
                     <p style="font-size: 16px; color: #555; line-height: 1.8;">
                         Additionally, the World Bank has pledged over $2 billion to support Bangladesh's flood response
                         initiatives and other reforms.
-
+                        <strong class="text-muted">REUTERS</strong>
                     </p>
                     <p style="font-size: 16px; color: #555; line-height: 1.8;margin-bottom:50px">
                         Furthermore, the European Investment Bank plans to double its funding to €2 billion to aid in
@@ -793,12 +780,12 @@ width:20px;
                     Experts commend Bangladesh's disaster management for significantly reducing fatalities from natural
                     disasters, attributing this to comprehensive policies like the Standing Order on Disaster and the
                     Disaster Management Act.
-
+                    <strong class="text-muted">THE FINANCIAL EXPRESS</strong>
                 </p>
                 <p style="font-size: 16px; color: #555; line-height: 1.8; text-align: justify;margin-bottom:50px">
                     However, challenges persist, including irregular disaster management committee meetings, bureaucratic
                     hurdles, and corruption, which hinder effective policy implementation.
-
+                    <strong class="text-muted">RESEARCHGATE</strong>
                 </p>
             </div>
         </div>
@@ -845,10 +832,10 @@ width:20px;
                     <div class="card shadow-sm">
                         <div class="card-body">
                             <p style="font-size: 16px; color: #555; line-height: 1.8; text-align: justify;margin-bottom:50px">
-                                Disaster Management and Support involves planning, coordination, and response to natural or man-made disasters. It includes
-                                 preparedness, emergency response, recovery, and risk reduction efforts to minimize damage and protect communities. Effective
-                                 disaster management relies on early warning systems, resource mobilization, humanitarian aid, and collaboration between
-                                  governments, NGOs, and volunteers.
+                                Disaster management in Bangladesh involves key partners such as the Ministry of Disaster Management
+                                and Relief (MoDMR), NGOs like BDPC, and international organizations like the Asian Disaster Preparedness
+                                Center (ADPC). Collaborative efforts focus on preparedness, capacity building, and emergency response.
+                                Humanitarian coordination teams and aid agencies like USAID play critical roles in strengthening resilience.
                             </p>
                         </div>
                     </div>
@@ -895,10 +882,10 @@ width:20px;
                         <div class="card shadow-sm">
                             <div class="card-body">
                                 <p style="font-size: 16px; color: #555; line-height: 1.8; text-align: justify;margin-bottom:50px">
-                                    Technology plays a vital role in disaster management by improving early warning systems, communication, and response efficiency.
-                                     Satellite imaging, artificial intelligence, and data analytics help predict disasters and assess damage. Mobile apps and social
-                                     media platforms enable real-time information sharing, ensuring swift emergency response. Drones, GIS mapping,
-                                     and remote sensing aid in rescue operations, making disaster management more effective, coordinated, and life-saving.
+                                    Disaster management in Bangladesh involves key partners such as the Ministry of Disaster Management
+                                    and Relief (MoDMR), NGOs like BDPC, and international organizations like the Asian Disaster Preparedness
+                                    Center (ADPC). Collaborative efforts focus on preparedness, capacity building, and emergency response.
+                                    Humanitarian coordination teams and aid agencies like USAID play critical roles in strengthening resilience.
                                 </p>
                             </div>
                         </div>
@@ -951,10 +938,10 @@ width:20px;
             <div class="card shadow-sm">
                 <div class="card-body">
                     <p style="font-size: 16px; color: #555; line-height: 1.8; text-align: justify;margin-bottom:50px;">
-                        Effective disaster management relies on collaboration between governments, NGOs, international organizations, and local
-                         communities. Key partners include the United Nations and humanitarian agencies, which provide emergency aid and
-                          resources. Private sector involvement enhances technological and logistical support, while community volunteers strengthen
-                           on-the-ground response. These partnershipsensure coordinated efforts in disaster preparedness, response, and recovery, minimizing the impact on affected populations.
+                        Disaster management in Bangladesh involves key partners such as the Ministry of Disaster Management
+                        and Relief (MoDMR), NGOs like BDPC, and international organizations like the Asian Disaster Preparedness
+                        Center (ADPC). Collaborative efforts focus on preparedness, capacity building, and emergency response.
+                        Humanitarian coordination teams and aid agencies like USAID play critical roles in strengthening resilience.
                     </p>
                 </div>
             </div>
@@ -1126,13 +1113,10 @@ width:20px;
     }, 100);
 </script>
 
-<script>
-    document.addEventListener("contextmenu", function(event) {
-        event.preventDefault(); // Prevent the default context menu
-        window.open(window.location.href, "_blank"); // Open the same page in a new tab
-    });
-</script>
-
 
 
 @endsection
+
+
+
+
