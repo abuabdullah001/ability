@@ -55,7 +55,7 @@
 
     .nav-links li {
         position: relative;
-        
+
 
     }
 
@@ -436,12 +436,11 @@
                 </a>
             </div>
     @endforeach
-
     <div class="hamburger" id="hamburger">&#9776;</div>
 
     {{-- donate button --}}
     <div class="nav-buttons row">
-     
+
         <ul  class="nav-links" id="navLinks">
 
 
@@ -452,7 +451,7 @@
                 <a class="nav-item2 " id="aboutus5" href="">
                     About Us
                 </a>
-              
+
             </li>
 
 
@@ -468,7 +467,7 @@
                 <a class="nav-item2 " id="involvedID" href="">
                     Involved
                 </a>
-          
+
             </li>
 
             {{-- media --}}
@@ -476,7 +475,7 @@
                 <a class="nav-item2" id="donateUsButton233" href="">
                     Media
                 </a>
-       
+
             </li>
 
             <li><a class="nav-item2" href="{{ url('/Contact-Us') }}">CONTACT</a></li>
@@ -505,7 +504,7 @@
 
 
 
-       
+
 
 
         @php
@@ -565,11 +564,11 @@
                     @endforeach
 
                     <!-- Additional static items -->
-                 
+
                 </div>
             </div>
         </div>
-    
+
         {{-- about us end --}}
 
         {{-- Acitivities --}}
@@ -596,13 +595,13 @@
                         <h3 style="text-align: center">Projects</h3>
                     </a>
                 </div>
-                <div>
+                {{-- <div>
                     <a class="dropdown-item" href="/response">
                         <img src="{{ asset('images/event/126.png') }}" alt=""
                             style="height: 150px;width:300px;">
                         <h3 style="text-align: center">Our Response</h3>
                     </a>
-                </div>
+                </div> --}}
             </div>
         </div>
 

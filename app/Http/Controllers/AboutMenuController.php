@@ -87,6 +87,7 @@ class AboutMenuController extends Controller
         $viewpage = DB::table('categories')
             ->join('about_menus', 'about_menus.menu', '=', 'categories.id')
             ->where('type', 'about')
+            
             ->get();
         // dd($viewpage);
         return view('admin/pages/aboutmenu/indexabout', get_defined_vars());
@@ -117,6 +118,7 @@ class AboutMenuController extends Controller
 
         $aboutMenu = new AboutMenu();
         $aboutMenu->menu = $request->menu_id;
+        $aboutMenu->title = $request->title;
         $aboutMenu->content = $request->aboutecontent;
 
         $imagepath = '' ;
@@ -174,6 +176,7 @@ class AboutMenuController extends Controller
         $updateaboute = AboutMenu::find($request->id);
         $updateaboute->menu = $request->editmenu_id;
         $updateaboute->content = $request->aboutedit;
+        $updateaboute->title = $request->title;
 
         if ($request->hasFile('image')) {
             $oldImagePath = $updateaboute->image;

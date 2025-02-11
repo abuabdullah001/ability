@@ -38,7 +38,7 @@
                             <i class="fas fa-user-friends fa-lg"></i>
                         </span>
                         <div class="info-box-content">
-                            <span class="info-box-text">Volunteer</span>
+                            <span class="info-box-text">All Volunteer</span>
                             <span class="info-box-number">{{ $volunteer->count() }}</span>
                         </div>
                     </div>
@@ -67,6 +67,104 @@
                         </div>
                     </div>
                 </div>
+                  <!-- Monthly Donation Section -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-danger elevation-1 d-flex justify-content-center align-items-center" style="height: 70px; width: 70px;">
+                            <img width="64" height="64" src="https://img.icons8.com/wired/64/currency.png" alt="currency"/>
+                        </span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Monthly Donation</span>
+                            <span class="info-box-number">{{ $donation->sum('amount') }} Tk</span>
+                        </div>
+                    </div>
+                </div>
+
+                     <!-- Today's Donation Section -->
+                     <div class="col-12 col-sm-6 col-md-3">
+                        <div class="info-box">
+                            <span class="info-box-icon bg-warning elevation-1 d-flex justify-content-center align-items-center" style="height: 70px; width: 70px;">
+                                <i class="fas fa-calendar-check fa-lg"></i>
+                            </span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Today's Donation</span>
+                                <span class="info-box-number">{{ $todayTransaction->sum('amount') }} Tk</span>
+                            </div>
+                        </div>
+                    </div>
+
+                     <!-- Total Sponsor Section -->
+                     <div class="col-12 col-sm-6 col-md-3">
+                        <div class="info-box">
+                            <span class="info-box-icon bg-fuchsia elevation-1 d-flex justify-content-center align-items-center" style="height: 70px; width: 70px;">
+                                <i class="fas fa-gift fa-lg"></i>
+                            </span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Total Sponsor</span>
+                                <span class="info-box-number">{{ $sponsor->count() }}</span>
+                            </div>
+                        </div>
+                    </div>
+                         <!-- Total Event Section -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-fuchsia elevation-1 d-flex justify-content-center align-items-center" style="height: 70px; width: 70px;">
+                            <i class="fas fa-calendar-alt fa-lg"></i>
+                        </span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Total Event</span>
+                            <span class="info-box-number">{{ $event->count() }}</span>
+                        </div>
+                    </div>
+                </div>
+                     <!-- Total Campaign Section -->
+                     <div class="col-12 col-sm-6 col-md-3">
+                        <div class="info-box">
+                            <span class="info-box-icon bg-fuchsia elevation-1 d-flex justify-content-center align-items-center" style="height: 70px; width: 70px;">
+                                <i class="fas fa-cogs fa-lg"></i>
+                            </span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Total Champaign</span>
+                                <span class="info-box-number">{{ $champagin->count() }}</span>
+                            </div>
+                        </div>
+                    </div>
+                         <!-- Total Project Section -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-fuchsia elevation-1 d-flex justify-content-center align-items-center" style="height: 70px; width: 70px;">
+                            <i class="fas fa-briefcase fa-lg"></i>
+                        </span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Total Project</span>
+                            <span class="info-box-number">{{ $project->count() }}</span>
+                        </div>
+                    </div>
+                </div>
+                         <!-- running Project Section -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-fuchsia elevation-1 d-flex justify-content-center align-items-center" style="height: 70px; width: 70px;">
+                            <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/project.png" alt="project"/>
+                        </span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Running Project</span>
+                            <span class="info-box-number">{{ $project->count() }}</span>
+                        </div>
+                    </div>
+                </div>
+                         <!-- Completed Project Section -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-fuchsia elevation-1 d-flex justify-content-center align-items-center" style="height: 70px; width: 70px;">
+                            <img width="80" height="80" src="https://img.icons8.com/dotty/80/project-management.png" alt="project-management"/>                        </span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Completed Project</span>
+                            <span class="info-box-number">{{ $project->count() }}</span>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Total Expense Section -->
                 <div class="col-12 col-sm-6 col-md-3">
                     <div class="info-box">
@@ -79,66 +177,45 @@
                         </div>
                     </div>
                 </div>
-                <!-- Today's Donation Section -->
+                <!-- Monthly Expense Section -->
                 <div class="col-12 col-sm-6 col-md-3">
                     <div class="info-box">
-                        <span class="info-box-icon bg-warning elevation-1 d-flex justify-content-center align-items-center" style="height: 70px; width: 70px;">
-                            <i class="fas fa-calendar-check fa-lg"></i>
-                        </span>
+                        <span class="info-box-icon bg-danger elevation-1 d-flex justify-content-center align-items-center" style="height: 70px; width: 70px;">
+                            <img width="80" height="80" src="https://img.icons8.com/dotty/80/tax.png" alt="tax"/>                        </span>
                         <div class="info-box-content">
-                            <span class="info-box-text">Today's Donation</span>
-                            <span class="info-box-number">{{ $todayTransaction->sum('amount') }} Tk</span>
+                            <span class="info-box-text">Monthly Expense</span>
+                            <span class="info-box-number">{{ $expense }} Tk</span>
                         </div>
                     </div>
                 </div>
-                <!-- Total Sponsor Section -->
+                <!-- Total sponsor receive Section -->
                 <div class="col-12 col-sm-6 col-md-3">
                     <div class="info-box">
-                        <span class="info-box-icon bg-fuchsia elevation-1 d-flex justify-content-center align-items-center" style="height: 70px; width: 70px;">
-                            <i class="fas fa-gift fa-lg"></i>
-                        </span>
+                        <span class="info-box-icon bg-danger elevation-1 d-flex justify-content-center align-items-center" style="height: 70px; width: 70px;">
+                            <img width="64" height="64" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-sponsor-business-flaticons-lineal-color-flat-icons.png" alt="external-sponsor-business-flaticons-lineal-color-flat-icons"/>                        </span>
                         <div class="info-box-content">
-                            <span class="info-box-text">Total Sponsor</span>
-                            <span class="info-box-number">{{ $sponsor->count() }}</span>
+                            <span class="info-box-text">Total sponsor receive</span>
+                            <span class="info-box-number">{{ $expense }} Tk</span>
                         </div>
                     </div>
                 </div>
-                <!-- Total Event Section -->
+                <!-- Monthly sponsor receive Section -->
                 <div class="col-12 col-sm-6 col-md-3">
                     <div class="info-box">
-                        <span class="info-box-icon bg-fuchsia elevation-1 d-flex justify-content-center align-items-center" style="height: 70px; width: 70px;">
-                            <i class="fas fa-calendar-alt fa-lg"></i>
-                        </span>
+                        <span class="info-box-icon bg-danger elevation-1 d-flex justify-content-center align-items-center" style="height: 70px; width: 70px;">
+                            <img width="64" height="64" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-sponsor-live-streaming-flaticons-lineal-color-flat-icons.png" alt="external-sponsor-live-streaming-flaticons-lineal-color-flat-icons"/>                        </span>
                         <div class="info-box-content">
-                            <span class="info-box-text">Total Event</span>
-                            <span class="info-box-number">{{ $event->count() }}</span>
+                            <span class="info-box-text">Monthly sponsor receive</span>
+                            <span class="info-box-number">{{ $expense }} Tk</span>
                         </div>
                     </div>
                 </div>
-                <!-- Total Project Section -->
-                <div class="col-12 col-sm-6 col-md-3">
-                    <div class="info-box">
-                        <span class="info-box-icon bg-fuchsia elevation-1 d-flex justify-content-center align-items-center" style="height: 70px; width: 70px;">
-                            <i class="fas fa-briefcase fa-lg"></i>
-                        </span>
-                        <div class="info-box-content">
-                            <span class="info-box-text">Total Project</span>
-                            <span class="info-box-number">{{ $project->count() }}</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Total Campaign Section -->
-                <div class="col-12 col-sm-6 col-md-3">
-                    <div class="info-box">
-                        <span class="info-box-icon bg-fuchsia elevation-1 d-flex justify-content-center align-items-center" style="height: 70px; width: 70px;">
-                            <i class="fas fa-cogs fa-lg"></i>
-                        </span>
-                        <div class="info-box-content">
-                            <span class="info-box-text">Total Campaign</span>
-                            <span class="info-box-number">{{ $champagin->count() }}</span>
-                        </div>
-                    </div>
-                </div>
+
+
+
+
+
+
             </div>
         </div>
     </section>
