@@ -191,34 +191,23 @@ HOME
     <h3> sponsor  Form</h3>
     <form action="{{Route('donate.store')}}" method="post" >
         @csrf
-        <label for="first-name">First Name*</label>
+        <label for="first-name">Name</label>
         <input type="text" id="first_name" name="first_name" required class="form-control">
-        <label for="last-name">Last Name*</label>
+        <label for="last-name">Company Name*</label>
         <input type="text" id="last_name" name="last_name" required class="form-control">
-        <label for="first-name">Email*</label>
+        <label for="first-name">Email</label>
         <input type="email" id="email" name="email" required class="form-control">
         <label for="first-name">Contact Number*</label>
         <input type="number" id="number" name="number" required class="form-control">
-        <label for="first-name">Number of amount You Want to sponsor*</label>
-        <select name="sponsor_number" id="sponsor_number" style="margin-bottom: 10px;border-radius: 5px;" required class="form-control">
-            <option value="">--None--</option>
-            <option value="1">1000</option>
-            <option value="2">2000</option>
-            <option value="3">3000</option>
-            <option value="4">4000</option>
-            <option value="5">5000</option>
-            <option value="6">6000</option>
-            <option value="7">7000</option>
-            <option value="8">8000</option>
-            <option value="9">9000</option>
-            <option value="10">10000</option>
-        </select>
+        <label>Amount You Want to Sponsor*</label>
+        <input type="text" name="sponsor_number" required class="form-control">
         <label for="first-name">Preferred Interval for needed*</label>
         <select name="contribution_type" id="contribution_type" style="margin-bottom: 10px;border-radius: 5px;" required class="form-control">
             <option value="">--None--</option>
             <option value="Monthly">Monthly</option>
             <option value="Yearly">Yearly</option>
             <option value="OneTime">OneTime</option>
+            <option value="quarter">Quarter</option>
         </select>
         <button type="submit" class="submit-button">Submit</button>
     </form>

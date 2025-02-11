@@ -398,7 +398,7 @@ margin-top: 10px;
             <p class="para-16" style="font-size: 16px!important; color: #555!important; line-height: 1.8!important;" class="mt-3">
               {!! Str::limit($odms->descrition, 1000) !!}
             </p>
-            <button class="btn btn-success">Read more</button>
+            <a class="btn btn-success" href="/view_aboutepage/39">Read more</button>
           </div>
         </div>
         @endforeach
