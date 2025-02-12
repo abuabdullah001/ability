@@ -208,7 +208,7 @@
     @if ($pagename == 46)
      @include('frontend.pages.report');
 
-      
+
 
     @endif
     @if ($pagename == 47)
@@ -315,7 +315,7 @@
     });
 </script>
 
-{{-- 
+{{--
 <script>
     function toggleContent() {
         var shortContent = document.getElementById("short-content");
