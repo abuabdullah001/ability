@@ -208,7 +208,7 @@ HOME
             <input type="text" id="first_name" name="first_name" required>
             <label for="last-name">Company Name</label>
             <input type="text" id="last_name" name="last_name" >
-            <label for="email">Email</label>
+            <label for="email">Email*</label>
             <input type="email" id="email" name="email" required>
             <label for="number">Contact Number</label>
             <input type="number" id="number" name="number" required>
@@ -236,9 +236,9 @@ HOME
             <input type="text" id="first_name" name="first_name" required>
             <label for="last-name">Company Name</label>
             <input type="text" id="last_name" name="last_name" >
-            <label for="email">Email</label>
+            <label for="email">Email*</label>
             <input type="email" id="email" name="email" required>
-            <label for="number">Contact Number*</label>
+            <label for="number">Contact Number</label>
             <input type="number" id="number" name="number" required>
             <label>Sponsor Amount*</label>
             <input type="text" name="sponsor_number" required>
