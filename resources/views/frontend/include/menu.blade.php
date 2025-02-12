@@ -574,7 +574,7 @@
         {{-- Acitivities --}}
         <div id="all2222" class="event-list" style=" margin-top:0px;margin-left:00px;">
             <div class="event-item2">
-                <div style="margin-right: 20px;margin-left:40px">
+                <div style="margin-right: 40px;margin-left:40px">
                     <a class="dropdown-item" href="{{ url('/event') }}">
                         <img src="{{ asset('images/event/123.jpg') }}" alt=""
                             style="height: 150px;width:300px;">
@@ -588,7 +588,7 @@
                         <h3 style="text-align: center">Completed Projects</h3>
                     </a>
                 </div>
-                <div style="margin-left: 20px">
+                <div style="margin-left: 40px">
                     <a class="dropdown-item" href="{{ url('/project') }}">
                         <img src="{{ asset('images/event/125.png') }}" alt=""
                             style="height: 150px;width:300px;">
