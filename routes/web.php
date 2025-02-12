@@ -538,6 +538,8 @@ Route::get('/sponsor', [FrontEndController::class, 'sponsor']);
 // Route::get('/volunteer', [FrontEndController::class, 'volunteer'])->middleware('volunteer');
 Route::get('/volunteer', [FrontEndController::class, 'volunteer']);
 
+Route::get('/sponserd-list', [FrontEndController::class, 'sponserlist']);
+
 Route::get('/search', [FrontEndController::class, 'search'])->name('search');
 
 Route::get('/volunteer/waiting', [FrontEndController::class, 'waiting'])->name('volunteer.waiting');

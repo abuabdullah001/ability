@@ -51,6 +51,10 @@ class User extends Authenticatable
         return $this->hasMany(Payment::class, 'member_id', 'id');
     }
 
+    public function sponsar(){
+        return $this->hasOne(Doante::class, 'user_id', 'id');
+    }
+
     public function paymentsum($query)
     {
         return Payment::where('member_id', $query)->where('accept_status', 1)->sum('amount');
