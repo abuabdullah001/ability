@@ -1028,6 +1028,7 @@ width:20px;
 
 
 {{-- js part start --}}
+<!-- jQuery CDN -->
 
 
 
