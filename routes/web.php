@@ -337,6 +337,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('category', [CategoryController::class, 'index'])->name('category-index');
     Route::post('Add-category', [CategoryController::class, 'store'])->name('addcategory');
     Route::get('deletecategory/{id}', [CategoryController::class, 'destroy']);
+    Route::put('updatecategory/{id}', [CategoryController::class, 'update']);
 
 
     //rabbi // about menu
