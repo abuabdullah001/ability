@@ -217,9 +217,9 @@ HOME
             <label for="contribution_type">Preferred Interval for needed*</label>
             <select name="contribution_type" id="contribution_type" class="form-control" required>
                 <option value="">--None--</option>
+                <option value="quarter">Quarter</option>
                 <option value="Monthly">Monthly</option>
                 <option value="Yearly">Yearly</option>
-                <option value="quarter">Quarter</option>
             </select>
             <label for="password">Password*</label>
             <input type="password" id="password" name="password" required>
@@ -245,9 +245,9 @@ HOME
             <label for="contribution_type">Preferred Interval for needed*</label>
             <select name="contribution_type" id="contribution_type" class="form-control" required>
                 <option value="">--None--</option>
+                <option value="quarter">Quarter</option>
                 <option value="Monthly">Monthly</option>
                 <option value="Yearly">Yearly</option>
-                <option value="quarter">Quarter</option>
             </select>
             <button type="submit" class="submit-button">Submit</button>
         </form>
