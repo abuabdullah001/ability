@@ -68,6 +68,7 @@ class DonateController extends Controller
             $donate->contact_number = $request->number;
             $donate->sponsor_number = $request->sponsor_number;
             $donate->contribution_type = $request->contribution_type;
+            $donate->type = 'unpaid';
             $donate->date = now();
 
             $user = new User;

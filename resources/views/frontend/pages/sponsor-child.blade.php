@@ -218,8 +218,8 @@ HOME
             <select name="contribution_type" id="contribution_type" class="form-control" required>
                 <option value="">--None--</option>
                 <option value="Monthly">Monthly</option>
-                <option value="quarter">Quarter</option>
-                <option value="quarter">Half Yearly</option>
+                <option value="quarterly">Quarterly</option>
+                <option value="Half Yearly">Half Yearly</option>
                 <option value="Yearly">Yearly</option>
             </select>
             <label for="password">Password*</label>
@@ -247,8 +247,8 @@ HOME
             <select name="contribution_type" id="contribution_type" class="form-control" required>
                 <option value="">--None--</option>
                 <option value="Monthly">Monthly</option>
-                <option value="quarter">Quarter</option>
-                <option value="quarter">Half Yearly</option>
+                <option value="quarterly">Quarterly</option>
+                <option value="Half Yearly">Half Yearly</option>
                 <option value="Yearly">Yearly</option>
             </select>
             <button type="submit" class="submit-button">Submit</button>

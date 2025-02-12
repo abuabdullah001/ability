@@ -51,10 +51,11 @@ ALL Training
                                     <tr>
                                         <th>SL</th>
                                         <th>Name</th>
+                                        <th>Company Name</th>
+                                        <th>Email</th>
                                         <th>Contact Number</th>
-                                        <th>Payable Amount</th>
+                                        <th>Sponsar Amount</th>
                                         <th>Contribution Type</th>
-                                        <th>Payment Status</th>
                                    
                                     </tr>
                                 </thead>
@@ -62,11 +63,12 @@ ALL Training
                                     <?php $i = 1; ?>
                                     <tr>
                                         <td>{{ $i++ }}</td>
-                                        <td>{{ Auth()->user()->name }}</td>
+                                        <td>{{ Auth()->user()->sponsar->first_name }}</td>
+                                        <td>{{ Auth()->user()->sponsar->last_name }}</td>
+                                        <td>{{ Auth()->user()->sponsar->email }}</td>
                                         <td>{{ Auth()->user()->sponsar->contact_number }}</td>
                                         <td>{{ Auth()->user()->sponsar->sponsor_number }} Tk</td>
                                         <td>{{ Auth()->user()->sponsar->contribution_type }}</td>
-                                        <td>{{ Auth()->user()->sponsar->type }}</td>
                        
                                 
                                     </tr>

@@ -242,6 +242,12 @@ class FrontEndController extends Controller
     public function sponserlist(){
         return view('admin.pages.sponsar.index');
     }
+    public function paid_list(){
+        return view('admin.pages.sponsar.paid-list');
+    }
+    public function deu_list(){
+        return view('admin.pages.sponsar.deu-list');
+    }
 
     public function jobView(Request $request, $id)
     {

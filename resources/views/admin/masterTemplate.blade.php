@@ -64,25 +64,33 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="/" class="btn btn-info" style="color: white"><i class="fa fa-chevron-circle-left"></i>
-                        WEBSITE</a>
+                    <a href="/" class="btn btn-info" style="color: white">
+                        <i class="fa fa-chevron-circle-left"></i> WEBSITE
+                    </a>
                 </li>
             </ul>
+        
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
-                <!-- Messages Dropdown Menu -->
-                <li>
-                    <!--<a href="{{ route('logout')}}" style="color: red">
-                                                    <i class="ace-icon fa fa-power-off"></i>
-                                                    Logout
-                                                </a>-->
-                    <a style="color: red" class="dropdown-item " href="{{ route('logout') }}" onclick="event.preventDefault();
-                                   document.getElementById('logout-form').submit();">
-                        <i class="ace-icon fa fa-power-off"></i> {{ __('Logout') }}
+                <!-- Profile Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" id="profileDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-user-circle"></i> <!-- Profile Icon -->
                     </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        {{ csrf_field() }}
-                    </form>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="profileDropdown">
+                        <!-- Change Password -->
+                        <a class="dropdown-item" href="{{ route('password.change') }}">
+                            <i class="fas fa-key"></i> Change Password
+                        </a>
+                        <!-- Logout -->
+                        <a class="dropdown-item" href="{{ route('logout') }}" 
+                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            <i class="fas fa-power-off"></i> {{ __('Logout') }}
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
+                    </div>
                 </li>
             </ul>
         </nav>
