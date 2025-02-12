@@ -61,6 +61,7 @@ use App\Http\Controllers\ServeController;
 use App\Http\Controllers\SupportController;
 use SebastianBergmann\Environment\Runtime;
 use App\Http\Controllers\PartnerController;
+use App\Http\Controllers\PasswordController;
 use FontLib\Table\Type\name;
 
 Route::get('/report', function () {
@@ -337,6 +338,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('category', [CategoryController::class, 'index'])->name('category-index');
     Route::post('Add-category', [CategoryController::class, 'store'])->name('addcategory');
     Route::get('deletecategory/{id}', [CategoryController::class, 'destroy']);
+    Route::put('updatecategory/{id}', [CategoryController::class, 'update']);
 
 
     //rabbi // about menu
@@ -505,7 +507,7 @@ Route::post('applicationStore', [ApplyController::class, 'applicationStore'])->n
 Route::post('/store/donate', [DonateController::class, 'store'])->name('donate.store');
 Route::get('/', [FrontEndController::class, 'index']);
 
-Route::get('/response',[FrontEndController::class,'response'])->name('frontend.pages.response');
+Route::get('/response', [FrontEndController::class, 'response'])->name('frontend.pages.response');
 
 
 
@@ -537,6 +539,14 @@ Route::get('/Our-Rules', [FrontEndController::class, 'OurRules']);
 Route::get('/sponsor', [FrontEndController::class, 'sponsor']);
 // Route::get('/volunteer', [FrontEndController::class, 'volunteer'])->middleware('volunteer');
 Route::get('/volunteer', [FrontEndController::class, 'volunteer']);
+
+
+Route::get('/change-password', [PasswordController::class, 'showChangePasswordForm'])->name('password.change');
+Route::post('/change-password', [PasswordController::class, 'updatePassword'])->name('password.update');
+
+Route::get('/sponserd-list', [FrontEndController::class, 'sponserlist']);
+Route::get('/due-list', [FrontEndController::class, 'deu_list']);
+Route::get('/paid-list', [FrontEndController::class, 'paid_list']);
 
 Route::get('/search', [FrontEndController::class, 'search'])->name('search');
 
@@ -664,56 +674,56 @@ Route::get('/generate-pdf/{id}', [VolunteerController::class, 'generateVolunteer
 
 
 // Blog
-Route::get('blog/index',[BlogController::class,'index'])->name('blog.index');
-Route::post('blog/store',[BlogController::class,'store'])->name('blog.store');
-Route::get('blog/create',[BlogController::class,'create'])->name('blog.create');
-Route::get('blog/edit/{id}',[BlogController::class,'edit'])->name('blog.edit');
-Route::put('blog/update/{id}',[BlogController::class,'update'])->name('blog.update');
-Route::get('blog/delete/{id}',[BlogController::class,'delete'])->name('blog.delete');
+Route::get('blog/index', [BlogController::class, 'index'])->name('blog.index');
+Route::post('blog/store', [BlogController::class, 'store'])->name('blog.store');
+Route::get('blog/create', [BlogController::class, 'create'])->name('blog.create');
+Route::get('blog/edit/{id}', [BlogController::class, 'edit'])->name('blog.edit');
+Route::put('blog/update/{id}', [BlogController::class, 'update'])->name('blog.update');
+Route::get('blog/delete/{id}', [BlogController::class, 'delete'])->name('blog.delete');
 
-Route::get('blog/show',[FrontEndController::class,'blog_show'])->name('frontend.pages.blog');
-Route::get('blog/details/{id}',[FrontEndController::class,'blog_details'])->name('blog_details');
+Route::get('blog/show', [FrontEndController::class, 'blog_show'])->name('frontend.pages.blog');
+Route::get('blog/details/{id}', [FrontEndController::class, 'blog_details'])->name('blog_details');
 
 
 // Feedback
-Route::get('feedback/create',[FeedbackController::class,'create'])->name('feedback.create');
-Route::post('feedback/store',[FeedbackController::class,'store'])->name('feedback.store');
-Route::get('feedback/index',[FeedbackController::class,'index'])->name('feedback.index');
-Route::get('feedback/edit/{id}',[FeedbackController::class,'edit'])->name('feedback.edit');
-Route::put('feedback/update/{id}',[FeedbackController::class,'update'])->name('feedback.update');
-Route::get('feedback/delete/{id}',[FeedbackController::class,'delete'])->name('feedback.delete');
+Route::get('feedback/create', [FeedbackController::class, 'create'])->name('feedback.create');
+Route::post('feedback/store', [FeedbackController::class, 'store'])->name('feedback.store');
+Route::get('feedback/index', [FeedbackController::class, 'index'])->name('feedback.index');
+Route::get('feedback/edit/{id}', [FeedbackController::class, 'edit'])->name('feedback.edit');
+Route::put('feedback/update/{id}', [FeedbackController::class, 'update'])->name('feedback.update');
+Route::get('feedback/delete/{id}', [FeedbackController::class, 'delete'])->name('feedback.delete');
 
 
 //odms
-Route::get('odms/index',[OdmsController::class,'index'])->name('odms.index');
-Route::post('odms/store',[OdmsController::class,'store'])->name('odms.store');
-Route::get('odms/create',[OdmsController::class,'create'])->name('odms.create');
-Route::get('odms/edit/{id}',[OdmsController::class,'edit'])->name('odms.edit');
-Route::put('odms/update/{id}',[OdmsController::class,'update'])->name('odms.update');
-Route::delete('odms/delete/{id}',[OdmsController::class,'delete'])->name('odms.delete');
+Route::get('odms/index', [OdmsController::class, 'index'])->name('odms.index');
+Route::post('odms/store', [OdmsController::class, 'store'])->name('odms.store');
+Route::get('odms/create', [OdmsController::class, 'create'])->name('odms.create');
+Route::get('odms/edit/{id}', [OdmsController::class, 'edit'])->name('odms.edit');
+Route::put('odms/update/{id}', [OdmsController::class, 'update'])->name('odms.update');
+Route::delete('odms/delete/{id}', [OdmsController::class, 'delete'])->name('odms.delete');
 
-Route::get('odms/show/{id}',[OdmsController::class,'show'])->name('frontend.pages.odms.show');
+Route::get('odms/show/{id}', [OdmsController::class, 'show'])->name('frontend.pages.odms.show');
 
 Route::post('/donations/update-payment-status', [EventController::class, 'updatePaymentStatus'])->name('donation.updatePaymentStatus');
 
 
 //manual
-Route::get('manual/create',[ManualController::class,'create'])->name('manual.create');
-Route::post('manual/store',[ManualController::class,'store'])->name('manual.store');
-Route::get('manual/index',[ManualController::class,'index'])->name('manual.index');
-Route::get('manual/edit/{id}',[ManualController::class,'edit'])->name('manual.edit');
-Route::put('manual/update/{id}',[ManualController::class,'update'])->name('manual.update');
-Route::delete('manual/delete/{id}',[ManualController::class,'delete'])->name('manual.delete');
+Route::get('manual/create', [ManualController::class, 'create'])->name('manual.create');
+Route::post('manual/store', [ManualController::class, 'store'])->name('manual.store');
+Route::get('manual-payment/index', [ManualController::class, 'index'])->name('manual.index');
+Route::get('manual/index', [ManualController::class, 'index2'])->name('getDonationTypes');
+Route::get('manual/edit/{id}', [ManualController::class, 'edit'])->name('manual.edit');
+Route::put('manual/update/{id}', [ManualController::class, 'update'])->name('manual.update');
+Route::delete('manual/delete/{id}', [ManualController::class, 'delete'])->name('manual.delete');
 
 
 // partner
-Route::get('partner/create',[PartnerController::class,'create'])->name('partner.create');
-Route::post('partner/store',[PartnerController::class,'store'])->name('partner.store');
-Route::get('partner/index',[PartnerController::class,'index'])->name('partner.index');
+Route::get('partner/create', [PartnerController::class, 'create'])->name('partner.create');
+Route::post('partner/store', [PartnerController::class, 'store'])->name('partner.store');
+Route::get('partner/index', [PartnerController::class, 'index'])->name('partner.index');
 
 
 
 // notice
-  Route::get('/frontend/notice_details/{id}', [NoticeController::class, 'details'])->name('frontend.notice_details');
-  Route::get('/frontend/notice_show/{id}', [NoticeController::class, 'show'])->name('frontend.pages.notice_show');
-
+Route::get('/frontend/notice_details/{id}', [NoticeController::class, 'details'])->name('frontend.notice_details');
+Route::get('/frontend/notice_show/{id}', [NoticeController::class, 'show'])->name('frontend.pages.notice_show');

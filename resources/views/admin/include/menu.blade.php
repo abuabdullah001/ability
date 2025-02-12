@@ -214,7 +214,44 @@
                 <p>all</p>
             </ul>
         </nav>
-        @endif
+        @elseif(Auth::user()->type == 100)
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <!-- Dashboard Link -->
+                <li class="nav-item">
+                    <a href="{{ route('dashboard') }}" class="nav-link {{ Request::is('dashboard') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+        
+                <!-- Profile -->
+                <li class="nav-item">
+                    <a href="/sponserd-list" class="nav-link {{ Request::is('company_profile') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-user"></i> <!-- Profile Icon -->
+                        <p>Profile</p>
+                    </a>
+                </li>
+        
+                <!-- Paid List -->
+                <li class="nav-item">
+                    <a href="/paid-list" class="nav-link {{ Request::is('paid-list') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-money-check-alt"></i> <!-- Paid List Icon -->
+                        <p>Paid List</p>
+                    </a>
+                </li>
+        
+                <!-- Due List -->
+                <li class="nav-item">
+                    <a href="/due-list" class="nav-link {{ Request::is('due-list') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-exclamation-circle"></i> <!-- Due List Icon -->
+                        <p>Due List</p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        
+    @endif
     </div>
     <!-- /.sidebar -->
 </aside>

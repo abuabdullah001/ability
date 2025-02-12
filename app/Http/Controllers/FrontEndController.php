@@ -239,6 +239,16 @@ class FrontEndController extends Controller
         return view('frontend.pages.sponsor-child', get_defined_vars());
     }
 
+    public function sponserlist(){
+        return view('admin.pages.sponsar.index');
+    }
+    public function paid_list(){
+        return view('admin.pages.sponsar.paid-list');
+    }
+    public function deu_list(){
+        return view('admin.pages.sponsar.deu-list');
+    }
+
     public function jobView(Request $request, $id)
     {
         if (Auth::check()) {

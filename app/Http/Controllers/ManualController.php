@@ -46,6 +46,12 @@ class ManualController extends Controller
         $manuals=Manual::all();
         return view('admin.manual.index',compact('manuals'));
     }
+    
+    public function index2(Request $request){
+        $manuals=Manual::all();
+        return view('helpers3',compact('manuals'));
+    }
+    
 
     public function edit($id){
         $manuals=Manual::findOrFail($id);

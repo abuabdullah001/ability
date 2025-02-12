@@ -220,5 +220,12 @@
         </div>
     </section>
     @endif
+    @if(Auth::user()->type == 100)
+    <section class="content">
+        <div class="container-fluid">
+          <h1 class="text-center">Welcome {{auth()->user()->name}}</h1>
+        </div>
+    </section>
+    @endif
 </div>
 @endsection

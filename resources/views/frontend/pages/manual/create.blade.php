@@ -170,18 +170,10 @@ HOME
                                             </div>
 
                                             {{-- choose event --}}
-                                            @php
-                                            $events = App\Models\Event::all();
-                                            @endphp
 
-                                        <div class="mt-5 form-group">
-                                            <label for="event_name" class="form-label fw-bold">Event Name</label>
-                                            <select name="event_name" id="event_name" class="form-select form-control form-select-lg">
-                                                <option selected disabled>Select an Event</option>
-                                                @foreach ($events as $event)
-                                                    <option value="{{ $event->id }}">{{ $event->name }}</option>
-                                                @endforeach
-                                            </select>
+
+                                        <div class="mt-5 form-group" id="event">
+
                                         </div>
 
                                              {{-- choose event --}}
@@ -229,6 +221,25 @@ HOME
             }
         );
     }
+</script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#event_type').change(function () {
+            var eventId = $(this).val();
+            if (eventId) {
+                $.ajax({
+                    url: "{{ route('getDonationTypes') }}", // Route for fetching donation types
+                    type: "GET",
+                    data: { event_id: eventId },
+                    success: function (response) {
+                        $('#event').html(response);
+                    }
+                });
+            }
+        });
+    });
 </script>
 
 
