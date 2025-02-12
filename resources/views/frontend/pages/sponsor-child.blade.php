@@ -204,22 +204,21 @@ HOME
         <form action="{{Route('donate.store')}}" method="post">
             @csrf
            
-            <label for="first-name">Name</label>
+            <label for="first-name">Name*</label>
             <input type="text" id="first_name" name="first_name" required>
-            <label for="last-name">Company Name*</label>
-            <input type="text" id="last_name" name="last_name" required>
+            <label for="last-name">Company Name</label>
+            <input type="text" id="last_name" name="last_name" >
             <label for="email">Email</label>
             <input type="email" id="email" name="email" required>
-            <label for="number">Contact Number*</label>
+            <label for="number">Contact Number</label>
             <input type="number" id="number" name="number" required>
-            <label>Amount You Want to Sponsor*</label>
+            <label>Sponsor Amount*</label>
             <input type="text" name="sponsor_number" required>
             <label for="contribution_type">Preferred Interval for needed*</label>
             <select name="contribution_type" id="contribution_type" class="form-control" required>
                 <option value="">--None--</option>
                 <option value="Monthly">Monthly</option>
                 <option value="Yearly">Yearly</option>
-                <option value="OneTime">OneTime</option>
                 <option value="quarter">Quarter</option>
             </select>
             <label for="password">Password*</label>
@@ -233,22 +232,21 @@ HOME
         <h4>Without Registration</h4>
         <form action="{{Route('donate.store')}}" method="post">
             @csrf
-            <label for="first-name">Name</label>
+            <label for="first-name">Name*</label>
             <input type="text" id="first_name" name="first_name" required>
-            <label for="last-name">Company Name*</label>
-            <input type="text" id="last_name" name="last_name" required>
+            <label for="last-name">Company Name</label>
+            <input type="text" id="last_name" name="last_name" >
             <label for="email">Email</label>
             <input type="email" id="email" name="email" required>
             <label for="number">Contact Number*</label>
             <input type="number" id="number" name="number" required>
-            <label>Amount You Want to Sponsor*</label>
+            <label>Sponsor Amount*</label>
             <input type="text" name="sponsor_number" required>
             <label for="contribution_type">Preferred Interval for needed*</label>
             <select name="contribution_type" id="contribution_type" class="form-control" required>
                 <option value="">--None--</option>
                 <option value="Monthly">Monthly</option>
                 <option value="Yearly">Yearly</option>
-                <option value="OneTime">OneTime</option>
                 <option value="quarter">Quarter</option>
             </select>
             <button type="submit" class="submit-button">Submit</button>
