@@ -392,13 +392,13 @@ margin-top: 10px;
         @foreach ($odmss as $odms)
         <div class="row">
           <div class="col-md-6" style="margin-top: 10px;">
-            <img style="width: 500px; height:400px" src="{{ asset('images/post/' . $odms->image) }}" alt="">
+            <img style="width: 500px; height:400px" src="{{ asset('images/post/'. $odms->image) }}" alt="">
           </div>
           <div class="col-md-6" style="margin-top: 0px">
             <p class="para-16" style="font-size: 16px!important; color: #555!important; line-height: 1.8!important;" class="mt-3">
               {!! Str::limit($odms->descrition, 1000) !!}
             </p>
-            <button class="btn btn-success">Read more</button>
+            <button class="btn btn-success"> Read more</button>
           </div>
         </div>
         @endforeach
@@ -549,17 +549,17 @@ $events = App\Models\Event::take(3)->where('type','current')->get();
       right: 0;
       bottom: 0;
       background-image:
-        linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)),
-        url('public/images/event/511.jpg'); 
+        /* linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)), */
+        url("{{ asset('images/event/511.jpg') }}");
       background-size: cover;
       background-position: center;
+      background-attachment:fixed;
       filter: blur(4px);
       z-index: -1;
       margin-left: 0px;
       margin-right: 0px;
       height: auto;
     }
-
     /* Swiper Container */
     .swiper {
       width: 90%;
@@ -619,7 +619,7 @@ width:20px;
     <div class="container">
 
         <div class="container mt-5" >
-            <div class="text-center mb-4">
+            <div class="text-center mb-4"  >
                 <h2 style="color: #333;font-weight:bold;margin-top:50px;">Current Event</h2>
                 <div class="" style="height: 2px;width:150px;background-color:black; margin:auto; margin-bottom:50px">
                 </div>

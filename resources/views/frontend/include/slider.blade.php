@@ -66,12 +66,16 @@
 
     </style>
     <!-- Wrapper for slides -->
-    <div class="carousel-inner h-25" role="listbox">
+    <div class="carousel-inner text-center h-25" role="listbox">
         @foreach($slidersImages as $key => $eachImage)
             <div class="item {{ $key == 0 ? 'active' : '' }}">
                 <img src="{{ URL::asset('/slider/'.$eachImage->image) }}" style="height:500px">
             </div>
         @endforeach
+       <div class="carousel-caption d-none d-md-block">
+         <h1 style="bg-light text-dark"> Welcome to ODMS </h1>
+         <p style="color:white"> we are non profit agency</p>
+       </div>
     </div>
     <!-- Left and right controls -->
     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">

@@ -338,10 +338,10 @@
 
     .event-item2 {
         display: flex;
-        justify-content: space-around;
+        /* justify-content: flex-start; */
+        margin-right: 20px;
         align-items: center;
         margin-bottom: 10px;
-
     }
 
     .aboutus6 {
@@ -409,7 +409,7 @@
 
             <!-- Address -->
             <div style2="font-size: 14px;" style="margin-left: 15px">
-                📍 123 Main Street, City, Country
+            || 123 Main Street, City, Country
             </div>
         </div>
     </div>
@@ -574,7 +574,7 @@
         {{-- Acitivities --}}
         <div id="all2222" class="event-list" style=" margin-top:0px;margin-left:00px;">
             <div class="event-item2">
-                <div>
+                <div style="margin-right: 20px;margin-left:40px">
                     <a class="dropdown-item" href="{{ url('/event') }}">
                         <img src="{{ asset('images/event/123.jpg') }}" alt=""
                             style="height: 150px;width:300px;">
@@ -582,26 +582,20 @@
                     </a>
                 </div>
                 <div>
-                    <a class="dropdown-item" href="{{ url('/champaign') }}">
-                        <img src="{{ asset('images/event/124.png') }}" alt=""
-                            style="height: 150px;width:300px;">
-                        <h3 style="text-align: center">Campaign</h3>
-                    </a>
-                </div>
-                <div>
                     <a class="dropdown-item" href="{{ url('/project') }}">
                         <img src="{{ asset('images/event/125.png') }}" alt=""
                             style="height: 150px;width:300px;">
-                        <h3 style="text-align: center">Projects</h3>
+                        <h3 style="text-align: center">Completed Projects</h3>
                     </a>
                 </div>
-                {{-- <div>
-                    <a class="dropdown-item" href="/response">
-                        <img src="{{ asset('images/event/126.png') }}" alt=""
+                <div style="margin-left: 20px">
+                    <a class="dropdown-item" href="{{ url('/project') }}">
+                        <img src="{{ asset('images/event/125.png') }}" alt=""
                             style="height: 150px;width:300px;">
-                        <h3 style="text-align: center">Our Response</h3>
+                        <h3 style="text-align: center">Running Projects</h3>
                     </a>
-                </div> --}}
+                </div>
+
             </div>
         </div>
 
