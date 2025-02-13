@@ -607,28 +607,28 @@
             <div class="event-item27">
                 <div>
                     <a class="dropdown-item" href="{{ url('/All-Gallery') }}">
-                        <img src="{{ asset('images/event/130.jpeg') }}" alt=""
+                        <img src="{{ asset('images/event/Gallery.jpg') }}" alt=""
                             style="height: 150px;width:300px;">
                         <h3 style="text-align: center">Gallery</h3>
                     </a>
                 </div>
                 <div>
                     <a class="dropdown-item" href="/All-Video">
-                        <img src="{{ asset('images/event/161.png') }}" alt=""
+                        <img src="{{ asset('images/event/video.jpg') }}" alt=""
                             style="height: 150px;width:300px;">
                         <h3 style="text-align: center">Video</h3>
                     </a>
                 </div>
                 <div>
                     <a class="dropdown-item" href="{{ url('/news') }}">
-                        <img src="{{ asset('images/event/162.jpeg') }}" alt=""
+                        <img src="{{ asset('images/event/news.jpg') }}" alt=""
                             style="height: 150px;width:300px;">
                         <h3 style="text-align: center">News</h3>
                     </a>
                 </div>
                 <div>
                     <a class="dropdown-item" href="{{ route('frontend.pages.blog') }}">
-                        <img src="{{ asset('images/event/163.png') }}" alt=""
+                        <img src="{{ asset('images/event/Blog.jpg') }}" alt=""
                             style="height: 150px;width:300px;">
                         <h3 style="text-align: center">Blog</h3>
                     </a>
@@ -645,21 +645,21 @@
 
                 <div style="margin-right:40px;margin-left:40px;">
                     <a class="dropdown-item" href="{{ url('/signin') }}">
-                        <img src="{{ asset('images/event/144.jpg') }}" alt=""
+                        <img src="{{ asset('images/event/Join-as-a-Donor.jpg') }}" alt=""
                             style="height: 150px;width:300px;">
                         <h3 style="text-align: center">Join as a Donor</h3>
                     </a>
                 </div>
-                <div style="margin-left: 40px">
+                <div style="margin-left: 0px">
                     <a class="dropdown-item" href="{{ url('/volunteer') }}">
-                        <img src="{{ asset('images/event/140.jpg') }}" alt=""
+                        <img src="{{ asset('images/event/Join-as-a-Volunteer.jpg') }}" alt=""
                             style="height: 150px;width:300px;">
                         <h3 style="text-align: center">Join as a Volunteer</h3>
                     </a>
                 </div>
                 <div style="margin-left: 40px">
                     <a class="dropdown-item" href="">
-                        <img src="{{ asset('images/event/212.jpeg') }}" alt=""
+                        <img src="{{ asset('images/event/Carrer.jpg') }}" alt=""
                             style="height: 150px;width:300px;">
                         <h3 style="text-align: center">Carrer</h3>
                     </a>
