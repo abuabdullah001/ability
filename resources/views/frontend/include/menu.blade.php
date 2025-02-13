@@ -361,7 +361,7 @@
 
     .involved33 {
         display: flex;
-        justify-content: space-around;
+        /* justify-content: space-around; */
         align-items: center;
         margin-bottom: 10px;
     }
@@ -643,27 +643,29 @@
         <div id="involved3" class="event-list" style=" margin-top:0px;margin-left:00px;">
             <div class="involved33">
 
-                <div>
+                <div style="margin-right:40px;margin-left:40px;">
                     <a class="dropdown-item" href="{{ url('/signin') }}">
                         <img src="{{ asset('images/event/144.jpg') }}" alt=""
                             style="height: 150px;width:300px;">
                         <h3 style="text-align: center">Join as a Donor</h3>
                     </a>
                 </div>
-                <div>
+                <div style="margin-left: 40px">
                     <a class="dropdown-item" href="{{ url('/volunteer') }}">
                         <img src="{{ asset('images/event/140.jpg') }}" alt=""
                             style="height: 150px;width:300px;">
                         <h3 style="text-align: center">Join as a Volunteer</h3>
                     </a>
                 </div>
-                <div>
+                <div style="margin-left: 40px">
                     <a class="dropdown-item" href="">
                         <img src="{{ asset('images/event/212.jpeg') }}" alt=""
                             style="height: 150px;width:300px;">
                         <h3 style="text-align: center">Carrer</h3>
                     </a>
                 </div>
+
+
                 {{-- @php
                     $notice = App\Models\Notice::first();
                 @endphp
