@@ -56,24 +56,24 @@ class CategoryController extends Controller
         $category->type = $request->type;
         $category->title = $request->title;
         $category->order_by = $request->order_by;
-    
+
         if ($request->hasFile('image')) {
             if (!empty($category->image) && file_exists(public_path($category->image))) {
                 unlink(public_path($category->image));
             }
-    
+
             $img_ext = $request->file('image')->getClientOriginalExtension();
             $filename = 'event-' . time() . '.' . $img_ext;
             $request->file('image')->move(public_path('images/event'), $filename);
             $imagepath = '/images/event/' . $filename;
             $category->image = $imagepath;
         }
-    
+
         $category->save();
-    
+
         return back();
     }
-    
+
     /**
      * Display the specified resource.
      *
@@ -103,7 +103,7 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    
+
 
     /**
      * Remove the specified resource from storage.

@@ -576,21 +576,21 @@
             <div class="event-item2">
                 <div style="margin-right: 40px;margin-left:40px">
                     <a class="dropdown-item" href="{{ url('/event') }}">
-                        <img src="{{ asset('images/event/123.jpg') }}" alt=""
+                        <img src="{{ asset('images/event/Events.jpg') }}" alt=""
                             style="height: 150px;width:300px;">
                         <h3 style="text-align: center">Events</h3>
                     </a>
                 </div>
                 <div>
                     <a class="dropdown-item" href="{{ url('/project') }}">
-                        <img src="{{ asset('images/event/125.png') }}" alt=""
+                        <img src="{{ asset('images/event/project.jpg') }}" alt=""
                             style="height: 150px;width:300px;">
                         <h3 style="text-align: center">Completed Projects</h3>
                     </a>
                 </div>
                 <div style="margin-left: 40px">
                     <a class="dropdown-item" href="{{ url('/project') }}">
-                        <img src="{{ asset('images/event/125.png') }}" alt=""
+                        <img src="{{ asset('images/event/project.jpg') }}" alt=""
                             style="height: 150px;width:300px;">
                         <h3 style="text-align: center">Running Projects</h3>
                     </a>
