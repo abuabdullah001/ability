@@ -94,6 +94,9 @@ Category
                                                                         <option value="Message" {{ $category->type == 'Message' ? 'selected' : '' }}>Message</option>
                                                                         <option value="Committee" {{ $category->type == 'Committee' ? 'selected' : '' }}>BIEA Committee</option>
                                                                         <option value="Cell" {{ $category->type == 'Cell' ? 'selected' : '' }}>BIEA Cell</option>
+                                                                        <option value="Cell" {{$category->type == 'Activities' ? 'selected' : '' }}>Activities</option>
+                                                                        <option value="Cell" {{$category->type == 'Media' ? 'selected' : '' }}>Media</option>
+                                                                        <option value="Cell" {{$category->type == 'Involved' ? 'selected' : '' }}>Involved</option>
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -174,7 +177,6 @@ Category
                                     <option value="Cell">Activities</option>
                                     <option value="Cell">Media</option>
                                     <option value="Cell">Involved</option>
-
                                 </select>
                             </div>
                         </div>
