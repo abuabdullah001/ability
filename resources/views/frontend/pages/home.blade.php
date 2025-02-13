@@ -387,7 +387,7 @@ margin-top: 10px;
           </div>
           <div class="col-md-6" style="margin-top: 0px">
             <p class="para-16" style="font-size: 16px!important; color: #555!important; line-height: 1.8!important;" class="mt-3">
-              {!! Str::limit($odms->descrition, 00) !!}
+              {!! Str::limit($odms->descrition, 700) !!}
             </p>
             <button class="btn btn-success"> Read more</button>
           </div>
