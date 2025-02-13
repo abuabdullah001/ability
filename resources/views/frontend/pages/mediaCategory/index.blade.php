@@ -20,7 +20,6 @@ Add Donation
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
         <hr class="style18">
-
     </div>
 
 
