@@ -62,7 +62,7 @@ SIGN IN
         <div class="form-wrapper">
           <div class="row">
             <div class="col-md-12">
-              <h4>Registration form</h4>
+              <h4>Login form</h4>
             </div>
           </div>
           <form class="billing-form"  method="post" action="{{ route('login') }}" >

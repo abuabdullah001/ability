@@ -62,16 +62,17 @@ HOME
                                                 @enderror
                                             </div>
 
-                                            <!-- Email Address -->
-                                            <div class="form-group" style="margin-bottom: 15px;">
-                                                <label for="email" style="font-weight: bold;">Email Address</label>
-                                                <input type="text" name="email" class="form-control" style="padding: 10px; font-size: 14px;" value="">
-                                                @error('email')
-                                                <div class="error text-red text-bold" style="color: red; font-size: 12px; margin-top: 5px;">
-                                                    <strong>{{$message}}</strong>
+                                                <!-- Phone -->
+                                                <div class="form-group" style="margin-bottom: 15px;">
+                                                    <label for="phone" style="font-weight: bold;">Phone</label>
+                                                    <input type="text" name="phone" class="form-control" style="padding: 10px; font-size: 14px;" value="">
+                                                    @error('phone')
+                                                    <div class="error text-red text-bold" style="color: red; font-size: 12px; margin-top: 5px;">
+                                                        <strong>{{$message}}</strong>
+                                                    </div>
+                                                    @enderror
                                                 </div>
-                                                @enderror
-                                            </div>
+
 
                                             <!-- Address -->
                                             <div class="form-group" style="margin-bottom: 15px;">
@@ -84,16 +85,19 @@ HOME
                                                 @enderror
                                             </div>
 
-                                            <!-- Phone -->
-                                            <div class="form-group" style="margin-bottom: 15px;">
-                                                <label for="phone" style="font-weight: bold;">Phone</label>
-                                                <input type="text" name="phone" class="form-control" style="padding: 10px; font-size: 14px;" value="">
-                                                @error('phone')
-                                                <div class="error text-red text-bold" style="color: red; font-size: 12px; margin-top: 5px;">
-                                                    <strong>{{$message}}</strong>
+
+                                                <!-- Email Address -->
+                                                <div class="form-group" style="margin-bottom: 15px;">
+                                                    <label for="email" style="font-weight: bold;">Email Address</label>
+                                                    <input type="text" name="email" class="form-control" style="padding: 10px; font-size: 14px;" value="">
+                                                    @error('email')
+                                                    <div class="error text-red text-bold" style="color: red; font-size: 12px; margin-top: 5px;">
+                                                        <strong>{{$message}}</strong>
+                                                    </div>
+                                                    @enderror
                                                 </div>
-                                                @enderror
-                                            </div>
+
+
 
                                             <!-- Payment Method -->
                                             <div class="form-group" style="margin-bottom: 15px;">
@@ -166,10 +170,10 @@ HOME
                                             </div>
 
                                             {{-- choose event --}}
-                                        
+
 
                                         <div class="mt-5 form-group" id="event">
-                                         
+
                                         </div>
 
                                              {{-- choose event --}}

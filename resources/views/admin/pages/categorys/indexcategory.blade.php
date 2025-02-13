@@ -67,7 +67,7 @@ Category
                                             </a>
                                         </td>
                                     </tr>
-    
+
                                     <!-- Edit Category Modal -->
                                     <div class="modal fade" id="editModal{{$category->id}}">
                                         <div class="modal-dialog modal-lg">
@@ -94,17 +94,20 @@ Category
                                                                         <option value="Message" {{ $category->type == 'Message' ? 'selected' : '' }}>Message</option>
                                                                         <option value="Committee" {{ $category->type == 'Committee' ? 'selected' : '' }}>BIEA Committee</option>
                                                                         <option value="Cell" {{ $category->type == 'Cell' ? 'selected' : '' }}>BIEA Cell</option>
+                                                                        <option value="Activities" {{$category->type == 'Activities' ? 'selected' : '' }}>Activities</option>
+                                                                        <option value="Media" {{$category->type == 'Media' ? 'selected' : '' }}>Media</option>
+                                                                        <option value="Involved" {{$category->type == 'Involved' ? 'selected' : '' }}>Involved</option>
                                                                     </select>
                                                                 </div>
                                                             </div>
-    
+
                                                             <div class="col-md-8">
                                                                 <div class="form-group">
                                                                     <label>Category</label>
                                                                     <input type="text" class="form-control" name="title" value="{{$category->title}}" required>
                                                                 </div>
                                                             </div>
-    
+
                                                             <div class="col-md-8">
                                                                 <div class="form-group">
                                                                     <label>Image</label>
@@ -112,7 +115,7 @@ Category
                                                                     <small>Leave empty to keep existing image</small>
                                                                 </div>
                                                             </div>
-    
+
                                                             <div class="col-md-8">
                                                                 <div class="form-group">
                                                                     <label>Order By</label>
@@ -130,7 +133,7 @@ Category
                                         </div>
                                     </div>
                                     <!-- End Edit Category Modal -->
-    
+
                                     @endforeach
                                 </tbody>
                             </table>
@@ -141,7 +144,7 @@ Category
             </div>
         </div>
     </section>
-    
+
 </div>
 
 
@@ -169,8 +172,11 @@ Category
                                     <option value="About">About</option>
                                     <option value="Mission">Mission</option>
                                     <option value="Message">Message</option>
-                                    <option value="Committee">BIEA Committee</option>
+                                    <option value="Committee">Committee</option>
                                     <option value="Cell">BIEA Cell</option>
+                                    <option value="Activities">Activities</option>
+                                    <option value="Media">Media</option>
+                                    <option value="Involved">Involved</option>
                                 </select>
                             </div>
                         </div>
@@ -199,7 +205,7 @@ Category
                            </div>
                         </div>
 
-                      
+
                     </div>
                 </div>
 

@@ -51,16 +51,14 @@ HOME
                     <div class="col-md-12">
                         <div class="row">
                             @foreach($projects as $project)
-                            <div class="col-md-3 col-sm-6 mb-4"> <!-- col-md-4 ensures 3 cards per row -->
-                                <div class="card">
+                            <div class="col-md-3 col-sm-6 mb-4" style="margin-bottom: 20px;"> <!-- col-md-4 ensures 3 cards per row -->
+                                <div class="card" style="margin-bottom:20px">
                                     <a href="{{ route('event.show', ['slug' => $project->slug]) }}">
                                         <img src="{{ asset($project->image)}}" style="width:35rem;height: 23rem;" class="card-img-top img-responsive" alt="...">
-                                        <div class="card-body">
+                                        <div class="card-body" style="margin-bottom: 20px">
                                             <h5 class="card-title" style="font-size: 21px;font-weight: 600;line-height: 25px;margin-bottom: 38px;">     {{ Str::limit($project->name, 20, '...') }} </h5>
 
                                             <a href="{{ route('champaign.show', ['slug' => $project->slug]) }}" class="" style="color:blue">Read More</a>
-
-
                                         </div>
                                     </a>
                                 </div>

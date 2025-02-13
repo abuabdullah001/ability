@@ -338,10 +338,10 @@
 
     .event-item2 {
         display: flex;
-        justify-content: space-around;
+        /* justify-content: flex-start; */
+        margin-right: 20px;
         align-items: center;
         margin-bottom: 10px;
-
     }
 
     .aboutus6 {
@@ -354,14 +354,14 @@
 
     .event-item27 {
         display: flex;
-        justify-content: space-around;
+        /* justify-content: space-around; */
         align-items: center;
         margin-bottom: 10px;
     }
 
     .involved33 {
         display: flex;
-        justify-content: space-around;
+        /* justify-content: space-around; */
         align-items: center;
         margin-bottom: 10px;
     }
@@ -409,7 +409,7 @@
 
             <!-- Address -->
             <div style2="font-size: 14px;" style="margin-left: 15px">
-                📍 123 Main Street, City, Country
+            || 123 Main Street, City, Country
             </div>
         </div>
     </div>
@@ -576,34 +576,30 @@
         {{-- Acitivities --}}
         <div id="all2222" class="event-list" style=" margin-top:0px;margin-left:00px;">
             <div class="event-item2">
-                <div>
+                <div style="margin-left:20px">
                     <a class="dropdown-item" href="{{ url('/event') }}">
-                        <img src="{{ asset('images/event/123.jpg') }}" alt=""
+                        <img src="{{ asset('images/event/Events.jpg') }}" alt=""
                             style="height: 150px;width:300px;">
                         <h3 style="text-align: center">Events</h3>
                     </a>
                 </div>
-                <div>
-                    <a class="dropdown-item" href="{{ url('/champaign') }}">
-                        <img src="{{ asset('images/event/124.png') }}" alt=""
-                            style="height: 150px;width:300px;">
-                        <h3 style="text-align: center">Campaign</h3>
-                    </a>
-                </div>
-                <div>
+
+                <div style="margin-left: 20px">
                     <a class="dropdown-item" href="{{ url('/project') }}">
-                        <img src="{{ asset('images/event/125.png') }}" alt=""
+                        <img src="{{ asset('images/event/project.jpg') }}" alt=""
                             style="height: 150px;width:300px;">
-                        <h3 style="text-align: center">Projects</h3>
+                        <h3 style="text-align: center">Running Projects</h3>
                     </a>
                 </div>
-                {{-- <div>
-                    <a class="dropdown-item" href="/response">
-                        <img src="{{ asset('images/event/126.png') }}" alt=""
+                <div style="margin-left: 20px">
+                    <a class="dropdown-item" href="{{ url('/project') }}">
+                        <img src="{{ asset('images/event/project.jpg') }}" alt=""
                             style="height: 150px;width:300px;">
-                        <h3 style="text-align: center">Our Response</h3>
+                        <h3 style="text-align: center">Completed Projects</h3>
                     </a>
-                </div> --}}
+                </div>
+
+
             </div>
         </div>
 
@@ -613,30 +609,30 @@
         {{-- Media start --}}
         <div id="all23" class="event-list" style=" margin-top:0px;margin-left:00px;">
             <div class="event-item27">
-                <div>
+                <div style="margin-left: 20px">
                     <a class="dropdown-item" href="{{ url('/All-Gallery') }}">
-                        <img src="{{ asset('images/event/130.jpeg') }}" alt=""
+                        <img src="{{ asset('images/event/Gallery.jpg') }}" alt=""
                             style="height: 150px;width:300px;">
                         <h3 style="text-align: center">Gallery</h3>
                     </a>
                 </div>
-                <div>
+                <div style="margin-left: 20px">
                     <a class="dropdown-item" href="/All-Video">
-                        <img src="{{ asset('images/event/161.png') }}" alt=""
+                        <img src="{{ asset('images/event/Video.jpg') }}" alt=""
                             style="height: 150px;width:300px;">
                         <h3 style="text-align: center">Video</h3>
                     </a>
                 </div>
-                <div>
+                <div style="margin-left: 20px">
                     <a class="dropdown-item" href="{{ url('/news') }}">
-                        <img src="{{ asset('images/event/162.jpeg') }}" alt=""
+                        <img src="{{ asset('images/event/news.jpg') }}" alt=""
                             style="height: 150px;width:300px;">
                         <h3 style="text-align: center">News</h3>
                     </a>
                 </div>
-                <div>
+                <div style="margin-left: 20px">
                     <a class="dropdown-item" href="{{ route('frontend.pages.blog') }}">
-                        <img src="{{ asset('images/event/163.png') }}" alt=""
+                        <img src="{{ asset('images/event/Blog.jpg') }}" alt=""
                             style="height: 150px;width:300px;">
                         <h3 style="text-align: center">Blog</h3>
                     </a>
@@ -651,28 +647,30 @@
         <div id="involved3" class="event-list" style=" margin-top:0px;margin-left:00px;">
             <div class="involved33">
 
-                <div>
+                <div style="margin-left:20px;">
                     <a class="dropdown-item" href="{{ url('/signin') }}">
-                        <img src="{{ asset('images/event/144.jpg') }}" alt=""
+                        <img src="{{ asset('images/event/Join-as-a-Donor.jpg') }}" alt=""
                             style="height: 150px;width:300px;">
                         <h3 style="text-align: center">Join as a Donor</h3>
                     </a>
                 </div>
-                <div>
+                <div style="margin-left: 20px">
                     <a class="dropdown-item" href="{{ url('/volunteer') }}">
-                        <img src="{{ asset('images/event/140.jpg') }}" alt=""
+                        <img src="{{ asset('images/event/Join-as-a-Volunteer.jpg') }}" alt=""
                             style="height: 150px;width:300px;">
                         <h3 style="text-align: center">Join as a Volunteer</h3>
                     </a>
                 </div>
-                <div>
+                <div style="margin-left: 20px">
                     <a class="dropdown-item" href="">
-                        <img src="{{ asset('images/event/212.jpeg') }}" alt=""
+                        <img src="{{ asset('images/event/Carrer.jpg') }}" alt=""
                             style="height: 150px;width:300px;">
                         <h3 style="text-align: center">Carrer</h3>
                     </a>
                 </div>
-                @php
+
+
+                {{-- @php
                     $notice = App\Models\Notice::first();
                 @endphp
 
@@ -680,7 +678,7 @@
                     <img src="{{ asset('images/event/200.png') }}" alt=""
                         style="height: 150px;width:300px;margin-left:30px;margin-right:20px;">
                     <h3 style="text-align: center"> Notice</h3>
-                </a>
+                </a> --}}
                 {{-- <div>
                             <a class="dropdown-item" href="">
                                 <img src="{{asset('images/event/165.jpg')}}" alt="" style="height: 150px;width:300px;">
