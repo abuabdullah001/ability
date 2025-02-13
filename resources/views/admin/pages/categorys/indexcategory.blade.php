@@ -174,9 +174,9 @@ Category
                                     <option value="Message">Message</option>
                                     <option value="Committee">Committee</option>
                                     <option value="Cell">BIEA Cell</option>
-                                    <option value="Cell">Activities</option>
-                                    <option value="Cell">Media</option>
-                                    <option value="Cell">Involved</option>
+                                    <option value="Activities">Activities</option>
+                                    <option value="Media">Media</option>
+                                    <option value="Involved">Involved</option>
                                 </select>
                             </div>
                         </div>
