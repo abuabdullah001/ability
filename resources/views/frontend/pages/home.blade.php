@@ -620,9 +620,20 @@ width:20px;
             <div class="card shadow-sm">
                 <div class="card-body">
                     <p style="font-size: 16px; color: #555; line-height: 1.8;">
+                        In January 2025, Bangladesh is addressing several disaster management challenges. The government has
+                        closed its border with Myanmar, preventing Rohingya refugees from seeking safety amid escalating
+                        violence in Rakhine state.
+                        <strong class="text-muted">THE GUARDIAN</strong>
                     </p>
-
-
+                    <p style="font-size: 16px; color: #555; line-height: 1.8;">
+                        Additionally, the World Bank has pledged over $2 billion to support Bangladesh's flood response
+                        initiatives and other reforms.
+                        <strong class="text-muted">REUTERS</strong>
+                    </p>
+                    <p style="font-size: 16px; color: #555; line-height: 1.8;margin-bottom:50px">
+                        Furthermore, the European Investment Bank plans to double its funding to €2 billion to aid in
+                        infrastructure projects focused on climate change resilience.
+                    </p>
                 </div>
             </div>
         </div>
