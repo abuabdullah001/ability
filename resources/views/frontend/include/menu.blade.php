@@ -614,7 +614,7 @@
                 </div>
                 <div>
                     <a class="dropdown-item" href="/All-Video">
-                        <img src="{{ asset('images/event/video.jpg') }}" alt=""
+                        <img src="{{ asset('images/event/Video.jpg') }}" alt=""
                             style="height: 150px;width:300px;">
                         <h3 style="text-align: center">Video</h3>
                     </a>
