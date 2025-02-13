@@ -664,7 +664,7 @@
                         <h3 style="text-align: center">Carrer</h3>
                     </a>
                 </div>
-                @php
+                {{-- @php
                     $notice = App\Models\Notice::first();
                 @endphp
 
@@ -672,7 +672,7 @@
                     <img src="{{ asset('images/event/200.png') }}" alt=""
                         style="height: 150px;width:300px;margin-left:30px;margin-right:20px;">
                     <h3 style="text-align: center"> Notice</h3>
-                </a>
+                </a> --}}
                 {{-- <div>
                             <a class="dropdown-item" href="">
                                 <img src="{{asset('images/event/165.jpg')}}" alt="" style="height: 150px;width:300px;">
