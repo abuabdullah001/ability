@@ -574,7 +574,7 @@
         {{-- Acitivities --}}
         <div id="all2222" class="event-list" style=" margin-top:0px;margin-left:00px;">
             <div class="event-item2">
-                <div style="margin-right: 40px;margin-left:40px">
+                <div style="margin-right: 20px;margin-left:20px">
                     <a class="dropdown-item" href="{{ url('/event') }}">
                         <img src="{{ asset('images/event/Events.jpg') }}" alt=""
                             style="height: 150px;width:300px;">
@@ -582,14 +582,14 @@
                     </a>
                 </div>
 
-                <div style="margin-left: 40px">
+                <div style="margin-left: 20px">
                     <a class="dropdown-item" href="{{ url('/project') }}">
                         <img src="{{ asset('images/event/project.jpg') }}" alt=""
                             style="height: 150px;width:300px;">
                         <h3 style="text-align: center">Running Projects</h3>
                     </a>
                 </div>
-                <div>
+                <div style="margin-left: 20px">
                     <a class="dropdown-item" href="{{ url('/project') }}">
                         <img src="{{ asset('images/event/project.jpg') }}" alt=""
                             style="height: 150px;width:300px;">
