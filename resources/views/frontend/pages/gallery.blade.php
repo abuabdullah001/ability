@@ -31,6 +31,9 @@ HOME
 <div class="container text-center mb-4">
     <div class="btn-group" role="group" aria-label="Category Buttons">
         {{-- <button class="btn btn-success filter-btn" data-category="all">All</button> --}}
+        <button class="btn btn-success filter-btn"  data-category='all'>
+            All
+        </button>
         @foreach($mediaCategories as $mediaCategory)
             <button class="btn btn-success filter-btn" data-category="{{ $mediaCategory->id }}">
                 {{ $mediaCategory->name }}

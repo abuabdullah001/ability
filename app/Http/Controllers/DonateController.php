@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Billing;
 use App\Models\Doante;
 use App\Models\Order;
 use App\Models\User;
@@ -80,6 +81,16 @@ class DonateController extends Controller
             $user->type = 100;
             $user->save();
 
+            
+            Billing::create([
+                "user_id" => $user->id,
+                "amount" => $request->sponsor_number,
+                "status" => "not_paid", // Enum: paid / not_paid / partial
+                "paid_amount" => 0,
+                "partial" => 0,
+            ]);
+
+
             $donate->user_id = $user->id;
 
             $donate->save();
@@ -143,19 +154,25 @@ class DonateController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // Find the donation
         $donate = Doante::find($id);
-        $donate->first_name = $request->first_name;
-        $donate->last_name = $request->last_name;
-        $donate->email = $request->email;
-        $donate->contact_number = $request->number;
-        $donate->sponsor_number = $request->sponsor_number;
-        $donate->contribution_type = $request->contribution_type;
-        //   $donate->date = now();
-        $donate->save();
-        return redirect('/all-donate-list')->with('success', 'Updated successfully');
+    
+        // Loop through the submitted statuses and update each billing record
+        foreach ($request->status as $billingId => $status) {
+            // Find the individual billing record by its ID
+            $billing = $donate->billing()->find($billingId);
+    
+            // If the billing record exists, update its status
+            if ($billing) {
+                $billing->status = $status;
+                $billing->save();
+            }
+        }
+    
+        // Redirect back with a success message
+        return back()->with('success', 'Updated successfully');
     }
-
-
+    
     /**
      * Remove the specified resource from storage.
      *

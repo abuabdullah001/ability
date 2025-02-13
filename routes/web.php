@@ -22,6 +22,7 @@ use App\Http\Controllers\SocialmediaController;
 use App\Http\Controllers\JournalAndPublicationController;
 use App\Http\Controllers\AcademicSummarieController;
 use App\Http\Controllers\AccountsController;
+use App\Http\Controllers\BillingController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ZoneController;
 use App\Http\Controllers\ContactUsController;
@@ -426,7 +427,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/training/studentresumy/{id}', [TrainingController::class, 'viewstudent'])->name('training.studentresumy');
 
     // Donate
-    Route::get('/all-donate-list', [DonateController::class, 'index']);
+    Route::get('/all-sponsar-list', [DonateController::class, 'index']);
     Route::get('/add-donate', [DonateController::class, 'create'])->name('create.donate');
     Route::post('/store/donate', [DonateController::class, 'store'])->name('donate.store');
     Route::post('/update/donate/{id}', [DonateController::class, 'update'])->name('donate.update');
@@ -721,6 +722,8 @@ Route::delete('manual/delete/{id}', [ManualController::class, 'delete'])->name('
 Route::get('partner/create', [PartnerController::class, 'create'])->name('partner.create');
 Route::post('partner/store', [PartnerController::class, 'store'])->name('partner.store');
 Route::get('partner/index', [PartnerController::class, 'index'])->name('partner.index');
+
+Route::put('billing/{id}', [BillingController::class, 'update'])->name('billing.updatePayment');
 
 
 

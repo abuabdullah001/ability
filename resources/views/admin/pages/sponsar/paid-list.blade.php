@@ -33,7 +33,7 @@ ALL Training
                     <div class="alert alert-success">{{session()->get('success')}}</div>
                     @endif
                 @php
-                   $billing = App\Models\Billing::where('user_id',auth()->user()->id)->where('status','paid')->get();
+                   $billing = App\Models\Billing::where('user_id',auth()->user()->id)->whereIn('status',['paid','partial'])->get();
                 @endphp
 
                         <div class="card-body">
@@ -56,8 +56,8 @@ ALL Training
                                             <td>{{auth()->user()->name}}</td>
                                             <td>{{$item->amount}} Tk</td>
                                             <td>{{$item->status }}</td>
-                                            <td>{{$item->paid_amount}}</td>                                        
-                                            <td>{{$item->created_at->format('y-m-F')}}</td>                                        
+                                            <td>{{$item->paid_amount}} Tk</td>                                        
+                                            <td>{{ $item->created_at->format('Y-M-d') }} to {{ $item->created_at->copy()->addMonth()->format('Y-M-d') }}</td>                                        
                                         @endforeach
                                         
                                 

@@ -33,7 +33,7 @@ ALL Training
                     @php
                         $billing = App\Models\Billing::where('user_id', auth()->user()->id)->where('status', 'not_paid')->get();
                     @endphp
-
+    
                     <div class="card-body">
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>
@@ -55,13 +55,13 @@ ALL Training
                                     <td>{{ $item->amount }} Tk</td>
                                     <td>{{ $item->status }}</td>
                                     <td>{{ $item->paid_amount }}</td>
-                                    <td>{{ $item->created_at->format('y-m-F') }}</td>
+                                    <td>{{ $item->created_at->format('Y-M-d') }} to {{ $item->created_at->copy()->addMonth()->format('Y-M-d') }}</td>
                                     <td>
                                         <button class="btn btn-primary btn-sm updatePaymentBtn" 
                                             data-id="{{ $item->id }}" 
                                             data-amount="{{ $item->amount }}" 
                                             data-paid="{{ $item->paid_amount }}" 
-                                            data-status="{{ $item->status }}"
+                                            data-status="{{ $item->status }}" 
                                             data-toggle="modal" data-target="#updatePaymentModal">
                                             Pay Now
                                         </button>
@@ -71,7 +71,7 @@ ALL Training
                             </tbody>
                         </table>
                     </div>
-
+    
                     <!-- Payment Update Modal -->
                     <div class="modal fade" id="updatePaymentModal" tabindex="-1" role="dialog" aria-labelledby="updatePaymentModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
@@ -82,7 +82,8 @@ ALL Training
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
-                                <form action="" method="POST">
+                                <form action="{{ route('billing.updatePayment', ':id') }}" method="POST" id="paymentForm">
+                                    @method('PUT')
                                     @csrf
                                     <div class="modal-body">
                                         <input type="hidden" name="billing_id" id="billingId">
@@ -94,7 +95,14 @@ ALL Training
                                             <label>Paid Amount (Tk)</label>
                                             <input type="number" name="paid_amount" class="form-control" id="paidAmount" required>
                                         </div>
-                                   
+                                        <div class="form-group">
+                                            <label>Phone Number</label>
+                                            <input type="text" name="phone_number" class="form-control" id="phoneNumber" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Transaction ID</label>
+                                            <input type="text" name="transaction_id" class="form-control" id="transactionId" required>
+                                        </div>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -105,28 +113,35 @@ ALL Training
                         </div>
                     </div>
                     <!-- End Payment Update Modal -->
-
+    
                 </div>
             </div>
         </div>
     </section>
+    
+    <script>
+        // Using jQuery to populate the modal fields dynamically
+        $(document).ready(function() {
+            $('.updatePaymentBtn').on('click', function() {
+                var billingId = $(this).data('id');
+                var billingAmount = $(this).data('amount');
+                var paidAmount = $(this).data('paid');
+                var status = $(this).data('status');
+    
+                // Set modal values
+                $('#billingId').val(billingId);
+                $('#billingAmount').val(billingAmount);
+                $('#paidAmount').val(paidAmount);
+    
+                // Update form action to include the correct billing ID
+                var formAction = "{{ route('billing.updatePayment', ':id') }}".replace(':id', billingId);
+                $('#paymentForm').attr('action', formAction);
+            });
+        });
+    </script>
+    
 </div>
 
 <!-- Script to Fill Modal with Data -->
-<script>
-    $(document).ready(function() {
-        $('.updatePaymentBtn').on('click', function() {
-            var billingId = $(this).data('id');
-            var amount = $(this).data('amount');
-            var paid = $(this).data('paid');
-            var status = $(this).data('status');
-
-            $('#billingId').val(billingId);
-            $('#billingAmount').val(amount);
-            $('#paidAmount').val(paid);
-            $('#paymentStatus').val(status);
-        });
-    });
-</script>
 
 @endsection

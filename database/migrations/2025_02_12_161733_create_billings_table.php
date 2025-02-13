@@ -20,6 +20,8 @@ class CreateBillingsTable extends Migration
             $table->string('status')->nullable();
             $table->double('paid_amount')->nullable();
             $table->double('partial')->nullable();
+            $table->integer('phone_number')->nullable();
+            $table->string('transaction_id')->nullable();
             $table->timestamps();
         });
     }

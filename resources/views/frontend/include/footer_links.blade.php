@@ -1,7 +1,7 @@
 <div class="clearfix"></div>
-<script>
+{{-- <script>
     document.addEventListener('contextmenu', event => event.preventDefault());
-</script>
+</script> --}}
 <!-- Scripts==================================================-->
 <script type="text/javascript" src="{{ asset('frontend_assets/assets/plugins/js/viewportchecker.js')}}"></script>
 <script type="text/javascript" src="{{ asset('frontend_assets/assets/plugins/js/bootstrap.min.js')}}"></script>
@@ -24,13 +24,13 @@
     });</script>
 <script src="{{ asset('frontend_assets/assets/js/sweetalert2@11.js') }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
+{{-- 
 @yield('script')
 <script>function openRightMenu() {
         document.getElementById("rightMenu").style.display = "block";
     }
     function closeRightMenu() {
-        document.getElementById("rightMenu").style.display = "none";
+        document.getElementById("rightMenu").style.display = "block";
     }</script>
 </div>
 
@@ -74,4 +74,4 @@
 </body>
 <!-- index-236:28-->
 
-</html>
+</html> --}}

@@ -29,7 +29,6 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
 
-
         // $schedule->command('inspire')->hourly();
         $schedule->call(function () {
 
@@ -45,15 +44,7 @@ class Kernel extends ConsoleKernel
                         $today = Carbon::now();
                         $billcheck = Billing::where("user_id", $userId)->orderBy("id", "desc")->first();
 
-                        if (!$billcheck) {
-                            Billing::create([
-                                "user_id" => $userId,
-                                "amount" => $amount,
-                                "status" => "not_paid", // Enum: paid / not_paid / partial
-                                "paid_amount" => 0,
-                                "partial" => 0,
-                            ]);
-                        } else {
+                        if ($billcheck) {
                             $createdAt = Carbon::parse($billcheck->created_at);
                             if ($donationType === "Monthly") {
                                 $nextBillingDate = $createdAt->copy()->addDays(30);
@@ -83,6 +74,7 @@ class Kernel extends ConsoleKernel
                     }
                 }
             } catch (\Throwable $th) {
+                
             }
         })->everyMinute();
     }

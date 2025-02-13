@@ -41,8 +41,6 @@
 
 </style>
 
-
-
 <!-- Hamburger Icon (Three Vertical Dots) -->
 <div class="containers" onclick="myFunction(this)">
     <div class="bar1"></div>
@@ -66,13 +64,18 @@
 
     </style>
     <!-- Wrapper for slides -->
-    <div class="carousel-inner h-25" role="listbox">
+    <div class="carousel-inner text-center h-25" role="listbox">
         @foreach($slidersImages as $key => $eachImage)
             <div class="item {{ $key == 0 ? 'active' : '' }}">
                 <img src="{{ URL::asset('/slider/'.$eachImage->image) }}" style="height:500px">
             </div>
         @endforeach
+       <div class="carousel-caption d-none d-md-block text-center">
+         <h1> Welcome to ODMS </h1>
+         <h3 style="color:#ffffff;"> Organization for Disaster Management Society</h3>
+       </div>
     </div>
+
     <!-- Left and right controls -->
     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
         <i class="fa-solid fa-angles-left glyphicon glyphicon-chevron-left" aria-hidden="true"></i>

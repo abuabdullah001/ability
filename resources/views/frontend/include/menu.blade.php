@@ -479,27 +479,29 @@
             </li>
 
             <li><a class="nav-item2" href="{{ url('/Contact-Us') }}">CONTACT</a></li>
-            <div class="buttonFixed d-flex" style="margin-right:20px ">
+            <div class="buttonFixed d-flex" style="margin-right: 20px;">
+                <!-- Donate Us Button -->
                 <a class="nav-item" href="{{ url('/event') }}">
-                    <button class="btn btn-success text-white" id="donateUsButton">
+                    <button class="btn btn-success text-white">
                         Donate Us
                     </button>
                 </a>
-                <li class="nav-item  ">
-                    <a href="{{ Route('sponsor_child') }}">
-                        <button class="btn btn-success text-white ">Sponsor</button>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ Route('support.showForm') }}">
-                        <button class="btn btn-success text-white text-bold" style="margin-right: 20px"
-                            data-bs-toggle="tooltip" data-bs-placement="top" title="Ask what you need"
-                            id="large-tooltip">
-                            <span style="font-size: 20px">?</span>
-                        </button>
-                    </a>
-                </li>
+            
+                <!-- Sponsor Button -->
+                <a class="nav-item" href="{{ Route('sponsor_child') }}">
+                    <button class="btn btn-success text-white">
+                        Sponsor
+                    </button>
+                </a>
+            
+                <!-- Support Button with Tooltip -->
+                <a class="nav-item" href="{{ Route('support.showForm') }}">
+                    <button class="btn btn-success text-white text-bold" style="margin-right: 20px" data-bs-toggle="tooltip" data-bs-placement="top" title="Ask what you need" id="large-tooltip">
+                        <span style="font-size: 20px">?</span>
+                    </button>
+                </a>
             </div>
+            
         </ul>
 
 

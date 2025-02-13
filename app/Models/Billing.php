@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Billing extends Model
 {
     use HasFactory;
-    protected $fillable=['user_id','amount','status','paid_amount','partial'];}
+    protected $guarded =["id"];
+}
