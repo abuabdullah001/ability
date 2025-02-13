@@ -387,7 +387,7 @@ margin-top: 10px;
           </div>
           <div class="col-md-6" style="margin-top: 0px">
             <p class="para-16" style="font-size: 16px!important; color: #555!important; line-height: 1.8!important;" class="mt-3">
-              {!! Str::limit($odms->descrition, 1000) !!}
+              {!! Str::limit($odms->descrition, 700) !!}
             </p>
             <button class="btn btn-success"> Read more</button>
           </div>
@@ -395,19 +395,8 @@ margin-top: 10px;
         @endforeach
       </div>
     </div>
-    @foreach ($odmss as $odms )
-    <div class="row col-md-6" style="margin-top: 30px;">
-     <img style="width: 500px;height:400px" src="{{ asset('images/post/' . $odms->image) }}" alt="">
-    </div>
-    <div class="row col-md-6 " style="margin-top: 60px">
-      <p style="text-size:12px;color:black;text-align: justify; font-family:Arial, Helvetica, sans-serif;margin-top:px" class="mt-3">
-        {!! Str::limit( $odms->descrition, 700) !!}
-     </p>
-<a href="view_aboutepage/39" class="btn btn-success">Read More</a>
-    </div>
-    @endforeach
-</div>
-</div>
+
+
 </section>
 
 {{-- Featured event --}}
