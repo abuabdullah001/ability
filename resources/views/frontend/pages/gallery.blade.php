@@ -26,7 +26,6 @@ HOME
 @php
     $mediaCategories = App\Models\MediaCategory::all();
 @endphp
-@dd($mediaCategories);
 
 <!-- Category Buttons -->
 <div class="container text-center mb-4">
