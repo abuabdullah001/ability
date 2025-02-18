@@ -500,6 +500,23 @@ $events = App\Models\Event::take(3)->where('type','featured')->get();
 $events = App\Models\Event::take(3)->where('type','current')->get();
 @endphp<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <style>
+    button.btn.btn-success.mt-25.ml-30 {
+    margin-left: 15px;
+}
+@media (max-width: 640px) {
+  .current_background {
+   height: auto !important;
+    padding: 0!important;
+  }
+}
+
+@media (max-width: 640px) {
+  p.text-white {
+     display: none;
+  }
+
+}
+
 
 h2.secTitle {
     padding-top: 40px;
@@ -697,7 +714,7 @@ a.btn.btn-link:hover,.btn.btn-success.mt-25:hover,a.btn-readmore.mt-25:hover{
    }
 
      .current_background {
-        height:190vh!important;
+        height:auto!important;
     }
 
     .footer-social{
