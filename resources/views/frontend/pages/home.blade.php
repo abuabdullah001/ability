@@ -364,7 +364,7 @@ margin-top: 10px;
     <div class="row">
     @foreach ($odmss as $odms )
     <div class="col-md-6" style="margin-top:30px;">
-     <img style="width:100%;height:500px" src="{{ asset('images/post/' . $odms->image) }}" alt="">
+     <img style="width:100%;height:400px" src="{{ asset('images/post/' . $odms->image) }}" alt="">
     </div>
     <div class="col-md-6 pl-30"  style="margin-top:10px;">
       <p class="secPara" style="text-size:12px;color:black;text-align: justify; font-family:Arial, Helvetica, sans-serif;margin-top:px" class="mt-3">
