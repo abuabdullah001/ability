@@ -54,7 +54,7 @@ ALL Training
                                         <th>Last Name</th>
                                         <th>Email</th>
                                         <th>Contact Number</th>
-                                        <th class="whatever">Sponsor Number</th>
+                                        <th class="whatever">Sponsor Amount </th>
                                         <th>Contribution Type</th>
                                         <th>Date</th>
                                         <th>Action</th>

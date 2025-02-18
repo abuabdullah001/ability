@@ -21,7 +21,7 @@ HOME
         background-size: cover;
         background-position: center;
         color: white;
-        height: 763px;
+        height: 500px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -34,7 +34,7 @@ HOME
         padding: 115px;
         width: 100%;
         position: absolute;
-        top: 528px;
+        top: 208px;
         bottom: 0;
         display: flex;
         flex-direction: column;

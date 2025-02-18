@@ -16,7 +16,7 @@ HOME
         background-size: cover;
         background-position: center;
         color: white;
-        height: 763px;
+        height: 500px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -28,7 +28,7 @@ HOME
         padding: 115px;
         width: 100%;
         position: absolute;
-        top: 528px;
+        top: 208px;
         bottom: 0;
         display: flex;
         flex-direction: column;
@@ -130,9 +130,9 @@ HOME
 <!-- Hero Section -->
 <section class="hero">
     <div class="overlay">
-        <h1 style="font-weight: 49px; font-weight: 600; color: #ef018d;">
+        <h2 style="font-weight: 49px; font-weight: 600; color:white;">
             Contribute any amount to support people's in disaster affected area
-        </h1>
+        </h2>
         <p style="color: white; text-align: center;">
             Within every disaster people lies boundless potential, and education is
             the key to unlocking opportunities that allow this potential
@@ -190,7 +190,7 @@ HOME
 <!-- Sponsorship Form Section -->
 <section class="sponsorship-form">
     <h3>Sponsor Form</h3>
-    
+
     <!-- Buttons for registration options -->
     <div style="margin-bottom: 15px; text-align: center;">
         <button type="button" id="with-registration-btn" class="registration-button">With Registration</button>
@@ -203,7 +203,7 @@ HOME
         <h4>With Registration</h4>
         <form action="{{Route('donate.store')}}" method="post">
             @csrf
-           
+
             <label for="first-name">Name*</label>
             <input type="text" id="first_name" name="first_name" required>
             <label for="last-name">Company Name</label>
@@ -282,8 +282,8 @@ HOME
                     @enderror
                 </div>
             </div>
-    
-        
+
+
             <div class="row">
                 <div class="col-md-12 text-center mrg-top-25">
                     <button type="submit" class="btn btn-success">LogIn</button>

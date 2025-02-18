@@ -19,7 +19,7 @@ HOME
         background-size: cover;
         background-position: center;
         color: white;
-        height: 763px;
+        height: 500px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -32,7 +32,7 @@ HOME
         padding: 115px;
         width: 100%;
         position: absolute;
-        top: 528px;
+        top: 208px;
         bottom: 0;
         display: flex;
         flex-direction: column;
@@ -131,7 +131,7 @@ HOME
 <!-- Hero Section -->
 <section class="hero">
     <div class="overlay">
-        <h1 style="font-weight: 600;color: #ef018d;">Contribute any amount to support people's in disaster affected area.</h1>
+        <h2 style="font-weight: 600;color: white;">Contribute any amount to support people's in disaster affected area.</h2>
         <p style="color: white;text-align: center;">Within every disaster people lies boundless potential, and education is the key to unlocking opportunities that allow this potential to flourish. By sponsoring disaster people, you are providing marginalised children with essential tools that will empower them to change their reality and create a better and brighter future, not only for themselves and their families but also for their communities as a whole.</p>
     </div>
 </section>
