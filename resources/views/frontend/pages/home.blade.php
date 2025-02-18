@@ -523,7 +523,7 @@ h2.secTitle {
       bottom: 0;
       background-image:
         linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)),
-        url("{{ asset('images/event/event-1737543951.jpeg') }}");
+        url("{{ asset('images/event/bc11.jpg') }}");
       background-size: cover;
       background-position: center;
       background-attachment:fixed;
