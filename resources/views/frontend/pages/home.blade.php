@@ -499,7 +499,6 @@ $events = App\Models\Event::take(3)->where('type','featured')->get();
 @php
 $events = App\Models\Event::take(3)->where('type','current')->get();
 @endphp<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
 <style>
 
 h2.secTitle {
@@ -508,7 +507,8 @@ h2.secTitle {
     /* Fullscreen Background */
     .current_background {
       position: relative;
-      height: 160vh;
+      height: auto;
+      padding: 0;
       width: 100%;
       overflow: hidden; /* Ensures the background doesn't spill out */
       z-index: 1;
