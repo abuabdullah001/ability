@@ -480,12 +480,15 @@
 
             <li><a class="nav-item2" href="{{ url('/Contact-Us') }}">CONTACT</a></li>
             <div class="buttonFixed d-flex" style="margin-right: 20px;">
+
                 <!-- Donate Us Button -->
-                <a class="nav-item" href="{{ url('/event') }}">
+               
+                <a class="nav-item2" id="donateUsButton" href="{{ url('/event') }}">
                     <button class="btn btn-success text-white">
                         Donate Us
                     </button>
                 </a>
+
 
                 <!-- Sponsor Button -->
                 <a class="nav-item" href="{{ Route('sponsor_child') }}">
@@ -503,8 +506,6 @@
             </div>
 
         </ul>
-
-
 
 
 
@@ -535,8 +536,6 @@
                         </a></h3>
                 </div>
             </div>
-
-
         </div>
 
 
