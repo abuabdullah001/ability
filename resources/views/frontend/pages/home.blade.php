@@ -181,7 +181,7 @@ section#testimonial {
     body {
         margin: 0px;
     }
-    
+
 
 }
 @media (max-width: 767px) {
@@ -341,7 +341,7 @@ overflow-y: auto;
 gap:10px;
 margin-top: 10px;
    }
-  
+
 }
 </style>
 
@@ -364,7 +364,7 @@ margin-top: 10px;
     <div class="row">
     @foreach ($odmss as $odms )
     <div class="col-md-6" style="margin-top:30px;">
-     <img style="width:100%;height:auto" src="{{ asset('images/post/' . $odms->image) }}" alt="">
+     <img style="width:100%;height:300px" src="{{ asset('images/post/' . $odms->image) }}" alt="">
     </div>
     <div class="col-md-6 pl-30"  style="margin-top:10px;">
       <p class="secPara" style="text-size:12px;color:black;text-align: justify; font-family:Arial, Helvetica, sans-serif;margin-top:px" class="mt-3">
@@ -617,7 +617,7 @@ a.btn.btn-link, .btn-readmore {
 
 a.btn-readmore.mt-25{
     border-radius:50px;
-    font-size:15px; 
+    font-size:15px;
     width:120px;
     margin:auto;
 }
@@ -629,7 +629,7 @@ a.btn.btn-link:hover,.btn.btn-success.mt-25:hover,a.btn-readmore.mt-25:hover{
 
 
   /* resposive style */
-  @media (max-width: 640px) { 
+  @media (max-width: 640px) {
     .mb-xs-0{
         margin-bottom:0px!important;
      }
@@ -646,11 +646,11 @@ a.btn.btn-link:hover,.btn.btn-success.mt-25:hover,a.btn-readmore.mt-25:hover{
     h2.xs-pt-0{
         padding-top:0!important;
     }
-    
+
     .secTitle{
         font-size:30px!important;
     }
-    
+
     .card-body p.para{
         max-width:100%!important;
     }
@@ -659,7 +659,7 @@ a.btn.btn-link:hover,.btn.btn-success.mt-25:hover,a.btn-readmore.mt-25:hover{
     padding-top:30px!important;
     font-size:25px!important;
    }
-   
+
    section#currentBg{
     padding:0!important;
    }
@@ -698,7 +698,7 @@ a.btn.btn-link:hover,.btn.btn-success.mt-25:hover,a.btn-readmore.mt-25:hover{
 
      .current_background {
         height:190vh!important;
-    } 
+    }
 
     .footer-social{
         text-align:center!important;
@@ -706,7 +706,7 @@ a.btn.btn-link:hover,.btn.btn-success.mt-25:hover,a.btn-readmore.mt-25:hover{
 
     a.btn-readmore.mt-25{
     border-radius:50px;
-    font-size:15px; 
+    font-size:15px;
     width:150px;
     margin:auto;
    }
@@ -721,10 +721,10 @@ a.btn.btn-link:hover,.btn.btn-success.mt-25:hover,a.btn-readmore.mt-25:hover{
     section#expartFeed, section#testimonial, section#ourPartner {
     padding-top: 70px;
 }
-    
+
     .nav-buttons {
-       display: block; 
-    } 
+       display: block;
+    }
 
     .card-body p.para{
         max-width:100%!important;
@@ -745,8 +745,8 @@ a.btn.btn-link:hover,.btn.btn-success.mt-25:hover,a.btn-readmore.mt-25:hover{
     color: black;
     font-size:20px;
 }
-    
-} 
+
+}
 
 p.secPara {
     padding-top:5px;
@@ -772,12 +772,12 @@ p.secPara {
                         In January 2025, Bangladesh is addressing several disaster management challenges. The government has
                         closed its border with Myanmar, preventing Rohingya refugees from seeking safety amid escalating
                         violence in Rakhine state.
-                        
+
                     </p>
                     <p style="font-size: 16px; color: #555; line-height: 1.8;">
                         Additionally, the World Bank has pledged over $2 billion to support Bangladesh's flood response
                         initiatives and other reforms.
-                      
+
                     </p>
                     <p style="font-size: 16px; color: #555; line-height: 1.8;margin-bottom:50px">
                         Furthermore, the European Investment Bank plans to double its funding to €2 billion to aid in
@@ -941,7 +941,7 @@ p.secPara {
                 <p  class="secPara" style="font-size: 16px; color: #555; line-height: 1.8; text-align: justify;margin-bottom:50px">
                     However, challenges persist, including irregular disaster management committee meetings, bureaucratic
                     hurdles, and corruption, which hinder effective policy implementation.
-                    
+
                 </p>
             </div>
         </div>
