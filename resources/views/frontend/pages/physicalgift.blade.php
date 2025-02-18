@@ -129,7 +129,7 @@ HOME
 <!-- Hero Section -->
 <section class="hero">
     <div class="overlay">
-        <h1 style="font-weight: 600;color: #ef018d;">Help a disaster people for their future</h1>
+        <h2 style="font-weight: 600;color:white;">Help a disaster people for their future</h2>
         <p style="color: white;text-align: center;">Within every disaster people lies boundless potential, and education is the key to unlocking opportunities that
             allow this potential to flourish. By sponsoring a child, you are providing marginalized children with essential tools that will empower them to change their
             reality and create a better and brighter future, not only for themselves and their families but also for their communities as a whole.</p>
